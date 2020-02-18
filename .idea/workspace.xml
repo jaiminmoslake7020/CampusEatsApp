@@ -1,7 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ffae415-f8a0-4828-a8f4-b43417e46f0f" name="Default Changelist" comment="" />
+    <list default="true" id="2ffae415-f8a0-4828-a8f4-b43417e46f0f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.bithoundrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/CampusEatsMobileApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/.pgbomit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/android/drawable-hdpi-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/android/drawable-ldpi-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/android/drawable-mdpi-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/android/drawable-xhdpi-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/android/drawable-xxhdpi-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/android/drawable-xxxhdpi-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-40@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-50@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-60@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-60@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-72@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-76@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-small@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-small@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/ios/icon@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Square150x150Logo.scale-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Square150x150Logo.scale-240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Square30x30Logo.scale-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Square310x310Logo.scale-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Square44x44Logo.scale-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Square44x44Logo.scale-240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Square70x70Logo.scale-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Square71x71Logo.scale-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Square71x71Logo.scale-240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/StoreLogo.scale-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/StoreLogo.scale-240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Wide310x150Logo.scale-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/windows/Wide310x150Logo.scale-240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/wp8/ApplicationIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/icon/wp8/Background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-land-hdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-land-ldpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-land-mdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-land-xhdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-land-xxhdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-land-xxxhdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-port-hdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-port-ldpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-port-mdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-port-xhdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-port-xxhdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/android/drawable-port-xxxhdpi-screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default-568h@2x~iphone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default-667h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default-736h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default-Landscape-736h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default-Landscape@2x~ipad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default-Landscape~ipad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default-Portrait@2x~ipad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default-Portrait~ipad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default@2x~iphone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/ios/Default~iphone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/windows/SplashScreen.scale-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/windows/SplashScreenPhone.scale-240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/res/screen/wp8/screen-portrait.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/spec.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/spec/helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/spec/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/spec/lib/jasmine-1.2.0/MIT.LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/spec/lib/jasmine-1.2.0/jasmine-html.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/spec/lib/jasmine-1.2.0/jasmine.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/spec/lib/jasmine-1.2.0/jasmine.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +120,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.phonegap.settings.workdir" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
     <configuration name="PhoneGap/Cordova run" type="PhoneGap" factoryName="PhoneGap/Cordova">
@@ -72,7 +164,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582064273638</updated>
-      <workItem from="1582064387528" duration="1504000" />
+      <workItem from="1582064387528" duration="2010000" />
     </task>
     <servers />
   </component>
@@ -80,9 +172,13 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="444" y="336" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582065866912">
+    <state x="244" y="118" key="CommitChangelistDialog2" timestamp="1582066050772">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="444" y="336" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777@0.23.1280.777" timestamp="1582065866912" />
+    <state x="244" y="118" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1582066050772" />
+    <state x="444" y="336" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582066100754">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="444" y="336" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777@0.23.1280.777" timestamp="1582066100754" />
   </component>
 </project>
