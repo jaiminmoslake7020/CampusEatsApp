@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ffae415-f8a0-4828-a8f4-b43417e46f0f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582064273638</updated>
-      <workItem from="1582064387528" duration="3649000" />
+      <workItem from="1582064387528" duration="4335000" />
     </task>
     <task id="LOCAL-00001" summary="New Setup">
       <created>1582066591077</created>
@@ -101,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582068321720</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Merge branch 'master' of https://github.com/jaiminmoslake7020/CampusEatsApp&#10;&#10;# Conflicts:&#10;#&#9;.idea/modules.xml&#10;#&#9;www/index.html">
+      <created>1582068633666</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582068633666</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
