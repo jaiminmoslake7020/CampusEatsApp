@@ -27,7 +27,7 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+<!--    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />-->
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -37,44 +37,62 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>-->
+    <link rel="stylesheet" href="../node_modules/@ionic/core/css/ionic.bundle.css" />
+<!--    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />-->
+    <link type="text/css" rel="stylesheet" href="../node_modules/firebaseui/dist/firebaseui.css" />
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <title>Campus Eats</title>
 </head>
-
 <body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+    <div id="app-container">
+        <div class="app" id="app">
+
+            <!--        <img src="images/splash.png"  alt="SplashScreen"/>-->
+
+                <div id="screen-container">
+
+                </div>
+
+
+
+<!--            <div class="screen"  id="register-screen">-->
+<!--            </div>-->
+
+<!--            <div class="screen"  id="home-screen">-->
+<!--            </div>-->
+
+<!--            <div class="screen"  id="menu-items-screen">-->
+<!--            </div>-->
+
+<!--            <div class="screen"  id="view-order-screen">-->
+<!--            </div>-->
+
+<!--            <div class="screen"  id="payment-screen">-->
+<!--            </div>-->
+
+<!--            <div class="screen"  id="payment-success-screen">-->
+<!--            </div>-->
+
+
         </div>
     </div>
+
+
     <script type="text/javascript" src="cordova.js"></script>
+    <script src="../node_modules/vue/dist/vue.js" ></script>
+    <script type="module" src="../node_modules/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="../node_modules/@ionic/core/dist/ionic/ionic.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="../node_modules/firebase/firebase.js"></script>
+    <script src="../node_modules/firebaseui/dist/firebaseui.js"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script src="js/CampusEats.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
-    </script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="bower_components/firebase/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="bower_components/firebase/firebase-analytics.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyB6uMvtd5S7bG6qvHC7wk_EXHSkgBw0tg4",
-            authDomain: "campus-eats-6ab51.firebaseapp.com",
-            databaseURL: "https://campus-eats-6ab51.firebaseio.com",
-            projectId: "campus-eats-6ab51",
-            storageBucket: "campus-eats-6ab51.appspot.com",
-            messagingSenderId: "554417127158",
-            appId: "1:554417127158:web:3244bbe55b0cee456fb6d7",
-            measurementId: "G-ZB1WE0VPZB"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
     </script>
 </body>
 

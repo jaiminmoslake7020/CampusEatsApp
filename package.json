@@ -28,6 +28,16 @@
     }
   },
   "dependencies": {
-    "cordova-browser": "^6.0.0"
+    "@ionic-native/native-page-transitions": "^5.22.0",
+    "@ionic/core": "^5.0.4",
+    "@ionic/react": "^5.0.0",
+    "@ionic/react-router": "^5.0.0",
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-browsersync": "^1.1.0",
+    "firebase": "^7.10.0",
+    "firebaseui": "^4.4.0",
+    "react-firebaseui": "^4.1.0",
+    "sweetalert2": "^9.9.0",
+    "vue": "^2.6.11"
   }
 }
