@@ -37,7 +37,14 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        import('app/CampusEats');
         let appObject = new CampusEats();
         appObject.init();
     }
 };
+
+app.initialize();
+
+let appObject = new CampusEats();
+appObject.init();
+

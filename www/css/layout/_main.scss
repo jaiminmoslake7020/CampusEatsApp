@@ -11,10 +11,8 @@ img{
 }
 
 #app-container{
-   height: 812px;
-   width: 375px;
-   border: 1px solid #eee;
-   margin: auto;
+   height: 100vw;
+   width: 100vh;
 }
 
 .screen{
@@ -39,3 +37,11 @@ img{
    opacity: 1;
 }
 
+@media screen and (min-width: 380px){
+   #app-container{
+      height: 600px;
+      width: 375px;
+      border: 1px solid #eee;
+      margin: auto;
+   }
+}

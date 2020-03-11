@@ -1,10 +1,10 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "helloworld",
-  "short_name": "helloworld",
+  "name": "CampusEats",
+  "short_name": "CampusEats",
   "version": "com.phonegap.helloworld",
-  "description": "Hello World sample application that responds to the deviceready event.",
+  "description": "This is an app for Langara Students and employees to order food/bevarges from any cafes on Langara Campus",
   "author": "PhoneGap Team",
   "icons": [],
   "start_url": "index.html"

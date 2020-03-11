@@ -38,62 +38,42 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>-->
-    <link rel="stylesheet" href="../node_modules/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="bower_components/@ionic/core/css/ionic.bundle.css" />
 <!--    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />-->
-    <link type="text/css" rel="stylesheet" href="../node_modules/firebaseui/dist/firebaseui.css" />
-
+    <link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-
     <title>Campus Eats</title>
 </head>
 <body>
+
     <div id="app-container">
         <div class="app" id="app">
-
-            <!--        <img src="images/splash.png"  alt="SplashScreen"/>-->
-
-                <div id="screen-container">
-
-                </div>
-
-
-
-<!--            <div class="screen"  id="register-screen">-->
-<!--            </div>-->
-
-<!--            <div class="screen"  id="home-screen">-->
-<!--            </div>-->
-
-<!--            <div class="screen"  id="menu-items-screen">-->
-<!--            </div>-->
-
-<!--            <div class="screen"  id="view-order-screen">-->
-<!--            </div>-->
-
-<!--            <div class="screen"  id="payment-screen">-->
-<!--            </div>-->
-
-<!--            <div class="screen"  id="payment-success-screen">-->
-<!--            </div>-->
-
-
+            <div id="screen-container">
+<!--                <div class="screen" id="splash-screen">-->
+<!--                    <div class=" spalsh-screen-image  spalsh-screen "></div>-->
+<!--                </div>-->
+            </div>
         </div>
     </div>
 
-
     <script type="text/javascript" src="cordova.js"></script>
-    <script src="../node_modules/vue/dist/vue.js" ></script>
-    <script type="module" src="../node_modules/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="../node_modules/@ionic/core/dist/ionic/ionic.js"></script>
+    <script src="bower_components/vue/dist/vue.js" ></script>
+    <script type="module" src="bower_components/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="bower_components/@ionic/core/dist/ionic/ionic.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="../node_modules/firebase/firebase.js"></script>
-    <script src="../node_modules/firebaseui/dist/firebaseui.js"></script>
-    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
-    <script src="js/CampusEats.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/firebaseui/dist/firebaseui.js"></script>
+
+<!--  APP JS  -->
+    <script src="js/app/components/BaseComponent.js"  ></script>
+    <script src="js/app/components/db/FirebaseCompoenent.js"  ></script>
+    <script src="js/app/components/view/ViewComponent.js"  ></script>
+    <script src="js/app/components/localstorage/LocalStorageComponent.js"  ></script>
+    <script src="js/app/AppClassManager.js"  ></script>
+    <script  src="js/app/CampusEats.js"  ></script>
+<!--    PHONEGAP's own call to our app handler-->
+    <script type="text/javascript" src="js/index.js"  ></script>
+    <!--  APP JS  -->
 </body>
 
 </html>

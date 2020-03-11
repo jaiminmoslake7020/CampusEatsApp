@@ -36,6 +36,7 @@
     "cordova-plugin-browsersync": "^1.1.0",
     "firebase": "^7.10.0",
     "firebaseui": "^4.4.0",
+    "ionic": "^5.4.16",
     "react-firebaseui": "^4.1.0",
     "sweetalert2": "^9.9.0",
     "vue": "^2.6.11"
