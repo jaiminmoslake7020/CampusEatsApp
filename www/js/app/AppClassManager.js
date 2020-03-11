@@ -7,12 +7,14 @@ class AppClassManager {
         this.getViewComponent();
         this.getFirebaseCompoenent();
         this.getLocalStorageComponent();
+        this.getRequestComponent();
     }
 
     setUp(){
         this.getViewComponent().init();
         this.getFirebaseCompoenent().init();
         this.getLocalStorageComponent().init();
+        this.getRequestComponent().init();
     }
 
     getViewComponent(){
@@ -36,6 +38,11 @@ class AppClassManager {
         return this.FirebaseCompoenent;
     }
 
-
+    getRequestComponent(){
+        if( typeof this.RequestComponent === "undefined" ){
+            this.RequestComponent = new RequestComponent();
+        }
+        return this.RequestComponent;
+    }
 
 }

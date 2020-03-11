@@ -6,7 +6,11 @@ class ViewComponent extends BaseComponent{
 
     init(){
         this.configureVue();
-        this.showSplashScreen();
+        if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
+            this.showHomeScreen();
+        }else{
+            this.showSplashScreen();
+        }
     }
 
     configureVue(){

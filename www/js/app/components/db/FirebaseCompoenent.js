@@ -49,7 +49,7 @@ class FirebaseCompoenent extends BaseComponent{
                     if( typeof authResult === "object"  && authResult.hasOwnProperty( 'user' )  ){
 
                         localStorage.setItem('authResult', authResult);
-                        return appObject.showHomeScreen();
+                        return appObject.getAppClassManager().getViewComponent().showHomeScreen();
 
                     }else{
 
