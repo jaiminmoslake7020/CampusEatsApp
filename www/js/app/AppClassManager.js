@@ -4,17 +4,17 @@ class AppClassManager {
     }
 
     init(){
-        this.getViewComponent();
+        this.getRequestComponent();
         this.getFirebaseCompoenent();
         this.getLocalStorageComponent();
-        this.getRequestComponent();
+        this.getViewComponent();
     }
 
     setUp(){
-        this.getViewComponent().init();
+        this.getRequestComponent().init();
         this.getFirebaseCompoenent().init();
         this.getLocalStorageComponent().init();
-        this.getRequestComponent().init();
+        this.getViewComponent().init();
     }
 
     getViewComponent(){
