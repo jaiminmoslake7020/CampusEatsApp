@@ -22,13 +22,15 @@ class FirebaseCompoenent extends BaseComponent{
             appId: "1:94074607384:web:594dbcadcdb444e47bf06d",
             measurementId: "G-KDJMVEZ6TZ"
         };
+
+        console.log( console.trace() );
+
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
 
         self.defaultStorage = firebase.storage();
         self.db = firebase.firestore();
-
     }
 
     setUpFirebaseUi(){
@@ -47,14 +49,10 @@ class FirebaseCompoenent extends BaseComponent{
                     console.log( redirectUrl );
 
                     if( typeof authResult === "object"  && authResult.hasOwnProperty( 'user' )  ){
-
                         localStorage.setItem('authResult', authResult);
-                        return appObject.getAppClassManager().getViewComponent().showHomeScreen();
-
+                        return campusEats.getAppClassManager().getViewComponent().showHomeScreen();
                     }else{
-
-                        alert('Error');
-
+                        campusEats.getAppClassManager().getEventHandlerComponent().alert( 'Error' , '' , '' , buttons );
                         return false;
                     }
 
@@ -72,10 +70,13 @@ class FirebaseCompoenent extends BaseComponent{
             signInOptions: [
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                firebase.auth.FacebookAuthProvider.PROVIDER_ID
+               // firebase.auth.FacebookAuthProvider.PROVIDER_ID   requiers more configuration
             ],
             // Other config options...
         });
     }
+
+
+
 
 }

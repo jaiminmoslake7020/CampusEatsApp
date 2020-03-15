@@ -54,25 +54,95 @@
         </div>
     </div>
 
+
+    <template id="nav-menu">
+
+        <ion-app>
+            <ion-menu side="start" menu-id="first" content-id="main">
+                <ion-header>
+                    <ion-toolbar color="primary">
+                        <ion-title>Start Menu</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content>
+                    <ion-list>
+                        <ion-item>Menu Item</ion-item>
+                        <ion-item>Menu Item</ion-item>
+                        <ion-item>Menu Item</ion-item>
+                        <ion-item>Menu Item</ion-item>
+                        <ion-item>Menu Item</ion-item>
+                    </ion-list>
+                </ion-content>
+            </ion-menu>
+
+            <div class="ion-page" id="main">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-buttons id="start-menu" slot="start">
+                            <ion-menu-button></ion-menu-button>
+                        </ion-buttons>
+                        <ion-title>
+                            <div class="logo-container">
+                                <img src="images/LogoCampusEats.png" />
+                            </div>
+                        </ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content class="ion-padding">
+
+                    <!-- Default -->
+                    <ion-button class="brand-logos" size="large" color="light" expand="block" shape="round" >
+                        <div class="brand-container">
+                            <img src="images/brands/tim.png" />
+                        </div>
+                    </ion-button>
+
+                    <ion-button class="brand-logos" size="large" color="light" expand="block" shape="round" >
+                        <div class="brand-container">
+                            <img src="images/brands/subway.png" />
+                        </div>
+                    </ion-button>
+
+                    <ion-button class="brand-logos" size="large" color="light" expand="block" shape="round" >
+                        <div class="brand-container">
+                            <img src="images/brands/starbucks.png" />
+                        </div>
+                    </ion-button>
+
+                </ion-content>
+            </div>
+
+        </ion-app>
+
+    </template>
+
+
     <script type="text/javascript" src="cordova.js"></script>
     <script src="bower_components/vue/dist/vue.js" ></script>
     <script type="module" src="bower_components/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="bower_components/@ionic/core/dist/ionic/ionic.js"></script>
+    <script nomodule src="bower_components/@ionic/core/dist/cjs/ion-menu_3-md.cjs.entry.js"></script>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/firebaseui/dist/firebaseui.js"></script>
 
-<!--  APP JS  -->
+
+    <script type="module" src="js/app/modules/ionic.js"  ></script>
+
+    <!--  APP JS  -->
     <script src="js/app/components/BaseComponent.js"  ></script>
     <script src="js/app/components/db/FirebaseCompoenent.js"  ></script>
     <script src="js/app/components/view/ViewComponent.js"  ></script>
     <script src="js/app/components/localstorage/LocalStorageComponent.js"  ></script>
     <script src="js/app/components/request/RequestComponent.js"  ></script>
+    <script src="js/app/components/events/EventHandlerComponent.js"  ></script>
     <script src="js/app/AppClassManager.js"  ></script>
     <script  src="js/app/CampusEats.js"  ></script>
 <!--    PHONEGAP's own call to our app handler-->
     <script type="text/javascript" src="js/index.js"  ></script>
     <!--  APP JS  -->
-</body>
 
+
+</body>
 </html>

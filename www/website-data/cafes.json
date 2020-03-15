@@ -1,0 +1,119 @@
+{
+  "tim-hortons": {
+    "name": "Tim Hortons",
+    "logo": "images/brands/tim.png",
+    "merchant_id": "x",
+    "cafe_vendor_id": "y",
+    "address": "100 W 49th Ave 1st Floor, Vancouver, BC V5Y 2Z6",
+    "cafe_primary_colour": "red",
+    "cafe_secondary_colour": "white",
+    "working_hours": {
+      "monday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "tuesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "wednesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "thursday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "friday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "saturday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "sunday": {
+        "start": "7:30",
+        "end": "16:00"
+      }
+    }
+  },
+  "starbucks": {
+    "name": "Starbucks",
+    "logo": "images/brands/starbucks.png",
+    "merchant_id": "x",
+    "cafe_vendor_id": "y",
+    "address": "100 W 49th Ave 1st Floor, Vancouver, BC V5Y 2Z6",
+    "cafe_primary_colour": "green",
+    "cafe_secondary_colour": "white",
+    "working_hours": {
+      "monday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "tuesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "wednesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "thursday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "friday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "saturday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "sunday": {
+        "start": "7:30",
+        "end": "16:00"
+      }
+    }
+  },
+  "subway": {
+    "name": "Subway",
+    "logo": "images/brands/subway.png",
+    "merchant_id": "x",
+    "cafe_vendor_id": "y",
+    "address": "Cafeteria Langara College, Science Building, 170 W 49th Ave, Vancouver, BC V5Y 2Z6",
+    "cafe_primary_colour": "green",
+    "cafe_secondary_colour": "yellow",
+    "working_hours": {
+      "monday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "tuesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "wednesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "thursday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "friday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "saturday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "sunday": {
+        "start": "7:30",
+        "end": "16:00"
+      }
+    }
+  }
+}

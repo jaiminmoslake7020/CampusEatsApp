@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+let campusEats = null ;
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -37,10 +40,13 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        let appObject = new CampusEats();
-        appObject.init();
+        // campusEats = new CampusEats();
+        // campusEats.init();
     }
 };
 
 app.initialize();
+
+campusEats = new CampusEats();
+campusEats.init();
 

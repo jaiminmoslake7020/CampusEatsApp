@@ -6,11 +6,19 @@ class ViewComponent extends BaseComponent{
 
     init(){
         this.configureVue();
-        if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
-            this.showLoginScreen();
+
+        if( true ){
+            // just for testing purpose
+            this.showHomeScreen()
         }else{
-            this.showSplashScreen();
+            if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
+                this.showLoginScreen();
+            }else{
+                this.showSplashScreen();
+            }
         }
+
+
     }
 
     configureVue(){
@@ -46,8 +54,11 @@ class ViewComponent extends BaseComponent{
 
         var app = new Vue({
             el: '#screen-container',
-            template: '<div id="screen-container"><div class="screen"  id="home-screen">HOME SCREEN</div></div>'
+            template: '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>'
         });
+
+        document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+        this.getAppClassManager().getEventHandlerComponent().homeScreenEvents();
 
     }
 

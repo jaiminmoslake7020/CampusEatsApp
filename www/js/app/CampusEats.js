@@ -4,6 +4,9 @@ class CampusEats {
     }
 
     init(){
+
+        console.log( console.trace() );
+
         this.getAppClassManager().init();
         this.getAppClassManager().setUp();
     }

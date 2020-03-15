@@ -8,6 +8,7 @@ class AppClassManager {
         this.getFirebaseCompoenent();
         this.getLocalStorageComponent();
         this.getViewComponent();
+        this.getEventHandlerComponent();
     }
 
     setUp(){
@@ -15,8 +16,12 @@ class AppClassManager {
         this.getFirebaseCompoenent().init();
         this.getLocalStorageComponent().init();
         this.getViewComponent().init();
+        this.getEventHandlerComponent().init();
     }
 
+    /**
+     * @returns {ViewComponent}
+     */
     getViewComponent(){
         if( typeof this.ViewComponent === "undefined" ){
             this.ViewComponent = new ViewComponent();
@@ -24,6 +29,9 @@ class AppClassManager {
         return this.ViewComponent;
     }
 
+    /**
+     * @returns {LocalStorageComponent}
+     */
     getLocalStorageComponent(){
         if( typeof this.LocalStorageComponent === "undefined" ){
             this.LocalStorageComponent = new LocalStorageComponent();
@@ -31,6 +39,9 @@ class AppClassManager {
         return this.LocalStorageComponent;
     }
 
+    /**
+     * @returns {FirebaseCompoenent}
+     */
     getFirebaseCompoenent(){
         if( typeof this.FirebaseCompoenent === "undefined" ){
             this.FirebaseCompoenent = new FirebaseCompoenent();
@@ -38,11 +49,24 @@ class AppClassManager {
         return this.FirebaseCompoenent;
     }
 
+    /**
+     * @returns {RequestComponent}
+     */
     getRequestComponent(){
         if( typeof this.RequestComponent === "undefined" ){
             this.RequestComponent = new RequestComponent();
         }
         return this.RequestComponent;
+    }
+
+    /**
+     * @returns {EventHandlerComponent}
+     */
+    getEventHandlerComponent(){
+        if( typeof this.EventHandlerComponent === "undefined" ){
+            this.EventHandlerComponent = new EventHandlerComponent();
+        }
+        return this.EventHandlerComponent;
     }
 
 }
