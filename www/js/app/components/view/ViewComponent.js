@@ -9,7 +9,7 @@ class ViewComponent extends BaseComponent{
 
         if( true ){
             // just for testing purpose
-            this.showHomeScreen()
+            this.showMenusScreen('tim-hortons')
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
                 this.showLoginScreen();
@@ -101,8 +101,15 @@ class ViewComponent extends BaseComponent{
         new Promise(function (resolve, reject) {
 
             var app = new Vue({
+                el: '#screen-container',
+                template: '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>'
+            });
+
+            document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+
+            var app = new Vue({
                 el: '#ion-content',
-                template: '<ion-content class="ion-padding menu-screen " id="ion-content" ></ion-content>'
+                template: '<ion-content class="ion-padding menu-screen-content " id="ion-content" ></ion-content>'
             });
 
             document.getElementById('home-screen').id = 'menu-screen';

@@ -68,6 +68,7 @@ img {
   margin-top: 3px;
 }
 
+/* MAIN CONTENT ============ */
 .ion-color-light {
   --ion-color-base: var(--ion-color-light, #ffffff)!important;
   --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248)!important;
@@ -77,10 +78,34 @@ img {
   --ion-color-tint: var(--ion-color-light-tint, #ffffff)!important;
 }
 
-.ion-color.ion-color-light {
+.brand-logos.ion-color.ion-color-light {
   height: 150px;
   margin: auto auto 30px auto;
   width: 75%;
+}
+
+.menu-btn.ion-color.ion-color-light {
+  height: 120px;
+  margin: 20px;
+  width: 35%;
+  display: inline-block;
+  position: relative;
+}
+
+.menu-btn-container {
+  margin-top: -20px;
+}
+
+.menu-btn-container ion-img {
+  max-width: 80px;
+}
+
+.menu-label {
+  color: #f15a24;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
 }
 
 button.button-native {
@@ -90,6 +115,19 @@ button.button-native {
 .brand-logos {
   border-radius: 15px;
   --border-radius: 30px;
+}
+
+.menu-btn {
+  border-radius: 15px;
+  --border-radius: 30px;
+}
+
+.menu-screen-content {
+  text-align: center;
+}
+
+.hamburger-menu {
+  color: #f15a24;
 }
 
 /* typography ======================= */
