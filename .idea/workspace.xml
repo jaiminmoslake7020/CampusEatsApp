@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2ffae415-f8a0-4828-a8f4-b43417e46f0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/layout/_btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/layout/_btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/layout/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/layout/_main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/variables/_colours.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/variables/_colours.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/app/components/db/FirebaseCompoenent.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/app/components/db/FirebaseCompoenent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/app/components/view/ViewComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/app/components/view/ViewComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +166,7 @@
       <workItem from="1583708466305" duration="14155000" />
       <workItem from="1583873150384" duration="32185000" />
       <workItem from="1584210713760" duration="188000" />
-      <workItem from="1584224512911" duration="52035000" />
+      <workItem from="1584224512911" duration="52363000" />
     </task>
     <task id="LOCAL-00001" summary="New Setup">
       <created>1582066591077</created>
@@ -283,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584346432658</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Setup">
+      <created>1584348990129</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1584348990129</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,10 +324,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="378" y="167" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.777@0.23.1280.777" timestamp="1584301782188" />
-    <state x="85" y="118" key="CommitChangelistDialog2" timestamp="1584346411770">
+    <state x="85" y="118" key="CommitChangelistDialog2" timestamp="1584348986126">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="85" y="118" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1584346411770" />
+    <state x="85" y="118" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1584348986126" />
     <state x="128" y="90" key="DiffContextDialog" timestamp="1583918308518">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -367,10 +364,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="160" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1584347984694" />
-    <state x="240" y="153" key="Vcs.Push.Dialog.v2" timestamp="1584260983629">
+    <state x="240" y="153" key="Vcs.Push.Dialog.v2" timestamp="1584349005231">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="240" y="153" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1584260983629" />
+    <state x="240" y="153" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1584349005231" />
     <state x="100" y="123" width="1080" height="577" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1582068627051">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
