@@ -93,13 +93,13 @@
       <recent name="$PROJECT_DIR$/www/js/app/Components" />
     </key>
   </component>
-  <component name="RunManager" selected="PhoneGap/Cordova.Run PhoneGap">
+  <component name="RunManager" selected="PhoneGap/Cordova.PhoneGap/Cordova run">
     <configuration name="PhoneGap/Cordova run" type="PhoneGap" factoryName="PhoneGap/Cordova">
       <option name="myExecutable" value="/usr/local/bin/phonegap" />
       <option name="myWorkDir" value="$PROJECT_DIR$" />
       <option name="myCommand" value="emulate" />
       <option name="myPassParent" value="true" />
-      <option name="myPlatform" value="browser" />
+      <option name="myPlatform" value="android" />
       <option name="myExtraArgs" value="" />
       <option name="hasTarget" value="false" />
       <option name="target" value="" />
@@ -166,7 +166,7 @@
       <workItem from="1583708466305" duration="14155000" />
       <workItem from="1583873150384" duration="32185000" />
       <workItem from="1584210713760" duration="188000" />
-      <workItem from="1584224512911" duration="52363000" />
+      <workItem from="1584224512911" duration="52717000" />
     </task>
     <task id="LOCAL-00001" summary="New Setup">
       <created>1582066591077</created>
@@ -280,7 +280,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584348990129</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Setup">
+      <created>1584349467655</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1584349467655</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Setup">
+      <created>1584349515667</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1584349515667</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,10 +318,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="240" y="78" key="#JSHint/0.23.1280.777@0.23.1280.777" timestamp="1583709034350" />
-    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584348668232">
+    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584350014595">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1584348668232" />
+    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1584350014595" />
     <state x="524" y="140" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1583704582330">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -324,10 +338,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="378" y="167" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.777@0.23.1280.777" timestamp="1584301782188" />
-    <state x="85" y="118" key="CommitChangelistDialog2" timestamp="1584349466942">
+    <state x="85" y="118" key="CommitChangelistDialog2" timestamp="1584350064501">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="85" y="118" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1584349466942" />
+    <state x="85" y="118" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1584350064501" />
     <state x="128" y="90" key="DiffContextDialog" timestamp="1583918308518">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -364,10 +378,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="160" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1584347984694" />
-    <state x="240" y="153" key="Vcs.Push.Dialog.v2" timestamp="1584349508762">
+    <state x="240" y="153" key="Vcs.Push.Dialog.v2" timestamp="1584349526552">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="240" y="153" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1584349508762" />
+    <state x="240" y="153" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1584349526552" />
     <state x="100" y="123" width="1080" height="577" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1582068627051">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
