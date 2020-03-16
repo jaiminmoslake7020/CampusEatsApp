@@ -1,6 +1,7 @@
 class BaseComponent {
 
     constructor() {
+
     }
 
     init(){
@@ -38,5 +39,19 @@ class BaseComponent {
     {
         this.getAppClassManager().getEventHandlerComponent().alert( header , subHeader , message , buttons )
     }
+
+    getCafesModel(){
+        return new Cafes();
+    }
+
+    getMenusModel( cafeId ){
+        return new Menus( cafeId );
+    }
+
+    globalCatch( reason ){
+        console.log( reason );
+        //this.triigerAlert( reason );
+    }
+
 
 }

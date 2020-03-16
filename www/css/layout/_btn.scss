@@ -1,0 +1,30 @@
+
+.ion-color-light {
+  --ion-color-base: var(--ion-color-light, #ffffff)!important;
+  --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248)!important;
+  --ion-color-contrast: var(--ion-color-light-contrast, #ffffff)!important;
+  --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 255, 255, 255)!important;
+  --ion-color-shade: var(--ion-color-light-shade, #ffffff)!important;
+  --ion-color-tint: var(--ion-color-light-tint, #ffffff)!important;
+}
+
+.brand-logos.ion-color.ion-color-light{
+  height: 150px;
+  margin: auto auto 30px auto;
+  width: 75%;
+}
+
+.menu-btn.ion-color.ion-color-light{
+  height: 150px;
+  margin: auto auto 30px auto;
+  width: 75%;
+}
+
+button.button-native{
+  border-radius: 20px;
+}
+
+.brand-logos{
+  border-radius: 15px;
+  --border-radius: 30px;
+}

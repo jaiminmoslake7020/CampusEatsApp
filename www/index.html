@@ -50,10 +50,10 @@
         <div class="app" id="app">
             <div id="screen-container">
 
+
             </div>
         </div>
     </div>
-
 
     <template id="nav-menu">
 
@@ -83,37 +83,87 @@
                         </ion-buttons>
                         <ion-title>
                             <div class="logo-container">
-                                <img src="images/LogoCampusEats.png" />
+                                <ion-img src="images/LogoCampusEats.png" ></ion-img>
                             </div>
                         </ion-title>
                     </ion-toolbar>
                 </ion-header>
-                <ion-content class="ion-padding">
-
-                    <!-- Default -->
-                    <ion-button class="brand-logos" size="large" color="light" expand="block" shape="round" >
-                        <div class="brand-container">
-                            <img src="images/brands/tim.png" />
-                        </div>
-                    </ion-button>
-
-                    <ion-button class="brand-logos" size="large" color="light" expand="block" shape="round" >
-                        <div class="brand-container">
-                            <img src="images/brands/subway.png" />
-                        </div>
-                    </ion-button>
-
-                    <ion-button class="brand-logos" size="large" color="light" expand="block" shape="round" >
-                        <div class="brand-container">
-                            <img src="images/brands/starbucks.png" />
-                        </div>
-                    </ion-button>
+                <ion-content class="ion-padding" id="ion-content" >
 
                 </ion-content>
             </div>
-
         </ion-app>
 
+    </template>
+
+    <template id="ion-button">
+        <ion-button class="brand-logos" size="large" color="light" expand="block" shape="round"
+            data-name="{{name}}" data-id="{{primaryKey}}"
+        >
+            <div class="brand-container">
+                <ion-img src="{{logo}}" alt="{{name}}" ></ion-img>
+            </div>
+        </ion-button>
+    </template>
+
+    <template id="ion-menu-button">
+        <ion-button class="menu-btn" size="small" color="light" expand="block" shape="round"
+                    data-name="{{name}}" data-id="{{primaryKey}}"
+        >
+            <div class="menu-btn-container">
+                <ion-img src="{{url}}" alt="{{name}}" ></ion-img>
+                <ion-label>{{name}}</ion-label>
+            </div>
+        </ion-button>
+    </template>
+
+
+<!--    <template id="ion-tab-button" >-->
+
+<!--&lt;!&ndash;        <ion-tab-button class="segment-item" tab="tab-{{primaryKey}}"  data-name="{{name}}" data-id="{{primaryKey}}" >&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <ion-icon name="{{name}}"></ion-icon>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <ion-label>{{name}}</ion-label>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <ion-img src="{{url}}" alt="{{name}}" ></ion-img>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        </ion-tab-button>&ndash;&gt;-->
+
+
+<!--        <ion-segment-button class="segment-item" tab="tab-{{primaryKey}}"  data-name="{{name}}" data-id="{{primaryKey}}" >-->
+<!--            &lt;!&ndash;            <ion-icon name="{{name}}"></ion-icon>&ndash;&gt;-->
+<!--            <ion-label>{{name}}</ion-label>-->
+<!--            &lt;!&ndash;            <ion-img src="{{url}}" alt="{{name}}" ></ion-img>&ndash;&gt;-->
+<!--        </ion-segment-button>-->
+
+<!--&lt;!&ndash;        <ion-segment-button value="home">&ndash;&gt;-->
+<!--&lt;!&ndash;            <ion-icon name="home"></ion-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;        </ion-segment-button>&ndash;&gt;-->
+
+<!--    </template>-->
+
+
+    <template id="ion-tab-button" >
+
+        <ion-segment-button class="segment-item" tab="tab-{{primaryKey}}"  data-name="{{name}}" data-id="{{primaryKey}}" >
+            <ion-label>{{name}}</ion-label>
+        </ion-segment-button>
+
+    </template>
+
+    <template id="ion-tab" >
+        <ion-tab tab="tab-{{primaryKey}}">
+            <ion-content id="body-{{primaryKey}}" ></ion-content>
+        </ion-tab>
+    </template>
+
+    <template id="ion-tabs" >
+        <ion-tabs id="menu-tabs" >
+            <ion-tab-bar slot="top" >
+                <div class="segment-parent" >
+                    <ion-segment id="ion-tab-bar" scrollable value="heart">
+                    </ion-segment>
+                </div>
+
+            </ion-tab-bar>
+        </ion-tabs>
     </template>
 
 
@@ -144,9 +194,15 @@
     <script src="js/app/components/request/RequestComponent.js"  ></script>
     <script src="js/app/components/events/EventHandlerComponent.js"  ></script>
 
+    <!--  ENTITIES  -->
+    <script src="js/app/entities/BaseEntity.js"  ></script>
+    <script src="js/app/entities/Cafe.js"  ></script>
+    <script src="js/app/entities/Menu.js"  ></script>
+
     <!--  MODELS  -->
     <script src="js/app/models/FirebaseActiveRecord.js"  ></script>
     <script src="js/app/models/Cafes.js"  ></script>
+    <script src="js/app/models/Menus.js"  ></script>
 
 
     <script src="js/app/AppClassManager.js"  ></script>
@@ -154,6 +210,12 @@
 <!--    PHONEGAP's own call to our app handler-->
     <script type="text/javascript" src="js/index.js"  ></script>
     <!--  APP JS  -->
+
+    <style type="text/css">
+        .segment-parent{
+
+        }
+    </style>
 
 
 </body>

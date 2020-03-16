@@ -47,6 +47,10 @@ var app = {
 
 app.initialize();
 
-campusEats = new CampusEats();
-campusEats.init();
+window.addEventListener('load',function () {
+
+    campusEats = new CampusEats();
+    campusEats.init();
+
+});
 

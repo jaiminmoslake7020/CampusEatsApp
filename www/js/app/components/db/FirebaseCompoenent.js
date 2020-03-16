@@ -23,8 +23,6 @@ class FirebaseCompoenent extends BaseComponent{
             measurementId: "G-KDJMVEZ6TZ"
         };
 
-        console.log( console.trace() );
-
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
@@ -50,7 +48,7 @@ class FirebaseCompoenent extends BaseComponent{
 
                     if( typeof authResult === "object"  && authResult.hasOwnProperty( 'user' )  ){
                         localStorage.setItem('authResult', authResult);
-                        return campusEats.getAppClassManager().getViewComponent().showHomeScreen();
+                        return campusEats.getAppClassManager().getViewComponent().showMenusScreen();
                     }else{
                         campusEats.getAppClassManager().getEventHandlerComponent().alert( 'Error' , '' , '' , buttons );
                         return false;

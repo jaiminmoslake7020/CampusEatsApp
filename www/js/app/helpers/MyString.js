@@ -28,6 +28,12 @@ class MyString{
         return !this.isEmpty()
     }
 
-
+    replaceChars(  findIn , replaceWith ) {
+        let content = this.content.replace( findIn , replaceWith );
+        if( content.indexOf( findIn ) !== -1 ){
+            return ( new MyString( content ).replaceChars( findIn , replaceWith ) );
+        }
+        return content;
+    };
 
 }

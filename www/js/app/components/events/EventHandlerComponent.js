@@ -1,3 +1,7 @@
+window.addEventListener('load',function () {
+    (new EventHandlerComponent()).showLoading();
+});
+
 class EventHandlerComponent extends BaseComponent{
 
     init(){
@@ -5,16 +9,29 @@ class EventHandlerComponent extends BaseComponent{
     }
 
     homeScreenEvents(){
+        let selfObject = this;
+        this.stopLoading();
 
-        document.addEventListener('load',function () {
-
-            document.getElementById('start-menu').addEventListener('click',function () {
-                menuController.enable(true, 'first');
-                menuController.open('first');
-            });
-
+        Array.from( document.getElementsByClassName('brand-logos') , ( el ) => {
+                el.addEventListener('click' ,  selfObject.goToMenuPage )
         });
 
+    }
+
+    menuScreenEvents(){
+        let selfObject = this;
+        this.stopLoading();
+
+        // Array.from( document.getElementsByClassName('brand-logos') , ( el ) => {
+        //     el.addEventListener('click' ,  selfObject.goToMenuPage )
+        // });
+
+    }
+
+    goToMenuPage( event ){
+        let brandButton = this;
+        let cafe = brandButton.dataset.id;
+        (new ViewComponent()).showMenusScreen( cafe );
     }
 
     alert( header , subHeader , message , buttons ){
@@ -41,6 +58,60 @@ class EventHandlerComponent extends BaseComponent{
         }
         document.body.appendChild(alert);
         return alert.present();
+    }
+
+    async showLoading() {
+
+
+            // const loading = document.createElement('ion-loading');
+            // loading.message = 'Please wait...';
+            //
+            // new Promise( ( resolve , reject ) => {
+            //     document.body.appendChild(loading);
+            //     resolve();
+            // }).then(function () {
+            //     loading.present();
+            //     selfObject.loadingBar = loading;
+            // }).catch(function ( reason ) {
+            //     selfObject.globalCatch( reason );
+            // });
+
+            let selfObject = this;
+
+            // const loading = document.createElement('ion-loading');
+            // loading.message = 'Please wait...';
+            // loading.duration = 10000;
+            //
+            // document.body.appendChild(loading);
+            // await loading.present();
+            //
+            // selfObject.loadingBar = loading;
+
+            const loading = await loadingController.create({
+                message: 'Loading',
+            });
+            self.appearedLoading = true ;
+            loading.present().then(function () {
+                self.appearedLoading = true;
+            });
+            self.loadingBar = loading;
+
+    }
+
+    stopLoading() {
+       let interval = setInterval(function () {
+
+           if( self.appearedLoading || window.appearedLoading ){
+               Array.from( document.getElementsByTagName('ion-loading') , ( el , i ) => {
+                   el.dismiss();
+                   self.appearedLoading = false;
+                   window.appearedLoading = false;
+               });
+               clearInterval( interval );
+           }
+
+       } , 1000 );
+
     }
 
 }

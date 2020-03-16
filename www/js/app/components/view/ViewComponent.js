@@ -52,14 +52,124 @@ class ViewComponent extends BaseComponent{
 
     showHomeScreen(){
 
-        var app = new Vue({
-            el: '#screen-container',
-            template: '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>'
+        let selfObject = this;
+
+        new Promise(function (resolve, reject) {
+
+            var app = new Vue({
+                el: '#screen-container',
+                template: '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>'
+            });
+
+            document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            resolve();
+
+        }).then(function () {
+
+            new Promise(function (resolve, reject) {
+
+                selfObject.getCafesModel().getAll().then(function ( snapshot ) {
+                    for( let i = 0 ; i < snapshot.length ; i++ ){
+                        let cafe = snapshot[i];
+                        selfObject.addToView( 'ion-button' , cafe );
+                    }
+                }).then(function () {
+                    resolve();
+                }).catch(function ( reason ) {
+                    selfObject.globalCatch( reason )
+                });
+
+            }).then(function () {
+
+                selfObject.getAppClassManager().getEventHandlerComponent().homeScreenEvents();
+
+            }).catch(function ( reason ) {
+                selfObject.globalCatch( reason )
+            });
+
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
         });
 
-        document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
-        this.getAppClassManager().getEventHandlerComponent().homeScreenEvents();
+    }
 
+    showMenusScreen( cafeId ){
+
+        let selfObject = this;
+        selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
+
+        new Promise(function (resolve, reject) {
+
+            var app = new Vue({
+                el: '#ion-content',
+                template: '<ion-content class="ion-padding menu-screen " id="ion-content" ></ion-content>'
+            });
+
+            document.getElementById('home-screen').id = 'menu-screen';
+            //document.getElementById('ion-content').innerHTML = document.getElementById('ion-tabs').innerHTML;
+
+            resolve();
+
+        }).then(function () {
+
+            new Promise(function (resolve, reject) {
+
+                selfObject.getMenusModel( cafeId ).getAll().then(function ( snapshot ) {
+                    for( let i = 0 ; i < snapshot.length ; i++ ){
+                        let cafe = snapshot[i];
+                        selfObject.addToView( 'ion-menu-button' , cafe );
+                    }
+                }).then(function () {
+                    resolve();
+                }).catch(function ( reason ) {
+                    selfObject.globalCatch( reason )
+                });
+
+            }).then(function () {
+
+                selfObject.getAppClassManager().getEventHandlerComponent().menuScreenEvents();
+
+            }).catch(function ( reason ) {
+                selfObject.globalCatch( reason )
+            });
+
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
+
+    }
+
+    getIonContent(){
+        return document.getElementById('ion-content');
+    }
+
+    getParentElement( template ){
+        let templateParentArray = {
+            'ion-button' : 'ion-content',
+            'ion-tab-button' :'ion-tab-bar' ,
+            'ion-menu-button' :'ion-content' ,
+            'ion-tab' :'menu-tabs'
+        } ;
+        if( !templateParentArray.hasOwnProperty( template ) ){
+            alert( 'Template parent array is not available.'+template );
+        }
+        return document.getElementById( templateParentArray[template] );
+    }
+
+    addToView( template , model ){
+        //model = new Cafe();
+        let primaryKey = model.primaryKey;
+        let data = model.data;
+        let templateString = document.getElementById(template).innerHTML;
+        templateString = ( new MyString( templateString ) ).replaceChars( '{{primaryKey}}' , model.primaryKey );
+        for( let key in data ){
+            let findIn = '{{'+key+'}}';
+            let value = data[key];
+            if( templateString.indexOf( findIn ) !== -1 ){
+                templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
+            }
+        }
+        this.getParentElement( template ).innerHTML +=  templateString;
     }
 
 }

@@ -1,4 +1,18 @@
 class FirebaseActiveRecord extends FirebaseCompoenent{
+    get order() {
+        return this._order;
+    }
+
+    set order(value) {
+        this._order = value;
+    }
+    get entityClass() {
+        return this._entityClass;
+    }
+
+    set entityClass(value) {
+        this._entityClass = value;
+    }
     get main_collection() {
         return this._main_collection;
     }
@@ -90,6 +104,11 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
         this._error = null ;
 
         this._main_collection = "" ;
+
+        this._entityClass = null ;
+
+        this._order = 0 ;
+
     }
 
     addNewCurrentDataCollection( key , value ){
@@ -144,6 +163,12 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
             if( !this.firebase_data.hasOwnProperty('updated_at') ){
                 this.firebase_data.updated_at = firebase.firestore.Timestamp.fromDate(new Date()) ;
             }
+            if( !this.firebase_data.hasOwnProperty('is_enabled') ){
+                this.firebase_data.is_enabled = true;
+            }
+            if( !this.firebase_data.hasOwnProperty('order') ){
+                this.firebase_data.order = this.order;
+            }
 
             let firebase_data = this.firebase_data ;
             if( this.objectAsANewCollection !== {} ){
@@ -167,32 +192,56 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
 
                     new Promise( ( resolve, reject ) => {
 
-                       for( let collection_name in selfObject.currentData_CollectionList ){
+                        new Promise( ( resolve, reject ) => {
+                           for( let collection_name in selfObject.currentData_CollectionList ){
+                                let addOrder = 0 ;
+                                for( let nestedCollectionDocId in selfObject.currentData_CollectionList[ collection_name ] ){
 
-                           let newItSelf = new FirebaseActiveRecord();
-                           newItSelf.firebase_collection = selfObject.firebase_collection+"/"+recent_firebase_document+"/"+collection_name;
-                           newItSelf.firebase_document = recent_firebase_document ;
-                           newItSelf.firebase_data = selfObject.currentData_CollectionList[collection_name];
-                           newItSelf.firebase_is_merge = true ;
-                           new Promise( ( resolve, reject ) => {
-                               newItSelf.save();
-                           }).then(() => {
-                               newItSelf.afterSave();
-                           }).catch(( reason )=>{
-                               console.log( reason );
-                               newItSelf.afterError( reason );
-                           });
+                                       new Promise( ( resolve, reject ) => {
 
-                       }
+                                           let newItSelf = new FirebaseActiveRecord();
+                                           newItSelf.order = addOrder ;
+                                           newItSelf.firebase_collection = selfObject.firebase_collection+"/"+recent_firebase_document+"/"+collection_name;
+                                           newItSelf.firebase_document = nestedCollectionDocId ;
+                                           newItSelf.firebase_data = selfObject.currentData_CollectionList[collection_name][ nestedCollectionDocId ];
+                                           newItSelf.firebase_is_merge = true ;
+                                           new Promise( ( resolve, reject ) => {
+                                               newItSelf.save();
+                                               resolve();
+                                           }).then(() => {
+                                               newItSelf.afterSave(  );
+                                           }).catch(( reason )=>{
+                                               console.log( reason );
+                                               newItSelf.afterError( reason );
+                                           });
+                                           resolve();
+
+                                       }).then(() => {
+                                           console.log('Came Here');
+                                           //selfObject.afterSave();
+                                       }).catch(( reason )=>{
+                                           console.log( reason );
+                                       });
+
+                                    addOrder++;
+                               }
+                            }
+                           resolve();
+                        }).then(() => {
+                            resolve();
+                        }).catch(( reason )=>{
+                            selfObject.afterError( reason );
+                        });
 
                     }).then(() => {
-                        selfObject.afterSave();
+                        selfObject.afterSave(  );
                     }).catch(( reason )=>{
-                        console.log( reason );
+                        selfObject.afterError( reason );
                     });
 
+
                 }else{
-                    selfObject.afterSave();
+                    selfObject.afterSave(  );
                 }
 
             })
@@ -204,11 +253,12 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
 
     afterSave(){
         this.processing_firebase_request = false ;
+        console.log( 'Saved '+this.firebase_collection+'/'+this.firebase_document );
         return true;
     }
 
     afterError( error ){
-        console.error("Error writing document: ", error);
+        console.log("Error writing document: ", error);
         this.processing_firebase_request = false ;
         this.error = error;
     }
@@ -216,6 +266,11 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
     update(){
         this.firebase_is_merge = true ;
         this.save();
+    }
+
+    async findAll(){
+        const snapshot = await self.db.collection( this.firebase_collection ).orderBy("order").get();
+        return snapshot.docs.map(doc =>  new Cafe( doc.id , doc.data() )  );
     }
 
 }
