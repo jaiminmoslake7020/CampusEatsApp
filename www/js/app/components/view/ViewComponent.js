@@ -7,7 +7,7 @@ class ViewComponent extends BaseComponent{
     init(){
         this.configureVue();
 
-        if( true ){
+        if( false ){
             // just for testing purpose
             this.showMenusScreen('tim-hortons')
         }else{
@@ -41,18 +41,26 @@ class ViewComponent extends BaseComponent{
 
     showLoginScreen(){
 
-        var app = new Vue({
-            el: '#screen-container',
-            template: '<div id="screen-container"><div class="screen"  id="login-screen"><div class=" spalsh-screen-image  spalsh-screen "><div id="firebaseui-auth-container"></div></div></div></div>'
-        });
+        let selfObject = this;
+        new Promise(function (resolve, reject) {
 
-        this.getAppClassManager().getFirebaseCompoenent().loadFirebaseAuthenticationFunctions();
+            var app = new Vue({
+                el: '#screen-container',
+                template: '<div id="screen-container"><div class="screen"  id="login-screen"><div class=" spalsh-screen-image  spalsh-screen "><div id="firebaseui-auth-container"></div></div></div></div>'
+            });
+            selfObject.getAppClassManager().getFirebaseCompoenent().loadFirebaseAuthenticationFunctions();
+            resolve();
+
+        }).then(function () {
+            selfObject.getAppClassManager().getEventHandlerComponent().stopLoading();
+        });
 
     }
 
     showHomeScreen(){
 
         let selfObject = this;
+        selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
 
         new Promise(function (resolve, reject) {
 
@@ -109,7 +117,7 @@ class ViewComponent extends BaseComponent{
 
             var app = new Vue({
                 el: '#ion-content',
-                template: '<ion-content class="ion-padding menu-screen-content " id="ion-content" ></ion-content>'
+                template: '<ion-content class="ion-padding screen-content menu-screen-content " id="ion-content" ></ion-content>'
             });
 
             document.getElementById('home-screen').id = 'menu-screen';

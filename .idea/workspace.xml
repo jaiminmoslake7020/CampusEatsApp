@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="2ffae415-f8a0-4828-a8f4-b43417e46f0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/css/layout/_btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/layout/_btn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/layout/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/layout/_main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/css/variables/_colours.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/variables/_colours.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/app/components/db/FirebaseCompoenent.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/app/components/db/FirebaseCompoenent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/app/components/view/ViewComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/app/components/view/ViewComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +103,7 @@
       <recent name="$PROJECT_DIR$/www/js/app/Components" />
     </key>
   </component>
-  <component name="RunManager" selected="PhoneGap/Cordova.PhoneGap/Cordova run">
+  <component name="RunManager" selected="PhoneGap/Cordova.Run PhoneGap">
     <configuration name="PhoneGap/Cordova run" type="PhoneGap" factoryName="PhoneGap/Cordova">
       <option name="myExecutable" value="/usr/local/bin/phonegap" />
       <option name="myWorkDir" value="$PROJECT_DIR$" />
@@ -106,6 +111,19 @@
       <option name="myPassParent" value="true" />
       <option name="myPlatform" value="browser" />
       <option name="myExtraArgs" value="" />
+      <option name="hasTarget" value="false" />
+      <option name="target" value="" />
+      <method v="2">
+        <option name="PhonegapTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run PhoneGap" type="PhoneGap" factoryName="PhoneGap/Cordova" nameIsGenerated="true">
+      <option name="myExecutable" value="/usr/local/bin/phonegap" />
+      <option name="myWorkDir" value="$PROJECT_DIR$" />
+      <option name="myCommand" value="serve" />
+      <option name="myPassParent" value="true" />
+      <option name="myPlatform" value="browser" />
+      <option name="myExtraArgs" value="--auto-reload" />
       <option name="hasTarget" value="false" />
       <option name="target" value="" />
       <method v="2">
@@ -122,6 +140,7 @@
     </configuration>
     <list>
       <item itemvalue="PhoneGap/Cordova.PhoneGap/Cordova run" />
+      <item itemvalue="PhoneGap/Cordova.Run PhoneGap" />
       <item itemvalue="Shell Script.publish.sh" />
     </list>
     <recent_temporary>
@@ -157,7 +176,7 @@
       <workItem from="1583708466305" duration="14155000" />
       <workItem from="1583873150384" duration="32185000" />
       <workItem from="1584210713760" duration="188000" />
-      <workItem from="1584224512911" duration="49583000" />
+      <workItem from="1584224512911" duration="52035000" />
     </task>
     <task id="LOCAL-00001" summary="New Setup">
       <created>1582066591077</created>
@@ -257,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584343292170</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Setup">
+      <created>1584346432658</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1584346432658</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,10 +307,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="240" y="78" key="#JSHint/0.23.1280.777@0.23.1280.777" timestamp="1583709034350" />
-    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583915393698">
+    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584348668232">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1583915393698" />
+    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1584348668232" />
     <state x="524" y="140" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1583704582330">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -301,46 +327,46 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="378" y="167" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.777@0.23.1280.777" timestamp="1584301782188" />
-    <state x="85" y="118" key="CommitChangelistDialog2" timestamp="1584343288966">
+    <state x="85" y="118" key="CommitChangelistDialog2" timestamp="1584346411770">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="85" y="118" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1584343288966" />
+    <state x="85" y="118" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1584346411770" />
     <state x="128" y="90" key="DiffContextDialog" timestamp="1583918308518">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="128" y="90" key="DiffContextDialog/0.23.1280.777@0.23.1280.777" timestamp="1583918308518" />
-    <state x="240" y="23" width="967" height="605" key="EditFileWatcherDialog" timestamp="1583921641838">
+    <state x="240" y="23" width="967" height="605" key="EditFileWatcherDialog" timestamp="1584347982204">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="240" y="23" width="967" height="605" key="EditFileWatcherDialog/0.23.1280.777@0.23.1280.777" timestamp="1583921641838" />
-    <state width="1238" height="364" key="GridCell.Tab.0.bottom" timestamp="1584230373402">
+    <state x="240" y="23" width="967" height="605" key="EditFileWatcherDialog/0.23.1280.777@0.23.1280.777" timestamp="1584347982204" />
+    <state width="1238" height="249" key="GridCell.Tab.0.bottom" timestamp="1584348581080">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="364" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1584230373402" />
+    <state width="1238" height="249" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1584348581080" />
     <state width="1238" height="364" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1584030303547" />
-    <state width="1238" height="364" key="GridCell.Tab.0.center" timestamp="1584230373401">
+    <state width="1238" height="249" key="GridCell.Tab.0.center" timestamp="1584348581078">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="364" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1584230373401" />
+    <state width="1238" height="249" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1584348581078" />
     <state width="1238" height="364" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1584030303545" />
-    <state width="1238" height="364" key="GridCell.Tab.0.left" timestamp="1584230373401">
+    <state width="1238" height="249" key="GridCell.Tab.0.left" timestamp="1584348581078">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="364" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1584230373401" />
+    <state width="1238" height="249" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1584348581078" />
     <state width="1238" height="364" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1584030303545" />
-    <state width="1238" height="364" key="GridCell.Tab.0.right" timestamp="1584230373402">
+    <state width="1238" height="249" key="GridCell.Tab.0.right" timestamp="1584348581079">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="364" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1584230373402" />
+    <state width="1238" height="249" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1584348581079" />
     <state width="1238" height="364" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1584030303546" />
     <state x="356" y="135" key="MultipleFileMergeDialog" timestamp="1582069404518">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="356" y="135" key="MultipleFileMergeDialog/0.23.1280.777@0.23.1280.777" timestamp="1582069404518" />
-    <state x="160" y="23" key="SettingsEditor" timestamp="1583921642903">
+    <state x="160" y="23" key="SettingsEditor" timestamp="1584347984694">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="160" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1583921642903" />
+    <state x="160" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1584347984694" />
     <state x="240" y="153" key="Vcs.Push.Dialog.v2" timestamp="1584260983629">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

@@ -40,8 +40,8 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        // campusEats = new CampusEats();
-        // campusEats.init();
+        campusEats = new CampusEats();
+        campusEats.init();
     }
 };
 
@@ -49,8 +49,8 @@ app.initialize();
 
 window.addEventListener('load',function () {
 
-    campusEats = new CampusEats();
-    campusEats.init();
+    // campusEats = new CampusEats();
+    // campusEats.init();
 
 });
 

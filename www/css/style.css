@@ -68,6 +68,10 @@ img {
   margin-top: 3px;
 }
 
+.screen-content {
+  --background: $color__bgsecondary;
+}
+
 /* MAIN CONTENT ============ */
 .ion-color-light {
   --ion-color-base: var(--ion-color-light, #ffffff)!important;
@@ -106,6 +110,10 @@ img {
   bottom: 20px;
   width: 100%;
   left: 0;
+  text-transform: capitalize;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: auto;
 }
 
 button.button-native {
@@ -124,6 +132,7 @@ button.button-native {
 
 .menu-screen-content {
   text-align: center;
+  --background: $color__primary;
 }
 
 .hamburger-menu {
