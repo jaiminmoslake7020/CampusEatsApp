@@ -7,13 +7,17 @@ class ViewComponent extends BaseComponent{
     init(){
         this.configureVue();
 
+        alert( "Viewe Component Loaded" );
+
         if( false ){
             // just for testing purpose
             this.showMenusScreen('tim-hortons')
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
+                alert( "showLoginScreen" );
                 this.showLoginScreen();
             }else{
+                alert( "showSplashScreen" );
                 this.showSplashScreen();
             }
         }
@@ -27,6 +31,9 @@ class ViewComponent extends BaseComponent{
 
     showSplashScreen(){
 
+        alert( "showSplashScreen  "+document.getElementById('screen-container').innerHTML );
+
+
         var app = new Vue({
             el: '#screen-container',
             template: '<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>'
@@ -34,12 +41,14 @@ class ViewComponent extends BaseComponent{
 
         let object = this;
         setTimeout(function () {
+            alert( "showSplashScreen   dfgdf"+document.getElementById('screen-container').innerHTML );
             object.showLoginScreen();
         },3000);
 
     }
 
     showLoginScreen(){
+        alert( "showLoginScreen" );
 
         let selfObject = this;
         new Promise(function (resolve, reject) {
@@ -58,6 +67,9 @@ class ViewComponent extends BaseComponent{
     }
 
     showHomeScreen(){
+
+        alert( "showHomeScreen" );
+
 
         let selfObject = this;
         selfObject.getAppClassManager().getEventHandlerComponent().showLoading();

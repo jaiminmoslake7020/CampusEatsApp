@@ -1,4 +1,5 @@
 window.addEventListener('load',function () {
+    alert( "showLoading" );
     (new EventHandlerComponent()).showLoading();
 });
 
@@ -12,6 +13,7 @@ class EventHandlerComponent extends BaseComponent{
         let selfObject = this;
         this.stopLoading();
 
+        alert( "homeScreenEvents" );
         Array.from( document.getElementsByClassName('brand-logos') , ( el ) => {
                 el.addEventListener('click' ,  selfObject.goToMenuPage )
         });
@@ -87,6 +89,8 @@ class EventHandlerComponent extends BaseComponent{
             //
             // selfObject.loadingBar = loading;
 
+        alert( "showLoading 1" );
+
             const loading = await loadingController.create({
                 message: 'Loading',
             });
@@ -96,10 +100,15 @@ class EventHandlerComponent extends BaseComponent{
             });
             self.loadingBar = loading;
 
+        alert( "showLoading 2" );
+
+
     }
 
     stopLoading() {
-       let interval = setInterval(function () {
+        alert( "stopLoading 1" );
+
+        let interval = setInterval(function () {
 
            if( self.appearedLoading || window.appearedLoading ){
                Array.from( document.getElementsByTagName('ion-loading') , ( el , i ) => {
@@ -107,6 +116,7 @@ class EventHandlerComponent extends BaseComponent{
                    self.appearedLoading = false;
                    window.appearedLoading = false;
                });
+               alert( "stopLoading stopped" );
                clearInterval( interval );
            }
 

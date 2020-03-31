@@ -4,6 +4,7 @@ class CampusEats {
     }
 
     init(){
+        alert(' CampusEats init');
         this.getAppClassManager().init();
         this.getAppClassManager().setUp();
     }

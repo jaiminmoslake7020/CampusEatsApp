@@ -44,77 +44,81 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>Campus Eats</title>
 </head>
-<body>
+<body style="background-color: yellow;" >
+
+    <h1>Yes I know this new</h1>
+
 
     <div id="app-container">
         <div class="app" id="app">
             <div id="screen-container">
 
+                <h1>Yes I know this</h1>
 
             </div>
         </div>
     </div>
 
-    <template id="nav-menu">
+<!--    <template id="nav-menu">-->
 
-        <ion-app>
-            <ion-menu side="start" menu-id="first" content-id="main">
-                <ion-header>
-                    <ion-toolbar color="primary">
-                        <ion-title>Start Menu</ion-title>
-                    </ion-toolbar>
-                </ion-header>
-                <ion-content>
-                    <ion-list>
-                        <ion-item>Menu Item</ion-item>
-                    </ion-list>
-                </ion-content>
-            </ion-menu>
+<!--        <ion-app>-->
+<!--            <ion-menu side="start" menu-id="first" content-id="main">-->
+<!--                <ion-header>-->
+<!--                    <ion-toolbar color="primary">-->
+<!--                        <ion-title>Start Menu</ion-title>-->
+<!--                    </ion-toolbar>-->
+<!--                </ion-header>-->
+<!--                <ion-content>-->
+<!--                    <ion-list>-->
+<!--                        <ion-item>Menu Item</ion-item>-->
+<!--                    </ion-list>-->
+<!--                </ion-content>-->
+<!--            </ion-menu>-->
 
-            <div class="ion-page" id="main">
-                <ion-header>
-                    <ion-toolbar>
-                        <ion-buttons id="start-menu" slot="start">
-                            <ion-menu-button class="hamburger-menu"  ></ion-menu-button>
-                        </ion-buttons>
-                        <ion-buttons id="start-menu" slot="start">
-                            <ion-back-button class="backbutton"  ></ion-back-button>
-                        </ion-buttons>
-                        <ion-title>
-                            <div class="logo-container">
-                                <ion-img src="images/LogoCampusEats.png" ></ion-img>
-                            </div>
-                        </ion-title>
-                    </ion-toolbar>
-                </ion-header>
-                <ion-content class="ion-padding screen-content " id="ion-content" >
+<!--            <div class="ion-page" id="main">-->
+<!--                <ion-header>-->
+<!--                    <ion-toolbar>-->
+<!--                        <ion-buttons id="start-menu" slot="start">-->
+<!--                            <ion-menu-button class="hamburger-menu"  ></ion-menu-button>-->
+<!--                        </ion-buttons>-->
+<!--                        <ion-buttons id="start-menu" slot="start">-->
+<!--                            <ion-back-button class="backbutton"  ></ion-back-button>-->
+<!--                        </ion-buttons>-->
+<!--                        <ion-title>-->
+<!--                            <div class="logo-container">-->
+<!--                                <ion-img src="images/LogoCampusEats.png" ></ion-img>-->
+<!--                            </div>-->
+<!--                        </ion-title>-->
+<!--                    </ion-toolbar>-->
+<!--                </ion-header>-->
+<!--                <ion-content class="ion-padding screen-content " id="ion-content" >-->
 
-                </ion-content>
-            </div>
-        </ion-app>
+<!--                </ion-content>-->
+<!--            </div>-->
+<!--        </ion-app>-->
 
-    </template>
+<!--    </template>-->
 
-    <template id="ion-button">
-        <ion-button class="brand-logos" size="large" color="light" expand="block" shape="round"
-            data-name="{{name}}" data-id="{{primaryKey}}"
-        >
-            <div class="brand-container">
-                <ion-img src="{{logo}}" alt="{{name}}" ></ion-img>
-            </div>
-        </ion-button>
-    </template>
+<!--    <template id="ion-button">-->
+<!--        <ion-button class="brand-logos" size="large" color="light" expand="block" shape="round"-->
+<!--            data-name="{{name}}" data-id="{{primaryKey}}"-->
+<!--        >-->
+<!--            <div class="brand-container">-->
+<!--                <ion-img src="{{logo}}" alt="{{name}}" ></ion-img>-->
+<!--            </div>-->
+<!--        </ion-button>-->
+<!--    </template>-->
 
-    <template id="ion-menu-button">
-        <ion-button class="menu-btn" size="small" color="light" expand="block" shape="round"
-                    data-name="{{name}}" data-id="{{primaryKey}}"
-        >
-            <div class="menu-btn-container">
-                <ion-img src="{{url}}" alt="{{name}}" ></ion-img>
-                <ion-label class="menu-label" >{{name}}</ion-label>
-            </div>
-        </ion-button>
-    </template>
+<!--    <template id="ion-menu-button">-->
+<!--        <ion-button class="menu-btn" size="small" color="light" expand="block" shape="round"-->
+<!--                    data-name="{{name}}" data-id="{{primaryKey}}"-->
+<!--        >-->
+<!--            <div class="menu-btn-container">-->
+<!--                <ion-img src="{{url}}" alt="{{name}}" ></ion-img>-->
+<!--                <ion-label class="menu-label" >{{name}}</ion-label>-->
+<!--            </div>-->
+<!--        </ion-button>-->
+<!--    </template>-->
 
 
 <!--    <template id="ion-tab-button" >-->
@@ -139,82 +143,81 @@
 <!--    </template>-->
 
 
-    <template id="ion-tab-button" >
+<!--    <template id="ion-tab-button" >-->
 
-        <ion-segment-button class="segment-item" tab="tab-{{primaryKey}}"  data-name="{{name}}" data-id="{{primaryKey}}" >
-            <ion-label>{{name}}</ion-label>
-        </ion-segment-button>
+<!--        <ion-segment-button class="segment-item" tab="tab-{{primaryKey}}"  data-name="{{name}}" data-id="{{primaryKey}}" >-->
+<!--            <ion-label>{{name}}</ion-label>-->
+<!--        </ion-segment-button>-->
 
-    </template>
+<!--    </template>-->
 
-    <template id="ion-tab" >
-        <ion-tab tab="tab-{{primaryKey}}">
-            <ion-content id="body-{{primaryKey}}" ></ion-content>
-        </ion-tab>
-    </template>
+<!--    <template id="ion-tab" >-->
+<!--        <ion-tab tab="tab-{{primaryKey}}">-->
+<!--            <ion-content id="body-{{primaryKey}}" ></ion-content>-->
+<!--        </ion-tab>-->
+<!--    </template>-->
 
-    <template id="ion-tabs" >
-        <ion-tabs id="menu-tabs" >
-            <ion-tab-bar slot="top" >
-                <div class="segment-parent" >
-                    <ion-segment id="ion-tab-bar" scrollable value="heart">
-                    </ion-segment>
-                </div>
-
-            </ion-tab-bar>
-        </ion-tabs>
-    </template>
+<!--    <template id="ion-tabs" >-->
+<!--        <ion-tabs id="menu-tabs" >-->
+<!--            <ion-tab-bar slot="top" >-->
+<!--                <div class="segment-parent" >-->
+<!--                    <ion-segment id="ion-tab-bar" scrollable value="heart">-->
+<!--                    </ion-segment>-->
+<!--                </div>-->
+<!--            </ion-tab-bar>-->
+<!--        </ion-tabs>-->
+<!--    </template>-->
 
 
     <script type="text/javascript" src="cordova.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"  ></script>
-    <script src="bower_components/vue/dist/vue.js" ></script>
-    <script type="module" src="bower_components/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="bower_components/@ionic/core/dist/ionic/ionic.js"></script>
-    <script nomodule src="bower_components/@ionic/core/dist/cjs/ion-menu_3-md.cjs.entry.js"></script>
+<!--    <script src="bower_components/jquery/dist/jquery.js"  ></script>-->
+<!--    <script src="bower_components/vue/dist/vue.js" ></script>-->
+<!--    <script type="module" src="bower_components/@ionic/core/dist/ionic/ionic.esm.js"></script>-->
+<!--    <script nomodule src="bower_components/@ionic/core/dist/ionic/ionic.js"></script>-->
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="bower_components/firebase/firebase.js"></script>
-    <script src="bower_components/firebaseui/dist/firebaseui.js"></script>
-
-    <!-- IONIC MODULE   -->
-    <script type="module" src="js/app/modules/ionic.js"  ></script>
-
-    <!--  APP JS  -->
-    <!--  HELPERS  -->
-    <script src="js/app/helpers/MyString.js"  ></script>
-    <script src="js/app/helpers/MyArray.js"  ></script>
-
-    <!--  COMPONENTS  -->
-    <script src="js/app/components/BaseComponent.js"  ></script>
-    <script src="js/app/components/db/FirebaseCompoenent.js"  ></script>
-    <script src="js/app/components/view/ViewComponent.js"  ></script>
-    <script src="js/app/components/localstorage/LocalStorageComponent.js"  ></script>
-    <script src="js/app/components/request/RequestComponent.js"  ></script>
-    <script src="js/app/components/events/EventHandlerComponent.js"  ></script>
-
-    <!--  ENTITIES  -->
-    <script src="js/app/entities/BaseEntity.js"  ></script>
-    <script src="js/app/entities/Cafe.js"  ></script>
-    <script src="js/app/entities/Menu.js"  ></script>
-
-    <!--  MODELS  -->
-    <script src="js/app/models/FirebaseActiveRecord.js"  ></script>
-    <script src="js/app/models/Cafes.js"  ></script>
-    <script src="js/app/models/Menus.js"  ></script>
+<!--    &lt;!&ndash; The core Firebase JS SDK is always required and must be listed first &ndash;&gt;-->
+<!--    <script src="bower_components/firebase/firebase.js"></script>-->
+<!--    <script src="bower_components/firebaseui/dist/firebaseui.js"></script>-->
 
 
-    <script src="js/app/AppClassManager.js"  ></script>
-    <script  src="js/app/CampusEats.js"  ></script>
-<!--    PHONEGAP's own call to our app handler-->
-    <script type="text/javascript" src="js/index.js"  ></script>
-    <!--  APP JS  -->
+<!--    &lt;!&ndash; IONIC MODULE   &ndash;&gt;-->
+<!--    <script type="module" src="js/app/modules/ionic.js"  ></script>-->
 
-    <style type="text/css">
-        .segment-parent{
+<!--    &lt;!&ndash;  APP JS  &ndash;&gt;-->
+<!--    &lt;!&ndash;  HELPERS  &ndash;&gt;-->
+<!--    <script src="js/app/helpers/MyString.js"  ></script>-->
+<!--    <script src="js/app/helpers/MyArray.js"  ></script>-->
 
-        }
-    </style>
+<!--    &lt;!&ndash;  COMPONENTS  &ndash;&gt;-->
+<!--    <script src="js/app/components/BaseComponent.js"  ></script>-->
+<!--    <script src="js/app/components/db/FirebaseCompoenent.js"  ></script>-->
+<!--    <script src="js/app/components/view/ViewComponent.js"  ></script>-->
+<!--    <script src="js/app/components/localstorage/LocalStorageComponent.js"  ></script>-->
+<!--    <script src="js/app/components/request/RequestComponent.js"  ></script>-->
+<!--    <script src="js/app/components/events/EventHandlerComponent.js"  ></script>-->
+
+<!--    &lt;!&ndash;  ENTITIES  &ndash;&gt;-->
+<!--    <script src="js/app/entities/BaseEntity.js"  ></script>-->
+<!--    <script src="js/app/entities/Cafe.js"  ></script>-->
+<!--    <script src="js/app/entities/Menu.js"  ></script>-->
+
+<!--    &lt;!&ndash;  MODELS  &ndash;&gt;-->
+<!--    <script src="js/app/models/FirebaseActiveRecord.js"  ></script>-->
+<!--    <script src="js/app/models/Cafes.js"  ></script>-->
+<!--    <script src="js/app/models/Menus.js"  ></script>-->
+
+
+<!--    <script src="js/app/AppClassManager.js"  ></script>-->
+<!--    <script  src="js/app/CampusEats.js"  ></script>-->
+<!--&lt;!&ndash;    PHONEGAP's own call to our app handler&ndash;&gt;-->
+<!--    <script type="text/javascript" src="js/index.js"  ></script>-->
+<!--    &lt;!&ndash;  APP JS  &ndash;&gt;-->
+
+<!--    <style type="text/css">-->
+<!--        .segment-parent{-->
+
+<!--        }-->
+<!--    </style>-->
 
 
 </body>

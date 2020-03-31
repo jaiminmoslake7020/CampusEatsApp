@@ -11,7 +11,7 @@
 /* HEEADER ============ */
 /* MAIN CONTENT ============ */
 body {
-  background-color: white;
+  background-color: red !important;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -34,7 +34,7 @@ img {
 }
 
 .spalsh-screen-image {
-  background-image: url("../images/splash.png");
+  background-image: url("http://192.168.0.124:3000/images/splash.png");
   width: 100%;
   min-height: 100vh;
 }
@@ -51,12 +51,12 @@ img {
 }
 
 @media screen and (min-width: 380px) {
-  #app-container {
-    height: 600px;
-    width: 375px;
-    border: 1px solid #eee;
-    margin: auto;
-  }
+  /*#app-container {*/
+  /*  height: 600px;*/
+  /*  width: 375px;*/
+  /*  border: 1px solid #eee;*/
+  /*  margin: auto;*/
+  /*}*/
 }
 .logo-container {
   width: 40%;
@@ -68,19 +68,19 @@ img {
   margin-top: 3px;
 }
 
-.screen-content {
-  --background: $color__bgsecondary;
-}
+/*.screen-content {*/
+/*  --background: $color__bgsecondary;*/
+/*}*/
 
 /* MAIN CONTENT ============ */
-.ion-color-light {
-  --ion-color-base: var(--ion-color-light, #ffffff)!important;
-  --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248)!important;
-  --ion-color-contrast: var(--ion-color-light-contrast, #ffffff)!important;
-  --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 255, 255, 255)!important;
-  --ion-color-shade: var(--ion-color-light-shade, #ffffff)!important;
-  --ion-color-tint: var(--ion-color-light-tint, #ffffff)!important;
-}
+/*.ion-color-light {*/
+/*  --ion-color-base: var(--ion-color-light, #ffffff)!important;*/
+/*  --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248)!important;*/
+/*  --ion-color-contrast: var(--ion-color-light-contrast, #ffffff)!important;*/
+/*  --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 255, 255, 255)!important;*/
+/*  --ion-color-shade: var(--ion-color-light-shade, #ffffff)!important;*/
+/*  --ion-color-tint: var(--ion-color-light-tint, #ffffff)!important;*/
+/*}*/
 
 .brand-logos.ion-color.ion-color-light {
   height: 150px;
@@ -130,10 +130,10 @@ button.button-native {
   --border-radius: 30px;
 }
 
-.menu-screen-content {
-  text-align: center;
-  --background: $color__primary;
-}
+/*.menu-screen-content {*/
+/*  text-align: center;*/
+/*  --background: $color__primary;*/
+/*}*/
 
 .hamburger-menu {
   color: #f15a24;
