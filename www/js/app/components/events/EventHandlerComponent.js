@@ -25,6 +25,18 @@ class EventHandlerComponent extends BaseComponent{
         document.querySelector('.menu-button.hamburger-menu').addEventListener('click',function () {
             (new NavBar()).toggle();
         });
+        document.querySelector('body').addEventListener('click',function ( e ) {
+            if( document.querySelector('.app-nav.active-menu').length != 0 ){
+                if( e.target.closest('.menu') === null && e.target.closest('.hamburger-menu-container') === null  ){
+                    (new NavBar()).hide();
+                }if( e.target.closest('.hamburger-menu-container') !== null ){
+                    // do notthing
+                }else{
+                    console.log(  e.target.closest('.menu') );
+                    console.log(  e.target.closest('.hamburger-menu-container') );
+                }
+            }
+        });
     }
 
     menuScreenEvents(){
