@@ -61,13 +61,6 @@ class ViewComponent extends BaseComponent{
         new Promise(function (resolve, reject) {
 
             let template = '<div id="screen-container"><div class="screen"  id="login-screen"><div class=" spalsh-screen-image  spalsh-screen "><div id="firebaseui-auth-container"></div></div></div></div>';
-            //
-            // var app = new Vue({
-            //     el: '#screen-container',
-            // });
-
-            alert( template );
-
             document.getElementById('app').innerHTML = template;
 
             selfObject.getAppClassManager().getFirebaseCompoenent().loadFirebaseAuthenticationFunctions();
