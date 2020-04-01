@@ -8,7 +8,7 @@ class ViewComponent extends BaseComponent{
     init(){
         alert( "Viewe Component configureVue" );
 
-        this.configureVue();
+        //this.configureVue();
 
         alert( "Viewe Component Loaded" );
 
@@ -34,11 +34,13 @@ class ViewComponent extends BaseComponent{
 
     showSplashScreen(){
 
-
-        var app = new Vue({
-            el: '#screen-container',
-            template: '<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>'
-        });
+        //
+        // var app = new Vue({
+        //     el: '#screen-container',
+        //     template: '<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>'
+        // });
+        //
+        document.getElementById('#app').innerHTML = '<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>';
 
         let object = this;
         setTimeout(function () {
@@ -49,13 +51,21 @@ class ViewComponent extends BaseComponent{
 
     showLoginScreen(){
 
+        alert( showLoginScreen );
+
         let selfObject = this;
         new Promise(function (resolve, reject) {
 
-            var app = new Vue({
-                el: '#screen-container',
-                template: '<div id="screen-container"><div class="screen"  id="login-screen"><div class=" spalsh-screen-image  spalsh-screen "><div id="firebaseui-auth-container"></div></div></div></div>'
-            });
+            let template = '<div id="screen-container"><div class="screen"  id="login-screen"><div class=" spalsh-screen-image  spalsh-screen "><div id="firebaseui-auth-container"></div></div></div></div>';
+            //
+            // var app = new Vue({
+            //     el: '#screen-container',
+            // });
+
+            alert( template );
+
+            document.getElementById('#app').innerHTML = template;
+
             selfObject.getAppClassManager().getFirebaseCompoenent().loadFirebaseAuthenticationFunctions();
             resolve();
 
