@@ -1,10 +1,17 @@
+let isDebug = true;
+function consoleAlert( data ){
+    if( isDebug ){
+        alert( data );
+    }
+}
+
 class CampusEats {
 
     constructor() {
     }
 
     init(){
-        alert(' CampusEats init');
+        consoleAlert(' CampusEats init');
         this.getAppClassManager().init();
         this.getAppClassManager().setUp();
     }
