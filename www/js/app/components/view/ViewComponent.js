@@ -31,8 +31,6 @@ class ViewComponent extends BaseComponent{
 
     showSplashScreen(){
 
-        alert( "showSplashScreen  "+document.getElementById('screen-container').innerHTML );
-
 
         var app = new Vue({
             el: '#screen-container',
@@ -41,14 +39,12 @@ class ViewComponent extends BaseComponent{
 
         let object = this;
         setTimeout(function () {
-            alert( "showSplashScreen   dfgdf"+document.getElementById('screen-container').innerHTML );
             object.showLoginScreen();
         },3000);
 
     }
 
     showLoginScreen(){
-        alert( "showLoginScreen" );
 
         let selfObject = this;
         new Promise(function (resolve, reject) {
@@ -82,6 +78,7 @@ class ViewComponent extends BaseComponent{
             });
 
             document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            alert( document.getElementById('home-screen').innerHTML );
             resolve();
 
         }).then(function () {
