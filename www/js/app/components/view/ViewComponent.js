@@ -1,26 +1,26 @@
 class ViewComponent extends BaseComponent{
 
     constructor() {
-        alert( "Viewe Component configureVue" );
+        consoleAlert( 'Viewe Component configureVue');
         super();
     }
 
     init(){
-        alert( "Viewe Component configureVue" );
+        consoleAlert( 'Viewe Component configureVue');
 
         //this.configureVue();
 
-        alert( "Viewe Component Loaded" );
+        consoleAlert( 'Viewe Component Loaded');
 
         if( false ){
             // just for testing purpose
-            this.showMenusScreen('tim-hortons')
+            this.showMenusScreen('tim-hortons');
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
-                alert( "showLoginScreen" );
+                consoleAlert( 'showLoginScreen' );
                 this.showLoginScreen();
             }else{
-                alert( "showSplashScreen" );
+                consoleAlert( 'showSplashScreen' );
                 this.showSplashScreen();
             }
         }
@@ -44,7 +44,7 @@ class ViewComponent extends BaseComponent{
         let template ='<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>';
         document.getElementById('app').innerHTML = template ;
 
-        alert(  document.getElementById('app').innerHTML );
+        consoleAlert(  document.getElementById('app').innerHTML );
 
         let object = this;
         setTimeout(function () {
@@ -55,7 +55,7 @@ class ViewComponent extends BaseComponent{
 
     showLoginScreen(){
 
-        alert( 'showLoginScreen' );
+        consoleAlert( 'showLoginScreen' );
 
         let selfObject = this;
         new Promise(function (resolve, reject) {
@@ -74,7 +74,7 @@ class ViewComponent extends BaseComponent{
 
     showHomeScreen(){
 
-        alert( "showHomeScreen" );
+        consoleAlert( "showHomeScreen" );
 
 
         let selfObject = this;
@@ -88,7 +88,7 @@ class ViewComponent extends BaseComponent{
             });
 
             document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
-            alert( document.getElementById('home-screen').innerHTML );
+            consoleAlert( document.getElementById('home-screen').innerHTML );
             resolve();
 
         }).then(function () {
@@ -185,7 +185,7 @@ class ViewComponent extends BaseComponent{
             'ion-tab' :'menu-tabs'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
-            alert( 'Template parent array is not available.'+template );
+            consoleAlert( 'Template parent array is not available.'+template );
         }
         return document.getElementById( templateParentArray[template] );
     }
