@@ -10,7 +10,7 @@ class ViewComponent extends BaseComponent{
 
         consoleAlert( 'Viewe Component Loaded');
 
-        if( false ){
+        if( true ){
             // just for testing purpose
             this.showHomeScreen();
         }else{
