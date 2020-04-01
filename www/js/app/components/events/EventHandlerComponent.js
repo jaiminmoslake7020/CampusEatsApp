@@ -26,7 +26,7 @@ class EventHandlerComponent extends BaseComponent{
             (new NavBar()).toggle();
         });
         document.querySelector('body').addEventListener('click',function ( e ) {
-            if( document.querySelector('.app-nav.active-menu').length != 0 ){
+            if( document.querySelector('.app-nav.active-menu') != null && document.querySelector('.app-nav.active-menu').length !== 0 ){
                 if( e.target.closest('.menu') === null && e.target.closest('.hamburger-menu-container') === null  ){
                     (new NavBar()).hide();
                 }if( e.target.closest('.hamburger-menu-container') !== null ){

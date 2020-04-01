@@ -11,7 +11,7 @@ class LoadingBar extends BaseComponent{
     }
 
     show(){
-       // document.getElementById('loadingBar').classList.add('active');
+        document.getElementById('loadingBar').classList.add('active');
     }
 
     hide(){

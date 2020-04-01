@@ -1,6 +1,7 @@
 .app-nav{
   width: 100%;
   display: block;
+  overflow-x: hidden;
 
   &.active-menu{
     .menu{
@@ -9,10 +10,12 @@
   }
 
   .menu{
-    width: 200px;
+    width: 350px;
     position: absolute;
     z-index: 1000;
-    left: -200px;
+    left: -350px;
+    padding: 15px;
+    box-sizing: border-box;
     top:0;
     bottom: 0;
     height: 100vh;
@@ -40,6 +43,7 @@
 
 
     .toolbar{
+      flex-grow: 1;
       max-height: 50px;
       display: flex;
 

@@ -23,6 +23,7 @@
   position: relative;
   width: fit-content;
   display: inline-block;
+  border-radius: 10px;
 }
 
 .menu-btn-container img{
@@ -52,6 +53,7 @@ button.button-native{
 .menu-btn{
   border-radius: 15px;
   margin: 0 20px;
+  display: inline-block;
 }
 
 .menu-screen-content{
