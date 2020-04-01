@@ -1,9 +1,10 @@
-let isDebug = true;
+let isDebug = false;
 function consoleAlert( data ){
     if( isDebug ){
         alert( data );
     }
 }
+localStorage.app = "CampusEats";
 
 class CampusEats {
 

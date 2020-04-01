@@ -8,13 +8,11 @@ class ViewComponent extends BaseComponent{
     init(){
         consoleAlert( 'Viewe Component configureVue');
 
-        //this.configureVue();
-
         consoleAlert( 'Viewe Component Loaded');
 
-        if( false ){
+        if( true ){
             // just for testing purpose
-            this.showMenusScreen('tim-hortons');
+            this.showHomeScreen();
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
                 consoleAlert( 'showLoginScreen' );
@@ -28,23 +26,16 @@ class ViewComponent extends BaseComponent{
 
     }
 
-    configureVue(){
-        Vue.config.productionTip = false;
+    replaceAppScreen( template , id = 'app' ){
+        consoleAlert( template );
+        document.getElementById(id).innerHTML = template ;
+        consoleAlert( document.getElementById(id).innerHTML  );
     }
 
     showSplashScreen(){
 
-        //
-        // var app = new Vue({
-        //     el: '#screen-container',
-        //     template: '<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>'
-        // });
-        //
-
         let template ='<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>';
-        document.getElementById('app').innerHTML = template ;
-
-        consoleAlert(  document.getElementById('app').innerHTML );
+        this.replaceAppScreen( template );
 
         let object = this;
         setTimeout(function () {
@@ -61,7 +52,7 @@ class ViewComponent extends BaseComponent{
         new Promise(function (resolve, reject) {
 
             let template = '<div id="screen-container"><div class="screen"  id="login-screen"><div class=" spalsh-screen-image  spalsh-screen "><div id="firebaseui-auth-container"></div></div></div></div>';
-            document.getElementById('app').innerHTML = template;
+            selfObject.replaceAppScreen( template );
 
             selfObject.getAppClassManager().getFirebaseCompoenent().loadFirebaseAuthenticationFunctions();
             resolve();
@@ -82,13 +73,11 @@ class ViewComponent extends BaseComponent{
 
         new Promise(function (resolve, reject) {
 
-            var app = new Vue({
-                el: '#screen-container',
-                template: '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>'
-            });
+            let template = '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>';
+            selfObject.replaceAppScreen( template );
 
             document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
-            consoleAlert( document.getElementById('home-screen').innerHTML );
+
             resolve();
 
         }).then(function () {
@@ -127,20 +116,14 @@ class ViewComponent extends BaseComponent{
 
         new Promise(function (resolve, reject) {
 
-            var app = new Vue({
-                el: '#screen-container',
-                template: '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>'
-            });
-
+            let template = '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>' ;
+            selfObject.replaceAppScreen( template );
             document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
 
-            var app = new Vue({
-                el: '#ion-content',
-                template: '<ion-content class="ion-padding screen-content menu-screen-content " id="ion-content" ></ion-content>'
-            });
+            document.getElementById('ion-content').classList.remove('content');
+            document.getElementById('ion-content').classList.add('menu-screen-content');
 
             document.getElementById('home-screen').id = 'menu-screen';
-            //document.getElementById('ion-content').innerHTML = document.getElementById('ion-tabs').innerHTML;
 
             resolve();
 

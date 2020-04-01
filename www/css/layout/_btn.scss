@@ -1,11 +1,5 @@
-
 .ion-color-light {
-  --ion-color-base: var(--ion-color-light, #ffffff)!important;
-  --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248)!important;
-  --ion-color-contrast: var(--ion-color-light-contrast, #ffffff)!important;
-  --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 255, 255, 255)!important;
-  --ion-color-shade: var(--ion-color-light-shade, #ffffff)!important;
-  --ion-color-tint: var(--ion-color-light-tint, #ffffff)!important;
+
 }
 
 .brand-logos.ion-color.ion-color-light{
@@ -23,10 +17,16 @@
 }
 
 .menu-btn-container{
-  margin-top: -20px;
+  margin: 10px auto;
+  padding: 0 5px 50px 5px;
+  background: white;
+  position: relative;
+  width: fit-content;
+  display: inline-block;
+  border-radius: 10px;
 }
 
-.menu-btn-container ion-img{
+.menu-btn-container img{
   max-width: 80px;
 }
 
@@ -48,22 +48,23 @@ button.button-native{
 
 .brand-logos{
   border-radius: 15px;
-  --border-radius: 30px;
 }
 
 .menu-btn{
   border-radius: 15px;
-  --border-radius: 30px;
+  margin: 0 20px;
+  display: inline-block;
 }
 
 .menu-screen-content{
   text-align: center;
-  --background: $color__primary;
 }
 
 .hamburger-menu{
   color: $color__primary;
 }
+
+
 
 
 
