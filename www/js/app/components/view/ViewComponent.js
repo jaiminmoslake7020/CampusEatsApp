@@ -40,7 +40,11 @@ class ViewComponent extends BaseComponent{
         //     template: '<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>'
         // });
         //
-        document.getElementById('#app').innerHTML = '<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>';
+
+        let template ='<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>';
+        document.getElementById('app').innerHTML = template ;
+
+        alert(  document.getElementById('app').innerHTML );
 
         let object = this;
         setTimeout(function () {
@@ -51,7 +55,7 @@ class ViewComponent extends BaseComponent{
 
     showLoginScreen(){
 
-        alert( showLoginScreen );
+        alert( 'showLoginScreen' );
 
         let selfObject = this;
         new Promise(function (resolve, reject) {
@@ -64,7 +68,7 @@ class ViewComponent extends BaseComponent{
 
             alert( template );
 
-            document.getElementById('#app').innerHTML = template;
+            document.getElementById('app').innerHTML = template;
 
             selfObject.getAppClassManager().getFirebaseCompoenent().loadFirebaseAuthenticationFunctions();
             resolve();
