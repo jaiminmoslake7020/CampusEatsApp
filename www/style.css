@@ -74,7 +74,12 @@ body {
 }
 
 .menu-btn-container {
-  margin-top: -20px;
+  margin: 10px auto;
+  padding: 0 5px 50px 5px;
+  background: white;
+  position: relative;
+  width: fit-content;
+  display: inline-block;
 }
 
 .menu-btn-container img {
@@ -99,12 +104,11 @@ button.button-native {
 
 .brand-logos {
   border-radius: 15px;
-  --border-radius: 30px;
 }
 
 .menu-btn {
   border-radius: 15px;
-  --border-radius: 30px;
+  margin: 0 20px;
 }
 
 .menu-screen-content {
