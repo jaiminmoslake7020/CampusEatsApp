@@ -4,6 +4,7 @@ class AppClassManager {
     }
 
     init(){
+        alert(' AppClassManager init ');
         this.getRequestComponent();
         this.getFirebaseCompoenent();
         this.getLocalStorageComponent();
@@ -15,6 +16,7 @@ class AppClassManager {
         this.getRequestComponent().init();
         this.getFirebaseCompoenent().init();
         this.getLocalStorageComponent().init();
+        alert(' getViewComponent init call ');
         this.getViewComponent().init();
         this.getEventHandlerComponent().init();
     }

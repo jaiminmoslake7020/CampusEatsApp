@@ -1,10 +1,13 @@
 class ViewComponent extends BaseComponent{
 
     constructor() {
+        alert( "Viewe Component configureVue" );
         super();
     }
 
     init(){
+        alert( "Viewe Component configureVue" );
+
         this.configureVue();
 
         alert( "Viewe Component Loaded" );
