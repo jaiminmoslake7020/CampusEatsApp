@@ -1,6 +1,6 @@
 window.addEventListener('load',function () {
     consoleAlert( "showLoading" );
-    (new EventHandlerComponent()).showLoading();
+    (new LoadingBar()).show();
 });
 
 class EventHandlerComponent extends BaseComponent{
@@ -12,6 +12,7 @@ class EventHandlerComponent extends BaseComponent{
     homeScreenEvents(){
         let selfObject = this;
         this.stopLoading();
+        this.addHamburgerMenuEvent();
 
         consoleAlert( "homeScreenEvents" );
         Array.from( document.getElementsByClassName('brand-logos') , ( el ) => {
@@ -20,9 +21,17 @@ class EventHandlerComponent extends BaseComponent{
 
     }
 
+    addHamburgerMenuEvent(){
+        document.querySelector('.menu-button.hamburger-menu').addEventListener('click',function () {
+            (new NavBar()).toggle();
+        });
+    }
+
     menuScreenEvents(){
         let selfObject = this;
         this.stopLoading();
+        this.addHamburgerMenuEvent();
+
 
         // Array.from( document.getElementsByClassName('brand-logos') , ( el ) => {
         //     el.addEventListener('click' ,  selfObject.goToMenuPage )
@@ -62,66 +71,17 @@ class EventHandlerComponent extends BaseComponent{
         return alert.present();
     }
 
-    async showLoading() {
-
-
-            // const loading = document.createElement('ion-loading');
-            // loading.message = 'Please wait...';
-            //
-            // new Promise( ( resolve , reject ) => {
-            //     document.body.appendChild(loading);
-            //     resolve();
-            // }).then(function () {
-            //     loading.present();
-            //     selfObject.loadingBar = loading;
-            // }).catch(function ( reason ) {
-            //     selfObject.globalCatch( reason );
-            // });
-
-            let selfObject = this;
-
-            // const loading = document.createElement('ion-loading');
-            // loading.message = 'Please wait...';
-            // loading.duration = 10000;
-            //
-            // document.body.appendChild(loading);
-            // await loading.present();
-            //
-            // selfObject.loadingBar = loading;
-
+    showLoading() {
+        let selfObject = this;
         consoleAlert( "showLoading 1" );
-
-            const loading = await loadingController.create({
-                message: 'Loading',
-            });
-            self.appearedLoading = true ;
-            loading.present().then(function () {
-                self.appearedLoading = true;
-            });
-            self.loadingBar = loading;
-
+        (new LoadingBar()).show();
         consoleAlert( "showLoading 2" );
-
-
     }
 
     stopLoading() {
         consoleAlert( "stopLoading 1" );
-
-        let interval = setInterval(function () {
-
-           if( self.appearedLoading || window.appearedLoading ){
-               Array.from( document.getElementsByTagName('ion-loading') , ( el , i ) => {
-                   el.dismiss();
-                   self.appearedLoading = false;
-                   window.appearedLoading = false;
-               });
-               consoleAlert( "stopLoading stopped" );
-               clearInterval( interval );
-           }
-
-       } , 1000 );
-
+        (new LoadingBar()).hide();
+        consoleAlert( "stopLoading 2" );
     }
 
 }

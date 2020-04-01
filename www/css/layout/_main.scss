@@ -1,13 +1,6 @@
 body{
-   background-color: white;
-   display: flex;
-   justify-content: center;
-   align-content: center;
-}
-
-img{
-   min-width: 100%;
-   height: auto;
+   margin: 0;
+   padding: 0;
 }
 
 #app-container{
@@ -22,7 +15,7 @@ img{
 }
 
 .spalsh-screen-image{
-   background-image: url("../images/splash.png");
+   background-image: url("images/splash.png");
    width: 100%;
    min-height: 100vh;
 }
@@ -47,18 +40,11 @@ img{
    }
 }
 
-.logo-container{
-   width: 40%;
-   margin: auto;
-}
-
-.logo-container img{
-   margin-left: -20px;
-   margin-top: 3px;
-}
-
 .screen-content{
-   --background: $color__bgsecondary;
+   background: $color__bgsecondary;
+   width: 100%;
+   min-height: 100vh;
+   padding-top: 20px;
 }
 
 

@@ -1,4 +1,4 @@
-let isDebug = true;
+let isDebug = false;
 function consoleAlert( data ){
     if( isDebug ){
         alert( data );

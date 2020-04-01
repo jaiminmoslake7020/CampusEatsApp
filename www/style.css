@@ -11,15 +11,8 @@
 /* HEEADER ============ */
 /* MAIN CONTENT ============ */
 body {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-img {
-  min-width: 100%;
-  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 #app-container {
@@ -34,7 +27,7 @@ img {
 }
 
 .spalsh-screen-image {
-  background-image: url("../images/splash.png");
+  background-image: url("images/splash.png");
   width: 100%;
   min-height: 100vh;
 }
@@ -58,30 +51,14 @@ img {
     margin: auto;
   }
 }
-.logo-container {
-  width: 40%;
-  margin: auto;
-}
-
-.logo-container img {
-  margin-left: -20px;
-  margin-top: 3px;
-}
-
 .screen-content {
-  --background: $color__bgsecondary;
+  background: #FFF9EC;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 20px;
 }
 
 /* MAIN CONTENT ============ */
-.ion-color-light {
-  --ion-color-base: var(--ion-color-light, #ffffff)!important;
-  --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248)!important;
-  --ion-color-contrast: var(--ion-color-light-contrast, #ffffff)!important;
-  --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 255, 255, 255)!important;
-  --ion-color-shade: var(--ion-color-light-shade, #ffffff)!important;
-  --ion-color-tint: var(--ion-color-light-tint, #ffffff)!important;
-}
-
 .brand-logos.ion-color.ion-color-light {
   height: 150px;
   margin: auto auto 30px auto;
@@ -100,7 +77,7 @@ img {
   margin-top: -20px;
 }
 
-.menu-btn-container ion-img {
+.menu-btn-container img {
   max-width: 80px;
 }
 
@@ -132,15 +109,171 @@ button.button-native {
 
 .menu-screen-content {
   text-align: center;
-  --background: $color__primary;
 }
 
 .hamburger-menu {
   color: #f15a24;
 }
 
+/* MAIN CONTENT ============ */
+body .loadingBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -10000;
+}
+body .loadingBar.active {
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1000;
+}
+body .loadingBar .loadingBar-content {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  color: #333;
+}
+body .loadingBar .loadingBar-content .loadingBar-icon {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 15px;
+}
+body .loadingBar .loadingBar-content .loadingBar-text {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 15px;
+}
+
+/* MAIN CONTENT ============ */
+/* MAIN CONTENT ============ */
+/* MAIN CONTENT ============ */
+.button.brand-logos {
+  max-width: 200px;
+  display: block;
+  margin: 40px auto;
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 15px;
+}
+.button.brand-logos .brand-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.button.brand-logos .brand-container img {
+  width: auto;
+  max-width: 170px;
+  height: 50px;
+}
+
+/* MAIN CONTENT ============ */
 /* typography ======================= */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.fsDefault {
+  font-size: 300px;
+}
+
+.fsBolder {
+  font-size: 400px;
+}
+
+.fsBold {
+  font-size: 500px;
+}
+
 /* Navigation ======================= */
+.app-nav {
+  width: 100%;
+  display: block;
+}
+.app-nav.active-menu .menu {
+  left: 0;
+}
+.app-nav .menu {
+  width: 200px;
+  position: absolute;
+  z-index: 1000;
+  left: -200px;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: #f15a24;
+  color: white;
+  transition: left 1s linear;
+}
+.app-nav .page {
+  display: flex;
+  flex: 0 0 100%;
+  flex-flow: row wrap;
+}
+.app-nav .page .hamburger-menu {
+  padding: 15px;
+}
+.app-nav .header-div {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  flex: 0 0 100%;
+}
+.app-nav .header-div .toolbar {
+  max-height: 50px;
+  display: flex;
+}
+.app-nav .header-div .toolbar .buttons {
+  flex-shrink: 1;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  display: flex;
+}
+.app-nav .header-div .toolbar .title {
+  display: flex;
+  flex-grow: 1;
+  max-height: 50px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.app-nav .header-div .toolbar .title .logo-container {
+  padding: 3px;
+  box-sizing: border-box;
+}
+.app-nav .header-div .toolbar .title .logo-container img {
+  width: auto;
+  height: 44px;
+}
+
 /* forms ======================= */
 /* media ======================= */
 
