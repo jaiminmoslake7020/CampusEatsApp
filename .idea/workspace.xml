@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ffae415-f8a0-4828-a8f4-b43417e46f0f" name="Default Changelist" comment="Addded logo support">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2ffae415-f8a0-4828-a8f4-b43417e46f0f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/www/faq.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/sidemenu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/navigation/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/navigation/_navigation.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +72,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.phonegap.settings.workdir" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/www" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -77,12 +83,19 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PhpstormProjects\CampusEatsApp\www" />
+      <recent name="$PROJECT_DIR$/www/js" />
+      <recent name="$PROJECT_DIR$/www/bower_components" />
+      <recent name="$PROJECT_DIR$/www/css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\PhpstormProjects\CampusEatsApp\www\res\screen\android" />
       <recent name="C:\Users\User\PhpstormProjects\CampusEatsApp\www\res\icon\android" />
@@ -90,13 +103,8 @@
       <recent name="$PROJECT_DIR$/www/js/app/components" />
       <recent name="$PROJECT_DIR$/www/js/app/Components/view" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/www/js" />
-      <recent name="$PROJECT_DIR$/www/bower_components" />
-      <recent name="$PROJECT_DIR$/www/css" />
-    </key>
   </component>
-  <component name="RunManager" selected="Shell Script.publish.sh">
+  <component name="RunManager" selected="Unknown.PhoneGap/Cordova run2107543545">
     <configuration name="PhoneGap/Cordova run" type="PhoneGap" factoryName="PhoneGap/Cordova">
       <option name="myExecutable" value="/usr/local/bin/phonegap" />
       <option name="myWorkDir" value="$PROJECT_DIR$" />
@@ -175,6 +183,7 @@
       <workItem from="1585685630931" duration="11802000" />
       <workItem from="1585703111875" duration="3590000" />
       <workItem from="1585706717437" duration="5077000" />
+      <workItem from="1585780952325" duration="6044000" />
     </task>
     <task id="LOCAL-00001" summary="New Setup">
       <created>1582066591077</created>
@@ -358,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585722085060</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Addded logo support">
+      <created>1585781074763</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1585781074763</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,9 +400,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="240" y="78" key="#JSHint/0.23.1280.777@0.23.1280.777" timestamp="1583709034350" />
-    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584350014595">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="125" y="55" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585781604080">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="125" y="55" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585781604080" />
     <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1584350014595" />
     <state x="524" y="140" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1583704582330">
       <screen x="0" y="23" width="1280" height="777" />
@@ -404,18 +421,19 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="378" y="167" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.777@0.23.1280.777" timestamp="1584301782188" />
-    <state x="561" y="0" width="743" height="802" key="CommitChangelistDialog2" timestamp="1585722082343">
+    <state x="561" y="0" width="743" height="802" key="CommitChangelistDialog2" timestamp="1585781072421">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="561" y="0" width="743" height="802" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585722082343" />
+    <state x="561" y="0" width="743" height="802" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585781072421" />
     <state x="85" y="118" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1585701485248" />
     <state x="128" y="90" key="DiffContextDialog" timestamp="1583918308518">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="128" y="90" key="DiffContextDialog/0.23.1280.777@0.23.1280.777" timestamp="1583918308518" />
-    <state x="240" y="23" width="967" height="605" key="EditFileWatcherDialog" timestamp="1584347982204">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="288" y="0" width="741" height="599" key="EditFileWatcherDialog" timestamp="1585787452415">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="288" y="0" width="741" height="599" key="EditFileWatcherDialog/0.0.1536.824@0.0.1536.824" timestamp="1585787452415" />
     <state x="240" y="23" width="967" height="605" key="EditFileWatcherDialog/0.23.1280.777@0.23.1280.777" timestamp="1584347982204" />
     <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1585706713462">
       <screen x="0" y="0" width="1536" height="824" />
@@ -446,9 +464,10 @@
     </state>
     <state x="427" y="119" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1585706014405" />
     <state x="356" y="135" key="MultipleFileMergeDialog/0.23.1280.777@0.23.1280.777" timestamp="1582069404518" />
-    <state x="160" y="23" key="SettingsEditor" timestamp="1584558337229">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="192" y="0" key="SettingsEditor" timestamp="1585787459213">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="192" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585787459213" />
     <state x="160" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1584558337229" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1585712411025">
       <screen x="0" y="0" width="1536" height="824" />
@@ -488,10 +507,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="394" y="211" key="git4idea.merge.GitMergeDialog/0.23.1280.777@0.23.1280.777" timestamp="1582066805126" />
-    <state x="457" y="216" key="git4idea.merge.GitPullDialog" timestamp="1585710962487">
+    <state x="457" y="216" key="git4idea.merge.GitPullDialog" timestamp="1585781567390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="457" y="216" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1585710962487" />
+    <state x="457" y="216" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1585781567390" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
