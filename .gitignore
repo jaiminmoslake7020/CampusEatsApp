@@ -1,0 +1,46 @@
+# Mac
+.DS_Store
+
+# Node
+npm-debug.log
+/node_modules
+
+# Cordova
+/platforms
+/plugins
+
+# res
+resources/signing
+jsconfig.json
+.vscode/
+typings/
+
+# phpstorm project files
+/.idea
+.idea
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# runtime directories
+
+# Composer.json should not be needed for PROD
+#composer.json
+
+# composer itself is not needed
+composer.phar
+
+
+
+
+
+
+
