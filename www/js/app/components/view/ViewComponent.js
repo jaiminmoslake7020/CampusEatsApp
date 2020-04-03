@@ -10,9 +10,10 @@ class ViewComponent extends BaseComponent{
 
         consoleAlert( 'Viewe Component Loaded');
 
-        if( true ){
+        if( false ){
             // just for testing purpose
-            this.showHomeScreen();
+            this.showMenusScreen('tim-hortons');
+            //this.showHomeScreen();
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
                 consoleAlert( 'showLoginScreen' );
@@ -75,12 +76,13 @@ class ViewComponent extends BaseComponent{
 
             let template = '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>';
             selfObject.replaceAppScreen( template );
-
             document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
-
+            consoleAlert( "NavMenu" );
             resolve();
 
         }).then(function () {
+
+            consoleAlert( "NavMenu" );
 
             new Promise(function (resolve, reject) {
 
@@ -116,15 +118,11 @@ class ViewComponent extends BaseComponent{
 
         new Promise(function (resolve, reject) {
 
-            let template = '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>' ;
+            let template = '<div id="screen-container"><div class="screen"  id="menu-screen"></div></div>' ;
             selfObject.replaceAppScreen( template );
-            document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
-
-            document.getElementById('ion-content').classList.remove('content');
+            document.getElementById('menu-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            document.getElementById('ion-content').classList.remove('home-screen');
             document.getElementById('ion-content').classList.add('menu-screen-content');
-
-            document.getElementById('home-screen').id = 'menu-screen';
-
             resolve();
 
         }).then(function () {
@@ -133,8 +131,8 @@ class ViewComponent extends BaseComponent{
 
                 selfObject.getMenusModel( cafeId ).getAll().then(function ( snapshot ) {
                     for( let i = 0 ; i < snapshot.length ; i++ ){
-                        let cafe = snapshot[i];
-                        selfObject.addToView( 'ion-menu-button' , cafe );
+                        let menu = snapshot[i];
+                        selfObject.addToView( 'ion-menu-button' , menu );
                     }
                 }).then(function () {
                     resolve();
@@ -156,6 +154,49 @@ class ViewComponent extends BaseComponent{
 
     }
 
+    showMenuIetmsScreen( menu ){
+
+        let selfObject = this;
+        selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
+
+        new Promise(function (resolve, reject) {
+
+            let template = '<div id="screen-container"><div class="screen"  id="menu-item-screen"></div></div>' ;
+            selfObject.replaceAppScreen( template );
+            document.getElementById('menu-item-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            document.getElementById('ion-content').classList.remove('menu-screen-content');
+            document.getElementById('ion-content').classList.add('menu-items-screen-content');
+            resolve();
+
+        }).then(function () {
+
+            new Promise(function (resolve, reject) {
+
+                selfObject.getMenuIetmsModel( menu ).getAll().then(function ( snapshot ) {
+                    for( let i = 0 ; i < snapshot.length ; i++ ){
+                        let menuItem = snapshot[i];
+                        selfObject.addToView( 'ion-menu-item-button' , menuItem );
+                    }
+                }).then(function () {
+                    resolve();
+                }).catch(function ( reason ) {
+                    selfObject.globalCatch( reason )
+                });
+
+            }).then(function () {
+
+                selfObject.getAppClassManager().getEventHandlerComponent().menuItemsScreenEvents();
+
+            }).catch(function ( reason ) {
+                selfObject.globalCatch( reason )
+            });
+
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
+
+    }
+
     getIonContent(){
         return document.getElementById('ion-content');
     }
@@ -165,6 +206,7 @@ class ViewComponent extends BaseComponent{
             'ion-button' : 'ion-content',
             'ion-tab-button' :'ion-tab-bar' ,
             'ion-menu-button' :'ion-content' ,
+            'ion-menu-item-button' :'ion-content' ,
             'ion-tab' :'menu-tabs'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
@@ -185,8 +227,47 @@ class ViewComponent extends BaseComponent{
             if( templateString.indexOf( findIn ) !== -1 ){
                 templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
             }
+            console.log( data.name , 'Added' );
         }
         this.getParentElement( template ).innerHTML +=  templateString;
+    }
+
+    addMenuitems(){
+
+        let selfObject = this;
+        new Promise(function (resolve, reject) {
+
+            let menu_item_offset = localStorage.getItem('menu_item_offset');
+            let menu = localStorage.getItem('menu');
+
+            let getMenuIetmsModel = selfObject.getMenuIetmsModel( menu );
+            getMenuIetmsModel.limitOffset = parseInt(menu_item_offset)+20;
+
+            localStorage.setItem('menu_item_offset',  getMenuIetmsModel.limitOffset );
+
+            getMenuIetmsModel.getAll().then(function ( snapshot ) {
+                for( let i = 0 ; i < snapshot.length ; i++ ){
+                    let menuItem = snapshot[i];
+                    selfObject.addToView( 'ion-menu-item-button' , menuItem );
+                }
+            }).then(function () {
+                resolve();
+            }).catch(function ( reason ) {
+                selfObject.globalCatch( reason )
+            });
+
+        }).then(function () {
+
+            selfObject.getAppClassManager().getEventHandlerComponent().menuItemsScreenEvents();
+
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
+
+    }
+
+    addBackButton(){
+
     }
 
 }

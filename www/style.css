@@ -51,10 +51,17 @@ body {
   }
 }
 .screen-content {
-  background: #FFF9EC;
+  background: white;
   width: 100%;
   min-height: 100vh;
   padding-top: 20px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s linear;
+}
+.screen-content.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* MAIN CONTENT ============ */
@@ -74,8 +81,8 @@ body {
 
 .menu-btn-container {
   margin: 10px auto;
-  padding: 0 5px 50px 5px;
-  background: white;
+  padding: 10px;
+  background: transparent;
   position: relative;
   width: fit-content;
   display: inline-block;
@@ -88,14 +95,13 @@ body {
 
 .menu-label {
   color: #f15a24;
-  position: absolute;
-  bottom: 20px;
   width: 100%;
   left: 0;
   text-transform: capitalize;
   word-wrap: break-word;
   overflow-wrap: break-word;
   overflow: auto;
+  text-align: center;
 }
 
 button.button-native {
@@ -108,16 +114,56 @@ button.button-native {
 
 .menu-btn {
   border-radius: 15px;
-  margin: 0 20px;
   display: inline-block;
 }
 
-.menu-screen-content {
+.defult-btn {
+  border-radius: 15px;
+  display: inline-block;
+  width: 40%;
   text-align: center;
+  box-sizing: border-box;
+}
+
+.screen-content {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-flow: row wrap;
+  width: fit-content;
+  margin: auto;
 }
 
 .hamburger-menu {
   color: #f15a24;
+}
+
+.back-button {
+  padding: 15px;
+  color: #f15a24;
+}
+
+.dnone {
+  display: none;
+}
+
+#home-screen .hamburger-menu {
+  display: block;
+}
+#home-screen .back-button {
+  display: none;
+}
+
+#menu-item-screen .hamburger-menu, #menu-screen .hamburger-menu {
+  display: none;
+}
+#menu-item-screen .back-button, #menu-screen .back-button {
+  display: block;
+}
+
+.img-wrapper img {
+  display: block;
+  margin: auto;
 }
 
 /* MAIN CONTENT ============ */
@@ -177,12 +223,13 @@ body .loadingBar .loadingBar-content .loadingBar-text {
 /* MAIN CONTENT ============ */
 /* MAIN CONTENT ============ */
 .button.brand-logos {
-  max-width: 200px;
+  width: fit-content;
   display: block;
   margin: 40px auto;
-  background-color: white;
-  border: 1px solid #eee;
   padding: 15px;
+  border: 5px solid #f2f2f2;
+  background: #fffdfd;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
 }
 .button.brand-logos .brand-container {
   display: flex;
@@ -190,11 +237,12 @@ body .loadingBar .loadingBar-content .loadingBar-text {
   justify-content: center;
   align-items: center;
   justify-items: center;
+  width: fit-content;
 }
 .button.brand-logos .brand-container img {
-  width: auto;
-  max-width: 170px;
-  height: 50px;
+  width: 250px;
+  height: auto;
+  padding: 10px;
 }
 
 /* MAIN CONTENT ============ */
@@ -251,6 +299,7 @@ body {
   height: 50px;
   width: 100%;
   flex: 0 0 100%;
+  background-color: #FFF9EC;
 }
 .app-nav .header-div .toolbar {
   flex-grow: 1;

@@ -9,11 +9,11 @@ class LocalStorageComponent extends BaseComponent{
     }
 
     setItem( key , value ){
-
+        localStorage[key] = value;
     }
 
-    getItem( key , value ){
-
+    getItem( key ){
+        return localStorage[key];
     }
 
 }

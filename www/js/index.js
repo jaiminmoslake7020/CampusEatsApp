@@ -50,9 +50,8 @@ app.initialize();
 
 window.addEventListener('load',function () {
 
-
-    // campusEats = new CampusEats();
-    // campusEats.init();
+    campusEats = new CampusEats();
+    campusEats.init();
 
 });
 

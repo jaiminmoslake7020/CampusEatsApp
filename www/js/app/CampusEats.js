@@ -4,8 +4,6 @@ function consoleAlert( data ){
         alert( data );
     }
 }
-localStorage.app = "CampusEats";
-
 class CampusEats {
 
     constructor() {

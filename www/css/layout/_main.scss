@@ -42,10 +42,20 @@ body{
 }
 
 .screen-content{
-   background: $color__bgsecondary;
+   background: white;
    width: 100%;
    min-height: 100vh;
    padding-top: 20px;
+
+   opacity: 0;
+   transform: translateY(100px);
+   transition: all 1s linear;
+
+   &.active{
+      opacity: 1;;
+      transform: translateY(0);
+   }
+
 }
 
 

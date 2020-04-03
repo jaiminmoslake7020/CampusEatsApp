@@ -37,6 +37,19 @@ class Cafes extends FirebaseActiveRecord{
         }
     }
 
+    /**
+     * This function is for development only it will add all the data from the
+     * www/website-data/cafes.json
+     * to firebase and create required collections and documents
+     * it should be run without phonegap from browser.
+     *
+     * before running please
+     * firebase projects:list
+     * firebase use campuseats-431d3
+     * firebase firestore:delete -r Cafes
+     *
+     * -r is recusrsive
+     */
     setUp(){
         let selfObject = this;
         selfObject.addCafes();
@@ -58,20 +71,30 @@ class Cafes extends FirebaseActiveRecord{
         for( let cafe in cafes ){
             if( increment === i ){
 
-                selfObject.order = i ;
-                selfObject.firebase_document = cafe;
-                selfObject.firebase_is_merge = true ;
-                selfObject.firebase_data = cafes[cafe];
-                selfObject.addObjectAsANewCollection('working_hours',"working_hours");
-                selfObject.addObjectAsANewCollection('menus',"menus");
+                let cafeRecord = new Cafes();
+                cafeRecord.order = i ;
+                cafeRecord.firebase_document = cafe;
+                cafeRecord.firebase_is_merge = true ;
+                cafeRecord.firebase_data = cafes[cafe];
+                if( "working_hours" in cafes[cafe] ){
+                    cafeRecord.addObjectAsANewCollection('working_hours',"working_hours");
+                }else{
+                    cafeRecord.removeObjectAsANewCollection('working_hours');
+                }
+                if( "menus" in cafes[cafe] ){
+                    cafeRecord.addObjectAsANewCollection('menus',"menus");
+                }else{
+                    cafeRecord.removeObjectAsANewCollection('menus');
+                }
                 new Promise( ( resolve, reject ) => {
-                    selfObject.save();
+                    cafeRecord.save();
                     resolve();
                 }).then(() => {
-                    selfObject.createRecord( selfObject.cafe_incremental++ );
+                    selfObject.cafe_incremental++;
+                    let cafe_incremental = selfObject.cafe_incremental;
+                    selfObject.createRecord( cafe_incremental );
                 }).catch(( reason )=>{
                     console.log( reason );
-
                 });
 
             }

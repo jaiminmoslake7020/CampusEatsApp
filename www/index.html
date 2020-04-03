@@ -43,24 +43,16 @@
 
         <div class="app-nav">
             <div class="menu" data-side="start" data-menu-id="first" data-content-id="main">
-                <div class="header">
-                    <div class="toolbar" data-color="primary">
-                        <div class="title">Start Menu</div>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="list">
-                        <div class="item">Menu Item</div>
-                    </div>
-                </div>
-                <div id="jaimin" ></div>
             </div>
             <div class="page" id="main">
                 <div class="header-div">
                     <div class="toolbar">
                         <div class="buttons hamburger-menu-container " id="start-menu" slot="start">
-                            <div class="menu-button hamburger-menu"  >
+                            <div class="menu-button hamburger-menu "  >
                                 <i class=" fas fa-bars " ></i>
+                            </div>
+                            <div class="menu-button back-button "  >
+                                <i class=" fas fa-arrow-left " ></i>
                             </div>
                         </div>
                         <div class="title">
@@ -70,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="content ion-padding screen-content " id="ion-content" >
+                <div class="home-screen ion-padding screen-content row " id="ion-content" >
 
                 </div>
             </div>
@@ -83,17 +75,32 @@
              data-name="{{name}}" data-id="{{primaryKey}}"
         >
             <div class="brand-container">
-                <img src="{{logo}}" alt="{{name}}" />
+                <img class="lazy" src="images/loader.gif" data-src="{{logo}}" alt="{{name}}">
             </div>
         </div>
     </template>
 
     <template id="ion-menu-button">
-        <div class="button menu-btn small light block round "
+        <div class="button menu-btn defult-btn small light block round "
              data-name="{{name}}" data-id="{{primaryKey}}"
         >
             <div class="menu-btn-container">
-                <img src="{{url}}" alt="{{name}}" />
+                <div class=" img-wrapper ">
+                    <img class="lazy" src="images/loader.gif" data-src="{{url}}" alt="{{name}}">
+                </div>
+                <div class="label menu-label" >{{name}}</div>
+            </div>
+        </div>
+    </template>
+
+    <template id="ion-menu-item-button">
+        <div class="button menu-item-btn defult-btn small light block round "
+             data-name="{{name}}" data-id="{{primaryKey}}"
+        >
+            <div class="menu-btn-container">
+                <div class=" img-wrapper ">
+                    <img class="lazy" src="images/loader.gif" data-src="{{url}}" alt="{{name}}">
+                </div>
                 <div class="label menu-label" >{{name}}</div>
             </div>
         </div>
@@ -156,6 +163,7 @@
     <script src="js/app/models/FirebaseActiveRecord.js"  ></script>
     <script src="js/app/models/Cafes.js"  ></script>
     <script src="js/app/models/Menus.js"  ></script>
+    <script src="js/app/models/MenuItems.js"  ></script>
 
 
     <script src="js/app/AppClassManager.js"  ></script>

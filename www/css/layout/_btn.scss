@@ -18,8 +18,8 @@
 
 .menu-btn-container{
   margin: 10px auto;
-  padding: 0 5px 50px 5px;
-  background: white;
+  padding: 10px;
+  background: transparent;
   position: relative;
   width: fit-content;
   display: inline-block;
@@ -32,14 +32,13 @@
 
 .menu-label{
   color: $color__primary;
-  position: absolute;
-  bottom: 20px;
   width: 100%;
   left: 0;
   text-transform: capitalize;
   word-wrap: break-word;
   overflow-wrap: break-word;
   overflow: auto;
+  text-align: center;
 }
 
 button.button-native{
@@ -52,19 +51,62 @@ button.button-native{
 
 .menu-btn{
   border-radius: 15px;
-  margin: 0 20px;
   display: inline-block;
 }
 
-.menu-screen-content{
+.defult-btn{
+  border-radius: 15px;
+  display: inline-block;
+  width: 40%;
   text-align: center;
+  box-sizing: border-box;
+}
+
+.screen-content{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-flow: row wrap;
+  width: fit-content;
+  margin: auto;
 }
 
 .hamburger-menu{
   color: $color__primary;
 }
 
+.back-button{
+  padding: 15px;
+  color: $color__primary;
+}
 
+.dnone{
+  display: none;
+}
 
+#home-screen{
+  .hamburger-menu{
+    display: block;
+  }
 
+  .back-button{
+    display: none;
+  }
+}
 
+#menu-item-screen, #menu-screen{
+  .hamburger-menu{
+    display: none;
+  }
+
+  .back-button{
+    display: block;
+  }
+}
+
+.img-wrapper{
+  img{
+    display: block;
+    margin: auto;
+  }
+}

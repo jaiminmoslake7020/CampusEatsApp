@@ -48,6 +48,10 @@ class BaseComponent {
         return new Menus( cafeId );
     }
 
+    getMenuIetmsModel( menu ){
+        return new MenuItems( menu );
+    }
+
     globalCatch( reason ){
         console.log( reason );
         //this.triigerAlert( reason );
