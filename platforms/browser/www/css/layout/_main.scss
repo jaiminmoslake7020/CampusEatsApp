@@ -1,0 +1,51 @@
+body{
+   margin: 0;
+   padding: 0;
+}
+
+#app-container{
+   height: 100vh;
+   width: 100vw;
+}
+
+.screen{
+   width: 100%;
+   min-height: 100vh;
+   position: relative;
+}
+
+.spalsh-screen-image{
+   background-image: url("images/splash.png");
+   width: 100%;
+   min-height: 100vh;
+}
+
+#firebaseui-auth-container{
+   padding-top: 100vh;
+   opacity: 0.7;
+   transition: all 1.5s linear;
+}
+
+#firebaseui-auth-container.active{
+   padding-top: 45vh;
+   opacity: 1;
+}
+
+@media screen and (min-width: 380px){
+   #app-container{
+      //height: 600px;
+      //width: 375px;
+      border: 1px solid #eee;
+      margin: auto;
+      overflow-x: hidden;
+   }
+}
+
+.screen-content{
+   background: $color__bgsecondary;
+   width: 100%;
+   min-height: 100vh;
+   padding-top: 20px;
+}
+
+

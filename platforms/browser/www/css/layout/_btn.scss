@@ -1,0 +1,70 @@
+.ion-color-light {
+
+}
+
+.brand-logos.ion-color.ion-color-light{
+  height: 150px;
+  margin: auto auto 30px auto;
+  width: 75%;
+}
+
+.menu-btn.ion-color.ion-color-light{
+  height: 120px;
+  margin: 20px;
+  width: 35%;
+  display: inline-block;
+  position: relative;
+}
+
+.menu-btn-container{
+  margin: 10px auto;
+  padding: 0 5px 50px 5px;
+  background: white;
+  position: relative;
+  width: fit-content;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.menu-btn-container img{
+  max-width: 80px;
+}
+
+.menu-label{
+  color: $color__primary;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+  text-transform: capitalize;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: auto;
+}
+
+button.button-native{
+  border-radius: 20px;
+}
+
+.brand-logos{
+  border-radius: 15px;
+}
+
+.menu-btn{
+  border-radius: 15px;
+  margin: 0 20px;
+  display: inline-block;
+}
+
+.menu-screen-content{
+  text-align: center;
+}
+
+.hamburger-menu{
+  color: $color__primary;
+}
+
+
+
+
+

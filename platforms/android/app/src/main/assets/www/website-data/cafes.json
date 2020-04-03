@@ -1,0 +1,219 @@
+{
+  "tim-hortons": {
+    "name": "Tim Hortons",
+    "logo": "images/brands/tim.png",
+    "merchant_id": "x",
+    "cafe_vendor_id": "y",
+    "address": "100 W 49th Ave 1st Floor, Vancouver, BC V5Y 2Z6",
+    "cafe_primary_colour": "red",
+    "cafe_secondary_colour": "white",
+    "working_hours": {
+      "monday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "tuesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "wednesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "thursday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "friday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "saturday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "sunday": {
+        "start": "7:30",
+        "end": "16:00"
+      }
+    },
+    "menus": {
+      "picker_7407": {
+        "name": "Coffee",
+        "id": "picker_7407",
+        "type": "picker",
+        "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/65c9e54048c121b6f25ba4de6ed6a632437bab81-1024x1024.png",
+        "menuitems": {
+          "picker_7407": {
+            "name": "Coffee",
+            "id": "picker_7407",
+            "type": "picker",
+            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/65c9e54048c121b6f25ba4de6ed6a632437bab81-1024x1024.png"
+          },
+          "section_7410": {
+            "name": "Hot Beverages",
+            "id": "section_7410",
+            "type": "section",
+            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/740c969a67ac6a502515424219122abc1c91e0e4-1024x1024.png"
+          },
+          "section_7413": {
+            "name": "Cold Beverages",
+            "id": "section_7413",
+            "type": "section",
+            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/e31ab19b9ddfd2f474f43bcaf2928ef90334839b-1024x1024.png"
+          },
+          "O7nuAB96T6T04xZ6RfB9wq": {
+            "name": "Breakfast",
+            "id": "O7nuAB96T6T04xZ6RfB9wq",
+            "type": "section",
+            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/8e6c849e64bc759843982186c802b3ded3be1399-1024x1024.png"
+          },
+          "Q33jLknAUxE06eVnrA1You": {
+            "name": "Lunch",
+            "id": "Q33jLknAUxE06eVnrA1You",
+            "type": "section",
+            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/2fe80d82c9a905c5787c7f3ee281932498efb392-1024x1024.png"
+          },
+          "section_7411": {
+            "name": "Donuts & Timbits",
+            "id": "section_7411",
+            "type": "section",
+            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/09716c5424d023cfa428542572669763088afc01-1024x1024.png"
+          },
+          "section_7414": {
+            "name": "Baked Goods",
+            "id": "section_7414",
+            "type": "section",
+            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/1c3958ccf1425537d81f3c426ca28d796de3e14c-1500x1000.png"
+          },
+          "section_7412": {
+            "name": "Bagels",
+            "id": "section_7412",
+            "type": "section",
+            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/55a5ee3b155a209f441f833690a722bb9194c081-1024x1024.png"
+          }
+        }
+      },
+      "section_7410": {
+        "name": "Hot Beverages",
+        "id": "section_7410",
+        "type": "section",
+        "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/740c969a67ac6a502515424219122abc1c91e0e4-1024x1024.png"
+      },
+      "section_7413": {
+        "name": "Cold Beverages",
+        "id": "section_7413",
+        "type": "section",
+        "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/e31ab19b9ddfd2f474f43bcaf2928ef90334839b-1024x1024.png"
+      },
+      "O7nuAB96T6T04xZ6RfB9wq": {
+        "name": "Breakfast",
+        "id": "O7nuAB96T6T04xZ6RfB9wq",
+        "type": "section",
+        "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/8e6c849e64bc759843982186c802b3ded3be1399-1024x1024.png"
+      },
+      "Q33jLknAUxE06eVnrA1You": {
+        "name": "Lunch",
+        "id": "Q33jLknAUxE06eVnrA1You",
+        "type": "section",
+        "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/2fe80d82c9a905c5787c7f3ee281932498efb392-1024x1024.png"
+      },
+      "section_7411": {
+        "name": "Donuts & Timbits",
+        "id": "section_7411",
+        "type": "section",
+        "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/09716c5424d023cfa428542572669763088afc01-1024x1024.png"
+      },
+      "section_7414": {
+        "name": "Baked Goods",
+        "id": "section_7414",
+        "type": "section",
+        "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/1c3958ccf1425537d81f3c426ca28d796de3e14c-1500x1000.png"
+      },
+      "section_7412": {
+        "name": "Bagels",
+        "id": "section_7412",
+        "type": "section",
+        "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/55a5ee3b155a209f441f833690a722bb9194c081-1024x1024.png"
+      }
+    }
+  },
+  "starbucks": {
+    "name": "Starbucks",
+    "logo": "images/brands/starbucks.png",
+    "merchant_id": "x",
+    "cafe_vendor_id": "y",
+    "address": "100 W 49th Ave 1st Floor, Vancouver, BC V5Y 2Z6",
+    "cafe_primary_colour": "green",
+    "cafe_secondary_colour": "white",
+    "working_hours": {
+      "monday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "tuesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "wednesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "thursday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "friday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "saturday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "sunday": {
+        "start": "7:30",
+        "end": "16:00"
+      }
+    }
+  },
+  "subway": {
+    "name": "Subway",
+    "logo": "images/brands/subway.png",
+    "merchant_id": "x",
+    "cafe_vendor_id": "y",
+    "address": "Cafeteria Langara College, Science Building, 170 W 49th Ave, Vancouver, BC V5Y 2Z6",
+    "cafe_primary_colour": "green",
+    "cafe_secondary_colour": "yellow",
+    "working_hours": {
+      "monday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "tuesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "wednesday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "thursday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "friday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "saturday": {
+        "start": "7:30",
+        "end": "16:00"
+      },
+      "sunday": {
+        "start": "7:30",
+        "end": "16:00"
+      }
+    }
+  }
+}

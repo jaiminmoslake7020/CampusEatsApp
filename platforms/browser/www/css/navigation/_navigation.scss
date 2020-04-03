@@ -1,0 +1,86 @@
+.app-nav{
+  width: 100%;
+  display: block;
+  overflow-x: hidden;
+
+  &.active-menu{
+    .menu{
+      left: 0;
+    }
+  }
+
+  .menu{
+    width: 350px;
+    position: absolute;
+    z-index: 1000;
+    left: -350px;
+    padding: 15px;
+    box-sizing: border-box;
+    top:0;
+    bottom: 0;
+    height: 100vh;
+    background-color: $color__primary;
+    color: white;
+    transition:left 1s linear ;
+  }
+
+  .page{
+    display: flex;
+    flex: 0 0 100%;
+    flex-flow: row wrap;
+
+    .hamburger-menu{
+      padding:15px;
+    }
+
+  }
+
+  .header-div{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    flex: 0 0 100%;
+
+
+    .toolbar{
+      flex-grow: 1;
+      max-height: 50px;
+      display: flex;
+
+      .buttons{
+        flex-shrink: 1;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        display: flex;
+      }
+
+      .title{
+        display: flex;
+        flex-grow: 1;
+        max-height: 50px;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+
+        .logo-container{
+          padding: 3px;
+          box-sizing: border-box;
+
+
+          img{
+            width: auto;
+            height: 44px;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

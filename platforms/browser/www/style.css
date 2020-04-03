@@ -1,0 +1,289 @@
+/*
+  RESET ==============================
+  JAIMIN
+
+/usr/local/bin/sass /Applications/MAMP/htdocs/CampusEatsMobileApp/www/css/style.scss /Applications/MAMP/htdocs/CampusEatsMobileApp/www/css/style.css
+/usr/local/bin/sass /Applications/MAMP/htdocs/CampusEatsMobileApp/www/css/style.scss /Applications/MAMP/htdocs/CampusEatsMobileApp/www/css/style.css
+
+*/
+/* variables ======================= */
+/* layout ======================= */
+/* HEEADER ============ */
+/* MAIN CONTENT ============ */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.spalsh-screen-image {
+  background-image: url("images/splash.png");
+  width: 100%;
+  min-height: 100vh;
+}
+
+#firebaseui-auth-container {
+  padding-top: 100vh;
+  opacity: 0.7;
+  transition: all 1.5s linear;
+}
+
+#firebaseui-auth-container.active {
+  padding-top: 45vh;
+  opacity: 1;
+}
+
+@media screen and (min-width: 380px) {
+  #app-container {
+    border: 1px solid #eee;
+    margin: auto;
+    overflow-x: hidden;
+  }
+}
+.screen-content {
+  background: #FFF9EC;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+/* MAIN CONTENT ============ */
+.brand-logos.ion-color.ion-color-light {
+  height: 150px;
+  margin: auto auto 30px auto;
+  width: 75%;
+}
+
+.menu-btn.ion-color.ion-color-light {
+  height: 120px;
+  margin: 20px;
+  width: 35%;
+  display: inline-block;
+  position: relative;
+}
+
+.menu-btn-container {
+  margin: 10px auto;
+  padding: 0 5px 50px 5px;
+  background: white;
+  position: relative;
+  width: fit-content;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.menu-btn-container img {
+  max-width: 80px;
+}
+
+.menu-label {
+  color: #f15a24;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+  text-transform: capitalize;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: auto;
+}
+
+button.button-native {
+  border-radius: 20px;
+}
+
+.brand-logos {
+  border-radius: 15px;
+}
+
+.menu-btn {
+  border-radius: 15px;
+  margin: 0 20px;
+  display: inline-block;
+}
+
+.menu-screen-content {
+  text-align: center;
+}
+
+.hamburger-menu {
+  color: #f15a24;
+}
+
+/* MAIN CONTENT ============ */
+body .loadingBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -10000;
+}
+body .loadingBar.active {
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1000;
+}
+body .loadingBar .loadingBar-content {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  color: #333;
+}
+body .loadingBar .loadingBar-content .loadingBar-icon {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 15px;
+}
+body .loadingBar .loadingBar-content .loadingBar-text {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 15px;
+}
+
+/* MAIN CONTENT ============ */
+/* MAIN CONTENT ============ */
+/* MAIN CONTENT ============ */
+.button.brand-logos {
+  max-width: 200px;
+  display: block;
+  margin: 40px auto;
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 15px;
+}
+.button.brand-logos .brand-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.button.brand-logos .brand-container img {
+  width: auto;
+  max-width: 170px;
+  height: 50px;
+}
+
+/* MAIN CONTENT ============ */
+/* typography ======================= */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.fsDefault {
+  font-size: 300px;
+}
+
+.fsBolder {
+  font-size: 400px;
+}
+
+.fsBold {
+  font-size: 500px;
+}
+
+/* Navigation ======================= */
+.app-nav {
+  width: 100%;
+  display: block;
+  overflow-x: hidden;
+}
+.app-nav.active-menu .menu {
+  left: 0;
+}
+.app-nav .menu {
+  width: 350px;
+  position: absolute;
+  z-index: 1000;
+  left: -350px;
+  padding: 15px;
+  box-sizing: border-box;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: #f15a24;
+  color: white;
+  transition: left 1s linear;
+}
+.app-nav .page {
+  display: flex;
+  flex: 0 0 100%;
+  flex-flow: row wrap;
+}
+.app-nav .page .hamburger-menu {
+  padding: 15px;
+}
+.app-nav .header-div {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  flex: 0 0 100%;
+}
+.app-nav .header-div .toolbar {
+  flex-grow: 1;
+  max-height: 50px;
+  display: flex;
+}
+.app-nav .header-div .toolbar .buttons {
+  flex-shrink: 1;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  display: flex;
+}
+.app-nav .header-div .toolbar .title {
+  display: flex;
+  flex-grow: 1;
+  max-height: 50px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.app-nav .header-div .toolbar .title .logo-container {
+  padding: 3px;
+  box-sizing: border-box;
+}
+.app-nav .header-div .toolbar .title .logo-container img {
+  width: auto;
+  height: 44px;
+}
+
+/* forms ======================= */
+/* media ======================= */
+
+/*# sourceMappingURL=style.css.map */
