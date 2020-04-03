@@ -10,10 +10,10 @@ class ViewComponent extends BaseComponent{
 
         consoleAlert( 'Viewe Component Loaded');
 
-        if( true ){
+        if( false ){
             // just for testing purpose
-            this.showMenusScreen('tim-hortons');
-            //this.showHomeScreen();
+            //this.showMenusScreen('tim-hortons');
+            this.showHomeScreen();
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
                 consoleAlert( 'showLoginScreen' );
