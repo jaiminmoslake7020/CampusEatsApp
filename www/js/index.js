@@ -53,5 +53,6 @@ window.addEventListener('load',function () {
     campusEats = new CampusEats();
     campusEats.init();
 
+
 });
 

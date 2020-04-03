@@ -22,6 +22,17 @@
     background-color: $color__primary;
     color: white;
     transition:left 1s linear ;
+
+      a {
+        text-decoration: none;
+        color: $color__bgprimary;
+      }
+
+      .panel-default>.panel-heading {
+        color: red;
+      }
+
+
   }
 
   .page{
