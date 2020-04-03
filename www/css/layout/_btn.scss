@@ -2,13 +2,13 @@
 
 }
 
-.brand-logos.ion-color.ion-color-light{
+.brand-logos.ion-color.ion-color-light {
   height: 150px;
   margin: auto auto 30px auto;
   width: 75%;
 }
 
-.menu-btn.ion-color.ion-color-light{
+.menu-btn.ion-color.ion-color-light {
   height: 120px;
   margin: 20px;
   width: 35%;
@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.menu-btn-container{
+.menu-btn-container {
   margin: 10px auto;
   padding: 10px;
   background: transparent;
@@ -26,11 +26,11 @@
   border-radius: 10px;
 }
 
-.menu-btn-container img{
+.menu-btn-container img {
   max-width: 80px;
 }
 
-.menu-label{
+.menu-label {
   color: $color__primary;
   width: 100%;
   left: 0;
@@ -39,74 +39,122 @@
   overflow-wrap: break-word;
   overflow: auto;
   text-align: center;
+  font-size: 16px;
 }
 
-button.button-native{
+button.button-native {
   border-radius: 20px;
 }
 
-.brand-logos{
+.brand-logos {
   border-radius: 15px;
 }
 
-.menu-btn{
+.menu-btn {
   border-radius: 15px;
   display: inline-block;
 }
 
-.defult-btn{
+.defult-btn {
   border-radius: 15px;
-  display: inline-block;
-  width: 40%;
+  display: block;
   text-align: center;
   box-sizing: border-box;
+  border: 0 solid #e6e6e6;
+  margin: 10px auto;
+  width: 150px;
+  height: 150px;
+
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.15), 0 4px 5px rgba(0, 0, 0, 0.15), 0 8px 5px rgba(0, 0, 0, 0.15);
 }
 
-.screen-content{
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  flex-flow: row wrap;
-  width: fit-content;
+.screen-content {
+  width: 100%;
   margin: auto;
 }
 
-.hamburger-menu{
+.hamburger-menu {
   color: $color__primary;
 }
 
-.back-button{
+.app-nav {
+  &.active-menu {
+    .menu {
+      .hamburger-menu {
+        color: $color__white;
+      }
+
+      .title-icon {
+        width: 40%;
+        margin: 20px auto;
+      }
+
+
+    }
+  }
+}
+
+.back-button {
   padding: 15px;
   color: $color__primary;
 }
 
-.dnone{
+.home-button {
+  padding: 15px;
+  color: $color__primary;
+}
+
+.dnone {
   display: none;
 }
 
-#home-screen{
-  .hamburger-menu{
+#home-screen {
+  .hamburger-menu {
     display: block;
   }
 
-  .back-button{
+  .back-button {
+    display: none;
+  }
+
+  .home-button {
     display: none;
   }
 }
 
-#menu-item-screen, #menu-screen{
-  .hamburger-menu{
+#menu-item-screen, #menu-screen {
+  .hamburger-menu {
     display: none;
   }
 
-  .back-button{
+  .back-button {
+    display: block;
+  }
+
+  .home-button {
+    display: none;
+  }
+}
+
+#faq-screen, #feedback-screen, #editInfo-screen , #privacyPolicys-screen {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .back-button {
+    display: none;
+  }
+
+  .home-button {
     display: block;
   }
 }
 
-.img-wrapper{
-  img{
+.img-wrapper {
+  img {
     display: block;
     margin: auto;
   }
 }
+
+

@@ -10,7 +10,7 @@ class ViewComponent extends BaseComponent{
 
         consoleAlert( 'Viewe Component Loaded');
 
-        if( false ){
+        if( true ){
             // just for testing purpose
             this.showMenusScreen('tim-hortons');
             //this.showHomeScreen();
@@ -77,6 +77,8 @@ class ViewComponent extends BaseComponent{
             let template = '<div id="screen-container"><div class="screen"  id="home-screen"></div></div>';
             selfObject.replaceAppScreen( template );
             document.getElementById('home-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            document.getElementById('ion-content').classList.add('home-screen-content');
+            selfObject.addUserDetails();
             consoleAlert( "NavMenu" );
             resolve();
 
@@ -121,8 +123,9 @@ class ViewComponent extends BaseComponent{
             let template = '<div id="screen-container"><div class="screen"  id="menu-screen"></div></div>' ;
             selfObject.replaceAppScreen( template );
             document.getElementById('menu-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
-            document.getElementById('ion-content').classList.remove('home-screen');
+            document.getElementById('ion-content').classList.remove('home-screen-content');
             document.getElementById('ion-content').classList.add('menu-screen-content');
+            selfObject.addUserDetails();
             resolve();
 
         }).then(function () {
@@ -166,6 +169,7 @@ class ViewComponent extends BaseComponent{
             document.getElementById('menu-item-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
             document.getElementById('ion-content').classList.remove('menu-screen-content');
             document.getElementById('ion-content').classList.add('menu-items-screen-content');
+            selfObject.addUserDetails();
             resolve();
 
         }).then(function () {
@@ -204,10 +208,8 @@ class ViewComponent extends BaseComponent{
     getParentElement( template ){
         let templateParentArray = {
             'ion-button' : 'ion-content',
-            'ion-tab-button' :'ion-tab-bar' ,
             'ion-menu-button' :'ion-content' ,
             'ion-menu-item-button' :'ion-content' ,
-            'ion-tab' :'menu-tabs'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
@@ -227,7 +229,7 @@ class ViewComponent extends BaseComponent{
             if( templateString.indexOf( findIn ) !== -1 ){
                 templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
             }
-            console.log( data.name , 'Added' );
+            //console.log( data.name , 'Added' );
         }
         this.getParentElement( template ).innerHTML +=  templateString;
     }
@@ -266,8 +268,76 @@ class ViewComponent extends BaseComponent{
 
     }
 
+    showRenderScreen( id ){
+        let selfObject = this;
+        new Promise(function (resolve, reject) {
+            let template = '<div id="screen-container"><div class="screen"  id="'+id+'-screen"></div></div>' ;
+            selfObject.replaceAppScreen( template );
+            document.getElementById(''+id+'-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+
+            document.getElementById('ion-content').classList.remove('home-screen-content');
+            document.getElementById('ion-content').classList.remove('menu-screen-content');
+            document.getElementById('ion-content').classList.remove('menu-items-screen-content');
+
+            document.getElementById('ion-content').classList.add(id+'-screen-content');
+
+            document.getElementById('ion-content').innerHTML = $('#'+id).html();
+
+            setTimeout(function () {
+                document.getElementById('ion-content').classList.add('active');
+            },200);
+
+            resolve();
+        }).then(function () {
+            selfObject.addUserDetails( id );
+        }).catch(function () {
+            selfObject.globalCatch( reason );
+        });
+    }
+
+    showFeedbackForm(){
+
+    }
+
+    showOrderHistory(){
+
+    }
+
+    showPaymentMethod(){
+
+    }
+
     addBackButton(){
 
+    }
+
+    addUserDetails( id = null ){
+
+        console.trace();
+
+        let authResult = localStorage.getItem('authResult');
+        let authResultObject = JSON.parse(authResult);
+        $('.user-info-box').find('.title').find('span').html( authResultObject.user.displayName );
+        if( authResultObject.user.photoURL != null ){
+            $('.user-info-box').find('.title-icon').html( '<img src="'+authResultObject.user.photoURL+'"  class=" img-responsive img-circle " alt=" '+authResultObject.user.displayName+' "  />' );
+        }
+
+        if( id === 'editInfo' ){
+            let templateString = document.querySelector('.editInfo-screen-content').innerHTML;
+            let data = authResultObject.user;
+            for( let key in data ){
+                let findIn = '{{'+key+'}}';
+                let value = data[key];
+                if( templateString.indexOf( findIn ) !== -1 ){
+                    if( value == null ){
+                        value = "" ;
+                    }
+                    templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
+                }
+                //console.log( data.name , 'Added' );
+            }
+            document.querySelector('.editInfo-screen-content').innerHTML = templateString;
+        }
     }
 
 }

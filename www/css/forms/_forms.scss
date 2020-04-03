@@ -1,6 +1,6 @@
 
 .edit-info-form {
-  max-width: 70%;
+  max-width: 95%;
   margin: auto;
 }
 .edit-info .title-icon .fa-user {
@@ -26,19 +26,23 @@
 .btn-default {
   background-color: $color__secondary;
   color: $color__bgprimary;
-  width: 300px;
   margin-top: 1rem;
   justify-content: center;
 }
 
 .feedback-form {
-  max-width: 70%;
+  max-width: 95%;
   margin: auto;
 }
 textarea.form-control {
-  height: 300px;
+  height: 200px;
 }
 
 .feedback-form label {
   font-size: 2rem;
+}
+
+.app-nav .page .title-icon {
+  width: 40%;
+  margin: 20px auto;
 }

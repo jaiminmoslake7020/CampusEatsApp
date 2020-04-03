@@ -18,7 +18,7 @@
     box-sizing: border-box;
     top:0;
     bottom: 0;
-    height: 100vh;
+    min-height: 100vh;
     background-color: $color__primary;
     color: white;
     transition:left 1s linear ;
@@ -40,7 +40,6 @@
     text-align: center;
 
     .panel-heading {
-
       background-color: $color__primary;
     }
     .panel-title a {
@@ -102,7 +101,7 @@
         .logo-container{
           padding: 3px;
           box-sizing: border-box;
-
+          margin-left: -30px;
 
           img{
             width: auto;

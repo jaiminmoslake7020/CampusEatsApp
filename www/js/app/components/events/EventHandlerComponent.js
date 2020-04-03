@@ -9,6 +9,12 @@ class EventHandlerComponent extends BaseComponent{
 
     }
 
+    addGoToHomeEvent(){
+        $('body').on('click','.home-button',function () {
+            (new ViewComponent()).showHomeScreen();
+        });
+    }
+
     homeScreenEvents(){
         let selfObject = this;
         this.startLazyLoad();
@@ -76,33 +82,13 @@ class EventHandlerComponent extends BaseComponent{
     }
 
     alert( header , subHeader , message , buttons ){
-        const alert = document.createElement('ion-alert');
-        if( header != null ){
-            alert.header = header;
-        }else{
-            alert.header = 'Alert';
-        }
-        if( subHeader != null ){
-            alert.subHeader = subHeader;
-        }else{
-            alert.subHeader = 'Subtitle';
-        }
-        if( message != null ){
-            alert.message = message;
-        }else{
-            alert.message = 'This is an alert message.';
-        }
-        if( buttons != null ){
-            alert.buttons = buttons;
-        }else{
-            alert.buttons = ['OK'];
-        }
-        document.body.appendChild(alert);
-        return alert.present();
+        // add botstrap alert
     }
 
     addHamburgerMenuEvent(){
-        document.querySelector('.menu-button.hamburger-menu').addEventListener('click',function () {
+        let selfObject = this ;
+
+        $('.menu-button.hamburger-menu').on('click',function () {
             (new NavBar()).toggle();
         });
         document.querySelector('body').addEventListener('click',function ( e ) {
@@ -117,6 +103,16 @@ class EventHandlerComponent extends BaseComponent{
                 }
             }
         });
+
+        $('body').on('click','.renderOnly',function (e) {
+            e.preventDefault();
+            let href = $(this).attr('href');
+            href = href.replace('#','');
+            (new ViewComponent()).showRenderScreen( href );
+            selfObject.addGoToHomeEvent();
+            selfObject.addHamburgerMenuEvent();
+        });
+
     }
 
     addBackButtonEvent(){
@@ -154,13 +150,13 @@ class EventHandlerComponent extends BaseComponent{
     }
 
     addDataOnScroll(){
-
-        $(window).scroll(function() {
-            if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-                console.log('hit bottom');
-                (new ViewComponent()).addMenuitems();
-            }
-        });
+        //
+        // $(window).scroll(function() {
+        //     if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+        //         console.log('hit bottom');
+        //         (new ViewComponent()).addMenuitems();
+        //     }
+        // });
 
     }
 

@@ -123,7 +123,7 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
 
         this._entityClass = null ;
 
-        this._limit = 20 ;
+        this._limit = 50 ;
         this._limitOffset = 0 ;
 
         this._order = 0 ;
