@@ -1,0 +1,46 @@
+
+
+.list-group-item {
+  background: transparent !important;
+  border: transparent;
+  border-bottom: 2px solid $color__bgprimary !important;
+}
+.list-group-item a {
+  color: $color__bgprimary;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.list-group-item a i {
+  font-size: 2rem;
+  padding: 1rem;
+}
+.item a{
+  border-bottom: none !important;
+  padding: 1rem !important;
+  color: $color__bgprimary;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.list-group {
+  margin-top: 5rem;
+}
+.fa-user {
+  font-size: 7rem;
+  border: 2px solid $color__bgprimary;
+  padding: 2rem;
+  border-radius: 50%;
+}
+.fa-pencil-alt {
+  padding: 0.8rem;
+}
+
+.toolbar .title {
+  font-size: 2rem;
+}
+
+.sidebar-title-wrapper {
+  text-align: center;
+}
+.fa-pencil-alt{
+  color: $color__bgprimary;
+}
