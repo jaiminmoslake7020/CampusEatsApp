@@ -1,0 +1,44 @@
+
+.edit-info-form {
+  max-width: 70%;
+  margin: auto;
+}
+.edit-info .title-icon .fa-user {
+  border: 2px solid $color__primary;
+  color: $color__primary;
+  text-align: center;
+}
+.title-icon {
+  text-align: center;
+}
+.edit-info .title {
+  color: $color__primary;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: $color__secondary !important;
+}
+.edit-info-button {
+  text-align: center;
+}
+
+.btn-default {
+  background-color: $color__secondary;
+  color: $color__bgprimary;
+  width: 300px;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.feedback-form {
+  max-width: 70%;
+  margin: auto;
+}
+textarea.form-control {
+  height: 300px;
+}
+
+.feedback-form label {
+  font-size: 2rem;
+}

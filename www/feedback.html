@@ -11,6 +11,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
     <script src="https://kit.fontawesome.com/9910dcf2f6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
 
@@ -49,12 +50,8 @@
             <div class="menu" data-side="start" data-menu-id="first" data-content-id="main">
                 <div class="header">
                     <div class="toolbar" data-color="primary">
-                        <div class="sidebar-title-wrapper">
-                            <div class="title-icon">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="title">John Doe<a href="edit-info.html" ><i class="fas fa-pencil-alt"></i></a></div>
-                        </div>
+                        <div class="title-icon"></div>
+                        <div class="title">John Doe</div>
                     </div>
                 </div>
                 <div class="content">
@@ -65,13 +62,6 @@
                         <li class="list-group-item"><a href="feedback.html"><i class="far fa-comments"></i>Submit feedback</a></li>
                         <li class="list-group-item"><a href="#"><i class="far fa-address-card"></i>About Us</a></li>
                     </ul>
-<!--                    <div class="list">-->
-<!--                        <div class="item"><a><i class="fas fa-history"></i>Order History</a></div>-->
-<!--                        <div class="item"><a>Payment Method</a></div>-->
-<!--                        <div class="item"><a href="faq.html">FAQ's</a></div>-->
-<!--                        <div class="item"><a>Submit feedback</a></div>-->
-<!--                        <div class="item"><a>About Us</a></div>-->
-<!--                    </div>-->
                     <div class="item"><a href="policy-page.html">Terms and conditions</a></div>
                 </div>
                 <div id="jaimin" ></div>
@@ -92,9 +82,13 @@
                     </div>
                 </div>
                 <div class="content ion-padding screen-content " id="ion-content" >
-
-
-
+                    <div class="feedback-form">
+                        <div>
+                            <label for="exampleFormControlTextarea1">Write your experience with us</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <input class="btn btn-default" type="submit" value="Submit">
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,13 +96,13 @@
     </template>
 
     <template id="ion-button">
-        <div class=" button brand-logos large light block round"
-             data-name="{{name}}" data-id="{{primaryKey}}"
-        >
-            <div class="brand-container">
-                <img src="{{logo}}" alt="{{name}}" />
-            </div>
-        </div>
+<!--        <div class=" button brand-logos large light block round"-->
+<!--             data-name="{{name}}" data-id="{{primaryKey}}"-->
+<!--        >-->
+<!--            <div class="brand-container">-->
+<!--                <img src="{{logo}}" alt="{{name}}" />-->
+<!--            </div>-->
+<!--        </div>-->
     </template>
 
 

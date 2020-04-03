@@ -23,16 +23,38 @@
     color: white;
     transition:left 1s linear ;
 
-      a {
-        text-decoration: none;
-        color: $color__bgprimary;
-      }
 
+      .panel-heading a{
+        background-color: #4caf50;
+        display: block;
+      }
+      .panel-body::before {
+        color: red;
+      }
       .panel-default>.panel-heading {
         color: red;
       }
 
+  }
+  .panel-group {
+    text-align: center;
 
+    .panel-heading {
+
+      background-color: $color__primary;
+    }
+    .panel-title a {
+      color: white;
+    }
+    .panel-heading{
+      border: 1px solid white;
+    }
+    .panel-body {
+      font-weight: bold;
+    }
+    .panel-heading:hover {
+      background-color: $color__secondary;
+    }
   }
 
   .page{

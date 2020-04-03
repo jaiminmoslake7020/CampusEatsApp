@@ -57,6 +57,10 @@ body {
   padding-top: 20px;
 }
 
+.policy-content {
+  padding: 1.6rem;
+}
+
 /* MAIN CONTENT ============ */
 .brand-logos.ion-color.ion-color-light {
   height: 150px;
@@ -238,12 +242,33 @@ body {
   color: white;
   transition: left 1s linear;
 }
-.app-nav .menu a {
-  text-decoration: none;
-  color: #ffffff;
+.app-nav .menu .panel-heading a {
+  background-color: #4caf50;
+  display: block;
+}
+.app-nav .menu .panel-body::before {
+  color: red;
 }
 .app-nav .menu .panel-default > .panel-heading {
   color: red;
+}
+.app-nav .panel-group {
+  text-align: center;
+}
+.app-nav .panel-group .panel-heading {
+  background-color: #f15a24;
+}
+.app-nav .panel-group .panel-title a {
+  color: white;
+}
+.app-nav .panel-group .panel-heading {
+  border: 1px solid white;
+}
+.app-nav .panel-group .panel-body {
+  font-weight: bold;
+}
+.app-nav .panel-group .panel-heading:hover {
+  background-color: #009245;
 }
 .app-nav .page {
   display: flex;
@@ -290,7 +315,109 @@ body {
   height: 44px;
 }
 
+/* sidebar ======================= */
+.list-group-item {
+  background: transparent !important;
+  border: transparent;
+  border-bottom: 2px solid #ffffff !important;
+}
+
+.list-group-item a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.list-group-item a i {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.item a {
+  border-bottom: none !important;
+  padding: 1rem !important;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.list-group {
+  margin-top: 5rem;
+}
+
+.fa-user {
+  font-size: 7rem;
+  border: 2px solid #ffffff;
+  padding: 2rem;
+  border-radius: 50%;
+}
+
+.fa-pencil-alt {
+  padding: 0.8rem;
+}
+
+.toolbar .title {
+  font-size: 2rem;
+}
+
+.sidebar-title-wrapper {
+  text-align: center;
+}
+
+.fa-pencil-alt {
+  color: #ffffff;
+}
+
 /* forms ======================= */
+.edit-info-form {
+  max-width: 70%;
+  margin: auto;
+}
+
+.edit-info .title-icon .fa-user {
+  border: 2px solid #f15a24;
+  color: #f15a24;
+  text-align: center;
+}
+
+.title-icon {
+  text-align: center;
+}
+
+.edit-info .title {
+  color: #f15a24;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #009245 !important;
+}
+
+.edit-info-button {
+  text-align: center;
+}
+
+.btn-default {
+  background-color: #009245;
+  color: #ffffff;
+  width: 300px;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.feedback-form {
+  max-width: 70%;
+  margin: auto;
+}
+
+textarea.form-control {
+  height: 300px;
+}
+
+.feedback-form label {
+  font-size: 2rem;
+}
+
 /* media ======================= */
 
 /*# sourceMappingURL=style.css.map */
