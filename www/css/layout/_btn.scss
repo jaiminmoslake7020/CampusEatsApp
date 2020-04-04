@@ -24,7 +24,10 @@
   width: fit-content;
   display: inline-block;
   border-radius: 10px;
+  max-width: 150px;
 }
+
+
 
 .menu-btn-container img {
   max-width: 80px;
@@ -32,8 +35,6 @@
 
 .menu-label {
   color: $color__primary;
-  width: 100%;
-  left: 0;
   text-transform: capitalize;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -68,6 +69,11 @@ button.button-native {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.15), 0 4px 5px rgba(0, 0, 0, 0.15), 0 8px 5px rgba(0, 0, 0, 0.15);
 }
 
+.menu-item-btn.defult-btn{
+  width: 150px;
+  height: 200px;
+}
+
 .screen-content {
   width: 100%;
   margin: auto;
@@ -79,19 +85,20 @@ button.button-native {
 
 .app-nav {
   &.active-menu {
-    .menu {
-      .hamburger-menu {
-        color: $color__white;
-      }
-
-      .title-icon {
-        width: 40%;
-        margin: 20px auto;
-      }
-
-
-    }
   }
+  .menu {
+    .hamburger-menu {
+      color: $color__white;
+    }
+
+    .title-icon {
+      width: 40%;
+      margin: 20px auto;
+    }
+
+
+  }
+
 }
 
 .back-button {
@@ -136,7 +143,7 @@ button.button-native {
   }
 }
 
-#faq-screen, #feedback-screen, #editInfo-screen , #privacyPolicys-screen {
+#faq-screen, #feedback-screen, #editInfo-screen , #privacyPolicys-screen, #cafeLocations-screen {
   .hamburger-menu {
     display: block;
   }

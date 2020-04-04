@@ -5923,6 +5923,7 @@ body {
   width: fit-content;
   display: inline-block;
   border-radius: 10px;
+  max-width: 150px;
 }
 
 .menu-btn-container img {
@@ -5931,8 +5932,6 @@ body {
 
 .menu-label {
   color: #f15a24;
-  width: 100%;
-  left: 0;
   text-transform: capitalize;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -5966,6 +5965,11 @@ button.button-native {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.15), 0 4px 5px rgba(0, 0, 0, 0.15), 0 8px 5px rgba(0, 0, 0, 0.15);
 }
 
+.menu-item-btn.defult-btn {
+  width: 150px;
+  height: 200px;
+}
+
 .screen-content {
   width: 100%;
   margin: auto;
@@ -5975,10 +5979,10 @@ button.button-native {
   color: #f15a24;
 }
 
-.app-nav.active-menu .menu .hamburger-menu {
+.app-nav .menu .hamburger-menu {
   color: #fff;
 }
-.app-nav.active-menu .menu .title-icon {
+.app-nav .menu .title-icon {
   width: 40%;
   margin: 20px auto;
 }
@@ -6017,13 +6021,13 @@ button.button-native {
   display: none;
 }
 
-#faq-screen .hamburger-menu, #feedback-screen .hamburger-menu, #editInfo-screen .hamburger-menu, #privacyPolicys-screen .hamburger-menu {
+#faq-screen .hamburger-menu, #feedback-screen .hamburger-menu, #editInfo-screen .hamburger-menu, #privacyPolicys-screen .hamburger-menu, #cafeLocations-screen .hamburger-menu {
   display: block;
 }
-#faq-screen .back-button, #feedback-screen .back-button, #editInfo-screen .back-button, #privacyPolicys-screen .back-button {
+#faq-screen .back-button, #feedback-screen .back-button, #editInfo-screen .back-button, #privacyPolicys-screen .back-button, #cafeLocations-screen .back-button {
   display: none;
 }
-#faq-screen .home-button, #feedback-screen .home-button, #editInfo-screen .home-button, #privacyPolicys-screen .home-button {
+#faq-screen .home-button, #feedback-screen .home-button, #editInfo-screen .home-button, #privacyPolicys-screen .home-button, #cafeLocations-screen .home-button {
   display: block;
 }
 

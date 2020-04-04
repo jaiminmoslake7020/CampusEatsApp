@@ -10,10 +10,11 @@ class ViewComponent extends BaseComponent{
 
         consoleAlert( 'Viewe Component Loaded');
 
-        if( false ){
+        if( true ){
             // just for testing purpose
-            //this.showMenusScreen('tim-hortons');
-            this.showHomeScreen();
+            this.showMenusScreen('tim-hortons');
+            //this.showHomeScreen();
+            //this.showRenderScreen('cafeLocations');
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
                 consoleAlert( 'showLoginScreen' );
@@ -125,6 +126,9 @@ class ViewComponent extends BaseComponent{
             document.getElementById('menu-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
             document.getElementById('ion-content').classList.remove('home-screen-content');
             document.getElementById('ion-content').classList.add('menu-screen-content');
+
+            document.getElementById('ion-content').innerHTML = '' ;
+
             selfObject.addUserDetails();
             resolve();
 
@@ -208,6 +212,7 @@ class ViewComponent extends BaseComponent{
     getParentElement( template ){
         let templateParentArray = {
             'ion-button' : 'ion-content',
+            'cafe-heading' : 'ion-content',
             'ion-menu-button' :'ion-content' ,
             'ion-menu-item-button' :'ion-content' ,
         } ;
@@ -289,7 +294,11 @@ class ViewComponent extends BaseComponent{
 
             resolve();
         }).then(function () {
-            selfObject.addUserDetails( id );
+            selfObject.addUserDetails(  );
+            if( id === "cafeLocations" ){
+                selfObject.showAllCafeLocations();
+            }
+            selfObject.getAppClassManager().getEventHandlerComponent().stopLoading();
         }).catch(function () {
             selfObject.globalCatch( reason );
         });
@@ -339,5 +348,141 @@ class ViewComponent extends BaseComponent{
             document.querySelector('.editInfo-screen-content').innerHTML = templateString;
         }
     }
+
+    initMap( position ){
+        var directionsService = new google.maps.DirectionsService();
+        var directionsRenderer = new google.maps.DirectionsRenderer();
+        let LangaraPos = {lat:49.224604 , lng: -123.1117564 } ;
+
+        console.log('Latitude: '          + position.coords.latitude          + '\n' +
+            'Longitude: '         + position.coords.longitude         + '\n' +
+            'Altitude: '          + position.coords.altitude          + '\n' +
+            'Accuracy: '          + position.coords.accuracy          + '\n' +
+            'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+            'Heading: '           + position.coords.heading           + '\n' +
+            'Speed: '             + position.coords.speed             + '\n' +
+            'Timestamp: '         + position.timestamp                + '\n');
+
+        var currentLocation = new google.maps.LatLng( position.coords.latitude  , position.coords.longitude  );
+        var langara = new google.maps.LatLng( LangaraPos.lat , LangaraPos.lng );
+
+        var map;
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: LangaraPos,
+            zoom:16
+        });
+
+        var image = {
+            url: "http://campuseats.wmdd.ca/html-site/CampusEastCmsHtml/small/images/brands/user.png",
+            // This marker is 20 pixels wide by 32 pixels high.
+            size: new google.maps.Size(150, 150),
+            // The origin for this image is (0, 0).
+            origin: new google.maps.Point(0, 0),
+            // The anchor for this image is the base of the flagpole at (0, 32).
+            anchor: new google.maps.Point(0, 0)
+        };
+
+        let marker = new google.maps.Marker({
+            position: currentLocation ,
+            map: map,
+            icon: image,
+            title: 'User Location'
+        });
+
+        let selfObject = new ViewComponent();
+        selfObject.getCafesModel().getAll().then(function ( snapshot ) {
+
+            for( let i = 0 ; i < snapshot.length ; i++ ){
+                let cafe = snapshot[i];
+                let data = cafe.data;
+                console.log( data.position );
+
+                var image = {
+                    url: "http://campuseats.wmdd.ca/html-site/CampusEastCmsHtml/small/"+data.logo,
+                    //url: "http://localhost/CampusEatsMobileApp/www/images/brands/small/subway.png",
+                    // This marker is 20 pixels wide by 32 pixels high.
+                    size: new google.maps.Size(150, 150),
+                    // The origin for this image is (0, 0).
+                    origin: new google.maps.Point(0, 0),
+                    // The anchor for this image is the base of the flagpole at (0, 32).
+                    anchor: new google.maps.Point(0, 0)
+                };
+
+                let marker = new google.maps.Marker({
+                    position: { lat: data.position.lat, lng: data.position.lang } ,
+                    map: map,
+                    icon: image,
+                    title: data.name
+                });
+            }
+
+        }).then(function () {
+            directionsRenderer.setMap(map);
+            var request = {
+                origin: currentLocation,
+                destination: langara,
+                // Note that JavaScript allows us to access the constant
+                // using square brackets and a string value as its
+                // "property."
+                travelMode: 'TRANSIT'
+            };
+            directionsService.route(request, function(response, status) {
+                if (status == 'OK') {
+                    directionsRenderer.setDirections(response);
+                }
+            });
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
+
+    }
+
+    initMapFailed( data ){
+        let LangaraPos = {lat:49.224604 , lng: -123.1117564 } ;
+
+        console.log( data );
+        var map;
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: LangaraPos,
+            zoom:16
+        });
+    }
+
+    showAllCafeLocations(){
+        navigator.geolocation.getCurrentPosition( this.initMap , this.initMapFailed )
+    }
+
+
+    initMap222() {
+        var directionsService = new google.maps.DirectionsService();
+        var directionsRenderer = new google.maps.DirectionsRenderer();
+        var haight = new google.maps.LatLng(37.7699298, -122.4469157);
+        var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
+        var mapOptions = {
+            zoom: 16,
+            center: haight
+        };
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        directionsRenderer.setMap(map);
+    }
+
+    calcRoute() {
+        var selectedMode = document.getElementById('mode').value;
+        var request = {
+            origin: haight,
+            destination: oceanBeach,
+            // Note that JavaScript allows us to access the constant
+            // using square brackets and a string value as its
+            // "property."
+            travelMode: 'TRANSIT'
+        };
+        directionsService.route(request, function(response, status) {
+            if (status == 'OK') {
+                directionsRenderer.setDirections(response);
+            }
+        });
+    }
+
+
 
 }

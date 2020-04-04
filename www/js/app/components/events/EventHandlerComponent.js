@@ -62,6 +62,9 @@ class EventHandlerComponent extends BaseComponent{
     goToMenuPage( event ){
         let brandButton = this;
         let cafe = brandButton.dataset.id;
+
+
+
         localStorage.setItem( 'cafe'  , cafe);
         (new ViewComponent()).showMenusScreen( cafe );
     }
@@ -126,7 +129,7 @@ class EventHandlerComponent extends BaseComponent{
                     break;
                 case "menu-item-screen" :
                     let cafe = localStorage.getItem( 'cafe');
-                    (new ViewComponent()).showMenusScreen( cafe );
+                    (new ViewComponent()).showMenusScreen( cafe.id );
                     break;
             }
         });
