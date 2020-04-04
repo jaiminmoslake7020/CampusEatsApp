@@ -5900,7 +5900,7 @@ body {
   flex-flow: unset;
 }
 
-/* MAIN CONTENT ============ */
+/* BTN CONTENT ============ */
 .brand-logos.ion-color.ion-color-light {
   height: 150px;
   margin: auto auto 30px auto;
@@ -6036,7 +6036,7 @@ button.button-native {
   margin: auto;
 }
 
-/* MAIN CONTENT ============ */
+/* Laodingbar CONTENT ============ */
 body .loadingBar {
   position: fixed;
   top: 0;
@@ -6089,9 +6089,8 @@ body .loadingBar .loadingBar-content .loadingBar-text {
   padding: 15px;
 }
 
-/* MAIN CONTENT ============ */
-/* MAIN CONTENT ============ */
-/* MAIN CONTENT ============ */
+/* LOGIN CONTENT ============ */
+/* HOME CONTENT ============ */
 .button.brand-logos {
   width: fit-content;
   display: block;
@@ -6115,7 +6114,47 @@ body .loadingBar .loadingBar-content .loadingBar-text {
   padding: 10px;
 }
 
-/* MAIN CONTENT ============ */
+/* MENUPAGE CONTENT ============ */
+.cafe-heading-wrapper {
+  padding: 10px;
+  background-color: #FFF9EC;
+  border-top: 1px solid #f15a24;
+  border-bottom: 1px solid #f15a24;
+}
+.cafe-heading-wrapper img {
+  width: 120px;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+.menu-heading {
+  text-align: center;
+  margin-top: 0;
+  color: #f15a24;
+  padding: 10px;
+  background-color: #FFF9EC;
+  border-bottom: 1px solid #f15a24;
+}
+
+.menu-screen-content {
+  padding-top: 0;
+}
+.menu-screen-content #cafe-content {
+  padding-top: 20px;
+}
+
+.menu-items-screen-content {
+  padding-top: 0;
+}
+.menu-items-screen-content #cafe-content {
+  padding-top: 0;
+}
+.menu-items-screen-content #cafe-content #menu-content {
+  padding-top: 20px;
+}
+
+/* MENUITEMS CONTENT ============ */
 /* typography ======================= */
 body {
   font-family: "Roboto", sans-serif;
@@ -6194,14 +6233,14 @@ body {
 }
 .app-nav .header-div {
   display: flex;
-  height: 50px;
+  height: 60px;
   width: 100%;
   flex: 0 0 100%;
   background-color: #FFF9EC;
 }
 .app-nav .header-div .toolbar {
   flex-grow: 1;
-  max-height: 50px;
+  max-height: 60px;
   display: flex;
 }
 .app-nav .header-div .toolbar .buttons {
@@ -6215,7 +6254,7 @@ body {
 .app-nav .header-div .toolbar .title {
   display: flex;
   flex-grow: 1;
-  max-height: 50px;
+  max-height: 60px;
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -6228,7 +6267,7 @@ body {
 }
 .app-nav .header-div .toolbar .title .logo-container img {
   width: auto;
-  height: 44px;
+  height: 56px;
 }
 
 /* sidebar ======================= */

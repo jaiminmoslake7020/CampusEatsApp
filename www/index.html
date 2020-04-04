@@ -120,7 +120,19 @@
     <template id="cafe-heading" >
         <div class="row">
             <div class="col-xs-12">
-                <img class="lazy" src="images/loader.gif" data-src="{{logo}}" alt="{{name}}">
+                <div class="cafe-heading-wrapper" >
+                    <img class="lazy" src="images/loader.gif" data-src="{{logo}}" alt="{{name}}">
+                </div>
+            </div>
+        </div>
+        <div class="row" id="cafe-content" >
+        </div>
+    </template>
+
+    <template id="menu-heading" >
+        <div class="col-xs-12">
+            <h2 class="menu-heading" >{{name}}</h2>
+            <div class="row" id="menu-content" >
             </div>
         </div>
     </template>
@@ -128,13 +140,14 @@
     <template id="ion-menu-button">
         <div class="col-xs-6 default-button-container menu-btn-parent-container ">
             <div class="button menu-btn defult-btn small light block round "
-                 data-name="{{name}}" data-id="{{primaryKey}}"
+                 data-name="{{name}}" data-id="{{primaryKey}}" data-src="{{url}}"
             >
                 <div class="menu-btn-container">
                     <div class=" img-wrapper ">
                         <img class="lazy" src="images/loader.gif" data-src="{{url}}" alt="{{name}}">
                     </div>
                     <label class="label menu-label" >{{name}}</label>
+                    <p class=" customize-info dnone " >{{customizations}}</p>
                 </div>
             </div>
         </div>
@@ -150,6 +163,7 @@
                         <img class="lazy" src="images/loader.gif" data-src="{{url}}" alt="{{name}}">
                     </div>
                     <label class="label menu-label" >{{name}}</label>
+                    <label class="label menu-label" >{{price}}</label>
                 </div>
             </div>
         </div>
@@ -418,7 +432,7 @@
             <div class="col-xs-12">
                 <h3 class="cPrimary ml15 text-center" >Cafe Loacations</h3>
                 <div class="map-container" >
-                    <div id="map" style="width: 100%;height: 90vh;" ></div>
+                    <div id="map" style="width: 100%;height: 80vh;" ></div>
                 </div>
             </div>
         </div>
@@ -469,7 +483,7 @@
     <script type="text/javascript" src="js/index.js"  ></script>
     <!--  APP JS  -->
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC58WAuu4J8nmfBFGjaLeMEKlvGuBZ1xGg"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhDjstWl1ci0pOxVnQOA96DC5UzGs2-c"
             async defer></script>
 
 </body>

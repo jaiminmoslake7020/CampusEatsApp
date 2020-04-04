@@ -1,0 +1,38 @@
+.cafe-heading-wrapper{
+  padding: 10px;
+  background-color: $color__bgsecondary;
+  border-top: 1px solid $color__primary;
+  border-bottom: 1px solid $color__primary;
+  img{
+    width: 120px;
+    height: auto;
+    margin: auto;
+    display: block;
+  }
+}
+
+.menu-heading{
+  text-align: center;
+  margin-top: 0;
+  color: $color__primary;
+  padding: 10px;
+  background-color: $color__bgsecondary;
+  border-bottom: 1px solid $color__primary;
+}
+
+.menu-screen-content{
+  padding-top: 0;
+  #cafe-content{
+    padding-top: 20px;
+  }
+}
+
+.menu-items-screen-content{
+  padding-top: 0;
+  #cafe-content{
+    padding-top: 0;
+    #menu-content{
+      padding-top: 20px;
+    }
+  }
+}

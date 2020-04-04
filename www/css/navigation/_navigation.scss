@@ -69,7 +69,7 @@
 
   .header-div{
     display: flex;
-    height: 50px;
+    height: 60px;
     width: 100%;
     flex: 0 0 100%;
     background-color: $color__bgsecondary;
@@ -77,7 +77,7 @@
 
     .toolbar{
       flex-grow: 1;
-      max-height: 50px;
+      max-height: 60px;
       display: flex;
 
       .buttons{
@@ -92,7 +92,7 @@
       .title{
         display: flex;
         flex-grow: 1;
-        max-height: 50px;
+        max-height: 60px;
         align-content: center;
         justify-content: center;
         align-items: center;
@@ -105,7 +105,7 @@
 
           img{
             width: auto;
-            height: 44px;
+            height: 56px;
           }
 
         }

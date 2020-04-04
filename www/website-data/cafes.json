@@ -167,7 +167,68 @@
               }
             }
           }
+        },
+        "customizations":{
+  "sweetners": {
+    "name": "Sweetners",
+    "options": {
+      "sugar": {
+        "name": "Sugar",
+        "calories": 27,
+        "price": 0
+      },
+      "sweetner": {
+        "name": "Sweetner",
+        "calories": 27,
+        "price": 0
+      }
+    }
+  },
+  "espresso_shots": {
+    "name": "Espresso Shots",
+    "options": {
+      "espresso_shot": {
+        "name": "Espresso Shot",
+        "calories": 27,
+        "price": 0.70
+      }
+    }
+  },
+  "flavour_shots": {
+    "name": "Flavour Shots",
+    "options": {
+      "flavour_shot": {
+        "category": {
+          "chocolate_syrup": {
+            "name": "Chocolate Syrup",
+            "calories": 75,
+            "price": 0.30
+          },
+          "caramel_syrup": {
+            "name": "Caramel Syrup",
+            "calories": 88,
+            "price": 0.30
+          },
+          "vanilla_syrup": {
+            "name": "Vanilla Syrup",
+            "calories": 74,
+            "price": 0.30
+          }
         }
+      }
+    }
+  },
+  "toppings": {
+    "name": "Toppings",
+    "options": {
+      "whipped_toppings": {
+        "name": "Whipped Topping",
+        "calories": 77,
+        "price": 0.60
+      }
+    }
+  }
+}
       },
       "section_7410": {
         "name": "Hot Beverages",
@@ -791,6 +852,67 @@
             "currentcy": "CA",
             "type": "item",
             "id": "item_31056"
+          }
+        },
+        "customizations":{
+          "sweetners": {
+            "name": "Sweetners",
+            "options": {
+              "sugar": {
+                "name": "Sugar",
+                "calories": 27,
+                "price": 0
+              },
+              "sweetner": {
+                "name": "Sweetner",
+                "calories": 27,
+                "price": 0
+              }
+            }
+          },
+          "espresso_shots": {
+            "name": "Espresso Shots",
+            "options": {
+              "espresso_shot": {
+                "name": "Espresso Shot",
+                "calories": 27,
+                "price": 0.70
+              }
+            }
+          },
+          "flavour_shots": {
+            "name": "Flavour Shots",
+            "options": {
+              "flavour_shot": {
+                "category": {
+                  "chocolate_syrup": {
+                    "name": "Chocolate Syrup",
+                    "calories": 75,
+                    "price": 0.30
+                  },
+                  "caramel_syrup": {
+                    "name": "Caramel Syrup",
+                    "calories": 88,
+                    "price": 0.30
+                  },
+                  "vanilla_syrup": {
+                    "name": "Vanilla Syrup",
+                    "calories": 74,
+                    "price": 0.30
+                  }
+                }
+              }
+            }
+          },
+          "toppings": {
+            "name": "Toppings",
+            "options": {
+              "whipped_toppings": {
+                "name": "Whipped Topping",
+                "calories": 77,
+                "price": 0.60
+              }
+            }
           }
         }
       },
@@ -3667,6 +3789,86 @@
     "position": {
       "lat":49.2252168,
       "lang":-123.1105755
+    }
+  },
+  "triple_o": {
+    "name": "Triple O",
+    "logo": "images/brands/tripleos.png",
+    "merchant_id": "x",
+    "cafe_vendor_id": "y",
+    "address": "100 West 49th Avenue, Vancouver, V5Y 2Z6",
+    "cafe_primary_colour": "green",
+    "cafe_secondary_colour": "white",
+    "working_hours": {
+      "monday": {
+        "start": "11:00",
+        "end": "11:00"
+      },
+      "tuesday": {
+        "start": "11:00",
+        "end": "11:00"
+      },
+      "wednesday": {
+        "start": "11:00",
+        "end": "11:00"
+      },
+      "thursday": {
+        "start": "11:00",
+        "end": "11:00"
+      },
+      "friday": {
+        "start": "11:00",
+        "end": "11:00"
+      },
+      "saturday": {
+        "start": "11:00",
+        "end": "11:00"
+      },
+      "sunday": {
+        "start": "11:00",
+        "end": "11:00"
+      }
+    },
+    "menus": {},
+    "position": {
+      "lat": 49.224604,
+      "long": 123.107379
+    }
+  },
+  "langara_student_union": {
+    "name": "Langara Student Union",
+    "logo": "images/brands/union.jpeg",
+    "merchant_id": "x",
+    "cafe_vendor_id": "y",
+    "address": "100 W 49th Ave, Vancouver, BC V5Y 2Z6",
+    "cafe_primary_colour": "orange",
+    "cafe_secondary_colour": "white",
+    "working_hours": {
+      "monday": {
+        "start": "09:30",
+        "end": "5:00"
+      },
+      "tuesday": {
+        "start": "09:30",
+        "end": "5:00"
+      },
+      "wednesday": {
+        "start": "09:30",
+        "end": "5:00"
+      },
+      "thursday": {
+        "start": "09:30",
+        "end": "5:00"
+      },
+      "friday": {
+        "start": "09:30",
+        "end": "4:30"
+      }
+    },
+    "menus": {},
+    "position": {
+      "lat": 49.224604,
+      "long": 123.107379
     }
   }
 }

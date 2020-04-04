@@ -62,25 +62,28 @@ class EventHandlerComponent extends BaseComponent{
     goToMenuPage( event ){
         let brandButton = this;
         let cafe = brandButton.dataset.id;
-
-
-
-        localStorage.setItem( 'cafe'  , cafe);
+        let cafeObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'logo': brandButton.dataset.src } ;
+        localStorage.setItem( 'cafe' , JSON.stringify(cafeObject));
         (new ViewComponent()).showMenusScreen( cafe );
     }
 
     goToMenuIetmsPage( event ){
         let brandButton = this;
+
         let menu = brandButton.dataset.id;
-        localStorage.setItem( 'menu'  , menu);
+        let custInfo = document.querySelector('[data-id="'+menu+'"]').querySelector('.customize-info').innerHTML;
+        custInfo = JSON.parse( custInfo );
+
+        let menuObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src, 'customizations': custInfo } ;
+        localStorage.setItem( 'menu'  , JSON.stringify( menuObject ) );
         localStorage.setItem('menu_item_offset',0);
         (new ViewComponent()).showMenuIetmsScreen( menu );
     }
 
     customizeMenuItem( event ){
         let brandButton = this;
-        let menu = brandButton.dataset.id;
-        localStorage.setItem( 'menu_item' , menu);
+        let menuItemObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src } ;
+        localStorage.setItem( 'menu_item' , JSON.stringify( menuItemObject ) );
         (new ViewComponent()).showMenuIetmsScreen( menu );
     }
 

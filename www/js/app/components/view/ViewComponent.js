@@ -12,7 +12,8 @@ class ViewComponent extends BaseComponent{
 
         if( true ){
             // just for testing purpose
-            this.showMenusScreen('tim-hortons');
+            //this.showMenusScreen('tim-hortons');
+            this.showMenuIetmsScreen('section_7410');
             //this.showHomeScreen();
             //this.showRenderScreen('cafeLocations');
         }else{
@@ -126,10 +127,9 @@ class ViewComponent extends BaseComponent{
             document.getElementById('menu-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
             document.getElementById('ion-content').classList.remove('home-screen-content');
             document.getElementById('ion-content').classList.add('menu-screen-content');
-
-            document.getElementById('ion-content').innerHTML = '' ;
-
+            selfObject.addCafeHeading();
             selfObject.addUserDetails();
+
             resolve();
 
         }).then(function () {
@@ -173,6 +173,8 @@ class ViewComponent extends BaseComponent{
             document.getElementById('menu-item-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
             document.getElementById('ion-content').classList.remove('menu-screen-content');
             document.getElementById('ion-content').classList.add('menu-items-screen-content');
+            selfObject.addCafeHeading();
+            selfObject.addMenuHeading();
             selfObject.addUserDetails();
             resolve();
 
@@ -213,8 +215,9 @@ class ViewComponent extends BaseComponent{
         let templateParentArray = {
             'ion-button' : 'ion-content',
             'cafe-heading' : 'ion-content',
-            'ion-menu-button' :'ion-content' ,
-            'ion-menu-item-button' :'ion-content' ,
+            'menu-heading' : 'cafe-content',
+            'ion-menu-button' :'cafe-content' ,
+            'ion-menu-item-button' :'menu-content' ,
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
@@ -231,10 +234,13 @@ class ViewComponent extends BaseComponent{
         for( let key in data ){
             let findIn = '{{'+key+'}}';
             let value = data[key];
+            if( typeof value === "object"){
+                value = JSON.stringify(value);
+            }
             if( templateString.indexOf( findIn ) !== -1 ){
                 templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
             }
-            //console.log( data.name , 'Added' );
+            console.log( data.name , 'Added' );
         }
         this.getParentElement( template ).innerHTML +=  templateString;
     }
@@ -318,6 +324,18 @@ class ViewComponent extends BaseComponent{
 
     addBackButton(){
 
+    }
+
+    addCafeHeading(){
+        let cafe = JSON.parse( localStorage.getItem('cafe') );
+        let cafeEntity = new Cafe( cafe.id , cafe );
+        this.addToView('cafe-heading', cafeEntity );
+    }
+
+    addMenuHeading(){
+        let menu = JSON.parse( localStorage.getItem('menu') );
+        let menuEnity = new Menu( menu.id , menu );
+        this.addToView('menu-heading', menuEnity );
     }
 
     addUserDetails( id = null ){
