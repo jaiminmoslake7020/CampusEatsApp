@@ -13,7 +13,8 @@ class ViewComponent extends BaseComponent{
         if( true ){
             // just for testing purpose
             //this.showMenusScreen('tim-hortons');
-            this.showMenuIetmsScreen('section_7410');
+            //this.showMenuIetmsScreen('section_7410');
+            this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
             //this.showHomeScreen();
             //this.showRenderScreen('cafeLocations');
         }else{
@@ -207,6 +208,33 @@ class ViewComponent extends BaseComponent{
 
     }
 
+    showCustomizeMenuItemOption( menuItem ){
+
+        let selfObject = this;
+        selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
+
+        new Promise(function (resolve, reject) {
+
+            let template = '<div id="screen-container"><div class="screen"  id="customize-menu-item-screen"></div></div>' ;
+            selfObject.replaceAppScreen( template );
+            document.getElementById('customize-menu-item-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            document.getElementById('ion-content').classList.remove('menu-items-screen-content');
+            document.getElementById('ion-content').classList.add('customize-menu-items-screen-content');
+            selfObject.addCafeHeading();
+            selfObject.addMenuHeading();
+            selfObject.addUserDetails();
+            selfObject.addMenuItemHeading();
+            resolve();
+
+        }).then(function () {
+
+            selfObject.getAppClassManager().getEventHandlerComponent().customizeMenuItemsScreenEvents();
+
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
+    }
+
     getIonContent(){
         return document.getElementById('ion-content');
     }
@@ -218,6 +246,7 @@ class ViewComponent extends BaseComponent{
             'menu-heading' : 'cafe-content',
             'ion-menu-button' :'cafe-content' ,
             'ion-menu-item-button' :'menu-content' ,
+            'ion-customize-menu-item-button':'menu-content'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
@@ -234,13 +263,47 @@ class ViewComponent extends BaseComponent{
         for( let key in data ){
             let findIn = '{{'+key+'}}';
             let value = data[key];
+            if( ( template === "ion-menu-item-button" || template === "ion-customize-menu-item-button" ) && typeof value === "object" && key === "sizes"  ){
+                if( "small" in value ){
+                    console.log( value.small.price );
+                    let valuex = value.small.price;
+                    let findInx = '{{price}}';
+                    valuex = parseFloat( valuex ).toFixed(2);
+                    templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
+                }else if( "medium" in value  ){
+                    console.log( value.medium.price );
+                    let valuex = value.medium.price;
+                    let findInx = '{{price}}';
+                    valuex = parseFloat( valuex ).toFixed(2);
+                    templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
+                }else if( "large" in value  ){
+                    console.log( value.large.price );
+                    let valuex = value.large.price;
+                    let findInx = '{{price}}';
+                    valuex = parseFloat( valuex ).toFixed(2);
+                    templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
+                }else if( "extra_large" in value  ){
+                    console.log( value.extra_large.price );
+                    let valuex = value.extra_large.price;
+                    let findInx = '{{price}}';
+                    valuex = parseFloat( valuex ).toFixed(2);
+                    templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
+                }
+            }
+            if( template === "ion-customize-menu-item-button" && key === "nutrition" ){
+                findIn = "{{calories}}";
+                value = value.calories;
+            }
             if( typeof value === "object"){
                 value = JSON.stringify(value);
+            }
+            if( ( template === "ion-menu-item-button" || template === "ion-customize-menu-item-button" ) && key === "price" ){
+                value = parseFloat(value).toFixed(2);
             }
             if( templateString.indexOf( findIn ) !== -1 ){
                 templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
             }
-            console.log( data.name , 'Added' );
+            //console.log( data.name , 'Added' );
         }
         this.getParentElement( template ).innerHTML +=  templateString;
     }
@@ -310,19 +373,11 @@ class ViewComponent extends BaseComponent{
         });
     }
 
-    showFeedbackForm(){
-
-    }
-
     showOrderHistory(){
 
     }
 
     showPaymentMethod(){
-
-    }
-
-    addBackButton(){
 
     }
 
@@ -336,6 +391,13 @@ class ViewComponent extends BaseComponent{
         let menu = JSON.parse( localStorage.getItem('menu') );
         let menuEnity = new Menu( menu.id , menu );
         this.addToView('menu-heading', menuEnity );
+    }
+
+    addMenuItemHeading(){
+        let menu_item = JSON.parse( localStorage.getItem('menu_item') );
+        let menuEnity = new BaseEntity( menu_item.id , menu_item );
+        console.log( menuEnity );
+        this.addToView('ion-customize-menu-item-button', menuEnity );
     }
 
     addUserDetails( id = null ){

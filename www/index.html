@@ -142,7 +142,7 @@
             <div class="button menu-btn defult-btn small light block round "
                  data-name="{{name}}" data-id="{{primaryKey}}" data-src="{{url}}"
             >
-                <div class="menu-btn-container">
+                <div class="menu-btn-container ">
                     <div class=" img-wrapper ">
                         <img class="lazy" src="images/loader.gif" data-src="{{url}}" alt="{{name}}">
                     </div>
@@ -154,16 +154,37 @@
     </template>
 
     <template id="ion-menu-item-button">
-        <div class="col-xs-6 default-button-container menu-item-btn-parent-container ">
+        <div class="col-xs-6  default-button-container menu-item-btn-parent-container ">
             <div class="button menu-item-btn defult-btn small light block round "
-                 data-name="{{name}}" data-id="{{primaryKey}}"
+                 data-name="{{name}}" data-id="{{primaryKey}}" data-src="{{url}}"
             >
-                <div class="menu-btn-container">
+                <div class="menu-btn-container ">
                     <div class=" img-wrapper ">
                         <img class="lazy" src="images/loader.gif" data-src="{{url}}" alt="{{name}}">
                     </div>
                     <label class="label menu-label" >{{name}}</label>
-                    <label class="label menu-label" >{{price}}</label>
+                    <label class="label menu-label" >$ {{price}}</label>
+
+                    <p class=" sizes-info dnone " >{{sizes}}</p>
+                    <p class=" nutrition-info dnone " >{{nutrition}}</p>
+
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="ion-customize-menu-item-button">
+        <div class="col-xs-6 customize default-button-container menu-item-btn-parent-container ">
+            <div class="button menu-item-btn defult-btn small light block round "
+                 data-name="{{name}}" data-id="{{primaryKey}}"
+            >
+                <div class="menu-btn-container ">
+                    <div class=" img-wrapper ">
+                        <img class="lazy" src="images/loader.gif" data-src="{{url}}" alt="{{name}}">
+                    </div>
+                    <label class="label menu-label" >{{name}}</label>
+                    <label class="label menu-label" id="customizedPrice" >$ {{price}}</label>
+                    <label class="label menu-label" id="customizedCalories" ><b>Calories</b>: {{calories}}</label>
                 </div>
             </div>
         </div>
@@ -433,6 +454,54 @@
                 <h3 class="cPrimary ml15 text-center" >Cafe Loacations</h3>
                 <div class="map-container" >
                     <div id="map" style="width: 100%;height: 80vh;" ></div>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
+    <template id="customizer-parent" >
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="customizers">
+                    <h4 class="cPrimary ml15 text-left" >{{name}}</h4>
+                    <div class="customizers-options">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="customizer" >
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" customizer-item ">
+                    <div class="customizer-content">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="control-label" >
+                                    {{name}}
+                                </label>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                      <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="{{name}}">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                      </button>
+                                    </span>
+                                    <input type="text" name="{{name}}" dirname="" class="form-control input-number" value="10" min="1" max="100">
+                                    <span class="input-group-btn">
+                                      <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="{{name}}">
+                                          <span class="glyphicon glyphicon-plus"></span>
+                                      </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

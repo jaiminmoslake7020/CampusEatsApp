@@ -59,6 +59,86 @@ class EventHandlerComponent extends BaseComponent{
 
     }
 
+    customizeMenuItemsScreenEvents(){
+        let selfObject = this;
+        this.startLazyLoad();
+        this.activatePage();
+        this.stopLoading();
+        this.addHamburgerMenuEvent();
+        this.addBackButtonEvent();
+        this.addDataOnScroll();
+
+        //plugin bootstrap minus and plus
+        //http://jsfiddle.net/laelitenetwork/puJ6G/
+        $('.btn-number').click(function(e){
+            e.preventDefault();
+            var fieldName = $(this).attr('data-field');
+            var type      = $(this).attr('data-type');
+            var input = $("input[name='"+fieldName+"']");
+            var currentVal = parseInt(input.val());
+            if (!isNaN(currentVal)) {
+                if(type == 'minus') {
+
+                    if(currentVal > input.attr('min')) {
+                        input.val(currentVal - 1).change();
+                    }
+                    if(parseInt(input.val()) == input.attr('min')) {
+                        $(this).attr('disabled', true);
+                    }
+
+                } else if(type == 'plus') {
+
+                    if(currentVal < input.attr('max')) {
+                        input.val(currentVal + 1).change();
+                    }
+                    if(parseInt(input.val()) == input.attr('max')) {
+                        $(this).attr('disabled', true);
+                    }
+
+                }
+            } else {
+                input.val(0);
+            }
+        });
+        $('.input-number').focusin(function(){
+            $(this).data('oldValue', $(this).val());
+        });
+        $('.input-number').change(function() {
+            var minValue =  parseInt($(this).attr('min'));
+            var maxValue =  parseInt($(this).attr('max'));
+            var valueCurrent = parseInt($(this).val());
+            var name = $(this).attr('name');
+            if(valueCurrent >= minValue) {
+                $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+            } else {
+                alert('Sorry, the minimum value was reached');
+                $(this).val($(this).data('oldValue'));
+            }
+            if(valueCurrent <= maxValue) {
+                $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+            } else {
+                alert('Sorry, the maximum value was reached');
+                $(this).val($(this).data('oldValue'));
+            }
+        });
+        $(".input-number").keydown(function (e) {
+            // Allow: backspace, delete, tab, escape, enter and .
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+                // Allow: Ctrl+A
+                (e.keyCode == 65 && e.ctrlKey === true) ||
+                // Allow: home, end, left, right
+                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+
+    }
+
     goToMenuPage( event ){
         let brandButton = this;
         let cafe = brandButton.dataset.id;
@@ -72,7 +152,11 @@ class EventHandlerComponent extends BaseComponent{
 
         let menu = brandButton.dataset.id;
         let custInfo = document.querySelector('[data-id="'+menu+'"]').querySelector('.customize-info').innerHTML;
-        custInfo = JSON.parse( custInfo );
+        if( custInfo === "{{customizations}}" ){
+            custInfo = {} ;
+        }else{
+            custInfo = JSON.parse( custInfo );
+        }
 
         let menuObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src, 'customizations': custInfo } ;
         localStorage.setItem( 'menu'  , JSON.stringify( menuObject ) );
@@ -82,9 +166,24 @@ class EventHandlerComponent extends BaseComponent{
 
     customizeMenuItem( event ){
         let brandButton = this;
-        let menuItemObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src } ;
+
+        let sizesInfo = document.querySelector('[data-id="'+brandButton.dataset.id+'"]').querySelector('.sizes-info').innerHTML;
+        if( sizesInfo === "{{sizes}}" ){
+            sizesInfo = {} ;
+        }else{
+            sizesInfo = JSON.parse( sizesInfo );
+        }
+
+        let nutritionInfo = document.querySelector('[data-id="'+brandButton.dataset.id+'"]').querySelector('.nutrition-info').innerHTML;
+        if( nutritionInfo === "{{nutrition}}" ){
+            nutritionInfo = {} ;
+        }else{
+            nutritionInfo = JSON.parse( nutritionInfo );
+        }
+
+        let menuItemObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src , 'sizes': sizesInfo ,'nutrition': nutritionInfo } ;
         localStorage.setItem( 'menu_item' , JSON.stringify( menuItemObject ) );
-        (new ViewComponent()).showMenuIetmsScreen( menu );
+        (new ViewComponent()).showCustomizeMenuItemOption( menuItemObject.id );
     }
 
     alert( header , subHeader , message , buttons ){
@@ -125,14 +224,17 @@ class EventHandlerComponent extends BaseComponent{
         let selfObject = this;
         $('.back-button').on('click',function (e) {
             let screen = $('.screen').attr('id');
-
             switch (screen) {
                 case "menu-screen" :
                     (new ViewComponent()).showHomeScreen( );
                     break;
                 case "menu-item-screen" :
-                    let cafe = localStorage.getItem( 'cafe');
+                    let cafe = JSON.parse( localStorage.getItem( 'cafe')) ;
                     (new ViewComponent()).showMenusScreen( cafe.id );
+                    break;
+                case "customize-menu-item-screen" :
+                    let menu = JSON.parse( localStorage.getItem( 'menu')) ;
+                    (new ViewComponent()).showMenuIetmsScreen( menu.id );
                     break;
             }
         });

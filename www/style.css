@@ -5938,6 +5938,8 @@ body {
   overflow: auto;
   text-align: center;
   font-size: 16px;
+  white-space: pre-wrap;
+  display: block;
 }
 
 button.button-native {
@@ -5955,7 +5957,6 @@ button.button-native {
 
 .defult-btn {
   border-radius: 15px;
-  display: block;
   text-align: center;
   box-sizing: border-box;
   border: 0 solid #e6e6e6;
@@ -5963,11 +5964,16 @@ button.button-native {
   width: 150px;
   height: 150px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.15), 0 4px 5px rgba(0, 0, 0, 0.15), 0 8px 5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
 }
 
 .menu-item-btn.defult-btn {
   width: 150px;
-  height: 200px;
+  height: 220px;
+}
+.menu-item-btn.defult-btn label:nth-of-type(2) {
+  color: #c0491e;
 }
 
 .screen-content {
@@ -6117,7 +6123,7 @@ body .loadingBar .loadingBar-content .loadingBar-text {
 /* MENUPAGE CONTENT ============ */
 .cafe-heading-wrapper {
   padding: 10px;
-  background-color: #FFF9EC;
+  background-color: white;
   border-top: 1px solid #f15a24;
   border-bottom: 1px solid #f15a24;
 }

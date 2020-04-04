@@ -3,7 +3,8 @@ class MenuItems extends FirebaseActiveRecord{
     constructor(menuId) {
         super();
 
-        this.firebase_collection = this.main_collection+"/Cafes/"+localStorage.getItem('cafe')+"/menus/"+menuId+"/menuitems";
+        let cafeObject = JSON.parse( localStorage.getItem('cafe') );
+        this.firebase_collection = this.main_collection+"/Cafes/"+cafeObject.id+"/menus/"+menuId+"/menuitems";
         this.firebase_is_merge = true ;
 
         this.cafe_incremental = 0 ;
