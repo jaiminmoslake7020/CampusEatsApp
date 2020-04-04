@@ -14,9 +14,9 @@ class ViewComponent extends BaseComponent{
             // just for testing purpose
             //this.showMenusScreen('tim-hortons');
             //this.showMenuIetmsScreen('section_7410');
-            this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
+            //this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
             //this.showHomeScreen();
-            //this.showRenderScreen('cafeLocations');
+            this.showRenderScreen('cafeLocations');
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
                 consoleAlert( 'showLoginScreen' );
