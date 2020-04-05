@@ -164,6 +164,7 @@
 
                     <p class=" sizes-info dnone " >{{sizes}}</p>
                     <p class=" nutrition-info dnone " >{{nutrition}}</p>
+                    <p class=" customize-info dnone " >{{customizations}}</p>
 
                 </div>
             </div>
@@ -185,6 +186,7 @@
 
                     <p class=" sizes-info dnone " >{{sizes}}</p>
                     <p class=" nutrition-info dnone " >{{nutrition}}</p>
+                    <p class=" customize-info dnone " >{{customizations}}</p>
 
                 </div>
             </div>
@@ -342,7 +344,7 @@
                 <h4 class=" cPrimary text-center ">Edit Personal Info</h4>
                 <div class="toolbar edit-info user-info-box " data-color="primary">
                     <div class="title-icon">
-                        <img src="{{photoURL}}" class=" img-responsive img-circle " alt="{{displayName}}"  />                    </div>
+                        <img class="lazy" src="images/loader.gif" data-src="{{photoURL}}" class=" img-responsive img-circle " alt="{{displayName}}"  />                    </div>
                     <div class="title">{{displayName}}</div>
                 </div>
                 <div class="edit-info-form" id="edit-info-form">
@@ -662,6 +664,54 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+    </template>
+
+    <template id="cart-container-template" >
+        <div id="cart-container" >
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="cart-items" >
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="cart-item" >
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="cart-item">
+                    <div data-id="{{itemId}}" class="cart-detail">
+                        <div class="img-title">
+                            <div class="col-12 col-sm-12 col-md-2 text-center">
+                                <img class="img-responsive lazy" src="images/loader.gif" data-src="{{url}}"
+                                     alt="{{name}}" />
+                            </div>
+                            <div class="img-name">
+                                <h4>{{name}}</h4>
+                            </div>
+                        </div>
+                        <div class="product-calories">
+                            <p>Calories</p>
+                            <p>{{calories}}</p>
+                        </div>
+                        <div class="product-quantity">
+                            <p>Quantity</p>
+                            <p>{{quantity}}</p>
+                        </div>
+                        <div class="product-amount">
+                            <p>Price</p>
+                            <p>${{price}}</p>
+                        </div>
+                        <div class="product-icons">
+                            <div data-id="{{itemId}}" class=" p15 editItem " ><i class="fas fa-pencil-alt fa-3x "></i></div>
+                            <div data-id="{{itemId}}" class=" p15 removeItemFromOrder " ><i class="fas fa-trash-alt fa-3x "></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </template>
 
     <div id="alert-parent">

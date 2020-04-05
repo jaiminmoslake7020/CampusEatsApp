@@ -49,7 +49,7 @@ class FirebaseCompoenent extends BaseComponent{
                     if( typeof authResult === "object"  && authResult.hasOwnProperty( 'user' )  ){
                         localStorage.setItem('authResult', JSON.stringify(authResult) );
 
-                        setTimeout(function () {
+                        setInterval(function () {
                             if( !campusEats.getAppClassManager().getViewComponent().authentiCate() ){
                                 campusEats.getAppClassManager().getViewComponent().showLoginScreen();
                             }

@@ -10,9 +10,7 @@ class EventHandlerComponent extends BaseComponent{
     }
 
     addGoToHomeEvent(){
-        $('body').on('click','.home-button',function () {
-            (new ViewComponent()).showHomeScreen();
-        });
+
     }
 
     homeScreenEvents(){
@@ -65,6 +63,15 @@ class EventHandlerComponent extends BaseComponent{
         (new CustomizeOrderItem()).init();
     }
 
+    showCartMenuEvents(){
+        let selfObject = this;
+        this.startLazyLoad();
+        this.activatePage();
+        this.stopLoading();
+        this.addHamburgerMenuEvent();
+        (new CustomizeOrder()).init();
+    }
+
     addRenderScreenEvents(){
         let selfObject = this;
         this.startLazyLoad();
@@ -115,7 +122,15 @@ class EventHandlerComponent extends BaseComponent{
             nutritionInfo = JSON.parse( nutritionInfo );
         }
 
-        let menuItemObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src , 'sizes': sizesInfo ,'nutrition': nutritionInfo } ;
+        let menu = brandButton.dataset.id;
+        let custInfo = document.querySelector('[data-id="'+menu+'"]').querySelector('.customize-info').innerHTML;
+        if( custInfo === "{{customizations}}" ){
+            custInfo = {} ;
+        }else{
+            custInfo = JSON.parse( custInfo );
+        }
+
+        let menuItemObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src , 'sizes': sizesInfo ,'nutrition': nutritionInfo , 'customizations': custInfo  } ;
         localStorage.setItem( 'menu_item' , JSON.stringify( menuItemObject ) );
         (new ViewComponent()).showCustomizeMenuItemOption( menuItemObject.id );
     }
@@ -134,10 +149,6 @@ class EventHandlerComponent extends BaseComponent{
         selfObject.addGoToHomeEvent();
         selfObject.addBackButtonEvent();
 
-        $('.menu-button.hamburger-menu').on('click',function () {
-            (new NavBar()).toggle();
-        });
-
         document.querySelector('body').addEventListener('click',function ( e ) {
             if( document.querySelector('.app-nav.active-menu') != null && document.querySelector('.app-nav.active-menu').length !== 0 ){
                 if( e.target.closest('.menu') === null && e.target.closest('.hamburger-menu-container') === null  ){
@@ -151,19 +162,6 @@ class EventHandlerComponent extends BaseComponent{
             }
         });
 
-        $('body').on('click','.renderOnly',function (e) {
-            e.preventDefault();
-            let href = $(this).attr('href');
-            href = href.replace('#','');
-            (new ViewComponent()).showRenderScreen( href );
-        });
-
-        $('body').on('click','.logout',function (e) {
-            e.preventDefault();
-            localStorage.clear();
-            (new ViewComponent()).showLoginScreen();
-        });
-
         this.addCartEvent();
 
     }
@@ -171,13 +169,7 @@ class EventHandlerComponent extends BaseComponent{
     addCartEvent(){
         let currentOrder = (new OrderManager()).currentOrder;
         if( currentOrder !== null && typeof currentOrder == "object" && JSON.stringify(currentOrder) !== "{}" ){
-
-            $('body').on('click','.cart-menu',function (e) {
-                e.preventDefault();
-                localStorage.clear();
-                (new ViewComponent()).showCartMenu();
-            });
-
+            //
         }else{
             $('.cart-menu').addClass('dnone');
         }
@@ -185,22 +177,6 @@ class EventHandlerComponent extends BaseComponent{
 
     addBackButtonEvent(){
         let selfObject = this;
-        $('.back-button').on('click',function (e) {
-            let screen = $('.screen').attr('id');
-            switch (screen) {
-                case "menu-screen" :
-                    (new ViewComponent()).showHomeScreen( );
-                    break;
-                case "menu-item-screen" :
-                    let cafe = JSON.parse( localStorage.getItem( 'cafe')) ;
-                    (new ViewComponent()).showMenusScreen( cafe.id );
-                    break;
-                case "customize-menu-item-screen" :
-                    let menu = JSON.parse( localStorage.getItem( 'menu')) ;
-                    (new ViewComponent()).showMenuIetmsScreen( menu.id );
-                    break;
-            }
-        });
     }
 
     showLoading() {
@@ -259,3 +235,50 @@ class EventHandlerComponent extends BaseComponent{
     }
 
 }
+
+$(document).ready(function () {
+
+    $('body').on('click','.renderOnly',function (e) {
+        e.preventDefault();
+        let href = $(this).attr('href');
+        href = href.replace('#','');
+        (new ViewComponent()).showRenderScreen( href );
+    });
+
+    $('.menu-button.hamburger-menu').on('click',function () {
+        (new NavBar()).toggle();
+    });
+
+    $('body').on('click','.logout',function (e) {
+        e.preventDefault();
+        localStorage.clear();
+        (new ViewComponent()).showLoginScreen();
+    });
+
+    $('body').on('click','.cart-menu',function (e) {
+        e.preventDefault();
+        (new ViewComponent()).showCartMenu();
+    });
+
+    $('.back-button').on('click',function (e) {
+        let screen = $('.screen').attr('id');
+        switch (screen) {
+            case "menu-screen" :
+                (new ViewComponent()).showHomeScreen( );
+                break;
+            case "menu-item-screen" :
+                let cafe = JSON.parse( localStorage.getItem( 'cafe')) ;
+                (new ViewComponent()).showMenusScreen( cafe.id );
+                break;
+            case "customize-menu-item-screen" :
+                let menu = JSON.parse( localStorage.getItem( 'menu')) ;
+                (new ViewComponent()).showMenuIetmsScreen( menu.id );
+                break;
+        }
+    });
+
+    $('body').on('click','.home-button',function () {
+        (new ViewComponent()).showHomeScreen();
+    });
+
+});

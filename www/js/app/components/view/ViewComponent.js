@@ -43,8 +43,9 @@ class ViewComponent extends BaseComponent{
             // just for testing purpose
             //this.showMenusScreen('tim-hortons');
             //this.showMenuIetmsScreen('section_7410');
-            this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
+            //this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
             //this.showHomeScreen();
+            this.showCartMenu();
             //this.showRenderScreen('cafeLocations');
         }
     }
@@ -55,8 +56,15 @@ class ViewComponent extends BaseComponent{
         consoleAlert( document.getElementById(id).innerHTML  );
     }
 
+    removeFooterContainerIfExist(){
+        if( $('#footer-container').length > 0 ){
+            $('#footer-container').remove()
+        }
+    }
+
     showSplashScreen(){
 
+        this.removeFooterContainerIfExist();
         let template ='<div id="screen-container"><div class="screen"  id="splash-screen"><div class=" spalsh-screen-image  spalsh-screen "></div></div></div>';
         this.replaceAppScreen( template );
 
@@ -70,6 +78,7 @@ class ViewComponent extends BaseComponent{
     showLoginScreen(){
 
         consoleAlert( 'showLoginScreen' );
+        this.removeFooterContainerIfExist();
 
         let selfObject = this;
         new Promise(function (resolve, reject) {
@@ -88,8 +97,12 @@ class ViewComponent extends BaseComponent{
 
     showHomeScreen(){
 
-        consoleAlert( "showHomeScreen" );
+        if( !this.authentiCate() ){
+            return;
+        }
 
+        consoleAlert( "showHomeScreen" );
+        this.removeFooterContainerIfExist();
 
         let selfObject = this;
         selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
@@ -136,6 +149,10 @@ class ViewComponent extends BaseComponent{
     }
 
     showMenusScreen( cafeId ){
+
+        if( !this.authentiCate() ){
+            return;
+        }
 
         let selfObject = this;
         selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
@@ -184,6 +201,10 @@ class ViewComponent extends BaseComponent{
 
     showMenuIetmsScreen( menu ){
 
+        if( !this.authentiCate() ){
+            return;
+        }
+
         let selfObject = this;
         selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
 
@@ -208,6 +229,14 @@ class ViewComponent extends BaseComponent{
                 selfObject.getMenuIetmsModel( menu ).getAll().then(function ( snapshot ) {
                     for( let i = 0 ; i < snapshot.length ; i++ ){
                         let menuItem = snapshot[i];
+
+                        let menuObj = JSON.parse( localStorage.getItem('menu') );
+                        if( menuObj == null ){
+                            console.log('menu empty showing homescreen.');
+                            selfObject.showHomeScreen();
+                        }
+
+                        menuItem.data.customizations = menuObj.customizations ;
                         selfObject.addToView( 'ion-menu-item-button' , menuItem );
                     }
                 }).then(function () {
@@ -231,6 +260,10 @@ class ViewComponent extends BaseComponent{
     }
 
     showCustomizeMenuItemOption( menuItem ){
+
+        if( !this.authentiCate() ){
+            return;
+        }
 
         let selfObject = this;
         selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
@@ -260,6 +293,58 @@ class ViewComponent extends BaseComponent{
         });
     }
 
+    showCartMenu(){
+
+        if( !this.authentiCate() ){
+            return;
+        }
+
+        let selfObject = this;
+        selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
+
+        new Promise(function (resolve, reject) {
+
+            let template = '<div id="screen-container"><div class="screen"  id="customize-menu-item-screen"></div></div>' ;
+            selfObject.replaceAppScreen( template );
+            document.getElementById('customize-menu-item-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            document.getElementById('ion-content').classList.remove('menu-items-screen-content');
+            document.getElementById('ion-content').classList.add('customize-menu-items-screen-content');
+            selfObject.addCafeHeading();
+            selfObject.addingViewHelper( 'menu-heading', 'cart-heading' , {'name':'Your Cart'} );
+            selfObject.addingViewHelper( 'cart-container-template', 'cart-container-template' , {} );
+            selfObject.addUserDetails();
+            selfObject.addFooterContainer();
+
+            resolve();
+
+        }).then(function () {
+
+            let currentOrder = (new OrderManager()).currentOrder;
+            for( let orderItem in currentOrder ){
+
+                console.log(currentOrder[orderItem]);
+
+                let orderItemData = {id:orderItem, itemId:orderItem,
+                    'name': currentOrder[orderItem]._name ,
+                    'calories': currentOrder[orderItem]._calories ,
+                    'quantity': currentOrder[orderItem]._quantity ,
+                    'price': currentOrder[orderItem]._price ,
+                    'url': currentOrder[orderItem]._actualData.url
+                };
+                selfObject.addingViewHelper( 'cart-item', orderItem , orderItemData );
+            }
+
+        }).then(function () {
+
+
+            selfObject.getAppClassManager().getEventHandlerComponent().showCartMenuEvents();
+
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
+
+    }
+
     getIonContent(){
         return document.getElementById('ion-content');
     }
@@ -276,7 +361,9 @@ class ViewComponent extends BaseComponent{
             '.editInfo-screen-content':'.editInfo-screen-content',
             'customizer-size-option':'customizer-size-options',
             'alert-template-parent':'alert-parent',
-            'addItemContainer':'ion-content'
+            'addItemContainer':'ion-content',
+            'cart-container-template':'ion-content',
+            'cart-item':'cart-items'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
@@ -473,7 +560,7 @@ class ViewComponent extends BaseComponent{
         this.addingViewHelper('addItemContainer', 'btnContainer' , {}  );
         this.addQuantity(  );
 
-        let menu = JSON.parse( localStorage.getItem('menu') );
+        let menu = JSON.parse( localStorage.getItem('menu_item') );
         if( menu == null ){
             console.log('menu_item empty showing homescreen.');
             this.showHomeScreen();
@@ -560,6 +647,7 @@ class ViewComponent extends BaseComponent{
 
     addingViewHelper( template , entityId , entityData , specialCustomizer = null , append = true ){
         let entity = new BaseEntity( entityId , entityData  );
+        console.log( 'entity' , entity );
         this.addToView( template , entity , specialCustomizer , append );
     }
 

@@ -17,6 +17,8 @@
 
 }
 
+
+
 .app-nav{
   width: 100%;
   display: block;
@@ -25,7 +27,9 @@
   &.active-menu{
     .menu{
       left: 0;
+      height: fit-content;
     }
+
   }
 
   .menu{
