@@ -5,6 +5,12 @@ window.addEventListener('load',function () {
 
 class EventHandlerComponent extends BaseComponent{
 
+    constructor(props) {
+        super(props);
+        this._counter = 0 ;
+    }
+
+
     init(){
 
     }
@@ -22,6 +28,8 @@ class EventHandlerComponent extends BaseComponent{
         this.stopLoading();
         this.addHamburgerMenuEvent();
 
+        let c = this._counter;
+        console.log(  c++  );
         consoleAlert( "homeScreenEvents" );
         Array.from( document.getElementsByClassName('brand-logos') , ( el ) => {
                 el.addEventListener('click' ,  selfObject.goToMenuPage )
@@ -36,7 +44,6 @@ class EventHandlerComponent extends BaseComponent{
         this.activatePage();
         this.stopLoading();
         this.addHamburgerMenuEvent();
-        this.addBackButtonEvent();
 
         Array.from( document.getElementsByClassName('menu-btn') , ( el ) => {
             el.addEventListener('click' ,  selfObject.goToMenuIetmsPage )
@@ -50,8 +57,6 @@ class EventHandlerComponent extends BaseComponent{
         this.activatePage();
         this.stopLoading();
         this.addHamburgerMenuEvent();
-        this.addBackButtonEvent();
-        this.addDataOnScroll();
 
         Array.from( document.getElementsByClassName('menu-item-btn') , ( el ) => {
             el.addEventListener('click' ,  selfObject.customizeMenuItem )
@@ -65,11 +70,24 @@ class EventHandlerComponent extends BaseComponent{
         this.activatePage();
         this.stopLoading();
         this.addHamburgerMenuEvent();
-        this.addBackButtonEvent();
-        this.addDataOnScroll();
-
         (new CustomizeOrderItem()).init();
+    }
 
+    showCartMenuEvents(){
+        let selfObject = this;
+        this.startLazyLoad();
+        this.activatePage();
+        this.stopLoading();
+        this.addHamburgerMenuEvent();
+        (new CustomizeOrderItem()).init();
+    }
+
+    addRenderScreenEvents(){
+        let selfObject = this;
+        this.startLazyLoad();
+        this.activatePage();
+        this.stopLoading();
+        this.addHamburgerMenuEvent();
     }
 
     goToMenuPage( event ){
@@ -114,7 +132,15 @@ class EventHandlerComponent extends BaseComponent{
             nutritionInfo = JSON.parse( nutritionInfo );
         }
 
-        let menuItemObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src , 'sizes': sizesInfo ,'nutrition': nutritionInfo } ;
+        let menu = brandButton.dataset.id;
+        let custInfo = document.querySelector('[data-id="'+menu+'"]').querySelector('.customize-info').innerHTML;
+        if( custInfo === "{{customizations}}" ){
+            custInfo = {} ;
+        }else{
+            custInfo = JSON.parse( custInfo );
+        }
+
+        let menuItemObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src , 'sizes': sizesInfo ,'nutrition': nutritionInfo , 'customizations': custInfo  } ;
         localStorage.setItem( 'menu_item' , JSON.stringify( menuItemObject ) );
         (new ViewComponent()).showCustomizeMenuItemOption( menuItemObject.id );
     }
@@ -130,9 +156,13 @@ class EventHandlerComponent extends BaseComponent{
     addHamburgerMenuEvent(){
         let selfObject = this ;
 
+        selfObject.addGoToHomeEvent();
+        selfObject.addBackButtonEvent();
+
         $('.menu-button.hamburger-menu').on('click',function () {
             (new NavBar()).toggle();
         });
+
         document.querySelector('body').addEventListener('click',function ( e ) {
             if( document.querySelector('.app-nav.active-menu') != null && document.querySelector('.app-nav.active-menu').length !== 0 ){
                 if( e.target.closest('.menu') === null && e.target.closest('.hamburger-menu-container') === null  ){
@@ -151,10 +181,27 @@ class EventHandlerComponent extends BaseComponent{
             let href = $(this).attr('href');
             href = href.replace('#','');
             (new ViewComponent()).showRenderScreen( href );
-            selfObject.addGoToHomeEvent();
-            selfObject.addHamburgerMenuEvent();
         });
 
+        $('body').on('click','.logout',function (e) {
+            e.preventDefault();
+            localStorage.clear();
+            (new ViewComponent()).showFreshLoginScreen();
+        });
+
+        this.addCartEvent();
+
+    }
+
+    addCartEvent(){
+        let isCartExists = (new OrderManager()).isCartExists();
+        if( isCartExists && $('#cart-menu-screen').length == 0 ){
+            $('.cart-menu').removeClass('dnone');
+            $('body').on('click','.cart-menu',function (e) {
+                e.preventDefault();
+                (new ViewComponent()).showCartMenu();
+            });
+        }
     }
 
     addBackButtonEvent(){

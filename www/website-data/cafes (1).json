@@ -469,32 +469,7 @@
             "id": "item_30084"
           },
           "aace4163fedc5a71a83fda052bbea472": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "5.99",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/35fe2da793e9666fe4d6474633c6cec9065e407e-1024x1024.png",
             "name": "Vanilla Latte",
             "nutrition": {
@@ -514,32 +489,7 @@
             "id": "item_30077"
           },
           "328d664e3ea8ffad180015c71e6d855a": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "1.88",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b4f3882ec5cdf5ddf6e720065c6c6453d1a6b084-1024x1024.png",
             "name": "Mocha Latte",
             "nutrition": {
@@ -577,29 +527,10 @@
             "type": "item",
             "id": "item_48232",
             "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
               "medium": {
                 "title": "Medium",
                 "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
+                "price": "3.76"
               }
             }
           },
@@ -667,59 +598,16 @@
             "type": "item",
             "id": "item_26561",
             "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
               "extra_large": {
                 "title": "Extra Large",
                 "tag": "XL",
-                "price": "2.29",
-                "calories": 0
+                "price": "2.39",
+                "calories": 492
               }
             }
           },
           "3239ae98cebbe9ad79d7146053655aa1": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "2.13",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/d0a17a969bb763b0fd47e8d9d2c2783a4a3539d9-1024x1024.png",
             "name": "Cappuccino",
             "nutrition": {
@@ -739,32 +627,7 @@
             "id": "item_30079"
           },
           "a4eda3b1dd58066977c6ba1b4f6f1250": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "3.41",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/6187dfc0477ba2f25634d12d7e738ec427bbe1eb-1024x1024.png",
             "name": "Flat White",
             "nutrition": {
@@ -784,32 +647,7 @@
             "id": "item_45618"
           },
           "fe2e523eedd0a1b99da6ff7016c81fe8": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "2.4",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/47b25c1d3a9ff1079947dada68d69a07c767bec0-1024x1024.png",
             "name": "Cortado",
             "nutrition": {
@@ -829,32 +667,7 @@
             "id": "item_45621"
           },
           "483ff9e01268ec0cab6ee6566ece7f87": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "1.56",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/a816017b698a0c1404136ad081e986bf8dde1b0f-1024x1024.png",
             "name": "Espresso Macchiato",
             "nutrition": {
@@ -874,32 +687,7 @@
             "id": "item_45620"
           },
           "6c2011f2da89bb58c52de1140eb8e929": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "4.84",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/773a49eea38e02df9eb47ce4f1f48e01ae6c4fbb-600x589.png",
             "name": "Single Espresso Shot",
             "nutrition": {
@@ -919,32 +707,7 @@
             "id": "item_30081"
           },
           "c249710d392059b8f89a9028b8cfe167": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "2.89",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/773a49eea38e02df9eb47ce4f1f48e01ae6c4fbb-600x589.png",
             "name": "Double Espresso Shot",
             "nutrition": {
@@ -964,32 +727,7 @@
             "id": "item_28494"
           },
           "8fa3cc33bc5cbd6bf519e6e02eda28a5": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "4.3",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Original Blend ",
             "nutrition": {
@@ -1009,32 +747,7 @@
             "id": "item_27452"
           },
           "8f2d54d4baeb985e3a2f2753d543c7b8": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "1.67",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Dark Roast ",
             "nutrition": {
@@ -1054,32 +767,7 @@
             "id": "item_27453"
           },
           "0aa4d88e42d4148447d041d3f9c80530": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "4.93",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Decaf ",
             "nutrition": {
@@ -1099,32 +787,7 @@
             "id": "item_27454"
           },
           "9ae8263e7c2e7d4ce4dad0d5bc50901a": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "3.87",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Specialty Tea",
             "nutrition": {
@@ -1144,32 +807,7 @@
             "id": "item_27456"
           },
           "7e2ae00ddeb6d7be8b2a673cd6cc1222": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "4.97",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Steeped Tea ",
             "nutrition": {
@@ -1189,32 +827,7 @@
             "id": "item_27455"
           },
           "ab2d990d7cf5a8cb74883df863bfb4fd": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "2.45",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Hot Chocolate ",
             "nutrition": {
@@ -1234,32 +847,7 @@
             "id": "item_27467"
           },
           "29908ae6799fc70839fe230ac739b294": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "4.9",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 French Vanilla ",
             "nutrition": {
@@ -1279,32 +867,7 @@
             "id": "item_27472"
           },
           "92df80d6048403d19756e82a34dd4f4f": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": "5.78",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 White Hot Chocolate",
             "nutrition": {
@@ -3645,25 +3208,10 @@
             "type": "item",
             "id": "item_48232",
             "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
               "medium": {
                 "title": "Medium",
                 "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
+                "price": "5.39"
               }
             }
           },
@@ -3689,22 +3237,22 @@
               "small": {
                 "tag": "S",
                 "title": "Small",
-                "price": "1.89"
+                "price": "2.89"
               },
               "medium": {
                 "title": "Medium",
                 "tag": "M",
-                "price": "2.36"
+                "price": "1.36"
               },
               "large": {
                 "title": "Large",
                 "tag": "L",
-                "price": "2.35"
+                "price": "2.26"
               },
               "extra_large": {
                 "title": "Extra Large",
                 "tag": "XL",
-                "price": "2.56"
+                "price": "2.57"
               }
             }
           },
@@ -3727,21 +3275,6 @@
             "type": "item",
             "id": "item_26561",
             "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
               "extra_large": {
                 "title": "Extra Large",
                 "tag": "XL",
@@ -3750,28 +3283,7 @@
             }
           },
           "3239ae98cebbe9ad79d7146053655aa1": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "1.28",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/d0a17a969bb763b0fd47e8d9d2c2783a4a3539d9-1024x1024.png",
             "name": "Cappuccino",
             "nutrition": {
@@ -3791,28 +3303,7 @@
             "id": "item_30079"
           },
           "a4eda3b1dd58066977c6ba1b4f6f1250": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "4.48",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/6187dfc0477ba2f25634d12d7e738ec427bbe1eb-1024x1024.png",
             "name": "Flat White",
             "nutrition": {
@@ -3832,28 +3323,7 @@
             "id": "item_45618"
           },
           "fe2e523eedd0a1b99da6ff7016c81fe8": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "4.68",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/47b25c1d3a9ff1079947dada68d69a07c767bec0-1024x1024.png",
             "name": "Cortado",
             "nutrition": {
@@ -3873,28 +3343,7 @@
             "id": "item_45621"
           },
           "483ff9e01268ec0cab6ee6566ece7f87": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "3.76",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/a816017b698a0c1404136ad081e986bf8dde1b0f-1024x1024.png",
             "name": "Espresso Macchiato",
             "nutrition": {
@@ -3914,28 +3363,7 @@
             "id": "item_45620"
           },
           "6c2011f2da89bb58c52de1140eb8e929": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "5.52",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/773a49eea38e02df9eb47ce4f1f48e01ae6c4fbb-600x589.png",
             "name": "Single Espresso Shot",
             "nutrition": {
@@ -3955,28 +3383,7 @@
             "id": "item_30081"
           },
           "c249710d392059b8f89a9028b8cfe167": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "4.74",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/773a49eea38e02df9eb47ce4f1f48e01ae6c4fbb-600x589.png",
             "name": "Double Espresso Shot",
             "nutrition": {
@@ -3996,28 +3403,7 @@
             "id": "item_28494"
           },
           "8fa3cc33bc5cbd6bf519e6e02eda28a5": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "1.34",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Original Blend ",
             "nutrition": {
@@ -4037,28 +3423,7 @@
             "id": "item_27452"
           },
           "8f2d54d4baeb985e3a2f2753d543c7b8": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "4.17",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Dark Roast ",
             "nutrition": {
@@ -4078,28 +3443,7 @@
             "id": "item_27453"
           },
           "0aa4d88e42d4148447d041d3f9c80530": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "5.49",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Decaf ",
             "nutrition": {
@@ -4119,28 +3463,7 @@
             "id": "item_27454"
           },
           "9ae8263e7c2e7d4ce4dad0d5bc50901a": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "5.66",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Specialty Tea",
             "nutrition": {
@@ -4160,28 +3483,7 @@
             "id": "item_27456"
           },
           "7e2ae00ddeb6d7be8b2a673cd6cc1222": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "2.66",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Steeped Tea ",
             "nutrition": {
@@ -4201,28 +3503,7 @@
             "id": "item_27455"
           },
           "ab2d990d7cf5a8cb74883df863bfb4fd": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "2.16",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Hot Chocolate ",
             "nutrition": {
@@ -4242,28 +3523,7 @@
             "id": "item_27467"
           },
           "29908ae6799fc70839fe230ac739b294": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "3.6",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 French Vanilla ",
             "nutrition": {
@@ -4283,28 +3543,7 @@
             "id": "item_27472"
           },
           "92df80d6048403d19756e82a34dd4f4f": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "5.53",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 White Hot Chocolate",
             "nutrition": {
@@ -4332,28 +3571,7 @@
         "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/55a5ee3b155a209f441f833690a722bb9194c081-1024x1024.png",
         "menuitems": {
           "3de5edef57788c9d12352aa6e58f10f6": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "3.53",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/84a2fee8a4f2429562b9531c34c8c967e5acbfff-1024x1024.png",
             "name": "Plain Bagel",
             "nutrition": {
@@ -4373,28 +3591,7 @@
             "id": "item_30990"
           },
           "2d1661e630894c8dfbb3c57517a2c116": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "8.54",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/55a5ee3b155a209f441f833690a722bb9194c081-1024x1024.png",
             "name": "Everything Bagel",
             "nutrition": {
@@ -4414,28 +3611,7 @@
             "id": "item_30985"
           },
           "17b14ff71e7f7cf70d55dca65bfcd9cb": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "6.64",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/8e45b106b3232b54f752bc17c3864aea31dda739-1024x1024.png",
             "name": "12 Grain Bagel",
             "nutrition": {
@@ -4455,28 +3631,7 @@
             "id": "item_30988"
           },
           "983a617f80c40ce93a34f681f90460f6": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "6.5",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/63d2371cd9f656598f2b9cee1d7f62ec074d2196-1024x1024.png",
             "name": "Four Cheese Bagel",
             "nutrition": {
@@ -4496,28 +3651,7 @@
             "id": "item_30994"
           },
           "c2926630ead16dfc099e6ac183565506": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "9.22",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/d1d45a39a34f4cddb0e289fb0af59f66c532f372-1024x1024.png",
             "name": "Maple Cinnamon French Toast Bagel",
             "nutrition": {
@@ -4537,28 +3671,7 @@
             "id": "item_31029"
           },
           "b56a69daf71192594962ff8e1aa7ab8b": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "10.87",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/8c0d7ae9c8470e654e602c45e90082105e93ffa8-1024x1024.png",
             "name": "Cinnamon Raisin Bagel",
             "nutrition": {
@@ -4578,28 +3691,7 @@
             "id": "item_30986"
           },
           "5b77ec00ab2ff78bc9f485425bc65240": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "10.58",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/4d010de0b288e8fa74a64924ef70f575127859a6-1024x1024.png",
             "name": "Sesame Seed Bagel",
             "nutrition": {
@@ -4619,28 +3711,7 @@
             "id": "item_30984"
           },
           "dc0e4f8909ca313d207d38f00801e555": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "6.2",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/d2cb890f13179473fb48126cd530b5c0ceb934c9-1024x1024.png",
             "name": "Sundried Tomato Asiago Parmesan Bagel",
             "nutrition": {
@@ -4911,92 +3982,6 @@
     "position": {
       "lat": 49.224947,
       "lang": -123.1101825
-    },
-    "menus": {
-      "hot_coffees": {
-        "name": "Hot Coffees",
-        "id": "hot_coffees",
-        "type": "hot_coffees",
-        "url": "https://globalassets.starbucks.com/assets/62cada05d1f64f79bf42f9544cffaae1.jpg"
-      },
-      "hot_drinks": {
-        "name": "Hot Drinks",
-        "id": "hot_drinks",
-        "type": "hot_drinks",
-        "url": "https://globalassets.starbucks.com/assets/d39650cf28d44aa283a0f311581e3491.jpg"
-      },
-      "cold_coffees": {
-        "name": "Cold Coffees",
-        "id": "cold_coffees",
-        "type": "cold_coffees",
-        "url": "https://globalassets.starbucks.com/assets/1697f7c55887448684fed85ecdd98e44.jpg"
-      },
-      "hot_teas": {
-        "name": "Hot Teas",
-        "id": "hot_teas",
-        "type": "hot_teas",
-        "url": "https://globalassets.starbucks.com/assets/49bf4333e9d048498a59a5a2b958165f.jpg"
-      },
-      "frappuccino_blended_beverages": {
-        "name": "Frappuccino Blended Beverages",
-        "id": "frappuccino_blended_beverages",
-        "type": "frappuccino_blended_beverages",
-        "url": "https://globalassets.starbucks.com/assets/e4d9e996eb64453eb3ac7adb570c9b7b.jpg"
-      },
-      "iced_teas": {
-        "name": "Iced Teas",
-        "id": "iced_teas",
-        "type": "iced_teas",
-        "url": "https://globalassets.starbucks.com/assets/7b51b01b4a394a829ff9df4ef9f3be3c.jpg"
-      },
-      "cold_drinks": {
-        "name": "Cold Drinks",
-        "id": "cold_drinks",
-        "type": "cold_drinks",
-        "url": "https://globalassets.starbucks.com/assets/7a42b73c1b964dea8d685559b1fab7b8.jpg"
-      },
-      "hot_breakfast": {
-        "name": "Hot Breakfast",
-        "id": "hot_breakfast",
-        "type": "hot_breakfast",
-        "url": "https://globalassets.starbucks.com/assets/ecbd0e5d6bb64650ab6d31c667b80b13.jpg"
-      },
-      "lunch": {
-        "name": "Lunch",
-        "id": "lunch",
-        "type": "lunch",
-        "url": "https://globalassets.starbucks.com/assets/fb98344fda004b0687fdf96d961ba1a6.jpg"
-      },
-      "yogurt_&_custard": {
-        "name": "Yogurt & Custard",
-        "id": "yogurt_&_custard",
-        "type": "yogurt_&_custard",
-        "url": "https://globalassets.starbucks.com/assets/13a82584a90745a680798973823fda34.jpg"
-      },
-      "bakery": {
-        "name": "Bakery",
-        "id": "bakery",
-        "type": "bakery",
-        "url": "https://globalassets.starbucks.com/assets/057f39830ac7427aa47b4443d1f08d14.jpg"
-      },
-      "snacks_&_sweets": {
-        "name": "Snacks & Sweets",
-        "id": "snacks_&_sweets",
-        "type": "snacks_&_sweets",
-        "url": "https://globalassets.starbucks.com/assets/374230e32c03466e9f1696551d843f3b.jpg"
-      },
-      "whole_bean": {
-        "name": "Whole Bean",
-        "id": "whole_bean",
-        "type": "whole_bean",
-        "url": "https://globalassets.starbucks.com/assets/91ad656330184fa695210eb4de251a5d.jpg"
-      },
-      "verismo_pods": {
-        "name": "Verismo Pods",
-        "id": "verismo_pods",
-        "type": "verismo_pods",
-        "url": "https://globalassets.starbucks.com/assets/1b0bc46a9e2041e9969d7576e056f8d7.jpg"
-      }
     }
   },
   "subway": {
@@ -5040,56 +4025,6 @@
     "position": {
       "lat": 49.2252168,
       "lang": -123.1105755
-    },
-    "menus": {
-      "all_sandwiches": {
-        "name": "All Sandwiches",
-        "id": "all_sandwiches",
-        "type": "all sandwiches",
-        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_AllSandwiches_540x540_@1x.jpg"
-      },
-      "signature_wraps": {
-        "name": "Signature Wraps",
-        "id": "signature_wraps",
-        "type": "signature wraps",
-        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_SignatureWraps_540x540_@1x.jpg"
-      },
-      "featured_products": {
-        "name": "Featured Products",
-        "id": "featured_products",
-        "type": "featured products",
-        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Owned_BOGO_Product_Category_Small.jpg"
-      },
-      "fresh_fit_choices": {
-        "name": "Fresh Fit Choices",
-        "id": "fresh_fit_choices",
-        "type": "fresh fit choices",
-        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_FreshFit_540x540_@1x.jpg"
-      },
-      "chopped_salads": {
-        "name": "Chopped Salads",
-        "id": "chopped_salads",
-        "type": "chopped salads",
-        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_ChoppedSalads_540x540_@1x.jpg"
-      },
-      "breakfast": {
-        "name": "Breakfast",
-        "id": "breakfast",
-        "type": "breakfast",
-        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_Breakfast_540x540_@1x.jpg"
-      },
-      "sides_drinks": {
-        "name": "Sides & Drinks",
-        "id": "sides_drinks",
-        "type": "sides drinks",
-        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_SidesDrinks_540x540_@1x.jpg"
-      },
-      "breads_toppings_extras": {
-        "name": "Breads Toppings Extras",
-        "id": "breads_toppings_extras",
-        "type": "breads toppings extras",
-        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_SidesDrinks_540x540_@1x.jpg"
-      }
     }
   },
   "triple_o": {
@@ -5130,254 +4065,7 @@
         "end": "11:00"
       }
     },
-    "menus": {
-      "original_sunny_start": {
-        "name": "Original Sunny Start",
-        "id": "original_sunny_start",
-        "type": "original_sunny",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Sunny-Start-600x600.png"
-      },
-      "sausage_sunny_start": {
-        "name": "Sausage Sunny Start",
-        "id": "sausage_sunny_start",
-        "type": "sausage_sunny",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TPLO16_BRKFST-Website_ProductDetails_300x2803.jpg"
-      },
-      "breakfast_club": {
-        "name": "Breakfast Club",
-        "id": "breakfast_club",
-        "type": "breakfast_club",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TPLO16_BRKFST-Website_ProductDetails_300x2805.jpg"
-      },
-      "egg_blt_ciabatta": {
-        "name": "Egg Blt Ciabatta",
-        "id": "egg_blt_ciabatta",
-        "type": "egg_blt_ciabatta",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/2019-02-3530-TripleOs-NewBreakfastItems-ProductInfo-EggBLTCiabatta-300x280.jpg"
-      },
-      "sausage_ciabatta": {
-        "name": "Sausage_Ciabatta",
-        "id": "sausage_ciabatta",
-        "type": "sausage ciabatta",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/2019-02-3530-TripleOs-NewBreakfastItems-ProductInfo-SausageCiabatta-300x280.jpg"
-      },
-      "canadian_waffle_breakfast_sandwich": {
-        "name": "Canadian Waffle Breakfast Sandwich",
-        "id": "canadian_waffle_breakfast_sandwich",
-        "type": "canadian_waffle",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/2019-02-3530-TripleOs-NewBreakfastItems-ProductInfo-WaffleSandwich-300x280.jpg"
-      },
-      "nat's_own_coffee": {
-        "name": "Nat's Own Coffee",
-        "id": "nat's_own_coffee",
-        "type": "nat's_own_coffee",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/12/Nats-own-coffee-cup-full-600x600.png"
-      },
-      "mushroom_super_swiss_burger": {
-        "name": "Mushroom Super Swiss Burger",
-        "id": "mushroom_super_swiss_burger",
-        "type": "mushroom_super_swiss_burger",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/04/2019-11-600x600.png"
-      },
-      "bacon_cheddar_burger": {
-        "name": "Bacon Cheddar Burger",
-        "id": "bacon_cheddar_burger",
-        "type": "bacon_cheddar",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Burger_Beef_BC_web_144dpi-600x560.png"
-      },
-      "chipotle_bbq_bacon_melt": {
-        "name": "Chipotle BBQ Melt",
-        "id": "chipotle_bbq_bacon_melt",
-        "type": "chipotle_bbq",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Burger_Beef_Chipotle_web_144dpi-600x560.png"
-      },
-      "monty_mushroom_burger": {
-        "name": "Monty Mushroom Burger",
-        "id": "monty_mushroom_burger",
-        "type": "monty_mushroom",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/04/Burger_Beef_Monty_web_144dpi-475x475.png"
-      },
-      "original_burger": {
-        "name": "Original Burger",
-        "id": "original_burger",
-        "type": "original_burger",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/04/Burger_Beef_Original_web_144dpi-600x560.png"
-      },
-      "original_burger_with_cheese": {
-        "name": "Original Burger With Cheese",
-        "id": "original_burger_cheese",
-        "type": "original_burger",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Original-Cheese-Cam-prod-image-size-Copy.png"
-      },
-      "double_double": {
-        "name": "Double Double",
-        "id": "double_double",
-        "type": "double_double",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Burger_Beef_Double_web_144dpi-600x560.png"
-      },
-      "lettuce_wrap": {
-        "name": "Lettuce Wrap",
-        "id": "lettuce_wrap",
-        "type": "lettuce_wrap",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/04/Lettuce-prod-details-cam-final.jpg"
-      },
-      "buttermilk_chicken_club": {
-        "name": "Buttermilk Chicken Club",
-        "id": "buttermilk_chicken_club",
-        "type": "buttermilk_chicken_club",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/2018-10-3371-TripleOs-BmilkChicClubMozzaBites-ProductInfo-300x280-Burger.jpg"
-      },
-      "bc_chicken": {
-        "name": "BC Chicken",
-        "id": "bc_chicken",
-        "type": "bc_chicken",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Burger_Chicken_BC_web_144dpi-600x560.png"
-      },
-      "spicy_ultimate_crunch": {
-        "name": "Spicy Ultimate Crunch",
-        "id": "spicy_ultimate_crunch",
-        "type": "spicy_ultimate_crunch",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Burger_Chicken_Ultimate_web_144dpi-600x560.png"
-      },
-      "chicken_and_waffles": {
-        "name": "Chicken & Waffles",
-        "id": "chicken_and_waffles",
-        "type": "chicken_and_waffles",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Chicken-Waffle-Breakfast-Sandwich_1139-300x280-RGB.jpg"
-      },
-      "dippin_chicken_tenders": {
-        "name": "Dippin Chicken Tenders",
-        "id": "dippin_chicken_tenders",
-        "type": "dippin_chicken_tenders",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Chicken_Strips_web_144dpi-600x560.png"
-      },
-      "veggie_burger": {
-        "name": "Veggie Burger",
-        "id": "veggie_burger",
-        "type": "veggie_burger",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/04/Veggie-Burger-Product-details-300x280.jpg"
-      },
-      "beyond_original_burger": {
-        "name": "Beyond Original Burger",
-        "id": "beyond_original_burger",
-        "type": "beyond_original_burger",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TPLO-BeyondBurger-300x280.jpg"
-      },
-      "kale_caesar_with_grilled_chicken": {
-        "name": "Kale Caesar With Grilled Chicken",
-        "id": "kale_caesar_with_grilled_chicken",
-        "type": "kale_caesar_with_grilled_chicken",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/04/TPLO-KaleChickenCaesar-300x280.jpg"
-      },
-      "fish_and_chips": {
-        "name": "Fish & Chips",
-        "id": "fish_and_chips",
-        "type": "fish_and_chips",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/04/fish-oceanwise-600x600.png"
-      },
-      "crispy_fish_burger": {
-        "name": "Crispy Fish Burger",
-        "id": "crispy_fish_burger",
-        "type": "crispy_fish_burger",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/04/burger-oceanwise-600x600.png"
-      },
-      "kale_caesar_salad_with_grilled_chicken": {
-        "name": "Kale Caesar With Grilled Chicken",
-        "id": "kale_caesar_salad_with_grilled_chicken",
-        "type": "kale_caesar_salad_with_grilled_chicken",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TPLO-KaleChickenCaesar-300x280.jpg"
-      },
-      "kale_caesar_salad": {
-        "name": "Kale Caesar Salad",
-        "id": "kale_caesar_salad",
-        "type": "kale_caesar_salad",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TPLO-KaleCaesar-300x280.jpg"
-      },
-      "french_fries": {
-        "name": "French Fries",
-        "id": "french_fries",
-        "type": "french_fries",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Sides_Fries_web_144dpi-600x560.png"
-      },
-      "onion_rings": {
-        "name": "Onion Rings",
-        "id": "onion_rings",
-        "type": "onion_rings",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/0002_OnRings.jpg"
-      },
-      "poutine": {
-        "name": "Poutine",
-        "id": "poutine",
-        "type": "poutine",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Sides_Poutine_web_144dpi-600x560.png"
-      },
-      "sweet_potato_fries": {
-        "name": "Sweet Potato Fries",
-        "id": "sweeet_potato_fries",
-        "type": "sweeet_potato_fries",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Sides_SweetPotato_web_144dpi-600x560.png"
-      },
-      "garlic_parm_fries": {
-        "name": "Garlic Parm Fries",
-        "id": "garlic_parm_fries",
-        "type": "garlic_parm_fries",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Sides_ParmFries_web_144dpi-600x560.png"
-      },
-      "chocolate_milkshake": {
-        "name": "Chocolate Milkshake",
-        "id": "chocolate_milkshake",
-        "type": "chocolate_milkshake",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TO_milkshakes_product_chocolate.jpg"
-      },
-      "cookies_and_cream_milkshake": {
-        "name": "Cookies & Cream Milkshake",
-        "id": "cookies_and_cream_milkshak",
-        "type": "cookies_and_cream_milkshak",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TO_milkshakes_product_strawberry.jpg"
-      },
-      "vanilla_milkshake": {
-        "name": "Vanilla Milkshake",
-        "id": "vanilla_milkshake",
-        "type": "vanilla_milkshake",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TO_milkshakes_product_vanilla.jpg"
-      },
-      "soda": {
-        "name": "Soda",
-        "id": "soda",
-        "type": "soda",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TPLO_drink_0002_RGB-600x600.jpg"
-      },
-      "simply_juice": {
-        "name": "Simply Juice",
-        "id": "simply_juice",
-        "type": "simply_juice",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Simply_TripleOs_300x280-prod-details-px-swap.jpg"
-      },
-      "nats_own_coffee": {
-        "name": "Nat's Own Coffee",
-        "id": "nats_own_coffee",
-        "type": "nats_own_coffee",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/Nats-Coffee-Resized-600x600.png"
-      },
-      "dipin_chicken_tenders": {
-        "name": "Dippin Chicken Tenders",
-        "id": "dipin_chicken_tenders",
-        "type": "dipin_chicken_tenders",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/dippin-600x600.png"
-      },
-      "grilled_cheese": {
-        "name": "Grilled Cheeese",
-        "id": "grilled_cheese",
-        "type": "grilled_cheese",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/TPLO-Kids-GrilledCheese-2373-ProductInfo-800x800-1-600x600.png"
-      },
-      "burger": {
-        "name": "Burger",
-        "id": "burger",
-        "type": "burger",
-        "url": "https://d15u2cc0ghnorb.cloudfront.net/files/uploads/2019/05/burger-600x600.png"
-      }
-    },
+    "menus": {},
     "position": {
       "lat": 49.224604,
       "lang": 123.107379
@@ -5413,62 +4101,7 @@
         "end": "4:30"
       }
     },
-    "menus": {
-      "black_tea": {
-        "name": "Black tea ",
-        "id": "black_tea",
-        "type": "black_tea",
-        "url": "https://i.ndtvimg.com/i/2017-10/black-tea-encourages-weight-loss_650x400_51507196055.jpg"
-      },
-      "green_tea": {
-        "name": "Green tea ",
-        "id": "green_tea",
-        "type": "green_tea",
-        "url": "https://www.healthywomen.org/sites/default/files/green-tea.jpg"
-      },
-      "milk_tea": {
-        "name": "Milk tea ",
-        "id": "milk_tea",
-        "type": "milk_tea",
-        "url": "https://cdn2.foodviva.com/static-content/food-images/tea-recipes/milk-tea-recipe/milk-tea-recipe.jpg"
-      },
-      "flavoured_slush": {
-        "name": "Flavoured slush ",
-        "id": "flavoured_slush",
-        "type": "flavoured_slush",
-        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPD5tNwn8ovDotafQ5-Y8Uk124OomZ8vEYtNlJ2niyRkh-rHmF&usqp=CAU"
-      },
-      "calpis": {
-        "name": "Calpis ",
-        "id": "calpis",
-        "type": "calpis",
-        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ0THeLbesofzzF_BxbjrLNmCwescAb9IouL_B04LuFR94ETsXb&usqp=CAU"
-      },
-      "toppings": {
-        "name": "Toppings ",
-        "id": "toppings",
-        "type": "toppings",
-        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRROptHEoM8UqN9xdlzJQGIvy32kKKvCUd1gMcu1MnPhd0fw5aM&usqp=CAU"
-      },
-      "coffee": {
-        "name": "Coffee ",
-        "id": "coffee",
-        "type": "coffee",
-        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlAuqCkIPxz5BhlK7_au-zRxqQhBAVMKUPp3LOOihUQ9-MZACd&usqp=CAU"
-      },
-      "tea_latte": {
-        "name": "Tea latte ",
-        "id": "tea_latte",
-        "type": "tea_latte",
-        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRaEv-f5lY2jPg4mNEJuCMe-JmMPszz4pkQVSSyJNOQnj48e6U6&usqp=CAU"
-      },
-      "loose_leaf_tea": {
-        "name": "Loose leaf tea",
-        "id": "loose_leaf_tea",
-        "type": "loose_leaf_tea",
-        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRsNyMlF4iSxSoBhRppWl0UKRu3YBbfgMzMF6w6N1gm6Gm2URnn&usqp=CAU"
-      }
-    },
+    "menus": {},
     "position": {
       "lat": 49.224604,
       "lang": 123.107379

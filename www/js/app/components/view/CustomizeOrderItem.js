@@ -1,13 +1,33 @@
 class CustomizeOrderItem extends ViewComponent{
+
+    get customizerData() {
+        if( typeof this._customizerData === "undefined"){
+            this._customizerData = {};
+        }
+        return  this._customizerData ;
+    }
+
+    set customizerData(value) {
+        this._customizerData = value;
+    }
+
+    addCustomizerData( key , value ){
+        let customizerData = this.customizerData;
+        customizerData[key] = value;
+        this.customizerData = customizerData;
+    }
+
     constructor() {
         super();
     }
 
     init() {
+        this._customizerData = {};
         this.addEvents();
     }
 
     addEvents(){
+        let selfObject = this ;
 
         //plugin bootstrap minus and plus
         //http://jsfiddle.net/laelitenetwork/puJ6G/
@@ -78,7 +98,6 @@ class CustomizeOrderItem extends ViewComponent{
             }
         });
 
-        let selfObject = this;
         $('body').on('change', '.sizeInput' ,function (e) {
             $('.sizeInput').prop('checked',false);
             $(this).prop('checked',true);
@@ -89,6 +108,74 @@ class CustomizeOrderItem extends ViewComponent{
             selfObject.calculatePriceAndCalories();
         });
 
+        $('body').on('click', '.addItem', function (e) {
+            selfObject.calculatePriceAndCalories();
+            let orderItem = new OrderItem();
+
+            let orderItemId = $(this).data('id');
+            if( ( orderItemId === undefined ||  orderItemId === null || orderItemId === "{{itemOrderId}}" || orderItemId === "" ) ){
+                orderItemId = null ;
+            }
+
+            new Promise(function (resolve, reject) {
+
+                let menu_item = JSON.parse( localStorage.getItem('menu_item') );
+                let quanitityInput = parseInt(selfObject.getValue( '#quanitityInput' ));
+                let customizerData = selfObject.customizerData;
+                orderItem.init( orderItemId , menu_item.id , menu_item.name ,
+                    parseFloat($('#customizedPrice').text()) ,
+                    quanitityInput,
+                    parseFloat($('#customizedCalories').text()) ,
+                    customizerData,
+                    menu_item
+                );
+                orderItem.saveToOrder();
+                resolve();
+
+            }).then(function () {
+
+                let menu = JSON.parse( localStorage.getItem('menu') );
+                if( menu == null ){
+                    console.log('menu empty showing homescreen.');
+                    this.showHomeScreen();
+                }
+                (new ViewComponent()).showMenuIetmsScreen( menu.id );
+
+            }).catch(function (reason) {
+                consoleAlert(reason);
+            });
+
+        });
+
+        $('body').on('click', '.removeItem', function (e) {
+            let orderItemId = $(this).data('id');
+
+            new Promise(function (resolve, reject) {
+                selfObject.calculatePriceAndCalories();
+                if( (orderItemId === null || orderItemId === "{{itemOrderId}}" || orderItemId === "" ) ){
+                    orderItemId = null ;
+                }
+                if( orderItemId !== null ){
+                    (new OrderManager()).removeItem( orderItemId );
+                }
+                resolve();
+
+            }).then(function () {
+
+                let menu = JSON.parse( localStorage.getItem('menu') );
+                if( menu == null ){
+                    console.log('menu empty showing homescreen.');
+                    this.showHomeScreen();
+                }
+                (new ViewComponent()).showMenuIetmsScreen( menu.id );
+
+            }).catch(function (reason) {
+                consoleAlert(reason);
+            });
+
+        });
+
+        selfObject.calculatePriceAndCalories();
     }
 
     getValue( elem ){
@@ -115,16 +202,34 @@ class CustomizeOrderItem extends ViewComponent{
             calories = parseFloat(selectedSize.data('calories'));
         }
 
+        let quantity = 0 ;
         if( this.elemExist( '#quanitityInput' ) ){
-            let quantity = this.getValue( '#quanitityInput'  );
+            quantity = this.getValue( '#quanitityInput'  );
             price = price*quantity;
             calories = calories*quantity;
         }
 
+        let selfObject = this;
+        $('.counter:not([name="Quantity"])').each(function (index , el) {
+            let priceItem = $(el).data('price');
+            let caloriesItem = $(el).data('calories');
+            let ownQuantity = $(el).val();
+            priceItem = ownQuantity*priceItem;
+            caloriesItem = ownQuantity*caloriesItem;
+
+            priceItem = quantity*priceItem;
+            caloriesItem = quantity*caloriesItem;
+
+            price += priceItem ;
+            calories += caloriesItem;
+
+
+            selfObject.addCustomizerData( $(el).data('id') , {'price':priceItem, 'value':ownQuantity, 'calories':caloriesItem} );
+
+        });
 
         $('#customizedPrice').text(parseFloat(price).toFixed(2));
         $('#customizedCalories').text(parseFloat(calories).toFixed(2));
-
 
     }
 

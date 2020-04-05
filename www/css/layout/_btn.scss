@@ -43,6 +43,9 @@
   font-size: 16px;
   white-space: pre-wrap;
   display: block;
+
+
+
 }
 
 button.button-native {
@@ -99,11 +102,6 @@ button.button-native {
 
       }
     }
-
-
-
-
-
   }
 }
 
@@ -138,10 +136,7 @@ button.button-native {
       width: 40%;
       margin: 20px auto;
     }
-
-
   }
-
 }
 
 .back-button {
@@ -154,49 +149,75 @@ button.button-native {
   color: $color__primary;
 }
 
+.cart-menu {
+  padding: 15px;
+  color: $color__primary;
+}
+
 .dnone {
   display: none;
 }
 
 #home-screen {
-  .hamburger-menu {
-    display: block;
-  }
+  .header-div{
+    .hamburger-menu {
+      display: block;
+    }
 
-  .back-button {
-    display: none;
-  }
+    .back-button {
+      display: none;
+    }
 
-  .home-button {
-    display: none;
+    .home-button {
+      display: none;
+    }
+
+    .cart-menu {
+      display: block;
+    }
+
   }
 }
 
 #menu-item-screen, #menu-screen, #customize-menu-item-screen {
-  .hamburger-menu {
-    display: none;
-  }
+  .header-div{
+    .hamburger-menu {
+      display: none;
+    }
 
-  .back-button {
-    display: block;
-  }
+    .back-button {
+      display: block;
+    }
 
-  .home-button {
-    display: none;
+    .home-button {
+      display: none;
+    }
+
+    .cart-menu {
+      display: none;
+    }
+
   }
 }
 
-#faq-screen, #feedback-screen, #editInfo-screen , #privacyPolicys-screen, #cafeLocations-screen {
-  .hamburger-menu {
-    display: block;
-  }
+#faq-screen, #feedback-screen, #editInfo-screen , #privacyPolicys-screen, #cafeLocations-screen , #cart-menu-screen {
+  .header-div{
+    .hamburger-menu {
+      display: block;
+    }
 
-  .back-button {
-    display: none;
-  }
+    .back-button {
+      display: none;
+    }
 
-  .home-button {
-    display: block;
+    .home-button {
+      display: block;
+    }
+
+    .cart-menu {
+      display: none;
+    }
+
   }
 }
 
@@ -214,6 +235,9 @@ button.button-native {
   align-items: center;
 }
 
+#ion-content{
+  margin-bottom: 70px;
+}
 .form-button {
   text-align: center;
 }

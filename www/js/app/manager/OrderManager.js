@@ -2,6 +2,13 @@ class OrderManager extends BaseManager{
 
     constructor(props) {
         super(props);
+        let currentOrder = localStorage.getItem('currentOrder');
+        if( currentOrder === null ){
+            currentOrder = {} ;
+        }else{
+            currentOrder = JSON.parse( currentOrder ) ;
+        }
+        this._currentOrder = currentOrder ;
     }
 
     get currentOrder() {
@@ -10,11 +17,7 @@ class OrderManager extends BaseManager{
 
     set currentOrder(value) {
         this._currentOrder = value;
-        localStorage.getItem('_currentOrder' ,  this._currentOrder ) ;
-    }
-
-    init( currentOrder ) {
-        this.currentOrder = localStorage.getItem('_currentOrder') ;
+        localStorage.setItem('currentOrder' ,  JSON.stringify(value) ) ;
     }
 
     addIetm( key , data ){
@@ -31,8 +34,13 @@ class OrderManager extends BaseManager{
         this.currentOrder = currentOrder;
     }
 
-    calculateOrder(){
-
+    isCartExists(){
+        let currentOrder = this.currentOrder;
+        if( currentOrder !== null && typeof currentOrder == "object" && JSON.stringify(currentOrder) !== "{}" ){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

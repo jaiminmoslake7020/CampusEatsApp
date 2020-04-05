@@ -19,19 +19,9 @@
   text-align: center;
 }
 
-.btn-primary {
-  //background-color: $color__secondary !important;
-}
 
 .edit-info-button {
   text-align: center;
-}
-
-.btn-default {
-  //background-color: $color__secondary;
-  //color: $color__bgprimary;
-  margin-top: 1rem;
-  justify-content: center;
 }
 
 .feedback-form {
@@ -210,8 +200,9 @@ body {
   color: #464640;
   font-family: ff-dagny-web-pro, "Helvetica Neue", Verdana, Geneva, Arial, Helvetica, sans-serif;
   font-size: 19px;
-  font-weight: 100;
+  font-weight: 400;
   line-height: 28px;
+
 }
 
 a {
