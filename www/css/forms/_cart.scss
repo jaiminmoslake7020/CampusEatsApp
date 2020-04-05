@@ -1,0 +1,86 @@
+
+.cart-detail {
+  max-width: 99%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr .4fr .5fr .5fr .5fr;
+  grid-column-gap: .7rem;
+}
+.cart-detail p {
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+.product-quantity p {
+  font-size: 0.9rem;
+}
+.product-quantity h4 {
+  font-size: 0.9rem;
+}
+.product-amount h4 {
+  font-size: 0.9rem;
+}
+.product-amount p {
+  font-size: 0.9rem;
+}
+.product-calories p {
+  font-size: 0.9rem;
+}
+.product-calories p:last-of-type {
+  color: gray;
+}
+.product-quantity p:last-of-type {
+  color: gray;
+}
+.product-amount p:last-of-type {
+  color: gray;
+}
+//.product-quantity p {
+//  font-size: 0.9rem;
+//}
+.img-name h4{
+  font-size: 0.9rem;
+  text-align: center;
+}
+.product-icons .fas {
+  color:$color__primary;
+  padding: 0.3rem !important;
+  font-size: 0.9rem;
+}
+.product-icons {
+  padding-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.product-quantity {
+  text-align: center;
+}
+.card-body {
+  padding-top: 1rem;
+}
+
+.product-price {
+  padding-top: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.product-price p{
+  color: black;
+}
+.product-price h4 {
+  padding-left: 0.7rem;
+  padding-right: 1rem;
+}
+
+.card-header {
+  text-align: center;
+  padding: 1rem;
+  color: $color__primary;
+}
+
+.order-payment-total {
+  display: flex;
+  justify-content: space-between;
+}
