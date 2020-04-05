@@ -70,7 +70,7 @@ class OrderItem extends BaseManager{
 
     init( orderItemId = null , menuItemId , name , price , quantity , calories , customizerOptions , actualData  ) {
         if( orderItemId === null ){
-            this.getViewComponent().getStringHelper().makeid(5);
+            orderItemId = this.getViewComponent().getStringHelper().makeid(5);
         }
         this._orderItemId = orderItemId;
         this._menuItemId = menuItemId;
@@ -83,5 +83,8 @@ class OrderItem extends BaseManager{
 
     }
 
+    saveToOrder(){
+        (new OrderManager()).addIetm( this.orderItemId , this );
+    }
 
 }

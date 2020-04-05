@@ -1,7 +1,10 @@
 class CustomizeOrderItem extends ViewComponent{
 
     get customizerData() {
-        return this._customizerData;
+        if( typeof this._customizerData === "undefined"){
+            this._customizerData = {};
+        }
+        return  this._customizerData ;
     }
 
     set customizerData(value) {
@@ -10,7 +13,7 @@ class CustomizeOrderItem extends ViewComponent{
 
     addCustomizerData( key , value ){
         let customizerData = this.customizerData;
-        customizerData.key = value;
+        customizerData[key] = value;
         this.customizerData = customizerData;
     }
 
@@ -19,8 +22,8 @@ class CustomizeOrderItem extends ViewComponent{
     }
 
     init() {
-        this.addEvents();
         this._customizerData = {};
+        this.addEvents();
     }
 
     addEvents(){
@@ -105,23 +108,70 @@ class CustomizeOrderItem extends ViewComponent{
             selfObject.calculatePriceAndCalories();
         });
 
-        $('body').on('change', '.addItem', function (e) {
+        $('body').on('click', '.addItem', function (e) {
             selfObject.calculatePriceAndCalories();
             let orderItem = new OrderItem();
 
-            let menu_item = JSON.parse( localStorage.getItem('menu_item') );
-            let selfObject = this;
-            orderItem.init( null , menu_item.id , menu_item.name ,
-                parseFloat($('#customizedPrice').text()) ,
-                selfObject.getValue( '#quanitityInput' ) ,
-                parseFloat($('#customizedCalories').text()) ,
-                selfObject.customizerData
+            let orderItemId = $(this).data('id');
+            if( ( orderItemId === undefined ||  orderItemId === null || orderItemId === "{{itemOrderId}}" || orderItemId === "" ) ){
+                orderItemId = null ;
+            }
+
+            new Promise(function (resolve, reject) {
+
+                let menu_item = JSON.parse( localStorage.getItem('menu_item') );
+                let quanitityInput = parseInt(selfObject.getValue( '#quanitityInput' ));
+                let customizerData = selfObject.customizerData;
+                orderItem.init( orderItemId , menu_item.id , menu_item.name ,
+                    parseFloat($('#customizedPrice').text()) ,
+                    quanitityInput,
+                    parseFloat($('#customizedCalories').text()) ,
+                    customizerData,
+                    menu_item
                 );
+                orderItem.saveToOrder();
+                resolve();
+
+            }).then(function () {
+
+                let menu = JSON.parse( localStorage.getItem('menu') );
+                if( menu == null ){
+                    console.log('menu empty showing homescreen.');
+                    this.showHomeScreen();
+                }
+                (new ViewComponent()).showMenuIetmsScreen( menu.id );
+
+            }).catch(function (reason) {
+                consoleAlert(reason);
+            });
 
         });
 
-        $('body').on('change', '.removeItem', function (e) {
-            selfObject.calculatePriceAndCalories();
+        $('body').on('click', '.removeItem', function (e) {
+            let orderItemId = $(this).data('id');
+
+            new Promise(function (resolve, reject) {
+                selfObject.calculatePriceAndCalories();
+                if( (orderItemId === null || orderItemId === "{{itemOrderId}}" || orderItemId === "" ) ){
+                    orderItemId = null ;
+                }
+                if( orderItemId !== null ){
+                    (new OrderManager()).removeItem( orderItemId );
+                }
+                resolve();
+
+            }).then(function () {
+
+                let menu = JSON.parse( localStorage.getItem('menu') );
+                if( menu == null ){
+                    console.log('menu empty showing homescreen.');
+                    this.showHomeScreen();
+                }
+                (new ViewComponent()).showMenuIetmsScreen( menu.id );
+
+            }).catch(function (reason) {
+                consoleAlert(reason);
+            });
 
         });
 

@@ -164,6 +164,23 @@ class EventHandlerComponent extends BaseComponent{
             (new ViewComponent()).showLoginScreen();
         });
 
+        this.addCartEvent();
+
+    }
+
+    addCartEvent(){
+        let currentOrder = (new OrderManager()).currentOrder;
+        if( currentOrder !== null && typeof currentOrder == "object" && JSON.stringify(currentOrder) !== "{}" ){
+
+            $('body').on('click','.cart-menu',function (e) {
+                e.preventDefault();
+                localStorage.clear();
+                (new ViewComponent()).showCartMenu();
+            });
+
+        }else{
+            $('.cart-menu').addClass('dnone');
+        }
     }
 
     addBackButtonEvent(){
