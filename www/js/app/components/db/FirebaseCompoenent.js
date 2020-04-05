@@ -51,7 +51,7 @@ class FirebaseCompoenent extends BaseComponent{
 
                         setInterval(function () {
                             if( !campusEats.getAppClassManager().getViewComponent().authentiCate() ){
-                                campusEats.getAppClassManager().getViewComponent().showLoginScreen();
+                                campusEats.getAppClassManager().getViewComponent().showFreshLoginScreen();
                             }
                         }, 10000 );
 

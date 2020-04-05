@@ -34,4 +34,13 @@ class OrderManager extends BaseManager{
         this.currentOrder = currentOrder;
     }
 
+    isCartExists(){
+        let currentOrder = this.currentOrder;
+        if( currentOrder !== null && typeof currentOrder == "object" && JSON.stringify(currentOrder) !== "{}" ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }

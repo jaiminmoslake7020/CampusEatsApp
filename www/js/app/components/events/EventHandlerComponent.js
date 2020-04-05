@@ -10,7 +10,9 @@ class EventHandlerComponent extends BaseComponent{
     }
 
     addGoToHomeEvent(){
-
+        $('body').on('click','.home-button',function () {
+            (new ViewComponent()).showHomeScreen();
+        });
     }
 
     homeScreenEvents(){
@@ -69,7 +71,7 @@ class EventHandlerComponent extends BaseComponent{
         this.activatePage();
         this.stopLoading();
         this.addHamburgerMenuEvent();
-        (new CustomizeOrder()).init();
+        (new CustomizeOrderItem()).init();
     }
 
     addRenderScreenEvents(){
@@ -149,6 +151,10 @@ class EventHandlerComponent extends BaseComponent{
         selfObject.addGoToHomeEvent();
         selfObject.addBackButtonEvent();
 
+        $('.menu-button.hamburger-menu').on('click',function () {
+            (new NavBar()).toggle();
+        });
+
         document.querySelector('body').addEventListener('click',function ( e ) {
             if( document.querySelector('.app-nav.active-menu') != null && document.querySelector('.app-nav.active-menu').length !== 0 ){
                 if( e.target.closest('.menu') === null && e.target.closest('.hamburger-menu-container') === null  ){
@@ -162,14 +168,32 @@ class EventHandlerComponent extends BaseComponent{
             }
         });
 
+        $('body').on('click','.renderOnly',function (e) {
+            e.preventDefault();
+            let href = $(this).attr('href');
+            href = href.replace('#','');
+            (new ViewComponent()).showRenderScreen( href );
+        });
+
+        $('body').on('click','.logout',function (e) {
+            e.preventDefault();
+            localStorage.clear();
+            (new ViewComponent()).showFreshLoginScreen();
+        });
+
         this.addCartEvent();
 
     }
 
     addCartEvent(){
-        let currentOrder = (new OrderManager()).currentOrder;
-        if( currentOrder !== null && typeof currentOrder == "object" && JSON.stringify(currentOrder) !== "{}" ){
-            //
+        let isCartExists = (new OrderManager()).isCartExists();
+        if( isCartExists ){
+
+            $('body').on('click','.cart-menu',function (e) {
+                e.preventDefault();
+                (new ViewComponent()).showCartMenu();
+            });
+
         }else{
             $('.cart-menu').addClass('dnone');
         }
@@ -177,6 +201,22 @@ class EventHandlerComponent extends BaseComponent{
 
     addBackButtonEvent(){
         let selfObject = this;
+        $('.back-button').on('click',function (e) {
+            let screen = $('.screen').attr('id');
+            switch (screen) {
+                case "menu-screen" :
+                    (new ViewComponent()).showHomeScreen( );
+                    break;
+                case "menu-item-screen" :
+                    let cafe = JSON.parse( localStorage.getItem( 'cafe')) ;
+                    (new ViewComponent()).showMenusScreen( cafe.id );
+                    break;
+                case "customize-menu-item-screen" :
+                    let menu = JSON.parse( localStorage.getItem( 'menu')) ;
+                    (new ViewComponent()).showMenuIetmsScreen( menu.id );
+                    break;
+            }
+        });
     }
 
     showLoading() {
@@ -235,50 +275,3 @@ class EventHandlerComponent extends BaseComponent{
     }
 
 }
-
-$(document).ready(function () {
-
-    $('body').on('click','.renderOnly',function (e) {
-        e.preventDefault();
-        let href = $(this).attr('href');
-        href = href.replace('#','');
-        (new ViewComponent()).showRenderScreen( href );
-    });
-
-    $('.menu-button.hamburger-menu').on('click',function () {
-        (new NavBar()).toggle();
-    });
-
-    $('body').on('click','.logout',function (e) {
-        e.preventDefault();
-        localStorage.clear();
-        (new ViewComponent()).showLoginScreen();
-    });
-
-    $('body').on('click','.cart-menu',function (e) {
-        e.preventDefault();
-        (new ViewComponent()).showCartMenu();
-    });
-
-    $('.back-button').on('click',function (e) {
-        let screen = $('.screen').attr('id');
-        switch (screen) {
-            case "menu-screen" :
-                (new ViewComponent()).showHomeScreen( );
-                break;
-            case "menu-item-screen" :
-                let cafe = JSON.parse( localStorage.getItem( 'cafe')) ;
-                (new ViewComponent()).showMenusScreen( cafe.id );
-                break;
-            case "customize-menu-item-screen" :
-                let menu = JSON.parse( localStorage.getItem( 'menu')) ;
-                (new ViewComponent()).showMenuIetmsScreen( menu.id );
-                break;
-        }
-    });
-
-    $('body').on('click','.home-button',function () {
-        (new ViewComponent()).showHomeScreen();
-    });
-
-});

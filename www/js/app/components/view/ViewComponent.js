@@ -22,14 +22,6 @@ class ViewComponent extends BaseComponent{
 
         if( userLoggedIn ){
             return true;
-        }else{
-            if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
-                consoleAlert( 'showLoginScreen' );
-                this.showLoginScreen();
-            }else{
-                consoleAlert( 'showSplashScreen' );
-                this.showSplashScreen();
-            }
         }
         return false;
     }
@@ -45,8 +37,16 @@ class ViewComponent extends BaseComponent{
             //this.showMenuIetmsScreen('section_7410');
             //this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
             //this.showHomeScreen();
-            this.showCartMenu();
+            return this.showCartMenu();
             //this.showRenderScreen('cafeLocations');
+        }else{
+            if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
+                consoleAlert( 'showLoginScreen' );
+                return this.showLoginScreen();
+            }else{
+                consoleAlert( 'showSplashScreen' );
+                return this.showSplashScreen();
+            }
         }
     }
 
@@ -75,6 +75,10 @@ class ViewComponent extends BaseComponent{
 
     }
 
+    showFreshLoginScreen(){
+        window.location.reload() ;
+    }
+
     showLoginScreen(){
 
         consoleAlert( 'showLoginScreen' );
@@ -98,7 +102,7 @@ class ViewComponent extends BaseComponent{
     showHomeScreen(){
 
         if( !this.authentiCate() ){
-            return;
+            return this.showFreshLoginScreen();
         }
 
         consoleAlert( "showHomeScreen" );
@@ -151,7 +155,7 @@ class ViewComponent extends BaseComponent{
     showMenusScreen( cafeId ){
 
         if( !this.authentiCate() ){
-            return;
+            return this.showFreshLoginScreen();
         }
 
         let selfObject = this;
@@ -202,7 +206,7 @@ class ViewComponent extends BaseComponent{
     showMenuIetmsScreen( menu ){
 
         if( !this.authentiCate() ){
-            return;
+            return this.showFreshLoginScreen();
         }
 
         let selfObject = this;
@@ -262,7 +266,7 @@ class ViewComponent extends BaseComponent{
     showCustomizeMenuItemOption( menuItem ){
 
         if( !this.authentiCate() ){
-            return;
+            return this.showFreshLoginScreen();
         }
 
         let selfObject = this;
@@ -296,7 +300,12 @@ class ViewComponent extends BaseComponent{
     showCartMenu(){
 
         if( !this.authentiCate() ){
-            return;
+            return this.showFreshLoginScreen();
+        }
+
+        let isCartExists = (new OrderManager()).isCartExists();
+        if( !isCartExists ){
+            return this.showHomeScreen();
         }
 
         let selfObject = this;
@@ -528,7 +537,7 @@ class ViewComponent extends BaseComponent{
         let cafe = JSON.parse( localStorage.getItem('cafe') );
         if( cafe == null ){
             console.log('cafe empty showing homescreen.');
-            this.showHomeScreen();
+            return this.showHomeScreen();
         }
         let cafeEntity = new Cafe( cafe.id , cafe );
         this.addToView('cafe-heading', cafeEntity );
@@ -538,7 +547,7 @@ class ViewComponent extends BaseComponent{
         let menu = JSON.parse( localStorage.getItem('menu') );
         if( menu == null ){
             console.log('menu empty showing homescreen.');
-            this.showHomeScreen();
+            return this.showHomeScreen();
         }
         let menuEnity = new Menu( menu.id , menu );
         this.addToView('menu-heading', menuEnity );
@@ -548,7 +557,7 @@ class ViewComponent extends BaseComponent{
         let menu_item = JSON.parse( localStorage.getItem('menu_item') );
         if( menu_item == null ){
             console.log('menu_item empty showing homescreen.');
-            this.showHomeScreen();
+            return this.showHomeScreen();
         }
         let menuEnity = new BaseEntity( menu_item.id , menu_item );
         console.log( menuEnity );
@@ -563,7 +572,7 @@ class ViewComponent extends BaseComponent{
         let menu = JSON.parse( localStorage.getItem('menu_item') );
         if( menu == null ){
             console.log('menu_item empty showing homescreen.');
-            this.showHomeScreen();
+            return this.showHomeScreen();
         }
 
         if( "customizations" in menu){
@@ -606,7 +615,7 @@ class ViewComponent extends BaseComponent{
         let menu_item = JSON.parse( localStorage.getItem('menu_item') );
         if( menu_item == null ){
             console.log('menu_item empty showing homescreen.');
-            this.showHomeScreen();
+            return this.showHomeScreen();
         }
 
         this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Size','id':'size', 'align':'center' }  );
