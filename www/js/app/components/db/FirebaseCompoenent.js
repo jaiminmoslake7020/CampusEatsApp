@@ -13,7 +13,7 @@ class FirebaseCompoenent extends BaseComponent{
 
         // Your web app's Firebase configuration
         var firebaseConfig = {
-            apiKey: "AIzaSyBTn4YPm1pvybVTQBJan4wUHCs5cKAA7NA",
+            apiKey: "AIzaSyBChFqqjM0nvMwfjQS_nH1D1YmlHnZ3Y6Q",
             authDomain: "campuseats-431d3.firebaseapp.com",
             databaseURL: "https://campuseats-431d3.firebaseio.com",
             projectId: "campuseats-431d3",
