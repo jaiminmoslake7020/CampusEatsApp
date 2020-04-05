@@ -187,7 +187,7 @@ class EventHandlerComponent extends BaseComponent{
 
     addCartEvent(){
         let isCartExists = (new OrderManager()).isCartExists();
-        if( isCartExists ){
+        if( isCartExists && $('#cart-menu-screen').length == 0 ){
 
             $('body').on('click','.cart-menu',function (e) {
                 e.preventDefault();

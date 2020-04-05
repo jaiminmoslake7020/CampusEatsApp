@@ -43,6 +43,9 @@
   font-size: 16px;
   white-space: pre-wrap;
   display: block;
+
+
+
 }
 
 button.button-native {
@@ -146,6 +149,11 @@ button.button-native {
   color: $color__primary;
 }
 
+.cart-menu {
+  padding: 15px;
+  color: $color__primary;
+}
+
 .dnone {
   display: none;
 }
@@ -163,6 +171,11 @@ button.button-native {
     .home-button {
       display: none;
     }
+
+    .cart-menu {
+      display: block;
+    }
+
   }
 }
 
@@ -179,10 +192,15 @@ button.button-native {
     .home-button {
       display: none;
     }
+
+    .cart-menu {
+      display: none;
+    }
+
   }
 }
 
-#faq-screen, #feedback-screen, #editInfo-screen , #privacyPolicys-screen, #cafeLocations-screen {
+#faq-screen, #feedback-screen, #editInfo-screen , #privacyPolicys-screen, #cafeLocations-screen , #cart-menu-screen {
   .header-div{
     .hamburger-menu {
       display: block;
@@ -195,6 +213,11 @@ button.button-native {
     .home-button {
       display: block;
     }
+
+    .cart-menu {
+      display: none;
+    }
+
   }
 }
 

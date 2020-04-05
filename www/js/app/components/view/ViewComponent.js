@@ -313,11 +313,11 @@ class ViewComponent extends BaseComponent{
 
         new Promise(function (resolve, reject) {
 
-            let template = '<div id="screen-container"><div class="screen"  id="customize-menu-item-screen"></div></div>' ;
+            let template = '<div id="screen-container"><div class="screen"  id="cart-menu-screen"></div></div>' ;
             selfObject.replaceAppScreen( template );
-            document.getElementById('customize-menu-item-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
-            document.getElementById('ion-content').classList.remove('menu-items-screen-content');
-            document.getElementById('ion-content').classList.add('customize-menu-items-screen-content');
+            document.getElementById('cart-menu-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            document.getElementById('ion-content').classList.remove('customize-menu-items-screen-content');
+            document.getElementById('ion-content').classList.add('cart-menu-screen-content');
             selfObject.addCafeHeading();
             selfObject.addingViewHelper( 'menu-heading', 'cart-heading' , {'name':'Your Cart'} );
             selfObject.addingViewHelper( 'cart-container-template', 'cart-container-template' , {} );
