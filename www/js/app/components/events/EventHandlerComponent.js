@@ -5,6 +5,12 @@ window.addEventListener('load',function () {
 
 class EventHandlerComponent extends BaseComponent{
 
+    constructor(props) {
+        super(props);
+        this._counter = 0 ;
+    }
+
+
     init(){
 
     }
@@ -22,6 +28,8 @@ class EventHandlerComponent extends BaseComponent{
         this.stopLoading();
         this.addHamburgerMenuEvent();
 
+        let c = this._counter;
+        console.log(  c++  );
         consoleAlert( "homeScreenEvents" );
         Array.from( document.getElementsByClassName('brand-logos') , ( el ) => {
                 el.addEventListener('click' ,  selfObject.goToMenuPage )
@@ -188,14 +196,11 @@ class EventHandlerComponent extends BaseComponent{
     addCartEvent(){
         let isCartExists = (new OrderManager()).isCartExists();
         if( isCartExists && $('#cart-menu-screen').length == 0 ){
-
+            $('.cart-menu').removeClass('dnone');
             $('body').on('click','.cart-menu',function (e) {
                 e.preventDefault();
                 (new ViewComponent()).showCartMenu();
             });
-
-        }else{
-            $('.cart-menu').addClass('dnone');
         }
     }
 

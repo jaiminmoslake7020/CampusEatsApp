@@ -645,6 +645,9 @@ class ViewComponent extends BaseComponent{
                 this.addingViewHelper( 'customizer-size-option' , 'single_size' , size   );
                 countDown++;
             }
+        }else{
+            quantity['price'] = menu_item['price'];
+            quantity['calories'] = menu_item.sizes[key]['calories'];
         }
 
         quantity.min = 1;
