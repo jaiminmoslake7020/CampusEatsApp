@@ -66,22 +66,26 @@
               "small": {
                 "tag": "S",
                 "title": "Small",
-                "price": "2.69"
+                "price": "2.69",
+                "calories": 1
               },
               "medium": {
                 "title": "Medium",
                 "tag": "M",
-                "price": "1.16"
+                "price": "1.16",
+                "calories": 3
               },
               "large": {
                 "title": "Large",
                 "tag": "L",
-                "price": "2.66"
+                "price": "2.66",
+                "calories": 5
               },
               "extra_large": {
                 "title": "Extra Large",
                 "tag": "XL",
-                "price": "5.47"
+                "price": "5.47",
+                "calories": 7
               }
             }
           },
@@ -168,67 +172,67 @@
             }
           }
         },
-        "customizations":{
-  "sweetners": {
-    "name": "Sweetners",
-    "options": {
-      "sugar": {
-        "name": "Sugar",
-        "calories": 27,
-        "price": 0
-      },
-      "sweetner": {
-        "name": "Sweetner",
-        "calories": 27,
-        "price": 0
-      }
-    }
-  },
-  "espresso_shots": {
-    "name": "Espresso Shots",
-    "options": {
-      "espresso_shot": {
-        "name": "Espresso Shot",
-        "calories": 27,
-        "price": 0.70
-      }
-    }
-  },
-  "flavour_shots": {
-    "name": "Flavour Shots",
-    "options": {
-      "flavour_shot": {
-        "category": {
-          "chocolate_syrup": {
-            "name": "Chocolate Syrup",
-            "calories": 75,
-            "price": 0.30
+        "customizations": {
+          "sweetners": {
+            "name": "Sweetners",
+            "options": {
+              "sugar": {
+                "name": "Sugar",
+                "calories": 27,
+                "price": 0
+              },
+              "sweetner": {
+                "name": "Sweetner",
+                "calories": 27,
+                "price": 0
+              }
+            }
           },
-          "caramel_syrup": {
-            "name": "Caramel Syrup",
-            "calories": 88,
-            "price": 0.30
+          "espresso_shots": {
+            "name": "Espresso Shots",
+            "options": {
+              "espresso_shot": {
+                "name": "Espresso Shot",
+                "calories": 27,
+                "price": 0.70
+              }
+            }
           },
-          "vanilla_syrup": {
-            "name": "Vanilla Syrup",
-            "calories": 74,
-            "price": 0.30
+          "flavour_shots": {
+            "name": "Flavour Shots",
+            "options": {
+              "flavour_shot": {
+                "category": {
+                  "chocolate_syrup": {
+                    "name": "Chocolate Syrup",
+                    "calories": 75,
+                    "price": 0.30
+                  },
+                  "caramel_syrup": {
+                    "name": "Caramel Syrup",
+                    "calories": 88,
+                    "price": 0.30
+                  },
+                  "vanilla_syrup": {
+                    "name": "Vanilla Syrup",
+                    "calories": 74,
+                    "price": 0.30
+                  }
+                }
+              }
+            }
+          },
+          "toppings": {
+            "name": "Toppings",
+            "options": {
+              "whipped_toppings": {
+                "name": "Whipped Topping",
+                "calories": 77,
+                "price": 0.60
+              }
+            }
           }
         }
-      }
-    }
-  },
-  "toppings": {
-    "name": "Toppings",
-    "options": {
-      "whipped_toppings": {
-        "name": "Whipped Topping",
-        "calories": 77,
-        "price": 0.60
-      }
-    }
-  }
-}
       },
       "section_7410": {
         "name": "Hot Beverages",
@@ -854,7 +858,7 @@
             "id": "item_31056"
           }
         },
-        "customizations":{
+        "customizations": {
           "sweetners": {
             "name": "Sweetners",
             "options": {
@@ -3697,12 +3701,215 @@
             "type": "item",
             "id": "item_30991"
           }
+        },
+        "customizations": {
+          "toasted": {
+            "name": "Toasted",
+            "options": {
+              "toasted": {
+                "name": "Toasted",
+                "calories": 0,
+                "price": 0
+              }
+            }
+          },
+          "spreads": {
+            "name": "Spreads",
+            "options": {
+              "plain_cream_cheese": {
+                "name": "Plain Cream Cheese",
+                "calories": 0,
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "regular": {
+                      "name": "Regular",
+                      "calories": 106,
+                      "price": 0.80
+                    },
+                    "extra": {
+                      "name": "Extra",
+                      "calories": 212,
+                      "price": 1.60
+                    },
+                    "light": {
+                      "name": "Light",
+                      "calories": 53,
+                      "price": 0.40
+                    }
+                  }
+                }
+              },
+              "plain_light_cream_cheese": {
+                "name": "Plain Light Cream Cheese",
+                "calories": 0,
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "regular": {
+                      "name": "Regular",
+                      "calories": 81,
+                      "price": 0.80
+                    },
+                    "extra": {
+                      "name": "Extra",
+                      "calories": 162,
+                      "price": 1.60
+                    }
+                  }
+                }
+              },
+              "herb_and_garlic_cream_cheese": {
+                "name": "Herb & Garlic Cream Cheese",
+                "calories": 0,
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "regular": {
+                      "name": "Regular",
+                      "calories": 114,
+                      "price": 0.80
+                    },
+                    "extra": {
+                      "name": "Extra",
+                      "calories": 229,
+                      "price": 1.60
+                    }
+                  }
+                }
+              },
+              "peanut_butter": {
+                "name": "Peanut Butter",
+                "calories": 0,
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "regular": {
+                      "name": "Regular",
+                      "calories": 104,
+                      "price": 0.30
+                    },
+                    "extra": {
+                      "name": "Extra",
+                      "calories": 209,
+                      "price": 0.60
+                    }
+                  }
+                }
+              },
+              "strawberry_jam": {
+                "name": "Strawberry Jam",
+                "calories": 0,
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "regular": {
+                      "name": "Regular",
+                      "calories": 40,
+                      "price": 0.30
+                    },
+                    "extra": {
+                      "name": "Extra",
+                      "calories": 81,
+                      "price": 0.60
+                    }
+                  }
+                }
+              },
+              "butter": {
+                "name": "Butter",
+                "calories": 0,
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "regular": {
+                      "name": "Regular",
+                      "calories": 60,
+                      "price": 0
+                    },
+                    "extra": {
+                      "name": "Extra",
+                      "calories": 121,
+                      "price": 0
+                    }
+                  }
+                }
+              },
+              "raspberry_jam": {
+                "name": "Raspberry Jam",
+                "calories": 0,
+                "price": 0.30
+              }
+            }
+          },
+          "protein": {
+            "name": "Protein",
+            "options": {
+              "bacon": {
+                "name": "Bacon",
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "regular_bacon": {
+                      "name": "Regular Bacon",
+                      "calories": 57,
+                      "price": 1
+                    },
+                    "extra_bacon": {
+                      "name": "Extra Bacon",
+                      "calories": 114,
+                      "price": 2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "cheese": {
+            "name": "Cheese",
+            "options": {
+              "cheddar_cheese": {
+                "name": "Cheddar Cheese",
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "regular_cheddar_cheese": {
+                      "name": "Regular Cheddar Cheese",
+                      "calories": 57,
+                      "price": 1
+                    },
+                    "extra_cheddar_cheese": {
+                      "name": "Extra Cheddar Cheese",
+                      "calories": 176,
+                      "price": 2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "vegetables": {
+            "name": "Vegetables",
+            "options": {
+              "tomato": {
+                "name": "Tomato",
+                "options": {
+                  "name": "Tomato",
+                  "calories": 6,
+                  "price": 0.5,
+                  "quantity": "1"
+                }
+              }
+            }
+          },
+          "select_quantity": {
+          }
         }
       }
     },
     "position": {
-      "lat":49.2245542,
-      "lang":-123.1092073
+      "lat": 49.2245542,
+      "lang": -123.1092073
     }
   },
   "starbucks": {
@@ -3744,9 +3951,10 @@
       }
     },
     "position": {
-      "lat":49.224947,
-      "lang":-123.1101825
-    }
+      "lat": 49.224947,
+      "lang": -123.1101825
+    },
+
   },
   "subway": {
     "name": "Subway",
@@ -3787,8 +3995,8 @@
       }
     },
     "position": {
-      "lat":49.2252168,
-      "lang":-123.1105755
+      "lat": 49.2252168,
+      "lang": -123.1105755
     }
   },
   "triple_o": {
@@ -3832,7 +4040,7 @@
     "menus": {},
     "position": {
       "lat": 49.224604,
-      "long": 123.107379
+      "lang": 123.107379
     }
   },
   "langara_student_union": {
@@ -3868,7 +4076,7 @@
     "menus": {},
     "position": {
       "lat": 49.224604,
-      "long": 123.107379
+      "lang": 123.107379
     }
   }
 }

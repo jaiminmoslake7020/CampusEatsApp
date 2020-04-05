@@ -174,7 +174,7 @@
     </template>
 
     <template id="ion-customize-menu-item-button">
-        <div class="col-xs-6 customize default-button-container menu-item-btn-parent-container ">
+        <div class="col-xs-12 customize default-button-container menu-item-btn-parent-container ">
             <div class="button menu-item-btn defult-btn small light block round "
                  data-name="{{name}}" data-id="{{primaryKey}}"
             >
@@ -183,8 +183,12 @@
                         <img class="lazy" src="images/loader.gif" data-src="{{url}}" alt="{{name}}">
                     </div>
                     <label class="label menu-label" >{{name}}</label>
-                    <label class="label menu-label" id="customizedPrice" >$ {{price}}</label>
-                    <label class="label menu-label" id="customizedCalories" ><b>Calories</b>: {{calories}}</label>
+                    <label class="label menu-label" >$ <span id="customizedPrice" >{{price}}</span></label>
+                    <label class="label menu-label" ><b>Calories</b>: <span id="customizedCalories" >{{calories}}</span></label>
+
+                    <p class=" sizes-info dnone " >{{sizes}}</p>
+                    <p class=" nutrition-info dnone " >{{nutrition}}</p>
+
                 </div>
             </div>
         </div>
@@ -257,6 +261,9 @@
                             </div>
                         </div>
                     </div>
+
+
+
                 </div>
             </div>
         </div>
@@ -273,7 +280,7 @@
                                 <label for="exampleFormControlTextarea1">Write your experience with us</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
                             </div>
-                            <input class="btn btn-default mt10 pull-right" type="submit" value="Submit">
+                            <input class="btn btn-success mt10 pull-right" type="submit" value="Submit">
                         </div>
                     </div>
                 </div>
@@ -314,7 +321,7 @@
                             <input value="{{phoneNumber}}" type="tel" class="form-control" id="exampleInputTelephone" placeholder="Enter phone number">
                         </div>
                         <div class="edit-info-button">
-                            <button type="button" class="btn btn-primary ">Update</button>
+                            <button type="button" class="btn btn-success ">Update</button>
                         </div>
                     </form>
                 </div>
@@ -461,26 +468,26 @@
     </template>
 
     <template id="customizer-parent" >
-        <div class="row">
-            <div class="col-xs-12">
+        <div class="col-xs-12  ">
                 <div class="customizers">
                     <h4 class="cPrimary ml15 text-left" >{{name}}</h4>
-                    <div class="customizers-options">
+                    <div class="customizers-options-parent" >
+                        <div class="row m0" id="customizers-options-{{name}}" >
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </template>
 
     <template id="customizer" >
 
         <div class="row">
             <div class="col-xs-12">
-                <div class=" customizer-item ">
+                <div class=" customizer-item {{name}} ">
                     <div class="customizer-content">
-                        <div class="row">
-                            <div class="col-xs-6">
+                        <div class="row m0">
+                            <div class="col-xs-6 customizer-label-parent ">
                                 <label class="control-label" >
                                     {{name}}
                                 </label>
@@ -492,7 +499,21 @@
                                         <span class="glyphicon glyphicon-minus"></span>
                                       </button>
                                     </span>
-                                    <input type="text" name="{{name}}" dirname="" class="form-control input-number" value="10" min="1" max="100">
+                                    <input type="text" name="{{name}}" data-calories="{{calories}}"
+                                           data-price="{{price}}"
+                                           data-small-price="{{small_price}}"
+                                           data-medium-price="{{medium_price}}"
+                                           data-large-price="{{large_price}}"
+                                           data-extra-large-price="{{extra_large_price}}"
+
+                                           data-small-calories="{{small_calories}}"
+                                           data-medium-calories="{{medium_calories}}"
+                                           data-large-calories="{{large_calories}}"
+                                           data-extra-large-calories="{{extra_large_calories}}"
+
+                                           id="quanitityInput"
+
+                                           dirname="" class="form-control input-number counter " value="{{value}}" min="0" max="10">
                                     <span class="input-group-btn">
                                       <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="{{name}}">
                                           <span class="glyphicon glyphicon-plus"></span>
@@ -508,6 +529,61 @@
 
     </template>
 
+    <template id="customizer-size" >
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" customizer-item {{name}} ">
+                    <div class="customizer-content">
+                        <div class="row m0">
+                            <div class="col-xs-12"  >
+                                <div class="btn-group" data-toggle="buttons"  id="customizer-size-options">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
+    <template id="customizer-size-option" >
+        <label class="btn btn-primary">
+            <input type="radio" class="sizeInput"  name="{{id}}" id="{{id}}" autocomplete="off"
+                   data-id="{{id}}"
+                   data-price="{{price}}"
+                   data-calories="{{calories}}"
+                   data-title="{{title}}"
+            > {{tag}}
+        </label>
+    </template>
+
+
+    <template id="alert-template-parent" >
+        <div id="alert" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">{{header}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        {{message}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary pull-right" data-dismiss="modal">Continue</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </template>
+
+    <div id="alert-parent">
+
+    </div>
+
 
     <script type="text/javascript" src="cordova.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"  ></script>
@@ -521,6 +597,8 @@
 
     <!--  APP JS  -->
     <!--  HELPERS  -->
+    <script src="js/app/AppClassManager.js"  ></script>
+
     <script src="js/app/helpers/MyString.js"  ></script>
     <script src="js/app/helpers/MyArray.js"  ></script>
 
@@ -534,10 +612,20 @@
     <script src="js/app/components/navbar/Navbar.js"  ></script>
     <script src="js/app/components/events/EventHandlerComponent.js"  ></script>
 
+
+    <script src="js/app/components/view/CustomizeOrder.js"  ></script>
+    <script src="js/app/components/view/CustomizeOrderItem.js"  ></script>
+
+
     <!--  ENTITIES  -->
     <script src="js/app/entities/BaseEntity.js"  ></script>
     <script src="js/app/entities/Cafe.js"  ></script>
     <script src="js/app/entities/Menu.js"  ></script>
+
+    <!--  MANAGERS  -->
+    <script src="js/app/manager/BaseManager.js"  ></script>
+    <script src="js/app/manager/OrderManager.js"  ></script>
+    <script src="js/app/manager/OrderItem.js"  ></script>
 
     <!--  MODELS  -->
     <script src="js/app/models/FirebaseActiveRecord.js"  ></script>
@@ -545,8 +633,6 @@
     <script src="js/app/models/Menus.js"  ></script>
     <script src="js/app/models/MenuItems.js"  ></script>
 
-
-    <script src="js/app/AppClassManager.js"  ></script>
     <script  src="js/app/CampusEats.js"  ></script>
     <!--    PHONEGAP's own call to our app handler-->
     <script type="text/javascript" src="js/index.js"  ></script>

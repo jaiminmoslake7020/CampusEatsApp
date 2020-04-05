@@ -67,6 +67,9 @@ body {
   transform: translateY(100px);
   transition: all 1s linear;
 }
+.screen-content.customize-menu-items-screen-content {
+  padding-top: 0;
+}
 .screen-content.active {
   opacity: 1;
   transform: translateY(0);
@@ -5968,6 +5971,28 @@ button.button-native {
   align-items: center;
 }
 
+#customize-menu-item-screen .customize .defult-btn {
+  border-radius: 15px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 0 solid #e6e6e6;
+  height: fit-content;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  display: block;
+  box-shadow: unset;
+}
+#customize-menu-item-screen .customize .defult-btn .menu-btn-container {
+  max-width: 400px;
+}
+#customize-menu-item-screen .customize .defult-btn .menu-btn-container .menu-label {
+  color: #333;
+}
+#customize-menu-item-screen .customize .defult-btn .menu-btn-container label:nth-of-type(1) {
+  color: #f15a24;
+}
+
 .menu-item-btn.defult-btn {
   width: 150px;
   height: 220px;
@@ -6017,13 +6042,13 @@ button.button-native {
   display: none;
 }
 
-#menu-item-screen .hamburger-menu, #menu-screen .hamburger-menu {
+#menu-item-screen .hamburger-menu, #menu-screen .hamburger-menu, #customize-menu-item-screen .hamburger-menu {
   display: none;
 }
-#menu-item-screen .back-button, #menu-screen .back-button {
+#menu-item-screen .back-button, #menu-screen .back-button, #customize-menu-item-screen .back-button {
   display: block;
 }
-#menu-item-screen .home-button, #menu-screen .home-button {
+#menu-item-screen .home-button, #menu-screen .home-button, #customize-menu-item-screen .home-button {
   display: none;
 }
 
@@ -6040,6 +6065,13 @@ button.button-native {
 .img-wrapper img {
   display: block;
   margin: auto;
+}
+
+.customizer-label-parent {
+  display: flex;
+  height: 34px;
+  align-content: center;
+  align-items: center;
 }
 
 /* Laodingbar CONTENT ============ */
@@ -6161,6 +6193,20 @@ body .loadingBar .loadingBar-content .loadingBar-text {
 }
 
 /* MENUITEMS CONTENT ============ */
+#customizer-size-options label {
+  font-size: 16px;
+  font-weight: 100;
+}
+#customizer-size-options label.active {
+  background-color: #f15a24;
+}
+
+.customizer-item.size #customizer-size-options {
+  display: block;
+  margin: auto;
+  width: fit-content;
+}
+
 /* typography ======================= */
 body {
   font-family: "Roboto", sans-serif;
@@ -6356,17 +6402,11 @@ body {
   text-align: center;
 }
 
-.btn-primary {
-  background-color: #009245 !important;
-}
-
 .edit-info-button {
   text-align: center;
 }
 
 .btn-default {
-  background-color: #009245;
-  color: #ffffff;
   margin-top: 1rem;
   justify-content: center;
 }

@@ -1,0 +1,17 @@
+#customizer-size-options{
+  label{
+    font-size: 16px;
+    font-weight: 100;
+    &.active{
+      background-color: $color__primary;
+    }
+  }
+}
+
+.customizer-item.size {
+  #customizer-size-options{
+    display: block;
+    margin: auto;
+    width: fit-content;
+  }
+}
