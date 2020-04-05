@@ -73,6 +73,40 @@ button.button-native {
   align-items: center;
 }
 
+#customize-menu-item-screen{
+  .customize{
+    .defult-btn {
+      border-radius: 15px;
+      text-align: center;
+      box-sizing: border-box;
+      border: 0 solid #e6e6e6;
+      height: fit-content;
+      align-items: center;
+      width: fit-content;
+      margin: auto;
+      display: block;
+      box-shadow: unset;
+      .menu-btn-container{
+        max-width: 400px;
+
+        .menu-label{
+          color: $color__textBlack;
+        }
+
+        label:nth-of-type(1){
+          color: $color__primary;
+        }
+
+      }
+    }
+
+
+
+
+
+  }
+}
+
 .menu-item-btn.defult-btn{
   width: 150px;
   height: 220px;
@@ -138,7 +172,7 @@ button.button-native {
   }
 }
 
-#menu-item-screen, #menu-screen {
+#menu-item-screen, #menu-screen, #customize-menu-item-screen {
   .hamburger-menu {
     display: none;
   }
@@ -173,6 +207,12 @@ button.button-native {
   }
 }
 
+.customizer-label-parent{
+  display: flex;
+  height: 34px;
+  align-content: center;
+  align-items: center;
+}
 
 .form-button {
   text-align: center;

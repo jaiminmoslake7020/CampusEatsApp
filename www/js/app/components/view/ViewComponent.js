@@ -10,10 +10,29 @@ class ViewComponent extends BaseComponent{
 
         consoleAlert( 'Viewe Component Loaded');
 
-        if( true ){
+        let userLoggedIn = false;
+
+        let authResult = localStorage.getItem('authResult');
+        if( authResult == null ){
+        }else{
+            let authResultObject = JSON.parse(authResult);
+            if( 'user' in authResultObject ){
+                let data = authResultObject.user;
+                if( typeof data === "object" && "uid" in data && data.uid != null ){
+                    console.log('User '+ data.displayName +' is logged in.');
+                    userLoggedIn = true ;
+                }
+            }
+        }
+
+        if( userLoggedIn ){
+
             // just for testing purpose
             //this.showMenusScreen('tim-hortons');
             //this.showMenuIetmsScreen('section_7410');
+           // this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
+            //this.showHomeScreen();
+            //this.showRenderScreen('editInfo');
             //this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
             this.showHomeScreen();
             // this.showRenderScreen('faq');
@@ -224,6 +243,8 @@ class ViewComponent extends BaseComponent{
             selfObject.addMenuHeading();
             selfObject.addUserDetails();
             selfObject.addMenuItemHeading();
+            selfObject.addCustomizingOptions();
+
             resolve();
 
         }).then(function () {
@@ -246,66 +267,95 @@ class ViewComponent extends BaseComponent{
             'menu-heading' : 'cafe-content',
             'ion-menu-button' :'cafe-content' ,
             'ion-menu-item-button' :'menu-content' ,
-            'ion-customize-menu-item-button':'menu-content'
+            'ion-customize-menu-item-button':'menu-content',
+            'customizer-parent':'menu-content',
+            '.editInfo-screen-content':'.editInfo-screen-content',
+            'customizer-size-option':'customizer-size-options',
+            'alert-template-parent':'alert-parent'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
         }
-        return document.getElementById( templateParentArray[template] );
+        if( template.indexOf('.') !== -1 ){
+            return document.querySelector( templateParentArray[template] );
+        }else{
+            return document.getElementById( templateParentArray[template] );
+        }
     }
 
-    addToView( template , model ){
+    addToView( template , model , customizer = null , append = true ){
         //model = new Cafe();
         let primaryKey = model.primaryKey;
         let data = model.data;
-        let templateString = document.getElementById(template).innerHTML;
-        templateString = ( new MyString( templateString ) ).replaceChars( '{{primaryKey}}' , model.primaryKey );
-        for( let key in data ){
-            let findIn = '{{'+key+'}}';
-            let value = data[key];
-            if( ( template === "ion-menu-item-button" || template === "ion-customize-menu-item-button" ) && typeof value === "object" && key === "sizes"  ){
-                if( "small" in value ){
-                    console.log( value.small.price );
-                    let valuex = value.small.price;
-                    let findInx = '{{price}}';
-                    valuex = parseFloat( valuex ).toFixed(2);
-                    templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
-                }else if( "medium" in value  ){
-                    console.log( value.medium.price );
-                    let valuex = value.medium.price;
-                    let findInx = '{{price}}';
-                    valuex = parseFloat( valuex ).toFixed(2);
-                    templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
-                }else if( "large" in value  ){
-                    console.log( value.large.price );
-                    let valuex = value.large.price;
-                    let findInx = '{{price}}';
-                    valuex = parseFloat( valuex ).toFixed(2);
-                    templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
-                }else if( "extra_large" in value  ){
-                    console.log( value.extra_large.price );
-                    let valuex = value.extra_large.price;
-                    let findInx = '{{price}}';
-                    valuex = parseFloat( valuex ).toFixed(2);
+        let templateString ;
+        if( template.indexOf('.') !== -1 ){
+             templateString = document.querySelector(template).innerHTML;
+        }else{
+             templateString = document.getElementById(template).innerHTML;
+        }
+        if( templateString != null ){
+            templateString = ( new MyString( templateString ) ).replaceChars( '{{primaryKey}}' , model.primaryKey );
+            for( let key in data ){
+                let findIn = '{{'+key+'}}';
+                let value = data[key];
+                if( ( template === "ion-menu-item-button" || template === "ion-customize-menu-item-button" ) && typeof value === "object" && key === "sizes"  ){
+                    if( "medium" in value  ){
+                        console.log( value.medium.price );
+                        let valuex = value.medium.price;
+                        let findInx = '{{price}}';
+                        valuex = parseFloat( valuex ).toFixed(2);
+                        templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
+                    }else if( "small" in value ){
+                        console.log( value.small.price );
+                        let valuex = value.small.price;
+                        let findInx = '{{price}}';
+                        valuex = parseFloat( valuex ).toFixed(2);
+                        templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
+                    }else if( "large" in value  ){
+                        console.log( value.large.price );
+                        let valuex = value.large.price;
+                        let findInx = '{{price}}';
+                        valuex = parseFloat( valuex ).toFixed(2);
+                        templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
+                    }else if( "extra_large" in value  ){
+                        console.log( value.extra_large.price );
+                        let valuex = value.extra_large.price;
+                        let findInx = '{{price}}';
+                        valuex = parseFloat( valuex ).toFixed(2);
+                        templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
+                    }
+                }
+                if( template === "ion-customize-menu-item-button" && key === "nutrition" ){
+                    let valuex =  value.calories;
+                    let findInx = '{{calories}}';
                     templateString = ( new MyString( templateString ) ).replaceChars( findInx , valuex );
                 }
+                if( typeof value === "object"){
+                    value = JSON.stringify(value);
+                }
+                if( ( template === "ion-menu-item-button" || template === "ion-customize-menu-item-button" ) && key === "price" ){
+                    value = parseFloat(value).toFixed(2);
+                }
+                if( templateString.indexOf( findIn ) !== -1 ){
+                    templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
+                }
+                //console.log( data.name , 'Added' );
             }
-            if( template === "ion-customize-menu-item-button" && key === "nutrition" ){
-                findIn = "{{calories}}";
-                value = value.calories;
+            let element ;
+            if( customizer != null ){
+                element = document.getElementById( 'customizers-options-'+customizer );
+            }else{
+                element = this.getParentElement( template );
             }
-            if( typeof value === "object"){
-                value = JSON.stringify(value);
+            if( element === null ){
+                console.log( template , model , customizer , append );
             }
-            if( ( template === "ion-menu-item-button" || template === "ion-customize-menu-item-button" ) && key === "price" ){
-                value = parseFloat(value).toFixed(2);
+            if( append ){
+                element.innerHTML +=  templateString;
+            }else{
+                element.innerHTML = templateString;
             }
-            if( templateString.indexOf( findIn ) !== -1 ){
-                templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
-            }
-            //console.log( data.name , 'Added' );
         }
-        this.getParentElement( template ).innerHTML +=  templateString;
     }
 
     addMenuitems(){
@@ -363,7 +413,7 @@ class ViewComponent extends BaseComponent{
 
             resolve();
         }).then(function () {
-            selfObject.addUserDetails(  );
+            selfObject.addUserDetails( id );
             if( id === "cafeLocations" ){
                 selfObject.showAllCafeLocations();
             }
@@ -383,21 +433,110 @@ class ViewComponent extends BaseComponent{
 
     addCafeHeading(){
         let cafe = JSON.parse( localStorage.getItem('cafe') );
+        if( cafe == null ){
+            console.log('cafe empty showing homescreen.');
+            this.showHomeScreen();
+        }
         let cafeEntity = new Cafe( cafe.id , cafe );
         this.addToView('cafe-heading', cafeEntity );
     }
 
     addMenuHeading(){
         let menu = JSON.parse( localStorage.getItem('menu') );
+        if( menu == null ){
+            console.log('menu empty showing homescreen.');
+            this.showHomeScreen();
+        }
         let menuEnity = new Menu( menu.id , menu );
         this.addToView('menu-heading', menuEnity );
     }
 
     addMenuItemHeading(){
         let menu_item = JSON.parse( localStorage.getItem('menu_item') );
+        if( menu_item == null ){
+            console.log('menu_item empty showing homescreen.');
+            this.showHomeScreen();
+        }
         let menuEnity = new BaseEntity( menu_item.id , menu_item );
         console.log( menuEnity );
         this.addToView('ion-customize-menu-item-button', menuEnity );
+    }
+
+    addCustomizingOptions(){
+        let selfObject = this;
+        this.addQuantity(  );
+
+        let menu = JSON.parse( localStorage.getItem('menu') );
+        if( menu == null ){
+            console.log('menu_item empty showing homescreen.');
+            this.showHomeScreen();
+        }
+
+        if( "customizations" in menu){
+            if( typeof menu.customizations === "object" && menu.customizations != null ){
+                let customizations = menu.customizations ;
+                console.log( customizations );
+                for( let key in customizations ){
+                    console.log( key , customizations[key] , customizations[key].options );
+                    let customizer = customizations[key];
+                    customizer.id = key;
+                    if( "options" in customizer ){
+                        let options = customizations[key].options;
+                        selfObject.addingViewHelper( 'customizer-parent' , key , customizer  );
+                        for( let key1 in options ){
+                            if( "category" in options[key1] ){
+                                let categories = options[key1].category ;
+                                for ( let key2 in categories ){
+                                    categories[key2].value = 0 ;
+                                    categories[key2].id = key2 ;
+                                    selfObject.addingViewHelper( 'customizer-parent' , key1 , {name:"",'id':key1}  );
+                                    selfObject.addingViewHelper( 'customizer' , key2 ,  categories[key2] , key1  );
+                                }
+                            }else{
+                                options[key1].value = 0;
+                                options[key1].id = key1;
+                                selfObject.addingViewHelper( 'customizer' , key1 , options[key1]  , key  );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    addQuantity(  ){
+
+        let menu_item = JSON.parse( localStorage.getItem('menu_item') );
+        if( menu_item == null ){
+            console.log('menu_item empty showing homescreen.');
+            this.showHomeScreen();
+        }
+
+        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Size','id':'size'}  );
+        this.addingViewHelper( 'customizer-size' , 'size' , {name:'size'}  , 'size'  );
+
+        let quantity = {'name':'Quantity','value':0} ;
+        if( "sizes" in menu_item ){
+            for( let key in menu_item.sizes ){
+                quantity[key+'_price'] = menu_item.sizes[key]['price'];
+                quantity[key+'_calories'] = menu_item.sizes[key]['calories'];
+
+                let size = { 'id':key , 'tag':menu_item.sizes[key]['tag'] , 'title':menu_item.sizes[key]['title'] , 'price': menu_item.sizes[key]['price'] , 'calories': menu_item.sizes[key]['calories']  };
+                this.addingViewHelper( 'customizer-size-option' , 'single_size' , size   );
+            }
+        }
+
+
+        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Quantity','id':'quantity'}  );
+        // 'Quantity' is the name of identifier of customizer
+        this.addingViewHelper( 'customizer' , 'quantity' , quantity  , 'quantity'  );
+
+    }
+
+    addingViewHelper( template , entityId , entityData , specialCustomizer = null , append = true ){
+        let entity = new BaseEntity( entityId , entityData  );
+        this.addToView( template , entity , specialCustomizer , append );
     }
 
     addUserDetails( id = null ){
@@ -412,20 +551,10 @@ class ViewComponent extends BaseComponent{
         }
 
         if( id === 'editInfo' ){
-            let templateString = document.querySelector('.editInfo-screen-content').innerHTML;
+
             let data = authResultObject.user;
-            for( let key in data ){
-                let findIn = '{{'+key+'}}';
-                let value = data[key];
-                if( templateString.indexOf( findIn ) !== -1 ){
-                    if( value == null ){
-                        value = "" ;
-                    }
-                    templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
-                }
-                //console.log( data.name , 'Added' );
-            }
-            document.querySelector('.editInfo-screen-content').innerHTML = templateString;
+            this.addingViewHelper( '.editInfo-screen-content' , 'user' , data , null , false );
+
         }
     }
 
@@ -531,38 +660,6 @@ class ViewComponent extends BaseComponent{
     showAllCafeLocations(){
         navigator.geolocation.getCurrentPosition( this.initMap , this.initMapFailed )
     }
-
-
-    initMap222() {
-        var directionsService = new google.maps.DirectionsService();
-        var directionsRenderer = new google.maps.DirectionsRenderer();
-        var haight = new google.maps.LatLng(37.7699298, -122.4469157);
-        var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
-        var mapOptions = {
-            zoom: 16,
-            center: haight
-        };
-        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        directionsRenderer.setMap(map);
-    }
-
-    calcRoute() {
-        var selectedMode = document.getElementById('mode').value;
-        var request = {
-            origin: haight,
-            destination: oceanBeach,
-            // Note that JavaScript allows us to access the constant
-            // using square brackets and a string value as its
-            // "property."
-            travelMode: 'TRANSIT'
-        };
-        directionsService.route(request, function(response, status) {
-            if (status == 'OK') {
-                directionsRenderer.setDirections(response);
-            }
-        });
-    }
-
 
 
 }

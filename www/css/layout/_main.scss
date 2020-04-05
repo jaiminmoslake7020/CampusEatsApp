@@ -51,6 +51,10 @@ body{
    transform: translateY(100px);
    transition: all 1s linear;
 
+   &.customize-menu-items-screen-content{
+      padding-top: 0;
+   }
+
    &.active{
       opacity: 1;;
       transform: translateY(0);
