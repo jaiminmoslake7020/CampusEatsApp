@@ -6207,6 +6207,10 @@ body .loadingBar .loadingBar-content .loadingBar-text {
   width: fit-content;
 }
 
+.customizer-item {
+  margin: 5px auto;
+}
+
 /* typography ======================= */
 body {
   font-family: "Roboto", sans-serif;

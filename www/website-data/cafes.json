@@ -3954,7 +3954,92 @@
       "lat": 49.224947,
       "lang": -123.1101825
     },
-
+    "menus": {
+      "hot_coffees": {
+        "name": "Hot Coffees",
+        "id": "hot_coffees",
+        "type": "hot_coffees",
+        "url": "https://globalassets.starbucks.com/assets/62cada05d1f64f79bf42f9544cffaae1.jpg"
+      },
+      "hot_drinks": {
+        "name": "Hot Drinks",
+        "id": "hot_drinks",
+        "type": "hot_drinks",
+        "url": "https://globalassets.starbucks.com/assets/d39650cf28d44aa283a0f311581e3491.jpg"
+      },
+      "cold_coffees": {
+        "name": "Cold Coffees",
+        "id": "cold_coffees",
+        "type": "cold_coffees",
+        "url": "https://globalassets.starbucks.com/assets/1697f7c55887448684fed85ecdd98e44.jpg"
+      },
+      "hot_teas": {
+        "name": "Hot Teas",
+        "id": "hot_teas",
+        "type": "hot_teas",
+        "url": "https://globalassets.starbucks.com/assets/49bf4333e9d048498a59a5a2b958165f.jpg"
+      },
+      "frappuccino_blended_beverages": {
+        "name": "Frappuccino Blended Beverages",
+        "id": "frappuccino_blended_beverages",
+        "type": "frappuccino_blended_beverages",
+        "url": "https://globalassets.starbucks.com/assets/e4d9e996eb64453eb3ac7adb570c9b7b.jpg"
+      },
+      "iced_teas": {
+        "name": "Iced Teas",
+        "id": "iced_teas",
+        "type": "iced_teas",
+        "url": "https://globalassets.starbucks.com/assets/7b51b01b4a394a829ff9df4ef9f3be3c.jpg"
+      },
+      "cold_drinks": {
+        "name": "Cold Drinks",
+        "id": "cold_drinks",
+        "type": "cold_drinks",
+        "url": "https://globalassets.starbucks.com/assets/7a42b73c1b964dea8d685559b1fab7b8.jpg"
+      },
+      "hot_breakfast": {
+        "name": "Hot Breakfast",
+        "id": "hot_breakfast",
+        "type": "hot_breakfast",
+        "url": "https://globalassets.starbucks.com/assets/ecbd0e5d6bb64650ab6d31c667b80b13.jpg"
+      },
+      "lunch": {
+        "name": "Lunch",
+        "id": "lunch",
+        "type": "lunch",
+        "url": "https://globalassets.starbucks.com/assets/fb98344fda004b0687fdf96d961ba1a6.jpg"
+      },
+      "yogurt_&_custard": {
+        "name": "Yogurt & Custard",
+        "id": "yogurt_&_custard",
+        "type": "yogurt_&_custard",
+        "url": "https://globalassets.starbucks.com/assets/13a82584a90745a680798973823fda34.jpg"
+      },
+      "bakery": {
+        "name": "Bakery",
+        "id": "bakery",
+        "type": "bakery",
+        "url": "https://globalassets.starbucks.com/assets/057f39830ac7427aa47b4443d1f08d14.jpg"
+      },
+      "snacks_&_sweets": {
+        "name": "Snacks & Sweets",
+        "id": "snacks_&_sweets",
+        "type": "snacks_&_sweets",
+        "url": "https://globalassets.starbucks.com/assets/374230e32c03466e9f1696551d843f3b.jpg"
+      },
+      "whole_bean": {
+        "name": "Whole Bean",
+        "id": "whole_bean",
+        "type": "whole_bean",
+        "url": "https://globalassets.starbucks.com/assets/91ad656330184fa695210eb4de251a5d.jpg"
+      },
+      "verismo_pods": {
+        "name": "Verismo Pods",
+        "id": "verismo_pods",
+        "type": "verismo_pods",
+        "url": "https://globalassets.starbucks.com/assets/1b0bc46a9e2041e9969d7576e056f8d7.jpg"
+      }
+    }
   },
   "subway": {
     "name": "Subway",
@@ -3997,6 +4082,56 @@
     "position": {
       "lat": 49.2252168,
       "lang": -123.1105755
+    },
+    "menus": {
+      "all_sandwiches": {
+        "name": "All Sandwiches",
+        "id": "all_sandwiches",
+        "type": "all sandwiches",
+        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_AllSandwiches_540x540_@1x.jpg"
+      },
+      "signature_wraps": {
+        "name": "Signature Wraps",
+        "id": "signature_wraps",
+        "type": "signature wraps",
+        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_SignatureWraps_540x540_@1x.jpg"
+      },
+      "featured_products": {
+        "name": "Featured Products",
+        "id": "featured_products",
+        "type": "featured products",
+        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Owned_BOGO_Product_Category_Small.jpg"
+      },
+      "fresh_fit_choices": {
+        "name": "Fresh Fit Choices",
+        "id": "fresh_fit_choices",
+        "type": "fresh fit choices",
+        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_FreshFit_540x540_@1x.jpg"
+      },
+      "chopped_salads": {
+        "name": "Chopped Salads",
+        "id": "chopped_salads",
+        "type": "chopped salads",
+        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_ChoppedSalads_540x540_@1x.jpg"
+      },
+      "breakfast": {
+        "name": "Breakfast",
+        "id": "breakfast",
+        "type": "breakfast",
+        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_Breakfast_540x540_@1x.jpg"
+      },
+      "sides_drinks": {
+        "name": "Sides & Drinks",
+        "id": "sides_drinks",
+        "type": "sides drinks",
+        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_SidesDrinks_540x540_@1x.jpg"
+      },
+      "breads_toppings_extras": {
+        "name": "Breads Toppings Extras",
+        "id": "breads_toppings_extras",
+        "type": "breads toppings extras",
+        "url": "https://www.subway.com/ns/images/menu/USA/ENG/Category_SidesDrinks_540x540_@1x.jpg"
+      }
     }
   },
   "triple_o": {
@@ -4073,7 +4208,62 @@
         "end": "4:30"
       }
     },
-    "menus": {},
+    "menus": {
+      "black_tea": {
+        "name": "Black tea ",
+        "id": "black_tea",
+        "type": "black_tea",
+        "url": "https://i.ndtvimg.com/i/2017-10/black-tea-encourages-weight-loss_650x400_51507196055.jpg"
+      },
+      "green_tea": {
+        "name": "Green tea ",
+        "id": "green_tea",
+        "type": "green_tea",
+        "url": "https://www.healthywomen.org/sites/default/files/green-tea.jpg"
+      },
+      "milk_tea": {
+        "name": "Milk tea ",
+        "id": "milk_tea",
+        "type": "milk_tea",
+        "url": "https://cdn2.foodviva.com/static-content/food-images/tea-recipes/milk-tea-recipe/milk-tea-recipe.jpg"
+      },
+      "flavoured_slush": {
+        "name": "Flavoured slush ",
+        "id": "flavoured_slush",
+        "type": "flavoured_slush",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPD5tNwn8ovDotafQ5-Y8Uk124OomZ8vEYtNlJ2niyRkh-rHmF&usqp=CAU"
+      },
+      "calpis": {
+        "name": "Calpis ",
+        "id": "calpis",
+        "type": "calpis",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ0THeLbesofzzF_BxbjrLNmCwescAb9IouL_B04LuFR94ETsXb&usqp=CAU"
+      },
+      "toppings": {
+        "name": "Toppings ",
+        "id": "toppings",
+        "type": "toppings",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRROptHEoM8UqN9xdlzJQGIvy32kKKvCUd1gMcu1MnPhd0fw5aM&usqp=CAU"
+      },
+      "coffee": {
+        "name": "Coffee ",
+        "id": "coffee",
+        "type": "coffee",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlAuqCkIPxz5BhlK7_au-zRxqQhBAVMKUPp3LOOihUQ9-MZACd&usqp=CAU"
+      },
+      "tea_latte": {
+        "name": "Tea latte ",
+        "id": "tea_latte",
+        "type": "tea_latte",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRaEv-f5lY2jPg4mNEJuCMe-JmMPszz4pkQVSSyJNOQnj48e6U6&usqp=CAU"
+      },
+      "loose_leaf_tea": {
+        "name": "Loose leaf tea",
+        "id": "loose_leaf_tea",
+        "type": "loose_leaf_tea",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRsNyMlF4iSxSoBhRppWl0UKRu3YBbfgMzMF6w6N1gm6Gm2URnn&usqp=CAU"
+      }
+    },
     "position": {
       "lat": 49.224604,
       "lang": 123.107379

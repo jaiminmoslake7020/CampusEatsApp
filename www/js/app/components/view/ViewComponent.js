@@ -461,26 +461,60 @@ class ViewComponent extends BaseComponent{
     }
 
     addCustomizingOptions(){
+        let selfObject = this;
+        this.addQuantity(  );
+
+        let menu = JSON.parse( localStorage.getItem('menu') );
+        if( menu == null ){
+            console.log('menu_item empty showing homescreen.');
+            this.showHomeScreen();
+        }
+
+        if( "customizations" in menu){
+            if( typeof menu.customizations === "object" && menu.customizations != null ){
+                let customizations = menu.customizations ;
+                console.log( customizations );
+                for( let key in customizations ){
+                    console.log( key , customizations[key] , customizations[key].options );
+                    let customizer = customizations[key];
+                    customizer.id = key;
+                    if( "options" in customizer ){
+                        let options = customizations[key].options;
+                        selfObject.addingViewHelper( 'customizer-parent' , key , customizer  );
+                        for( let key1 in options ){
+                            if( "category" in options[key1] ){
+                                let categories = options[key1].category ;
+                                for ( let key2 in categories ){
+                                    categories[key2].value = 0 ;
+                                    categories[key2].id = key2 ;
+                                    selfObject.addingViewHelper( 'customizer-parent' , key1 , {name:"",'id':key1}  );
+                                    selfObject.addingViewHelper( 'customizer' , key2 ,  categories[key2] , key1  );
+                                }
+                            }else{
+                                options[key1].value = 0;
+                                options[key1].id = key1;
+                                selfObject.addingViewHelper( 'customizer' , key1 , options[key1]  , key  );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    addQuantity(  ){
+
         let menu_item = JSON.parse( localStorage.getItem('menu_item') );
         if( menu_item == null ){
             console.log('menu_item empty showing homescreen.');
             this.showHomeScreen();
         }
 
-        this.addQuantity( menu_item );
+        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Size','id':'size'}  );
+        this.addingViewHelper( 'customizer-size' , 'size' , {name:'size'}  , 'size'  );
 
-
-
-
-    }
-
-    addQuantity( menu_item ){
-        // let entity = new BaseEntity( 'quantity_option' , {'name':'Quantity'} );
-        // this.addToView('customizer-parent', entity );
-        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Size'}  );
-        this.addingViewHelper( 'customizer-size' , 'size' , {name:'size'}  , 'Size'  );
-
-        let quantity = {'name':'Quantity','value':2} ;
+        let quantity = {'name':'Quantity','value':0} ;
         if( "sizes" in menu_item ){
             for( let key in menu_item.sizes ){
                 quantity[key+'_price'] = menu_item.sizes[key]['price'];
@@ -492,13 +526,9 @@ class ViewComponent extends BaseComponent{
         }
 
 
-        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Quantity'}  );
+        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Quantity','id':'quantity'}  );
         // 'Quantity' is the name of identifier of customizer
-        this.addingViewHelper( 'customizer' , 'quantity' , quantity  , 'Quantity'  );
-
-        //
-        // entity = new BaseEntity( 'quantity' , {'name':'Quantity','value':2} );
-        // this.addToView('customizer', entity  );
+        this.addingViewHelper( 'customizer' , 'quantity' , quantity  , 'quantity'  );
 
     }
 
