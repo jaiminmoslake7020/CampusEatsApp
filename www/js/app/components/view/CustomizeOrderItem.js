@@ -1,10 +1,26 @@
 class CustomizeOrderItem extends ViewComponent{
+
+    get customizerData() {
+        return this._customizerData;
+    }
+
+    set customizerData(value) {
+        this._customizerData = value;
+    }
+
+    addCustomizerData( key , value ){
+        let customizerData = this.customizerData;
+        customizerData.key = value;
+        this.customizerData = customizerData;
+    }
+
     constructor() {
         super();
     }
 
     init() {
         this.addEvents();
+        this._customizerData = {};
     }
 
     addEvents(){
@@ -89,6 +105,27 @@ class CustomizeOrderItem extends ViewComponent{
             selfObject.calculatePriceAndCalories();
         });
 
+        $('body').on('change', '.addItem', function (e) {
+            selfObject.calculatePriceAndCalories();
+            let orderItem = new OrderItem();
+
+            let menu_item = JSON.parse( localStorage.getItem('menu_item') );
+            let selfObject = this;
+            orderItem.init( null , menu_item.id , menu_item.name ,
+                parseFloat($('#customizedPrice').text()) ,
+                selfObject.getValue( '#quanitityInput' ) ,
+                parseFloat($('#customizedCalories').text()) ,
+                selfObject.customizerData
+                );
+
+        });
+
+        $('body').on('change', '.removeItem', function (e) {
+            selfObject.calculatePriceAndCalories();
+
+        });
+
+        selfObject.calculatePriceAndCalories();
     }
 
     getValue( elem ){
@@ -115,16 +152,34 @@ class CustomizeOrderItem extends ViewComponent{
             calories = parseFloat(selectedSize.data('calories'));
         }
 
+        let quantity = 0 ;
         if( this.elemExist( '#quanitityInput' ) ){
-            let quantity = this.getValue( '#quanitityInput'  );
+            quantity = this.getValue( '#quanitityInput'  );
             price = price*quantity;
             calories = calories*quantity;
         }
 
+        let selfObject = this;
+        $('.counter:not([name="Quantity"])').each(function (index , el) {
+            let priceItem = $(el).data('price');
+            let caloriesItem = $(el).data('calories');
+            let ownQuantity = $(el).val();
+            priceItem = ownQuantity*priceItem;
+            caloriesItem = ownQuantity*caloriesItem;
+
+            priceItem = quantity*priceItem;
+            caloriesItem = quantity*caloriesItem;
+
+            price += priceItem ;
+            calories += caloriesItem;
+
+
+            selfObject.addCustomizerData( $(el).data('id') , {'price':priceItem, 'value':ownQuantity, 'calories':caloriesItem} );
+
+        });
 
         $('#customizedPrice').text(parseFloat(price).toFixed(2));
         $('#customizedCalories').text(parseFloat(calories).toFixed(2));
-
 
     }
 

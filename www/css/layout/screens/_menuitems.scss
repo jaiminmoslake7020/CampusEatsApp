@@ -3,7 +3,8 @@
     font-size: 16px;
     font-weight: 100;
     &.active{
-      background-color: $color__primary;
+      background-color: $color__lgrey;
+      color: $color__textBlack;
     }
   }
 }

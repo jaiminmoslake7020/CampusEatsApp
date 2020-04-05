@@ -5,13 +5,8 @@ class ViewComponent extends BaseComponent{
         super();
     }
 
-    init(){
-        consoleAlert( 'Viewe Component configureVue');
-
-        consoleAlert( 'Viewe Component Loaded');
-
+    authentiCate(){
         let userLoggedIn = false;
-
         let authResult = localStorage.getItem('authResult');
         if( authResult == null ){
         }else{
@@ -26,14 +21,7 @@ class ViewComponent extends BaseComponent{
         }
 
         if( userLoggedIn ){
-
-            // just for testing purpose
-            //this.showMenusScreen('tim-hortons');
-            //this.showMenuIetmsScreen('section_7410');
-            this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
-            //this.showHomeScreen();
-            //this.showRenderScreen('editInfo');
-
+            return true;
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
                 consoleAlert( 'showLoginScreen' );
@@ -43,8 +31,22 @@ class ViewComponent extends BaseComponent{
                 this.showSplashScreen();
             }
         }
+        return false;
+    }
 
+    init(){
+        consoleAlert( 'Viewe Component configureVue');
+        consoleAlert( 'Viewe Component Loaded');
 
+        let userLoggedIn = this.authentiCate();
+        if( userLoggedIn ){
+            // just for testing purpose
+            //this.showMenusScreen('tim-hortons');
+            //this.showMenuIetmsScreen('section_7410');
+            this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
+            //this.showHomeScreen();
+            //this.showRenderScreen('cafeLocations');
+        }
     }
 
     replaceAppScreen( template , id = 'app' ){
@@ -147,6 +149,7 @@ class ViewComponent extends BaseComponent{
             document.getElementById('ion-content').classList.add('menu-screen-content');
             selfObject.addCafeHeading();
             selfObject.addUserDetails();
+            selfObject.addFooterContainer();
 
             resolve();
 
@@ -194,6 +197,8 @@ class ViewComponent extends BaseComponent{
             selfObject.addCafeHeading();
             selfObject.addMenuHeading();
             selfObject.addUserDetails();
+            selfObject.addFooterContainer();
+
             resolve();
 
         }).then(function () {
@@ -242,6 +247,7 @@ class ViewComponent extends BaseComponent{
             selfObject.addUserDetails();
             selfObject.addMenuItemHeading();
             selfObject.addCustomizingOptions();
+            selfObject.addFooterContainer();
 
             resolve();
 
@@ -269,7 +275,8 @@ class ViewComponent extends BaseComponent{
             'customizer-parent':'menu-content',
             '.editInfo-screen-content':'.editInfo-screen-content',
             'customizer-size-option':'customizer-size-options',
-            'alert-template-parent':'alert-parent'
+            'alert-template-parent':'alert-parent',
+            'addItemContainer':'ion-content'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
@@ -415,7 +422,8 @@ class ViewComponent extends BaseComponent{
             if( id === "cafeLocations" ){
                 selfObject.showAllCafeLocations();
             }
-            selfObject.getAppClassManager().getEventHandlerComponent().stopLoading();
+        }).then(function () {
+            selfObject.getAppClassManager().getEventHandlerComponent().addRenderScreenEvents();
         }).catch(function () {
             selfObject.globalCatch( reason );
         });
@@ -462,6 +470,7 @@ class ViewComponent extends BaseComponent{
 
     addCustomizingOptions(){
         let selfObject = this;
+        this.addingViewHelper('addItemContainer', 'btnContainer' , {}  );
         this.addQuantity(  );
 
         let menu = JSON.parse( localStorage.getItem('menu') );
@@ -480,6 +489,7 @@ class ViewComponent extends BaseComponent{
                     customizer.id = key;
                     if( "options" in customizer ){
                         let options = customizations[key].options;
+                        customizer.align = "left" ;
                         selfObject.addingViewHelper( 'customizer-parent' , key , customizer  );
                         for( let key1 in options ){
                             if( "category" in options[key1] ){
@@ -487,12 +497,14 @@ class ViewComponent extends BaseComponent{
                                 for ( let key2 in categories ){
                                     categories[key2].value = 0 ;
                                     categories[key2].id = key2 ;
-                                    selfObject.addingViewHelper( 'customizer-parent' , key1 , {name:"",'id':key1}  );
+                                    categories[key2].min = 0 ;
+                                    selfObject.addingViewHelper( 'customizer-parent' , key1 , {name:"",'id':key1, 'align':'left' }  );
                                     selfObject.addingViewHelper( 'customizer' , key2 ,  categories[key2] , key1  );
                                 }
                             }else{
                                 options[key1].value = 0;
                                 options[key1].id = key1;
+                                options[key1].min = 0 ;
                                 selfObject.addingViewHelper( 'customizer' , key1 , options[key1]  , key  );
                             }
                         }
@@ -502,7 +514,6 @@ class ViewComponent extends BaseComponent{
         }
     }
 
-
     addQuantity(  ){
 
         let menu_item = JSON.parse( localStorage.getItem('menu_item') );
@@ -511,22 +522,37 @@ class ViewComponent extends BaseComponent{
             this.showHomeScreen();
         }
 
-        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Size','id':'size'}  );
+        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Size','id':'size', 'align':'center' }  );
         this.addingViewHelper( 'customizer-size' , 'size' , {name:'size'}  , 'size'  );
 
-        let quantity = {'name':'Quantity','value':0} ;
+        let quantity = {'name':'Quantity','value':1} ;
         if( "sizes" in menu_item ){
+            let hadMedium = false ;
+            let countDown = 1 ;
             for( let key in menu_item.sizes ){
                 quantity[key+'_price'] = menu_item.sizes[key]['price'];
                 quantity[key+'_calories'] = menu_item.sizes[key]['calories'];
 
-                let size = { 'id':key , 'tag':menu_item.sizes[key]['tag'] , 'title':menu_item.sizes[key]['title'] , 'price': menu_item.sizes[key]['price'] , 'calories': menu_item.sizes[key]['calories']  };
+                let size = menu_item.sizes[key];
+                size.id = key;
+                size["checked"] = "" ;
+                size["active"] = "" ;
+                if( key === "medium" ){
+                    hadMedium = true ;
+                    size["checked"] = "checked" ;
+                    size["active"] = "active" ;
+                }else if( hadMedium === false && countDown === menu_item.sizes.length ){
+                    size["checked"] = "checked" ;
+                    size["active"] = "active" ;
+                }
+
                 this.addingViewHelper( 'customizer-size-option' , 'single_size' , size   );
+                countDown++;
             }
         }
 
-
-        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Quantity','id':'quantity'}  );
+        quantity.min = 1;
+        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Quantity','id':'quantity',  'align':'left'}  );
         // 'Quantity' is the name of identifier of customizer
         this.addingViewHelper( 'customizer' , 'quantity' , quantity  , 'quantity'  );
 
@@ -604,6 +630,10 @@ class ViewComponent extends BaseComponent{
                 let data = cafe.data;
                 console.log( data.position );
 
+                if( data.logo.indexOf('union') !== -1 ){
+                    data.logo =  selfObject.getStringHelper(  data.logo  ).replaceChars('jpeg','png')
+                }
+
                 var image = {
                     url: "http://campuseats.wmdd.ca/html-site/CampusEastCmsHtml/small/"+data.logo,
                     //url: "http://localhost/CampusEatsMobileApp/www/images/brands/small/subway.png",
@@ -659,5 +689,8 @@ class ViewComponent extends BaseComponent{
         navigator.geolocation.getCurrentPosition( this.initMap , this.initMapFailed )
     }
 
+    addFooterContainer(){
+       $('body').append($('#footer').html());
+    }
 
 }

@@ -48,6 +48,13 @@ class FirebaseCompoenent extends BaseComponent{
 
                     if( typeof authResult === "object"  && authResult.hasOwnProperty( 'user' )  ){
                         localStorage.setItem('authResult', JSON.stringify(authResult) );
+
+                        setTimeout(function () {
+                            if( !campusEats.getAppClassManager().getViewComponent().authentiCate() ){
+                                campusEats.getAppClassManager().getViewComponent().showLoginScreen();
+                            }
+                        }, 10000 );
+
                         return campusEats.getAppClassManager().getViewComponent().showHomeScreen();
                     }else{
                         campusEats.getAppClassManager().getEventHandlerComponent().alert( 'Error' , '' , '' , buttons );

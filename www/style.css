@@ -5436,7 +5436,7 @@ body {
 }
 
 .pr2 {
-  padding-right: 2pxpx;
+  padding-right: 2 pxpx;
 }
 
 .pr3 {
@@ -5903,6 +5903,18 @@ body {
   flex-flow: unset;
 }
 
+.removeItem {
+  color: #f15a24;
+}
+
+.addItem {
+  color: #009245;
+}
+
+.customizer-label-parent label.control-label {
+  color: #333;
+}
+
 /* BTN CONTENT ============ */
 .brand-logos.ion-color.ion-color-light {
   height: 150px;
@@ -6032,33 +6044,33 @@ button.button-native {
   display: none;
 }
 
-#home-screen .hamburger-menu {
+#home-screen .header-div .hamburger-menu {
   display: block;
 }
-#home-screen .back-button {
+#home-screen .header-div .back-button {
   display: none;
 }
-#home-screen .home-button {
+#home-screen .header-div .home-button {
   display: none;
 }
 
-#menu-item-screen .hamburger-menu, #menu-screen .hamburger-menu, #customize-menu-item-screen .hamburger-menu {
+#menu-item-screen .header-div .hamburger-menu, #menu-screen .header-div .hamburger-menu, #customize-menu-item-screen .header-div .hamburger-menu {
   display: none;
 }
-#menu-item-screen .back-button, #menu-screen .back-button, #customize-menu-item-screen .back-button {
+#menu-item-screen .header-div .back-button, #menu-screen .header-div .back-button, #customize-menu-item-screen .header-div .back-button {
   display: block;
 }
-#menu-item-screen .home-button, #menu-screen .home-button, #customize-menu-item-screen .home-button {
+#menu-item-screen .header-div .home-button, #menu-screen .header-div .home-button, #customize-menu-item-screen .header-div .home-button {
   display: none;
 }
 
-#faq-screen .hamburger-menu, #feedback-screen .hamburger-menu, #editInfo-screen .hamburger-menu, #privacyPolicys-screen .hamburger-menu, #cafeLocations-screen .hamburger-menu {
+#faq-screen .header-div .hamburger-menu, #feedback-screen .header-div .hamburger-menu, #editInfo-screen .header-div .hamburger-menu, #privacyPolicys-screen .header-div .hamburger-menu, #cafeLocations-screen .header-div .hamburger-menu {
   display: block;
 }
-#faq-screen .back-button, #feedback-screen .back-button, #editInfo-screen .back-button, #privacyPolicys-screen .back-button, #cafeLocations-screen .back-button {
+#faq-screen .header-div .back-button, #feedback-screen .header-div .back-button, #editInfo-screen .header-div .back-button, #privacyPolicys-screen .header-div .back-button, #cafeLocations-screen .header-div .back-button {
   display: none;
 }
-#faq-screen .home-button, #feedback-screen .home-button, #editInfo-screen .home-button, #privacyPolicys-screen .home-button, #cafeLocations-screen .home-button {
+#faq-screen .header-div .home-button, #feedback-screen .header-div .home-button, #editInfo-screen .header-div .home-button, #privacyPolicys-screen .header-div .home-button, #cafeLocations-screen .header-div .home-button {
   display: block;
 }
 
@@ -6072,6 +6084,10 @@ button.button-native {
   height: 34px;
   align-content: center;
   align-items: center;
+}
+
+#ion-content {
+  margin-bottom: 70px;
 }
 
 /* Laodingbar CONTENT ============ */
@@ -6198,7 +6214,8 @@ body .loadingBar .loadingBar-content .loadingBar-text {
   font-weight: 100;
 }
 #customizer-size-options label.active {
-  background-color: #f15a24;
+  background-color: #eee;
+  color: #333;
 }
 
 .customizer-item.size #customizer-size-options {
@@ -6229,6 +6246,23 @@ body {
 }
 
 /* Navigation ======================= */
+#footer-container {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 60px;
+  left: 0;
+  background-color: #FFF9EC;
+  z-index: 999;
+  color: #f15a24;
+}
+#footer-container i {
+  color: #f15a24;
+}
+#footer-container .menu-button {
+  padding: 20px;
+}
+
 .app-nav {
   width: 100%;
   display: block;
@@ -6408,11 +6442,6 @@ body {
 
 .edit-info-button {
   text-align: center;
-}
-
-.btn-default {
-  margin-top: 1rem;
-  justify-content: center;
 }
 
 .feedback-form {
