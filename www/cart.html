@@ -102,60 +102,51 @@
                 </div>
                 <div class="home-screen-content ion-padding screen-content row " id="ion-content" >
 
-                        <div class="col-xs-12">
-
-                            <form>
-                                <h4>Payment details</h4>
-
-                                <ul>
-                                    <li>
-                                        <label for="card_number">Card number </label>
-                                        <input type="text" name="card_number" id="card_number" placeholder="1234 5678 9012 3456">
-
-                                        <small class="help">We supports Visa, Visa Electron, Maestro, MasterCard and Discover.</small>
-                                    </li>
-
-                                    <li class="vertical">
-                                        <ul>
-                                            <li>
-                                                <label for="expiry_date">Expiry date</label>
-                                                <input type="text" name="expiry_date" id="expiry_date" maxlength="5" placeholder="mm/yy">
-                                            </li>
-
-                                            <li>
-                                                <label for="cvv">CVV</label>
-                                                <input type="text" name="cvv" id="cvv" maxlength="3" placeholder="123">
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="vertical maestro" style="display: none; opacity: 0;">
-                                        <ul>
-                                            <li>
-                                                <label for="issue_date">Issue date</label>
-                                                <input type="text" name="issue_date" id="issue_date" maxlength="5" placeholder="mm/yy">
-                                            </li>
-
-                                            <li>
-                                                <span class="or">or</span>
-                                                <label for="issue_number">Issue number</label>
-                                                <input type="text" name="issue_number" id="issue_number" maxlength="2">
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <label for="name_on_card">Name on card</label>
-                                        <input type="text" name="name_on_card" id="name_on_card" placeholder="Enter your name as on card">
-                                    </li>
-                                </ul>
-                                <div class="payment-buttons">
-                                    <button type="button" class="btn btn-primary btn-confirm">Confirm</button>
-                                    <button type="button" class="btn btn-secondary btn-cancel">Cancel</button>
-                                </div>
-                            </form>
-
+                    <div class="card shopping-cart">
+                        <div class="card-header bg-dark text-light">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            Your Order
                         </div>
+                        <div class="card-body">
+                            <!-- PRODUCT -->
+                            <div class="cart-detail">
+                                <div class="img-title">
+                                    <div class="col-12 col-sm-12 col-md-2 text-center">
+                                        <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
+                                    </div>
+                                    <div class="img-name">
+                                        <h4>Product Name</h4>
+                                    </div>
+                                </div>
+                                <div class="product-calories">
+                                    <p>Calories</p>
+                                    <p>200gm</p>
+                                </div>
+                                <div class="product-quantity">
+                                    <p>Quantity</p>
+                                    <p>1</p>
+                                </div>
+                                <div class="product-amount">
+                                    <p>Price</p>
+                                    <p>$3.58</p>
+                                </div>
+                                <div class="product-icons">
+                                    <a><i class="fas fa-pencil-alt"></i></a>
+                                    <a><i class="fas fa-trash-alt"></i></a>
+                                </div>
+
+
+                            </div>
+                            <div class="order-payment-total">
+                                <div class="product-price">
+                                    <h4>Total</h4>
+                                    <p>$20.50</p>
+                                </div>
+                                <div class="pull-right cart-buttons" style="margin: 10px">
+                                    <a href="" class="btn btn-success pull-right">Checkout</a>
+                                </div>
+                            </div>
+                    </div>
 
                 </div>
             </div>

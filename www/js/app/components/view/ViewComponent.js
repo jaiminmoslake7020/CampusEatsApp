@@ -10,13 +10,13 @@ class ViewComponent extends BaseComponent{
 
         consoleAlert( 'Viewe Component Loaded');
 
-        if( false ){
+        if( true ){
             // just for testing purpose
             //this.showMenusScreen('tim-hortons');
             //this.showMenuIetmsScreen('section_7410');
             //this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
             this.showHomeScreen();
-            //this.showRenderScreen('cafeLocations');
+            // this.showRenderScreen('faq');
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
                 consoleAlert( 'showLoginScreen' );
