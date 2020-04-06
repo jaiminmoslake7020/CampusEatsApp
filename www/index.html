@@ -707,21 +707,23 @@
                                 <h4>{{name}}</h4>
                             </div>
                         </div>
-                        <div class="product-calories">
-                            <p>Calories</p>
-                            <p>{{calories}}</p>
-                        </div>
-                        <div class="product-quantity">
-                            <p>Quantity</p>
-                            <p>{{quantity}}</p>
-                        </div>
-                        <div class="product-amount">
-                            <p>Price</p>
-                            <p>${{price}}</p>
-                        </div>
-                        <div class="product-icons">
-                            <div data-id="{{itemId}}" class=" p15 editItem " ><i class="fas fa-pencil-alt fa-3x "></i></div>
-                            <div data-id="{{itemId}}" class=" p15 removeItemFromOrder " ><i class="fas fa-trash-alt fa-3x "></i></div>
+                        <div class="inner-payment-cart">
+                            <div class="product-calories">
+                                <p>Calories</p>
+                                <p>{{calories}}</p>
+                            </div>
+                            <div class="product-quantity">
+                                <p>Quantity</p>
+                                <p>{{quantity}}</p>
+                            </div>
+                            <div class="product-amount">
+                                <p>Price</p>
+                                <p>${{price}}</p>
+                            </div>
+                            <div class="product-icons">
+                                <div data-id="{{itemId}}" class=" p15 editItem " ><button type="button" class="btn btn-primary btn-edit">Edit<i class="fas fa-pencil-alt fa-3x "></i></button></div>
+                                <div data-id="{{itemId}}" class=" p15 removeItemFromOrder " ><button type="button" class="btn btn-primary btn-delete">Delete<i class="fas fa-trash-alt fa-3x "></i></button></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -865,7 +867,7 @@
     <script  src="js/app/CampusEats.js"  ></script>
     <!--    PHONEGAP's own call to our app handler-->
     <script type="text/javascript" src="js/index.js"  ></script>
-=    <!--  APP JS  -->
+    <!--  APP JS  -->
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBChFqqjM0nvMwfjQS_nH1D1YmlHnZ3Y6Q"
             async defer></script>
