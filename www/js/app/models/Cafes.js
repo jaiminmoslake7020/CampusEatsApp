@@ -6,8 +6,11 @@ class Cafes extends FirebaseActiveRecord{
         this.firebase_collection = this.main_collection+"/Cafes";
         this.firebase_is_merge = true ;
 
+        let href = window.location.href;
+        href = this.getStringHelper( href ).replaceChars('/?mode=select', '' );
+
         this.cafe_incremental = 0 ;
-        this.cafes_json = "/CampusEatsMobileApp/www/website-data/cafes.json";
+        this.cafes_json = href+"/website-data/cafes.json";
         this.cafesJsonData = {} ;
 
         this._entityClass = 'Cafe' ;

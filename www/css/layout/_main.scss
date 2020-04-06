@@ -5433,7 +5433,7 @@ body {
 }
 
 .pr2 {
-  padding-right: 2 pxpx
+  padding-right: 2px
 }
 
 .pr3 {
@@ -5915,6 +5915,7 @@ body {
   color: $color__textBlack;
 }
 
+
 #payment-screen{
   li{
     span.text-danger{
@@ -5924,3 +5925,22 @@ body {
     }
   }
 }
+
+
+.remove-cPrimary{
+  color: $color__textBlack !important;
+}
+
+.customizer-item{
+  .btn-group{
+    label.btn.btn-default.active{
+      background-color: $color__secondary;
+      color: white;
+    }
+  }
+}
+
+
+
+
+

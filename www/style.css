@@ -5436,7 +5436,7 @@ body {
 }
 
 .pr2 {
-  padding-right: 2 pxpx;
+  padding-right: 2px;
 }
 
 .pr3 {
@@ -5921,6 +5921,15 @@ body {
   display: inline-block;
 }
 
+.remove-cPrimary {
+  color: #333 !important;
+}
+
+.customizer-item .btn-group label.btn.btn-default.active {
+  background-color: #009245;
+  color: white;
+}
+
 /* BTN CONTENT ============ */
 .brand-logos.ion-color.ion-color-light {
   height: 150px;
@@ -6052,7 +6061,7 @@ button.button-native {
 }
 
 .dnone {
-  display: none;
+  display: none !important;
 }
 
 #home-screen .header-div .hamburger-menu {
@@ -6082,13 +6091,13 @@ button.button-native {
 }
 
 #payment-screen .header-div .hamburger-menu {
-  display: block;
-}
-#payment-screen .header-div .back-button {
   display: none;
 }
-#payment-screen .header-div .home-button {
+#payment-screen .header-div .back-button {
   display: block;
+}
+#payment-screen .header-div .home-button {
+  display: none;
 }
 #payment-screen .header-div .cart-menu {
   display: none;
@@ -6101,7 +6110,7 @@ button.button-native {
   display: none;
 }
 #confirm-order-screen .header-div .home-button {
-  display: none;
+  display: block;
 }
 #confirm-order-screen .header-div .cart-menu {
   display: none;
@@ -6330,6 +6339,36 @@ body {
   padding: 20px;
 }
 
+#faq-screen .menu .panel-heading a {
+  background-color: #4caf50;
+  display: block;
+}
+#faq-screen .menu .panel-body::before {
+  color: red;
+}
+#faq-screen .menu .panel-default > .panel-heading {
+  color: red;
+}
+
+#faq-screen .panel-group {
+  text-align: center;
+}
+#faq-screen .panel-group .panel-heading {
+  background-color: #f15a24;
+}
+#faq-screen .panel-group .panel-title a {
+  color: white;
+}
+#faq-screen .panel-group .panel-heading {
+  border: 1px solid white;
+}
+#faq-screen .panel-group .panel-body {
+  font-weight: bold;
+}
+#faq-screen .panel-group .panel-heading:hover {
+  background-color: #009245;
+}
+
 .app-nav {
   width: 100%;
   display: block;
@@ -6352,34 +6391,6 @@ body {
   background-color: #f15a24;
   color: white;
   transition: left 1s linear;
-}
-.app-nav .menu .panel-heading a {
-  background-color: #4caf50;
-  display: block;
-}
-.app-nav .menu .panel-body::before {
-  color: red;
-}
-.app-nav .menu .panel-default > .panel-heading {
-  color: red;
-}
-.app-nav .panel-group {
-  text-align: center;
-}
-.app-nav .panel-group .panel-heading {
-  background-color: #f15a24;
-}
-.app-nav .panel-group .panel-title a {
-  color: white;
-}
-.app-nav .panel-group .panel-heading {
-  border: 1px solid white;
-}
-.app-nav .panel-group .panel-body {
-  font-weight: bold;
-}
-.app-nav .panel-group .panel-heading:hover {
-  background-color: #009245;
 }
 .app-nav .page {
   display: flex;
@@ -6434,62 +6445,80 @@ body {
 }
 
 /* sidebar ======================= */
-.list-group-item {
+.side-bar-menu-ce .list-group-item {
   background: transparent !important;
   border: transparent;
   border-bottom: 2px solid #ffffff !important;
 }
-
-.list-group-item a {
+.side-bar-menu-ce .list-group-item a {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.5rem;
   padding: 15px;
   display: block;
 }
-
-.list-group-item {
+.side-bar-menu-ce .list-group-item {
   padding: 0 !important;
 }
-
-.list-group-item a i {
+.side-bar-menu-ce .list-group-item a i {
   font-size: 2rem;
   padding: 1rem;
 }
-
-.item a {
+.side-bar-menu-ce .item a {
   border-bottom: none !important;
   padding: 1rem !important;
   color: #ffffff;
   text-decoration: none;
   font-size: 1.5rem;
 }
-
-.list-group {
+.side-bar-menu-ce .list-group {
   margin-top: 5rem;
 }
-
-.fa-user {
+.side-bar-menu-ce .fa-user {
   font-size: 7rem;
   border: 2px solid #ffffff;
   padding: 2rem;
   border-radius: 50%;
 }
-
-.fa-pencil-alt {
+.side-bar-menu-ce .fa-pencil-alt {
   padding: 0.8rem;
 }
-
-.toolbar .title {
+.side-bar-menu-ce .toolbar .title {
   font-size: 2rem;
 }
-
-.sidebar-title-wrapper {
+.side-bar-menu-ce .sidebar-title-wrapper {
   text-align: center;
 }
-
-.fa-pencil-alt {
+.side-bar-menu-ce .fa-pencil-alt {
   color: #ffffff;
+}
+
+.panel-title a {
+  display: block;
+  text-decoration: none;
+}
+.panel-title a:hover {
+  border-bottom: unset;
+}
+
+#nut-summary .panel-body {
+  padding: 0;
+}
+#nut-summary .panel-title a {
+  display: block;
+}
+#nut-summary .list-group-item {
+  border: unset;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  text-transform: capitalize;
+}
+#nut-summary .list-group-item span.label.label-info {
+  float: right;
+  margin-top: -2px;
+  background-color: #009245;
+  padding: 10px;
+  min-width: 70px;
 }
 
 /* forms ======================= */

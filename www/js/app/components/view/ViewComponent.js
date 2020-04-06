@@ -35,9 +35,9 @@ class ViewComponent extends BaseComponent{
             // just for testing purpose
             //this.showMenusScreen('tim-hortons');
             //this.showMenuIetmsScreen('section_7410');
-            //this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
-            this.showHomeScreen();
-            //return this.showCartMenu();
+            //this.showCustomizeMenuItemOption("983a617f80c40ce93a34f681f90460f6");
+            //this.showHomeScreen();
+            return this.showCartMenu();
             //return this.showPaymentScreen();
            // return this.showConfirmOrderScreen('YTfubvjh');
             //this.showRenderScreen('cafeLocations');
@@ -183,6 +183,7 @@ class ViewComponent extends BaseComponent{
                 selfObject.getMenusModel( cafeId ).getAll().then(function ( snapshot ) {
                     for( let i = 0 ; i < snapshot.length ; i++ ){
                         let menu = snapshot[i];
+                        menu.data['cafeId'] = cafeId;
                         selfObject.addToView( 'ion-menu-button' , menu );
                     }
                 }).then(function () {
@@ -205,7 +206,8 @@ class ViewComponent extends BaseComponent{
 
     }
 
-    showMenuIetmsScreen( menu ){
+    showMenuIetmsScreen( menuObject ){
+        let menu = menuObject.id;
 
         if( !this.authentiCate() ){
             return this.showFreshLoginScreen();
@@ -235,14 +237,9 @@ class ViewComponent extends BaseComponent{
                 selfObject.getMenuIetmsModel( menu ).getAll().then(function ( snapshot ) {
                     for( let i = 0 ; i < snapshot.length ; i++ ){
                         let menuItem = snapshot[i];
-
-                        let menuObj = JSON.parse( localStorage.getItem('menu') );
-                        if( menuObj == null ){
-                            console.log('menu empty showing homescreen.');
-                            selfObject.showHomeScreen();
-                        }
-
-                        menuItem.data.customizations = menuObj.customizations ;
+                        menuItem.data['menuId'] = menu;
+                        menuItem.data['cafeId'] = menuObject.cafeId;
+                        menuItem.data.customizations = menuObject.customizations ;
                         selfObject.addToView( 'ion-menu-item-button' , menuItem );
                     }
                 }).then(function () {
@@ -265,7 +262,7 @@ class ViewComponent extends BaseComponent{
 
     }
 
-    showCustomizeMenuItemOption( menuItem ){
+    showCustomizeMenuItemOption( menuItem , itemOrderId = null ){
 
         if( !this.authentiCate() ){
             return this.showFreshLoginScreen();
@@ -284,8 +281,8 @@ class ViewComponent extends BaseComponent{
             selfObject.addCafeHeading();
             selfObject.addMenuHeading();
             selfObject.addUserDetails();
-            selfObject.addMenuItemHeading();
-            selfObject.addCustomizingOptions();
+            selfObject.addMenuItemHeading( itemOrderId );
+            selfObject.addCustomizingOptions( itemOrderId );
             selfObject.addFooterContainer();
 
             resolve();
@@ -336,12 +333,18 @@ class ViewComponent extends BaseComponent{
 
                 console.log(currentOrder[orderItem]);
 
+                let size = "" ;
+                if( currentOrder[orderItem]._size != null ){
+                    size = "&nbsp;-&nbsp;"+currentOrder[orderItem]._size ;
+                }
+
                 let orderItemData = {id:orderItem, itemId:orderItem,
                     'name': currentOrder[orderItem]._name ,
                     'calories': currentOrder[orderItem]._calories ,
                     'quantity': currentOrder[orderItem]._quantity ,
                     'price': currentOrder[orderItem]._price ,
-                    'url': currentOrder[orderItem]._actualData.url
+                    'url': currentOrder[orderItem]._actualData.url,
+                    'size': size
                 };
                 totalPriceOfOrder += orderItemData.price ;
                 selfObject.addingViewHelper( 'cart-item', orderItem , orderItemData );
@@ -465,7 +468,9 @@ class ViewComponent extends BaseComponent{
             'cart-container-template':'ion-content',
             'cart-item':'cart-items',
             'payment-page':'ion-content',
-            'confirm-order':'ion-content'
+            'confirm-order':'ion-content',
+            'nutrition-template':'nut-summary',
+            'nutrition-item':'nutrition-container'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
@@ -530,19 +535,20 @@ class ViewComponent extends BaseComponent{
                 if( ( template === "ion-menu-item-button" || template === "ion-customize-menu-item-button" ) && key === "price" ){
                     value = parseFloat(value).toFixed(2);
                 }
-                if( templateString.indexOf( findIn ) !== -1 ){
+                if( primaryKey === "user" && key === "photoURL" && value === null ){
+                }else if( templateString.indexOf( findIn ) !== -1 ){
                     templateString = ( new MyString( templateString ) ).replaceChars( findIn , value );
                 }
                 //console.log( data.name , 'Added' );
             }
             let element ;
             if( customizer != null ){
-                element = document.getElementById( 'customizers-options-'+customizer );
+                element = document.getElementById( customizer );
+                if( element === null ){
+                    console.log( template , model , customizer , append );
+                }
             }else{
                 element = this.getParentElement( template );
-            }
-            if( element === null ){
-                console.log( template , model , customizer , append );
             }
             if( append ){
                 element.innerHTML +=  templateString;
@@ -646,21 +652,46 @@ class ViewComponent extends BaseComponent{
         this.addToView('menu-heading', menuEnity );
     }
 
-    addMenuItemHeading(){
+
+    addMenuItemHeading( itemOrderId = null ){
+
+        let selfObject = this;
         let menu_item = JSON.parse( localStorage.getItem('menu_item') );
         if( menu_item == null ){
             console.log('menu_item empty showing homescreen.');
-            return this.showHomeScreen();
+            return selfObject.showHomeScreen();
         }
-        let menuEnity = new BaseEntity( menu_item.id , menu_item );
-        console.log( menuEnity );
-        this.addToView('ion-customize-menu-item-button', menuEnity );
+
+        new Promise(function (resolve, reject) {
+
+            if( itemOrderId != null ){
+
+            }
+
+            let menuEnity = new BaseEntity( menu_item.id , menu_item );
+            console.log( menuEnity );
+            selfObject.addToView('ion-customize-menu-item-button', menuEnity );
+            resolve();
+
+        }).then(function () {
+
+            if( "nutrition" in menu_item && !jQuery.isEmptyObject( menu_item.nutrition ) ){
+                selfObject.addingViewHelper('nutrition-template', 'nutrition-template' , {} );
+                for( let item in menu_item.nutrition  ){
+                    selfObject.addingViewHelper('nutrition-item', 'nutrition-item' , {'title':item,'value':menu_item.nutrition[item] } );
+                }
+            }
+
+        }).catch(function ( error ) {
+            selfObject.globalCatch( error );
+        });
+
     }
 
-    addCustomizingOptions(){
+    addCustomizingOptions( itemOrderId = null ){
         let selfObject = this;
         this.addingViewHelper('addItemContainer', 'btnContainer' , {}  );
-        this.addQuantity(  );
+        this.addQuantity(  itemOrderId );
 
         let menu = JSON.parse( localStorage.getItem('menu_item') );
         if( menu == null ){
@@ -687,14 +718,55 @@ class ViewComponent extends BaseComponent{
                                     categories[key2].value = 0 ;
                                     categories[key2].id = key2 ;
                                     categories[key2].min = 0 ;
+
+                                    categories[key2]['title'] = categories[key2].name;
+                                    categories[key2]['parentTitle'] = ' A '+customizer.name;
+
                                     selfObject.addingViewHelper( 'customizer-parent' , key1 , {name:"",'id':key1, 'align':'left' }  );
-                                    selfObject.addingViewHelper( 'customizer' , key2 ,  categories[key2] , key1  );
+                                    selfObject.addingViewHelper( 'customizer' , key2 ,  categories[key2] , 'customizers-options-'+key1  );
                                 }
-                            }else{
+                            }
+                            else if( "sizes" in options[key1] ){
+
+                                if(  $('#customizers-options-'+key1).length === 0  ){
+                                    this.addingViewHelper( 'customizer-parent' , key1 , {'name':options[key1]['name'],'id': key1 , 'align':'left remove-cPrimary ' }  );
+                                }
+                                this.addingViewHelper( 'customizer-size-2' , 'size-container' , {name: key1 , key:key1 }  , 'customizers-options-'+key1 , false );
+
+                                if( "category" in options[key1]['sizes'] ){
+                                    let categories = options[key1]['sizes'].category ;
+
+                                    for ( let key2 in categories ){
+
+                                        let category = categories[ key2 ];
+                                        category.id = key1+'___'+key2 ;
+                                        category["title"] = categories[ key2 ]['name']  ;
+                                        category["parentTitle"] = options[key1]['name']  ;
+                                        category["coffeeSize"] = "notACoffeeSize" ;
+                                        if( key2 === "no" ){
+                                            category["checked"] = "checked" ;
+                                            category["active"] = "active" ;
+                                        }else{
+                                            category["checked"] = ' no-check ' ;
+                                            category["active"] = ' no-active ' ;
+                                        }
+                                        category["tag"] = categories[ key2 ]['name'] ;
+
+                                        selfObject.addingViewHelper( 'customizer-size-option' , key2+'_single_size' , category  , 'customizer-size-options-'+key1   );
+
+                                    }
+                                }
+
+                            }
+                            else{
                                 options[key1].value = 0;
                                 options[key1].id = key1;
                                 options[key1].min = 0 ;
-                                selfObject.addingViewHelper( 'customizer' , key1 , options[key1]  , key  );
+
+                                options[key1]['title'] = options[key1].name;
+                                options[key1]['parentTitle'] = customizer.name;
+
+                                selfObject.addingViewHelper( 'customizer' , key1 , options[key1]  , 'customizers-options-'+key  );
                             }
                         }
                     }
@@ -703,7 +775,7 @@ class ViewComponent extends BaseComponent{
         }
     }
 
-    addQuantity(  ){
+    addQuantity(  itemOrderId = null ){
 
         let menu_item = JSON.parse( localStorage.getItem('menu_item') );
         if( menu_item == null ){
@@ -711,11 +783,12 @@ class ViewComponent extends BaseComponent{
             return this.showHomeScreen();
         }
 
-        this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Size','id':'size', 'align':'center' }  );
-        this.addingViewHelper( 'customizer-size' , 'size' , {name:'size'}  , 'size'  );
-
         let quantity = {'name':'Quantity','value':1} ;
-        if( "sizes" in menu_item ){
+        if( "sizes" in menu_item && !jQuery.isEmptyObject( menu_item.sizes ) ){
+
+            this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Size','id':'size', 'align':'center' }  );
+            this.addingViewHelper( 'customizer-size' , 'size' , {name:'size'}  , 'customizers-options-size'  );
+
             let hadMedium = false ;
             let countDown = 1 ;
             for( let key in menu_item.sizes ){
@@ -726,6 +799,8 @@ class ViewComponent extends BaseComponent{
                 size.id = key;
                 size["checked"] = "" ;
                 size["active"] = "" ;
+                size["coffeeSize"] = "coffeeSize" ;
+                size["parentTitle"] = "Size"  ;
                 if( key === "medium" ){
                     hadMedium = true ;
                     size["checked"] = "checked" ;
@@ -738,15 +813,19 @@ class ViewComponent extends BaseComponent{
                 this.addingViewHelper( 'customizer-size-option' , 'single_size' , size   );
                 countDown++;
             }
+
         }else{
             quantity['price'] = menu_item['price'];
-            quantity['calories'] = menu_item.sizes[key]['calories'];
+            quantity['calories'] = menu_item.nutrition['calories'];
         }
+
+        quantity['title'] = 'Quanitity';
+        quantity['parentTitle'] = 'Quanitity';
 
         quantity.min = 1;
         this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Quantity','id':'quantity',  'align':'left'}  );
         // 'Quantity' is the name of identifier of customizer
-        this.addingViewHelper( 'customizer' , 'quantity' , quantity  , 'quantity'  );
+        this.addingViewHelper( 'customizer' , 'quantity' , quantity  , 'customizers-options-quantity'  );
 
     }
 

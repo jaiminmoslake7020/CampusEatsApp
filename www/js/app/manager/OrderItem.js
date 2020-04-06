@@ -64,14 +64,39 @@ class OrderItem extends BaseManager{
         this._actualData = value;
     }
 
+    get cafeId() {
+        return this._cafeId;
+    }
+
+    set cafeId(value) {
+        this._cafeId = value;
+    }
+
+    get menuId() {
+        return this._menuId;
+    }
+
+    set menuId(value) {
+        this._menuId = value;
+    }
+
+    get size() {
+        return this._size;
+    }
+
+    set size(value) {
+        this._size = value;
+    }
+
     constructor( props ) {
         super( props );
     }
 
-    init( orderItemId = null , menuItemId , name , price , quantity , calories , customizerOptions , actualData  ) {
+    init( orderItemId = null , menuItemId , name , price , quantity , calories , customizerOptions , actualData , cafeId , menuId , size ) {
         if( orderItemId === null ){
             orderItemId = this.getViewComponent().getStringHelper().makeid(5);
         }
+
         this._orderItemId = orderItemId;
         this._menuItemId = menuItemId;
         this._name = name;
@@ -80,6 +105,11 @@ class OrderItem extends BaseManager{
         this._calories = calories;
         this._customizerOptions = customizerOptions;
         this._actualData = actualData;
+
+        this._cafeId = cafeId;
+        this._menuId = menuId;
+
+        this._size = size;
 
     }
 

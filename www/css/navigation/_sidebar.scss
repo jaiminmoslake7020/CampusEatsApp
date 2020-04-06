@@ -1,51 +1,89 @@
 
+.side-bar-menu-ce{
 
-.list-group-item {
-  background: transparent !important;
-  border: transparent;
-  border-bottom: 2px solid $color__bgprimary !important;
-}
-.list-group-item a {
-  color: $color__bgprimary;
-  text-decoration: none;
-  font-size: 1.5rem;
-  padding: 15px;
-  display: block;
-}
-.list-group-item{
-  padding: 0 !important;
-}
-.list-group-item a i {
-  font-size: 2rem;
-  padding: 1rem;
-}
-.item a{
-  border-bottom: none !important;
-  padding: 1rem !important;
-  color: $color__bgprimary;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-.list-group {
-  margin-top: 5rem;
-}
-.fa-user {
-  font-size: 7rem;
-  border: 2px solid $color__bgprimary;
-  padding: 2rem;
-  border-radius: 50%;
-}
-.fa-pencil-alt {
-  padding: 0.8rem;
+  .list-group-item {
+    background: transparent !important;
+    border: transparent;
+    border-bottom: 2px solid $color__bgprimary !important;
+  }
+  .list-group-item a {
+    color: $color__bgprimary;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 15px;
+    display: block;
+  }
+  .list-group-item{
+    padding: 0 !important;
+  }
+  .list-group-item a i {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .item a{
+    border-bottom: none !important;
+    padding: 1rem !important;
+    color: $color__bgprimary;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  .list-group {
+    margin-top: 5rem;
+  }
+  .fa-user {
+    font-size: 7rem;
+    border: 2px solid $color__bgprimary;
+    padding: 2rem;
+    border-radius: 50%;
+  }
+  .fa-pencil-alt {
+    padding: 0.8rem;
+  }
+
+  .toolbar .title {
+    font-size: 2rem;
+  }
+
+  .sidebar-title-wrapper {
+    text-align: center;
+  }
+  .fa-pencil-alt{
+    color: $color__bgprimary;
+  }
+
 }
 
-.toolbar .title {
-  font-size: 2rem;
+.panel-title{
+  a{
+    display: block;
+    text-decoration: none;
+  }
+  a:hover {
+    border-bottom: unset;
+  }
 }
 
-.sidebar-title-wrapper {
-  text-align: center;
-}
-.fa-pencil-alt{
-  color: $color__bgprimary;
+#nut-summary{
+  .panel-body{
+    padding: 0;
+  }
+  .panel-title{
+    a{
+      display: block;
+    }
+  }
+  .list-group-item{
+    border: unset;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    text-transform: capitalize;
+
+    span.label.label-info{
+      float: right;
+      margin-top: -2px;
+      background-color: $color__secondary;
+      padding: 10px;
+      min-width: 70px;
+    }
+  }
 }

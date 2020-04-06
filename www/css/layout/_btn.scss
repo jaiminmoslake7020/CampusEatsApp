@@ -155,7 +155,8 @@ button.button-native {
 }
 
 .dnone {
-  display: none;
+  display: none !important;
+  
 }
 
 #home-screen {
@@ -204,15 +205,15 @@ button.button-native {
 
   .header-div{
     .hamburger-menu {
-      display: block;
-    }
-
-    .back-button {
       display: none;
     }
 
-    .home-button {
+    .back-button {
       display: block;
+    }
+
+    .home-button {
+      display: none;
     }
 
     .cart-menu {
@@ -235,7 +236,7 @@ button.button-native {
     }
 
     .home-button {
-      display: none;
+      display: block;
     }
 
     .cart-menu {

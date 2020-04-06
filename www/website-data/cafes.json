@@ -906,7 +906,7 @@
             "id": "item_45620"
           },
           "6c2011f2da89bb58c52de1140eb8e929": {
-            "price":1.29,
+            "price": 1.29,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/773a49eea38e02df9eb47ce4f1f48e01ae6c4fbb-600x589.png",
             "name": "Single Espresso Shot",
             "nutrition": {
@@ -926,7 +926,7 @@
             "id": "item_30081"
           },
           "c249710d392059b8f89a9028b8cfe167": {
-            "price":1.99,
+            "price": 1.99,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/773a49eea38e02df9eb47ce4f1f48e01ae6c4fbb-600x589.png",
             "name": "Double Espresso Shot",
             "nutrition": {
@@ -946,7 +946,7 @@
             "id": "item_28494"
           },
           "8fa3cc33bc5cbd6bf519e6e02eda28a5": {
-            "price":18.89,
+            "price": 18.89,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Original Blend ",
             "nutrition": {
@@ -966,7 +966,7 @@
             "id": "item_27452"
           },
           "8f2d54d4baeb985e3a2f2753d543c7b8": {
-            "price":18.89,
+            "price": 18.89,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Dark Roast ",
             "nutrition": {
@@ -986,7 +986,7 @@
             "id": "item_27453"
           },
           "0aa4d88e42d4148447d041d3f9c80530": {
-            "price":18.89,
+            "price": 18.89,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Decaf ",
             "nutrition": {
@@ -1006,7 +1006,7 @@
             "id": "item_27454"
           },
           "9ae8263e7c2e7d4ce4dad0d5bc50901a": {
-            "price":18.89,
+            "price": 18.89,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Specialty Tea",
             "nutrition": {
@@ -1026,7 +1026,7 @@
             "id": "item_27456"
           },
           "7e2ae00ddeb6d7be8b2a673cd6cc1222": {
-            "price":20.99,
+            "price": 20.99,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Steeped Tea ",
             "nutrition": {
@@ -1046,7 +1046,7 @@
             "id": "item_27455"
           },
           "ab2d990d7cf5a8cb74883df863bfb4fd": {
-            "price":20.99,
+            "price": 20.99,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Hot Chocolate ",
             "nutrition": {
@@ -1066,7 +1066,7 @@
             "id": "item_27467"
           },
           "29908ae6799fc70839fe230ac739b294": {
-            "price":20.99,
+            "price": 20.99,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 French Vanilla ",
             "nutrition": {
@@ -4114,28 +4114,7 @@
         "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/55a5ee3b155a209f441f833690a722bb9194c081-1024x1024.png",
         "menuitems": {
           "3de5edef57788c9d12352aa6e58f10f6": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "3.53",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/84a2fee8a4f2429562b9531c34c8c967e5acbfff-1024x1024.png",
             "name": "Plain Bagel",
             "nutrition": {
@@ -4150,33 +4129,12 @@
               "sugar": 4,
               "proteins": 9
             },
-            "currency": "CA",
+            "currentcy": "CA",
             "type": "item",
             "id": "item_30990"
           },
           "2d1661e630894c8dfbb3c57517a2c116": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "8.54",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/55a5ee3b155a209f441f833690a722bb9194c081-1024x1024.png",
             "name": "Everything Bagel",
             "nutrition": {
@@ -4191,33 +4149,12 @@
               "sugar": 5.88,
               "proteins": 9.94
             },
-            "currency": "CA",
+            "currentcy": "CA",
             "type": "item",
             "id": "item_30985"
           },
           "17b14ff71e7f7cf70d55dca65bfcd9cb": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "6.64",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/8e45b106b3232b54f752bc17c3864aea31dda739-1024x1024.png",
             "name": "12 Grain Bagel",
             "nutrition": {
@@ -4232,33 +4169,12 @@
               "sugar": 8.48,
               "proteins": 10.43
             },
-            "currency": "CA",
+            "currentcy": "CA",
             "type": "item",
             "id": "item_30988"
           },
           "983a617f80c40ce93a34f681f90460f6": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "6.5",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/63d2371cd9f656598f2b9cee1d7f62ec074d2196-1024x1024.png",
             "name": "Four Cheese Bagel",
             "nutrition": {
@@ -4273,33 +4189,12 @@
               "sugar": 3.25,
               "proteins": 12.08
             },
-            "currency": "CA",
+            "currentcy": "CA",
             "type": "item",
             "id": "item_30994"
           },
           "c2926630ead16dfc099e6ac183565506": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "9.22",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/d1d45a39a34f4cddb0e289fb0af59f66c532f372-1024x1024.png",
             "name": "Maple Cinnamon French Toast Bagel",
             "nutrition": {
@@ -4314,33 +4209,12 @@
               "sugar": 15.13,
               "proteins": 9.84
             },
-            "currency": "CA",
+            "currentcy": "CA",
             "type": "item",
             "id": "item_31029"
           },
           "b56a69daf71192594962ff8e1aa7ab8b": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "10.87",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/8c0d7ae9c8470e654e602c45e90082105e93ffa8-1024x1024.png",
             "name": "Cinnamon Raisin Bagel",
             "nutrition": {
@@ -4355,33 +4229,12 @@
               "sugar": 11.18,
               "proteins": 9.38
             },
-            "currency": "CA",
+            "currentcy": "CA",
             "type": "item",
             "id": "item_30986"
           },
           "5b77ec00ab2ff78bc9f485425bc65240": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "10.58",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/4d010de0b288e8fa74a64924ef70f575127859a6-1024x1024.png",
             "name": "Sesame Seed Bagel",
             "nutrition": {
@@ -4396,33 +4249,12 @@
               "sugar": 4.52,
               "proteins": 9.82
             },
-            "currency": "CA",
+            "currentcy": "CA",
             "type": "item",
             "id": "item_30984"
           },
           "dc0e4f8909ca313d207d38f00801e555": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "3.72"
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.50"
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.35"
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.56"
-              }
-            },
+            "price": "6.2",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/d2cb890f13179473fb48126cd530b5c0ceb934c9-1024x1024.png",
             "name": "Sundried Tomato Asiago Parmesan Bagel",
             "nutrition": {
@@ -4448,8 +4280,26 @@
             "options": {
               "toasted": {
                 "name": "Toasted",
-                "calories": 0,
-                "price": 0
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
+                    "regular": {
+                      "name": "Regular",
+                      "calories": 60,
+                      "price": 0
+                    },
+                    "double": {
+                      "name": "Double",
+                      "calories": 121,
+                      "price": 0
+                    }
+                  }
+                }
               }
             }
           },
@@ -4462,6 +4312,11 @@
                 "sizes": {
                   "name": "size",
                   "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
                     "regular": {
                       "name": "Regular",
                       "calories": 106,
@@ -4486,6 +4341,11 @@
                 "sizes": {
                   "name": "size",
                   "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
                     "regular": {
                       "name": "Regular",
                       "calories": 81,
@@ -4505,6 +4365,11 @@
                 "sizes": {
                   "name": "size",
                   "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
                     "regular": {
                       "name": "Regular",
                       "calories": 114,
@@ -4524,6 +4389,11 @@
                 "sizes": {
                   "name": "size",
                   "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
                     "regular": {
                       "name": "Regular",
                       "calories": 104,
@@ -4543,6 +4413,11 @@
                 "sizes": {
                   "name": "size",
                   "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
                     "regular": {
                       "name": "Regular",
                       "calories": 40,
@@ -4562,6 +4437,11 @@
                 "sizes": {
                   "name": "size",
                   "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
                     "regular": {
                       "name": "Regular",
                       "calories": 60,
@@ -4578,7 +4458,27 @@
               "raspberry_jam": {
                 "name": "Raspberry Jam",
                 "calories": 0,
-                "price": 0.30
+                "price": 0.30,
+                "sizes": {
+                  "name": "size",
+                  "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
+                    "regular": {
+                      "name": "Regular",
+                      "calories": 60,
+                      "price": 0
+                    },
+                    "extra": {
+                      "name": "Extra",
+                      "calories": 121,
+                      "price": 0
+                    }
+                  }
+                }
               }
             }
           },
@@ -4590,6 +4490,11 @@
                 "sizes": {
                   "name": "size",
                   "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
                     "regular_bacon": {
                       "name": "Regular Bacon",
                       "calories": 57,
@@ -4613,6 +4518,11 @@
                 "sizes": {
                   "name": "size",
                   "category": {
+                    "no": {
+                      "name": "No",
+                      "calories": 0,
+                      "price": 0
+                    },
                     "regular_cheddar_cheese": {
                       "name": "Regular Cheddar Cheese",
                       "calories": 57,
@@ -4633,16 +4543,10 @@
             "options": {
               "tomato": {
                 "name": "Tomato",
-                "options": {
-                  "name": "Tomato",
-                  "calories": 6,
-                  "price": 0.5,
-                  "quantity": "1"
-                }
+                "calories": 6,
+                "price": 0.5
               }
             }
-          },
-          "select_quantity": {
           }
         }
       }

@@ -41,11 +41,14 @@ $('body').on('click', '.back-button',function (e) {
             break;
         case "customize-menu-item-screen" :
             let menu = JSON.parse( localStorage.getItem( 'menu')) ;
-            (new ViewComponent()).showMenuIetmsScreen( menu.id );
+            (new ViewComponent()).showMenuIetmsScreen( menu );
             break;
         case "cart-menu-screen" :
             let menuC = JSON.parse( localStorage.getItem( 'menu')) ;
-            (new ViewComponent()).showMenuIetmsScreen( menuC.id );
+            (new ViewComponent()).showMenuIetmsScreen( menuC );
+            break;
+        case "payment-screen" :
+            (new ViewComponent()).showCartMenu( );
             break;
     }
 });
@@ -165,8 +168,13 @@ $('body').on('click','.confirm-order',function () {
 
                 if( isCreditCardValidated ){
 
-                    let orderId = (new OrderManager()).bookOrder();
-                    (new ViewComponent()).showConfirmOrderScreen( orderId );
+                    (new EventHandlerComponent()).showLoading();
+
+                    setTimeout(function () {
+                        let orderId = (new OrderManager()).bookOrder();
+                        (new ViewComponent()).showConfirmOrderScreen( orderId );
+                    }, 2000 );
+
 
                 }
 
@@ -226,7 +234,7 @@ class EventHandlerComponent extends BaseComponent{
         this.addHamburgerMenuEvent();
 
         let c = this._counter;
-        console.log(  c++  );
+        console.trace(   );
         consoleAlert( "homeScreenEvents" );
         Array.from( document.getElementsByClassName('brand-logos') , ( el ) => {
                 el.addEventListener('click' ,  selfObject.goToMenuPage )
@@ -293,6 +301,7 @@ class EventHandlerComponent extends BaseComponent{
         this.startLazyLoad();
         this.activatePage();
         this.stopLoading();
+        (new OrderManager()).removeOrder();
         this.addHamburgerMenuEvent();
     }
 
@@ -301,14 +310,13 @@ class EventHandlerComponent extends BaseComponent{
         this.startLazyLoad();
         this.activatePage();
         this.stopLoading();
-        (new OrderManager()).removeOrder();
         this.addHamburgerMenuEvent();
     }
 
     goToMenuPage( event ){
         let brandButton = this;
         let cafe = brandButton.dataset.id;
-        let cafeObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'logo': brandButton.dataset.src } ;
+        let cafeObject = {'id': brandButton.dataset.id , 'cafeId': brandButton.dataset.cafe , 'name': brandButton.dataset.name ,'logo': brandButton.dataset.src } ;
         localStorage.setItem( 'cafe' , JSON.stringify(cafeObject));
         (new ViewComponent()).showMenusScreen( cafe );
     }
@@ -324,10 +332,10 @@ class EventHandlerComponent extends BaseComponent{
             custInfo = JSON.parse( custInfo );
         }
 
-        let menuObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src, 'customizations': custInfo } ;
+        let menuObject = {'id': brandButton.dataset.id , 'menuId': brandButton.dataset.menu , 'cafeId': brandButton.dataset.cafe , 'name': brandButton.dataset.name ,'url': brandButton.dataset.src, 'customizations': custInfo } ;
         localStorage.setItem( 'menu'  , JSON.stringify( menuObject ) );
         localStorage.setItem('menu_item_offset',0);
-        (new ViewComponent()).showMenuIetmsScreen( menu );
+        (new ViewComponent()).showMenuIetmsScreen( menuObject );
     }
 
     customizeMenuItem( event ){
@@ -347,15 +355,21 @@ class EventHandlerComponent extends BaseComponent{
             nutritionInfo = JSON.parse( nutritionInfo );
         }
 
-        let menu = brandButton.dataset.id;
-        let custInfo = document.querySelector('[data-id="'+menu+'"]').querySelector('.customize-info').innerHTML;
+        let custInfo = document.querySelector('[data-id="'+brandButton.dataset.id+'"]').querySelector('.customize-info').innerHTML;
         if( custInfo === "{{customizations}}" ){
             custInfo = {} ;
         }else{
             custInfo = JSON.parse( custInfo );
         }
 
-        let menuItemObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name ,'url': brandButton.dataset.src , 'sizes': sizesInfo ,'nutrition': nutritionInfo , 'customizations': custInfo  } ;
+        let priceInfo = document.querySelector('[data-id="'+brandButton.dataset.id+'"]').querySelector('.price-info').innerHTML;
+        if( priceInfo === "{{price}}" ){
+            priceInfo = 0 ;
+        }else{
+            priceInfo = parseFloat( priceInfo ).toFixed(2);
+        }
+
+        let menuItemObject = {'id': brandButton.dataset.id ,'name': brandButton.dataset.name , 'menuId': brandButton.dataset.menu , 'cafeId': brandButton.dataset.cafe , 'url': brandButton.dataset.src , 'price':priceInfo , 'sizes': sizesInfo ,'nutrition': nutritionInfo , 'customizations': custInfo  } ;
         localStorage.setItem( 'menu_item' , JSON.stringify( menuItemObject ) );
         (new ViewComponent()).showCustomizeMenuItemOption( menuItemObject.id );
     }
@@ -408,7 +422,7 @@ class EventHandlerComponent extends BaseComponent{
     }
 
     addDataOnScroll(){
-        //
+
         // $(window).scroll(function() {
         //     if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
         //         console.log('hit bottom');
