@@ -341,7 +341,7 @@ class CustomizeOrderItem extends ViewComponent{
         $('#customizedPrice').text(parseFloat(price).toFixed(2));
         $('#customizedCalories').text(parseFloat(calories).toFixed(2));
 
-        console.log( selfObject.customizerData );
+        //console.log( selfObject.customizerData );
 
     }
 

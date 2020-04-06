@@ -1,6 +1,6 @@
 let isDebug = false;
 function consoleAlert( data ){
-    console.log(data);
+    //console.log(data);
     if( isDebug ){
         alert( data );
     }

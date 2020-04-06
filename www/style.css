@@ -6136,7 +6136,7 @@ button.button-native {
   display: none;
 }
 #faq-screen .header-div .home-button, #feedback-screen .header-div .home-button, #editInfo-screen .header-div .home-button, #privacyPolicys-screen .header-div .home-button, #cafeLocations-screen .header-div .home-button {
-  display: none;
+  display: block;
 }
 #faq-screen .header-div .cart-menu, #feedback-screen .header-div .cart-menu, #editInfo-screen .header-div .cart-menu, #privacyPolicys-screen .header-div .cart-menu, #cafeLocations-screen .header-div .cart-menu {
   display: none;

@@ -333,7 +333,7 @@ class ViewComponent extends BaseComponent{
             let currentOrder = (new OrderManager()).currentOrder;
             for( let orderItem in currentOrder ){
 
-                console.log(currentOrder[orderItem]);
+                //console.log(currentOrder[orderItem]);
 
                 let size = "" ;
                 if( currentOrder[orderItem]._size != null ){
@@ -354,8 +354,8 @@ class ViewComponent extends BaseComponent{
                 let customizerOptions = currentOrder[orderItem]._customizerOptions ;
                 if( !jQuery.isEmptyObject( customizerOptions ) ){
 
-                    console.log( "customizerOptions" );
-                    console.log( customizerOptions );
+                    //console.log( "customizerOptions" );
+                    //console.log( customizerOptions );
                     let newOptionsObject = {} ;
                     for( let option in customizerOptions ){
                         if( customizerOptions[option].parentTitle !== "Size" ){
@@ -373,8 +373,8 @@ class ViewComponent extends BaseComponent{
                         }
                     }
 
-                    console.log( "newOptionsObject" );
-                    console.log( newOptionsObject );
+                    //console.log( "newOptionsObject" );
+                    //console.log( newOptionsObject );
 
                     if( !jQuery.isEmptyObject( newOptionsObject ) ){
                         selfObject.addingViewHelper( 'order-item-template', 'order-item-template' , {'id':orderItem} , 'detailed-summary-'+orderItem );
@@ -717,7 +717,7 @@ class ViewComponent extends BaseComponent{
         new Promise(function (resolve, reject) {
 
             let menuEnity = new BaseEntity( menu_item.id , menu_item );
-            console.log( menuEnity );
+            //console.log( menuEnity );
             selfObject.addToView('ion-customize-menu-item-button', menuEnity );
             resolve();
 
@@ -754,15 +754,16 @@ class ViewComponent extends BaseComponent{
         if( "customizations" in menu){
             if( typeof menu.customizations === "object" && menu.customizations != null ){
                 let customizations = menu.customizations ;
-                console.log( customizations );
+                //console.log( customizations );
                 for( let key in customizations ){
-                    console.log( key , customizations[key] , customizations[key].options );
+                    //console.log( key , customizations[key] , customizations[key].options );
                     let customizer = customizations[key];
                     customizer.id = key;
                     if( "options" in customizer ){
                         let options = customizations[key].options;
                         customizer.align = "left" ;
                         selfObject.addingViewHelper( 'customizer-parent' , key , customizer  );
+                        let defaultSelection = "no"  ;
                         for( let key1 in options ){
                             if( "category" in options[key1] ){
                                 let categories = options[key1].category ;
@@ -798,6 +799,20 @@ class ViewComponent extends BaseComponent{
 
                                 if( "category" in options[key1]['sizes'] ){
                                     let categories = options[key1]['sizes'].category ;
+
+                                    for ( let key2 in categories ) {
+                                        if (itemOrderId != null) {
+                                            let currentOrder = (new OrderManager()).currentOrder;
+                                            if (itemOrderId in currentOrder) {
+                                                let customizedItem = currentOrder[itemOrderId]._customizerOptions;
+                                                if (key1 + '___' + key2 in currentOrder[itemOrderId]._customizerOptions) {
+                                                    defaultSelection = key2;
+                                                    console.log(defaultSelection, 'Position 2', categories[key2]['name']);
+                                                }
+                                            }
+                                        }
+                                    }
+
                                     for ( let key2 in categories ){
 
                                         let category = categories[ key2 ];
@@ -806,18 +821,8 @@ class ViewComponent extends BaseComponent{
                                         category["parentTitle"] = options[key1]['name']  ;
                                         category["coffeeSize"] = "notACoffeeSize" ;
 
-                                        let defaultSelection = "no"  ;
-                                        if( itemOrderId != null ){
-                                            let currentOrder = (new OrderManager()).currentOrder;
-                                            if( itemOrderId in currentOrder ){
-                                                let customizedItem = currentOrder[ itemOrderId ]._customizerOptions;
-                                                if( key1+'___'+key2  in currentOrder[ itemOrderId ]._customizerOptions ){
-                                                    defaultSelection = key2;
-                                                }
-                                            }
-                                        }
-
                                         if( key2 === defaultSelection ){
+                                            console.log( defaultSelection , 'Position 3' , categories[ key2 ]['name'] );
                                             category["checked"] = "checked" ;
                                             category["active"] = "active" ;
                                         }else{
@@ -936,13 +941,13 @@ class ViewComponent extends BaseComponent{
 
     addingViewHelper( template , entityId , entityData , specialCustomizer = null , append = true ){
         let entity = new BaseEntity( entityId , entityData  );
-        console.log( 'entity' , entity );
+        //console.log( 'entity' , entity );
         this.addToView( template , entity , specialCustomizer , append );
     }
 
     addUserDetails( id = null ){
 
-        console.trace();
+        //console.trace();
 
         let authResult = localStorage.getItem('authResult');
         let authResultObject = JSON.parse(authResult);
