@@ -281,7 +281,7 @@ class ViewComponent extends BaseComponent{
             selfObject.addCafeHeading();
             selfObject.addMenuHeading();
             selfObject.addUserDetails();
-            selfObject.addMenuItemHeading( itemOrderId );
+            selfObject.addMenuItemHeading( );
             selfObject.addCustomizingOptions( itemOrderId );
             selfObject.addFooterContainer();
 
@@ -327,6 +327,8 @@ class ViewComponent extends BaseComponent{
 
         }).then(function () {
 
+
+
             let totalPriceOfOrder = 0 ;
             let currentOrder = (new OrderManager()).currentOrder;
             for( let orderItem in currentOrder ){
@@ -348,8 +350,57 @@ class ViewComponent extends BaseComponent{
                 };
                 totalPriceOfOrder += orderItemData.price ;
                 selfObject.addingViewHelper( 'cart-item', orderItem , orderItemData );
+
+                let customizerOptions = currentOrder[orderItem]._customizerOptions ;
+                if( !jQuery.isEmptyObject( customizerOptions ) ){
+
+                    console.log( "customizerOptions" );
+                    console.log( customizerOptions );
+                    let newOptionsObject = {} ;
+                    for( let option in customizerOptions ){
+                        if( customizerOptions[option].parentTitle !== "Size" ){
+                            let doNotAvoidIt = true ;
+                            if( option.indexOf('___') !== -1 && customizerOptions[option].title == "No" ){
+                                doNotAvoidIt = false ;
+                            }
+                            else if( customizerOptions[option].value !== "0" && customizerOptions[option].value !== 0 && doNotAvoidIt ){
+                                if( !( customizerOptions[option].parentTitle in newOptionsObject ) ){
+                                    newOptionsObject[ customizerOptions[option].parentTitle ] = {} ;
+                                }
+                                newOptionsObject[ customizerOptions[option].parentTitle ][ customizerOptions[option].title ] =  customizerOptions[option] ;
+                                newOptionsObject[ customizerOptions[option].parentTitle ][ customizerOptions[option].title ]['option'] = option ;
+                            }
+                        }
+                    }
+
+                    console.log( "newOptionsObject" );
+                    console.log( newOptionsObject );
+
+                    if( !jQuery.isEmptyObject( newOptionsObject ) ){
+                        selfObject.addingViewHelper( 'order-item-template', 'order-item-template' , {'id':orderItem} , 'detailed-summary-'+orderItem );
+                        let count = 0 ;
+                        for( let panel in newOptionsObject ){
+                            let innerCount = 0 ;
+                            let newId = orderItem+'-sub-item-'+count;
+                            selfObject.addingViewHelper( 'order-item-sub-template', 'order-item-sub-template' , {'id':newId,'title':panel, 'orderId':orderItem } , 'accordion-'+orderItem );
+                            for( let subPanel in newOptionsObject[panel] ){
+                                let newNewId = orderItem+'-sub-sub-item-'+innerCount;
+                                if( newOptionsObject[panel][subPanel].option.indexOf('___') !== -1  ){
+                                    selfObject.addingViewHelper( 'order-item-detail-item', 'order-item-detail-item' , {'id':newNewId,'title':subPanel, 'value': newOptionsObject[panel][subPanel]['value'] , 'dnone' : ' dnone ' } , 'order-detail-container-'+newId );
+                                }else{
+                                    selfObject.addingViewHelper( 'order-item-detail-item', 'order-item-detail-item' , {'id':newNewId,'title':subPanel, 'value': newOptionsObject[panel][subPanel]['value'] , 'dnone' : '' } , 'order-detail-container-'+newId );
+                                }
+                                innerCount++;
+                            }
+                            count++;
+                        }
+                    }
+
+                }
+
             }
             $('#totalPriceOfOrder').html('&nbsp;$'+parseFloat(totalPriceOfOrder).toFixed(2));
+
 
 
         }).then(function () {
@@ -470,7 +521,8 @@ class ViewComponent extends BaseComponent{
             'payment-page':'ion-content',
             'confirm-order':'ion-content',
             'nutrition-template':'nut-summary',
-            'nutrition-item':'nutrition-container'
+            'nutrition-item':'nutrition-container',
+            'order-item-template' : 'detailed-summary'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
@@ -653,7 +705,7 @@ class ViewComponent extends BaseComponent{
     }
 
 
-    addMenuItemHeading( itemOrderId = null ){
+    addMenuItemHeading( ){
 
         let selfObject = this;
         let menu_item = JSON.parse( localStorage.getItem('menu_item') );
@@ -663,10 +715,6 @@ class ViewComponent extends BaseComponent{
         }
 
         new Promise(function (resolve, reject) {
-
-            if( itemOrderId != null ){
-
-            }
 
             let menuEnity = new BaseEntity( menu_item.id , menu_item );
             console.log( menuEnity );
@@ -690,7 +738,11 @@ class ViewComponent extends BaseComponent{
 
     addCustomizingOptions( itemOrderId = null ){
         let selfObject = this;
-        this.addingViewHelper('addItemContainer', 'btnContainer' , {}  );
+        let itermEntity = {'existingOrder':'plus-square'} ;
+        if( itemOrderId != null ){
+            itermEntity = {'itemOrderId':itemOrderId,'existingOrder':'check-square'}
+        }
+        this.addingViewHelper('addItemContainer', 'btnContainer' , itermEntity  );
         this.addQuantity(  itemOrderId );
 
         let menu = JSON.parse( localStorage.getItem('menu_item') );
@@ -715,12 +767,23 @@ class ViewComponent extends BaseComponent{
                             if( "category" in options[key1] ){
                                 let categories = options[key1].category ;
                                 for ( let key2 in categories ){
-                                    categories[key2].value = 0 ;
+
+                                    let defaultValue = 0;
+                                    if( itemOrderId != null ){
+                                        let currentOrder = (new OrderManager()).currentOrder;
+                                        if( itemOrderId in currentOrder ){
+                                            let customizedItem = currentOrder[ itemOrderId ]._customizerOptions;
+                                            if( key2 in currentOrder[ itemOrderId ]._customizerOptions ){
+                                                defaultValue = currentOrder[ itemOrderId ]._customizerOptions[key2].value;
+                                            }
+                                        }
+                                    }
+
                                     categories[key2].id = key2 ;
                                     categories[key2].min = 0 ;
-
+                                    categories[key2].value = defaultValue ;
                                     categories[key2]['title'] = categories[key2].name;
-                                    categories[key2]['parentTitle'] = ' A '+customizer.name;
+                                    categories[key2]['parentTitle'] = customizer.name;
 
                                     selfObject.addingViewHelper( 'customizer-parent' , key1 , {name:"",'id':key1, 'align':'left' }  );
                                     selfObject.addingViewHelper( 'customizer' , key2 ,  categories[key2] , 'customizers-options-'+key1  );
@@ -735,7 +798,6 @@ class ViewComponent extends BaseComponent{
 
                                 if( "category" in options[key1]['sizes'] ){
                                     let categories = options[key1]['sizes'].category ;
-
                                     for ( let key2 in categories ){
 
                                         let category = categories[ key2 ];
@@ -743,7 +805,19 @@ class ViewComponent extends BaseComponent{
                                         category["title"] = categories[ key2 ]['name']  ;
                                         category["parentTitle"] = options[key1]['name']  ;
                                         category["coffeeSize"] = "notACoffeeSize" ;
-                                        if( key2 === "no" ){
+
+                                        let defaultSelection = "no"  ;
+                                        if( itemOrderId != null ){
+                                            let currentOrder = (new OrderManager()).currentOrder;
+                                            if( itemOrderId in currentOrder ){
+                                                let customizedItem = currentOrder[ itemOrderId ]._customizerOptions;
+                                                if( key1+'___'+key2  in currentOrder[ itemOrderId ]._customizerOptions ){
+                                                    defaultSelection = key2;
+                                                }
+                                            }
+                                        }
+
+                                        if( key2 === defaultSelection ){
                                             category["checked"] = "checked" ;
                                             category["active"] = "active" ;
                                         }else{
@@ -759,7 +833,19 @@ class ViewComponent extends BaseComponent{
 
                             }
                             else{
-                                options[key1].value = 0;
+
+                                let defaultValue = 0;
+                                if( itemOrderId != null ){
+                                    let currentOrder = (new OrderManager()).currentOrder;
+                                    if( itemOrderId in currentOrder ){
+                                        let customizedItem = currentOrder[ itemOrderId ]._customizerOptions;
+                                        if( key1 in currentOrder[ itemOrderId ]._customizerOptions ){
+                                            defaultValue = currentOrder[ itemOrderId ]._customizerOptions[key1].value;
+                                        }
+                                    }
+                                }
+
+                                options[key1].value = defaultValue;
                                 options[key1].id = key1;
                                 options[key1].min = 0 ;
 
@@ -783,7 +869,26 @@ class ViewComponent extends BaseComponent{
             return this.showHomeScreen();
         }
 
-        let quantity = {'name':'Quantity','value':1} ;
+        let selectedSize = "medium" ;
+        let quantityValue = 1 ;
+        if( itemOrderId != null ){
+            let currentOrder = (new OrderManager()).currentOrder;
+            if( itemOrderId in currentOrder ){
+                let customizedItem = currentOrder[ itemOrderId ];
+                quantityValue = customizedItem._quantity;
+                if( customizedItem._size === "S" ){
+                    selectedSize = "small";
+                }else if( customizedItem._size === "M" ){
+                    selectedSize = "medium";
+                }else if( customizedItem._size === "L" ) {
+                    selectedSize = "large";
+                }else if( customizedItem._size === "XL" ){
+                    selectedSize = "extra_large";
+                }
+            }
+        }
+
+        let quantity = {'name':'Quantity','value':quantityValue} ;
         if( "sizes" in menu_item && !jQuery.isEmptyObject( menu_item.sizes ) ){
 
             this.addingViewHelper( 'customizer-parent' , 'quantity_option' , {'name':'Size','id':'size', 'align':'center' }  );
@@ -801,7 +906,7 @@ class ViewComponent extends BaseComponent{
                 size["active"] = "" ;
                 size["coffeeSize"] = "coffeeSize" ;
                 size["parentTitle"] = "Size"  ;
-                if( key === "medium" ){
+                if( key === selectedSize ){
                     hadMedium = true ;
                     size["checked"] = "checked" ;
                     size["active"] = "active" ;

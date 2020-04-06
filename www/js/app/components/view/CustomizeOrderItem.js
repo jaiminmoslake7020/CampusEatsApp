@@ -91,6 +91,18 @@ $('body').on('change', '.counter', function (e) {
     selfObject.calculatePriceAndCalories();
 });
 
+$('body').on('click','.editItem',function () {
+     let orderItem = $(this).data('id');
+    if( orderItem != null ){
+        let currentOrder = (new OrderManager()).currentOrder;
+        if( orderItem in currentOrder ){
+            let customizedItem = currentOrder[ orderItem ]._actualData;
+            localStorage.setItem( 'menu_item' , JSON.stringify( customizedItem ) );
+            (new ViewComponent()).showCustomizeMenuItemOption( customizedItem.id , orderItem );
+        }
+    }
+});
+
 $('body').on('click', '.addItem', function (e) {
     selfObject.calculatePriceAndCalories();
     let orderItem = new OrderItem();
