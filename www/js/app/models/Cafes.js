@@ -102,4 +102,11 @@ class Cafes extends FirebaseActiveRecord{
         }
     }
 
+    async getOne( id ){
+        let selfObject = this;
+        const snapshot = await self.db.collection( this.firebase_collection ).doc( id ).get();
+        console.log( snapshot );
+        return snapshot;
+    }
+
 }

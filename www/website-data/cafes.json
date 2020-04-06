@@ -429,7 +429,6 @@
             }
           },
           "0b6eed4913bd5b104d2618ffdd1b6ecb": {
-            "price": "3.40",
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/d0a17a969bb763b0fd47e8d9d2c2783a4a3539d9-1024x1024.png",
             "name": "Latte",
             "nutrition": {
@@ -446,29 +445,7 @@
             },
             "currency": "CA",
             "type": "item",
-            "id": "item_26591"
-          },
-          "7529766f8f45acd7639104cd506e1388": {
-            "price": "4.21",
-            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/403d4853ae4529a54f900c482c6f1be653b32932-1024x1024.png",
-            "name": "Caramel Latte",
-            "nutrition": {
-              "calories": 54.95888,
-              "fat": 0.44126454,
-              "saturatedFat": 0.34007344,
-              "transFat": null,
-              "cholesterol": 1.3450581,
-              "sodium": 11.924737,
-              "carbohydrates": 12.755211,
-              "fiber": 0,
-              "sugar": 12.194487,
-              "proteins": 0.08594486
-            },
-            "currency": "CA",
-            "type": "item",
-            "id": "item_30084"
-          },
-          "aace4163fedc5a71a83fda052bbea472": {
+            "id": "item_26591",
             "sizes": {
               "small": {
                 "tag": "S",
@@ -494,11 +471,52 @@
                 "price": "2.29",
                 "calories": 0
               }
+            }
+          },
+          "7529766f8f45acd7639104cd506e1388": {
+            "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/403d4853ae4529a54f900c482c6f1be653b32932-1024x1024.png",
+            "name": "Caramel Latte",
+            "nutrition": {
+              "calories": 211,
+              "fat": 0.44126454,
+              "saturatedFat": 0.34007344,
+              "transFat": null,
+              "cholesterol": 1.3450581,
+              "sodium": 11.924737,
+              "carbohydrates": 12.755211,
+              "fiber": 0,
+              "sugar": 12.194487,
+              "proteins": 0.08594486
             },
+            "currency": "CA",
+            "type": "item",
+            "id": "item_30084",
+            "sizes": {
+              "small": {
+                "tag": "S",
+                "title": "Small",
+                "price": "2.89",
+                "calories": 173
+              },
+              "medium": {
+                "title": "Medium",
+                "tag": "M",
+                "price": "3.39",
+                "calories": 211
+              },
+              "large": {
+                "title": "Large",
+                "tag": "L",
+                "price": "3.99",
+                "calories": 307
+              }
+            }
+          },
+          "aace4163fedc5a71a83fda052bbea472": {
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/35fe2da793e9666fe4d6474633c6cec9065e407e-1024x1024.png",
             "name": "Vanilla Latte",
             "nutrition": {
-              "calories": 3.8537183,
+              "calories": 164,
               "fat": 0.108735465,
               "saturatedFat": 0.039926577,
               "transFat": null,
@@ -511,33 +529,53 @@
             },
             "currency": "CA",
             "type": "item",
-            "id": "item_30077"
+            "id": "item_30077",
+            "sizes": {
+              "small": {
+                "tag": "S",
+                "title": "Small",
+                "price": "2.89",
+                "calories": 164
+              },
+              "medium": {
+                "title": "Medium",
+                "tag": "M",
+                "price": "3.39",
+                "calories": 211
+              },
+              "large": {
+                "title": "Large",
+                "tag": "L",
+                "price": "3.99",
+                "calories": 307
+              }
+            }
           },
           "328d664e3ea8ffad180015c71e6d855a": {
             "sizes": {
               "small": {
                 "tag": "S",
                 "title": "Small",
-                "price": "1.54",
-                "calories": 0
+                "price": "2.89",
+                "calories": 165
               },
               "medium": {
                 "title": "Medium",
                 "tag": "M",
-                "price": "1.86",
-                "calories": 0
+                "price": "3.39",
+                "calories": 211
               },
               "large": {
                 "title": "Large",
                 "tag": "L",
-                "price": "2.02",
+                "price": "3.39",
                 "calories": 0
               },
               "extra_large": {
                 "title": "Extra Large",
                 "tag": "XL",
-                "price": "2.29",
-                "calories": 0
+                "price": "3.99",
+                "calories": 309
               }
             },
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b4f3882ec5cdf5ddf6e720065c6c6453d1a6b084-1024x1024.png",
@@ -694,36 +732,10 @@
             }
           },
           "3239ae98cebbe9ad79d7146053655aa1": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/d0a17a969bb763b0fd47e8d9d2c2783a4a3539d9-1024x1024.png",
             "name": "Cappuccino",
             "nutrition": {
-              "calories": 52.811283,
+              "calories": 83,
               "fat": 5.3612647,
               "saturatedFat": 3.2300735,
               "transFat": null,
@@ -736,7 +748,27 @@
             },
             "currency": "CA",
             "type": "item",
-            "id": "item_30079"
+            "id": "item_30079",
+            "sizes": {
+              "small": {
+                "tag": "S",
+                "title": "Small",
+                "price": "2.59",
+                "calories": 83
+              },
+              "medium": {
+                "title": "Medium",
+                "tag": "M",
+                "price": "3.09",
+                "calories": 93
+              },
+              "large": {
+                "title": "Large",
+                "tag": "L",
+                "price": "3.69",
+                "calories": 163
+              }
+            }
           },
           "a4eda3b1dd58066977c6ba1b4f6f1250": {
             "sizes": {
@@ -874,32 +906,7 @@
             "id": "item_45620"
           },
           "6c2011f2da89bb58c52de1140eb8e929": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price":1.29,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/773a49eea38e02df9eb47ce4f1f48e01ae6c4fbb-600x589.png",
             "name": "Single Espresso Shot",
             "nutrition": {
@@ -919,32 +926,7 @@
             "id": "item_30081"
           },
           "c249710d392059b8f89a9028b8cfe167": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price":1.99,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/773a49eea38e02df9eb47ce4f1f48e01ae6c4fbb-600x589.png",
             "name": "Double Espresso Shot",
             "nutrition": {
@@ -964,32 +946,7 @@
             "id": "item_28494"
           },
           "8fa3cc33bc5cbd6bf519e6e02eda28a5": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price":18.89,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Original Blend ",
             "nutrition": {
@@ -1009,32 +966,7 @@
             "id": "item_27452"
           },
           "8f2d54d4baeb985e3a2f2753d543c7b8": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price":18.89,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Dark Roast ",
             "nutrition": {
@@ -1054,32 +986,7 @@
             "id": "item_27453"
           },
           "0aa4d88e42d4148447d041d3f9c80530": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price":18.89,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Decaf ",
             "nutrition": {
@@ -1099,32 +1006,7 @@
             "id": "item_27454"
           },
           "9ae8263e7c2e7d4ce4dad0d5bc50901a": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price":18.89,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Specialty Tea",
             "nutrition": {
@@ -1144,32 +1026,7 @@
             "id": "item_27456"
           },
           "7e2ae00ddeb6d7be8b2a673cd6cc1222": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price":20.99,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Steeped Tea ",
             "nutrition": {
@@ -1189,32 +1046,7 @@
             "id": "item_27455"
           },
           "ab2d990d7cf5a8cb74883df863bfb4fd": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price":20.99,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 Hot Chocolate ",
             "nutrition": {
@@ -1234,32 +1066,7 @@
             "id": "item_27467"
           },
           "29908ae6799fc70839fe230ac739b294": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price":20.99,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 French Vanilla ",
             "nutrition": {
@@ -1279,36 +1086,11 @@
             "id": "item_27472"
           },
           "92df80d6048403d19756e82a34dd4f4f": {
-            "sizes": {
-              "small": {
-                "tag": "S",
-                "title": "Small",
-                "price": "1.54",
-                "calories": 0
-              },
-              "medium": {
-                "title": "Medium",
-                "tag": "M",
-                "price": "1.86",
-                "calories": 0
-              },
-              "large": {
-                "title": "Large",
-                "tag": "L",
-                "price": "2.02",
-                "calories": 0
-              },
-              "extra_large": {
-                "title": "Extra Large",
-                "tag": "XL",
-                "price": "2.29",
-                "calories": 0
-              }
-            },
+            "price": 20.99,
             "url": "https://cdn.sanity.io/images/czqk28jt/prod_th/b9db093a071241c89e20cceba05445386cdeaee4-2048x1365.png",
             "name": "Take 12 White Hot Chocolate",
             "nutrition": {
-              "calories": 3084.23,
+              "calories": 219,
               "fat": 112.2,
               "saturatedFat": 101.64,
               "transFat": 0,
@@ -1889,7 +1671,7 @@
               "large": {
                 "title": "Large",
                 "tag": "L",
-                "price": "3.22"
+                "price": "23.0"
               }
             },
             "price": "23.0"

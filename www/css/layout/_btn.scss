@@ -200,7 +200,8 @@ button.button-native {
   }
 }
 
-#faq-screen, #feedback-screen, #editInfo-screen , #privacyPolicys-screen, #cafeLocations-screen , #cart-menu-screen {
+#payment-screen {
+
   .header-div{
     .hamburger-menu {
       display: block;
@@ -212,6 +213,72 @@ button.button-native {
 
     .home-button {
       display: block;
+    }
+
+    .cart-menu {
+      display: none;
+    }
+
+  }
+
+}
+
+#confirm-order-screen{
+
+  .header-div{
+    .hamburger-menu {
+      display: block;
+    }
+
+    .back-button {
+      display: none;
+    }
+
+    .home-button {
+      display: none;
+    }
+
+    .cart-menu {
+      display: none;
+    }
+
+  }
+
+}
+
+#cart-menu-screen{
+  .header-div{
+    .hamburger-menu {
+      display: none;
+    }
+
+    .back-button {
+      display: block;
+    }
+
+    .home-button {
+      display: none;
+    }
+
+    .cart-menu {
+      display: none;
+    }
+
+  }
+}
+
+#faq-screen, #feedback-screen, #editInfo-screen , #privacyPolicys-screen, #cafeLocations-screen {
+  .header-div{
+    .hamburger-menu {
+      display: block;
+    }
+
+    .back-button {
+      display: none;
+    }
+
+    .home-button {
+      display: none;
     }
 
     .cart-menu {

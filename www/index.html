@@ -93,6 +93,9 @@
                             <div class="menu-button cart-menu dnone "  >
                                 <i class=" fas fa-shopping-cart fa-2x  " ></i>
                             </div>
+                            <div class="menu-button home-button "  >
+                                <i class=" fas fa-home fa-2x  " ></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -677,6 +680,16 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="payment-buttons" >
+                        <div class=" pull-left m15  ">
+                            <p><b>Total Price:<span class=" cPrimary " id="totalPriceOfOrder" ></span></b></p>
+                        </div>
+                        <button type="button" class="btn btn-success pull-right m15 checkoutButton " >Checkout</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </template>
 
@@ -716,6 +729,84 @@
         </div>
     </template>
 
+    <template id="payment-page" >
+
+        <div class="col-xs-12">
+            <form>
+                <h4>Payment details</h4>
+                <ul>
+                    <li>
+                        <label for="card_number">Card number </label>
+                        <input type="text" name="card_number" id="card_number" placeholder="1234 5678 9012 3456">
+                        <small class="help">We supports Visa, Visa Electron, Maestro, MasterCard and Discover.</small>
+                        <span class="  text-danger " ></span>
+                    </li>
+                    <li class="vertical">
+                        <ul>
+                            <li>
+                                <label for="expiry_date">Expiry date</label>
+                                <input type="text" name="expiry_date" id="expiry_date" maxlength="5" placeholder="mm/yy">
+                                <span class=" text-danger " ></span>
+                            </li>
+
+                            <li>
+                                <label for="cvv">CVV</label>
+                                <input type="text" name="cvv" id="cvv" maxlength="3" placeholder="123">
+                                <span class=" text-danger " ></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="vertical maestro" style="display: none; opacity: 0;">
+                        <ul>
+                            <li>
+                                <label for="issue_date">Issue date</label>
+                                <input type="text" name="issue_date" id="issue_date" maxlength="5" placeholder="mm/yy">
+                            </li>
+
+                            <li>
+                                <span class="or">or</span>
+                                <label for="issue_number">Issue number</label>
+                                <input type="text" name="issue_number" id="issue_number" maxlength="2">
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label for="name_on_card">Name on card</label>
+                        <input type="text" name="name_on_card" id="name_on_card" placeholder="Enter your name as on card">
+                        <span class=" text-danger " ></span>
+                    </li>
+                    <li>
+                        <label for="total_amount">Total Amount</label>
+                        <input class="form-control" type="text" name="total_amount" id="total_amount"  disabled>
+                    </li>
+                </ul>
+                <div class="payment-buttons">
+                    <button type="button" class="btn btn-secondary btn-cancel pull-left cart-menu " style="padding: 6px 12px;" >Cancel</button>
+                    <button type="button" class="btn btn-primary btn-confirm pull-right confirm-order ">Confirm</button>
+                </div>
+            </form>
+
+        </div>
+
+    </template>
+
+    <template id="confirm-order" >
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" confirm-order-screen ">
+                    <div class="alert alert-success m10 " role="alert">
+                        Thankyou! Your order is successfull and order reference number is <b>{{orderId}}</b>. Cafe will start preparing your order soon.
+                    </div>
+                    <div class="map-container" >
+                        <div id="map" style="width: 100%;height: 45vh;" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
     <div id="alert-parent">
 
     </div>
@@ -737,6 +828,8 @@
 
     <script src="js/app/helpers/MyString.js"  ></script>
     <script src="js/app/helpers/MyArray.js"  ></script>
+    <script src="js/app/helpers/creditcard/jquery.creditCardValidator.js"  ></script>
+    <script src="js/app/helpers/creditCardValidator.js"  ></script>
 
     <!--  COMPONENTS  -->
     <script src="js/app/components/BaseComponent.js"  ></script>
@@ -772,7 +865,7 @@
     <script  src="js/app/CampusEats.js"  ></script>
     <!--    PHONEGAP's own call to our app handler-->
     <script type="text/javascript" src="js/index.js"  ></script>
-    <!--  APP JS  -->
+=    <!--  APP JS  -->
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBChFqqjM0nvMwfjQS_nH1D1YmlHnZ3Y6Q"
             async defer></script>

@@ -43,4 +43,40 @@ class OrderManager extends BaseManager{
         }
     }
 
+    removeOrder(){
+        this.currentOrder = {} ;
+    }
+
+    bookOrder(){
+
+        return this.getViewComponent().getStringHelper().makeid(10);
+
+        let newDbOrder = {} ;
+        let currentOrder = this.currentOrder ;
+
+        let totalPriceOfOrder = 0 ;
+        for( let orderItem in currentOrder ){
+
+            console.log(currentOrder[orderItem]);
+
+            let orderItemData = {id:orderItem, itemId:orderItem,
+                'name': currentOrder[orderItem]._name ,
+                'calories': currentOrder[orderItem]._calories ,
+                'quantity': currentOrder[orderItem]._quantity ,
+                'price': currentOrder[orderItem]._price ,
+                'url': currentOrder[orderItem]._actualData.url
+            };
+            totalPriceOfOrder += orderItemData.price ;
+            selfObject.addingViewHelper( 'cart-item', orderItem , orderItemData );
+        }
+
+        newDbOrder.totalPriceOfOrder = newDbOrder ;
+        //newDbOrder.
+
+
+        
+
+
+    }
+
 }

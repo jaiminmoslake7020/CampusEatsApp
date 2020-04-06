@@ -45,7 +45,7 @@ body {
   background: white;
   width: 100%;
   min-height: 100vh;
-  padding-top: 20px;
+  padding-top: 0;
 
   opacity: 0;
   transform: translateY(100px);
@@ -62,10 +62,10 @@ body {
 
 }
 
-#cart-menu-screen{
+#home-screen{
 
   .screen-content {
-    padding-top: 0;
+    padding-top: 20px;
   }
 
 }
@@ -5913,4 +5913,14 @@ body {
 
 .customizer-label-parent label.control-label{
   color: $color__textBlack;
+}
+
+#payment-screen{
+  li{
+    span.text-danger{
+      font-size: 14px;
+      line-height: 20px;
+      display: inline-block;
+    }
+  }
 }

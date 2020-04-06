@@ -62,7 +62,7 @@ body {
   background: white;
   width: 100%;
   min-height: 100vh;
-  padding-top: 20px;
+  padding-top: 0;
   opacity: 0;
   transform: translateY(100px);
   transition: all 1s linear;
@@ -75,8 +75,8 @@ body {
   transform: translateY(0);
 }
 
-#cart-menu-screen .screen-content {
-  padding-top: 0;
+#home-screen .screen-content {
+  padding-top: 20px;
 }
 
 .policy-content {
@@ -5919,6 +5919,12 @@ body {
   color: #333;
 }
 
+#payment-screen li span.text-danger {
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-block;
+}
+
 /* BTN CONTENT ============ */
 .brand-logos.ion-color.ion-color-light {
   height: 150px;
@@ -6079,16 +6085,55 @@ button.button-native {
   display: none;
 }
 
-#faq-screen .header-div .hamburger-menu, #feedback-screen .header-div .hamburger-menu, #editInfo-screen .header-div .hamburger-menu, #privacyPolicys-screen .header-div .hamburger-menu, #cafeLocations-screen .header-div .hamburger-menu, #cart-menu-screen .header-div .hamburger-menu {
+#payment-screen .header-div .hamburger-menu {
   display: block;
 }
-#faq-screen .header-div .back-button, #feedback-screen .header-div .back-button, #editInfo-screen .header-div .back-button, #privacyPolicys-screen .header-div .back-button, #cafeLocations-screen .header-div .back-button, #cart-menu-screen .header-div .back-button {
+#payment-screen .header-div .back-button {
   display: none;
 }
-#faq-screen .header-div .home-button, #feedback-screen .header-div .home-button, #editInfo-screen .header-div .home-button, #privacyPolicys-screen .header-div .home-button, #cafeLocations-screen .header-div .home-button, #cart-menu-screen .header-div .home-button {
+#payment-screen .header-div .home-button {
   display: block;
 }
-#faq-screen .header-div .cart-menu, #feedback-screen .header-div .cart-menu, #editInfo-screen .header-div .cart-menu, #privacyPolicys-screen .header-div .cart-menu, #cafeLocations-screen .header-div .cart-menu, #cart-menu-screen .header-div .cart-menu {
+#payment-screen .header-div .cart-menu {
+  display: none;
+}
+
+#confirm-order-screen .header-div .hamburger-menu {
+  display: block;
+}
+#confirm-order-screen .header-div .back-button {
+  display: none;
+}
+#confirm-order-screen .header-div .home-button {
+  display: none;
+}
+#confirm-order-screen .header-div .cart-menu {
+  display: none;
+}
+
+#cart-menu-screen .header-div .hamburger-menu {
+  display: none;
+}
+#cart-menu-screen .header-div .back-button {
+  display: block;
+}
+#cart-menu-screen .header-div .home-button {
+  display: none;
+}
+#cart-menu-screen .header-div .cart-menu {
+  display: none;
+}
+
+#faq-screen .header-div .hamburger-menu, #feedback-screen .header-div .hamburger-menu, #editInfo-screen .header-div .hamburger-menu, #privacyPolicys-screen .header-div .hamburger-menu, #cafeLocations-screen .header-div .hamburger-menu {
+  display: block;
+}
+#faq-screen .header-div .back-button, #feedback-screen .header-div .back-button, #editInfo-screen .header-div .back-button, #privacyPolicys-screen .header-div .back-button, #cafeLocations-screen .header-div .back-button {
+  display: none;
+}
+#faq-screen .header-div .home-button, #feedback-screen .header-div .home-button, #editInfo-screen .header-div .home-button, #privacyPolicys-screen .header-div .home-button, #cafeLocations-screen .header-div .home-button {
+  display: none;
+}
+#faq-screen .header-div .cart-menu, #feedback-screen .header-div .cart-menu, #editInfo-screen .header-div .cart-menu, #privacyPolicys-screen .header-div .cart-menu, #cafeLocations-screen .header-div .cart-menu {
   display: none;
 }
 
@@ -6385,6 +6430,11 @@ body {
 .app-nav .header-div .toolbar .title .logo-container img {
   width: auto;
   height: 56px;
+}
+
+.ceats-success {
+  background-color: #eee;
+  color: #009245;
 }
 
 /* sidebar ======================= */

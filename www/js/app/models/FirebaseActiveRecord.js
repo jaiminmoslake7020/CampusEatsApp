@@ -107,6 +107,14 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
         this._currentData_CollectionList = value;
     }
 
+    get fieldPath() {
+        return this._fieldPath;
+    }
+
+    set fieldPath(value) {
+        this._fieldPath = value;
+    }
+
     constructor() {
         super();
         this._firebase_collection = null ;
@@ -118,6 +126,8 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
         this._objectAsANewCollection = {} ;
         this._currentData_CollectionList = {} ;
         this._error = null ;
+
+        this._fieldPath = null ;
 
         this._main_collection = "" ;
 
@@ -343,6 +353,12 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
     }
 
     async findAll(){
+        let selfObject = this;
+        const snapshot = await self.db.collection( this.firebase_collection ).orderBy("order").startAt( selfObject.limitOffset ).limit( selfObject.limit).get();
+        return snapshot.docs.map(doc => new BaseEntity( doc.id , doc.data() ) );
+    }
+
+    async findOne(){
         let selfObject = this;
         const snapshot = await self.db.collection( this.firebase_collection ).orderBy("order").startAt( selfObject.limitOffset ).limit( selfObject.limit).get();
         return snapshot.docs.map(doc => new BaseEntity( doc.id , doc.data() ) );

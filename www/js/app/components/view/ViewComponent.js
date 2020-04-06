@@ -36,8 +36,10 @@ class ViewComponent extends BaseComponent{
             //this.showMenusScreen('tim-hortons');
             //this.showMenuIetmsScreen('section_7410');
             //this.showCustomizeMenuItemOption("d762b653f3fe6ac800512b464183744b");
-            //this.showHomeScreen();
-            return this.showCartMenu();
+            this.showHomeScreen();
+            //return this.showCartMenu();
+            //return this.showPaymentScreen();
+           // return this.showConfirmOrderScreen('YTfubvjh');
             //this.showRenderScreen('cafeLocations');
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
@@ -328,6 +330,7 @@ class ViewComponent extends BaseComponent{
 
         }).then(function () {
 
+            let totalPriceOfOrder = 0 ;
             let currentOrder = (new OrderManager()).currentOrder;
             for( let orderItem in currentOrder ){
 
@@ -340,13 +343,101 @@ class ViewComponent extends BaseComponent{
                     'price': currentOrder[orderItem]._price ,
                     'url': currentOrder[orderItem]._actualData.url
                 };
+                totalPriceOfOrder += orderItemData.price ;
                 selfObject.addingViewHelper( 'cart-item', orderItem , orderItemData );
             }
+            $('#totalPriceOfOrder').html('&nbsp;$'+parseFloat(totalPriceOfOrder).toFixed(2));
+
 
         }).then(function () {
 
-
             selfObject.getAppClassManager().getEventHandlerComponent().showCartMenuEvents();
+
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
+
+    }
+
+    showPaymentScreen(){
+
+        if( !this.authentiCate() ){
+            return this.showFreshLoginScreen();
+        }
+
+        let isCartExists = (new OrderManager()).isCartExists();
+        if( !isCartExists ){
+            return this.showHomeScreen();
+        }
+
+        let selfObject = this;
+        selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
+
+        new Promise(function (resolve, reject) {
+
+            let template = '<div id="screen-container"><div class="screen"  id="payment-screen"></div></div>' ;
+            selfObject.replaceAppScreen( template );
+            document.getElementById('payment-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            document.getElementById('ion-content').classList.remove('cart-menu-screen-content');
+            document.getElementById('ion-content').classList.add('payment-screen-content');
+            selfObject.addCafeHeading();
+            selfObject.addingViewHelper( 'menu-heading', 'cart-heading' , {'name':'Payment'} );
+            selfObject.addingViewHelper( 'payment-page', 'payment-page' , {} );
+            selfObject.addUserDetails();
+            selfObject.addFooterContainer();
+
+            resolve();
+
+        }).then(function () {
+
+            let totalPriceOfOrder = 0 ;
+            let currentOrder = (new OrderManager()).currentOrder;
+            for( let orderItem in currentOrder ){
+                totalPriceOfOrder += currentOrder[orderItem]._price ;
+            }
+            $('#total_amount').val(parseFloat(totalPriceOfOrder).toFixed(2));
+
+        }).then(function () {
+
+            selfObject.getAppClassManager().getEventHandlerComponent().showPaymentScreenEvent();
+
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
+
+    }
+
+    showConfirmOrderScreen( orderId ){
+
+        if( !this.authentiCate() ){
+            return this.showFreshLoginScreen();
+        }
+
+        let selfObject = this;
+        selfObject.getAppClassManager().getEventHandlerComponent().showLoading();
+        selfObject.removeFooterContainerIfExist();
+
+        new Promise(function (resolve, reject) {
+
+            let template = '<div id="screen-container"><div class="screen"  id="confirm-order-screen"></div></div>' ;
+            selfObject.replaceAppScreen( template );
+            document.getElementById('confirm-order-screen').innerHTML = document.getElementById('nav-menu').innerHTML;
+            document.getElementById('ion-content').classList.remove('payment-screen-content');
+            document.getElementById('ion-content').classList.add('confirm-order-screen-content');
+            selfObject.addCafeHeading();
+            selfObject.addingViewHelper( 'menu-heading', 'confirm-order-heading' , {'name':'Order Successfull'} );
+            selfObject.addingViewHelper( 'confirm-order', 'confirm-order' , {'orderId':orderId} );
+            selfObject.addUserDetails();
+
+            resolve();
+
+        }).then(function () {
+
+            selfObject.showDirections();
+
+        }).then(function () {
+
+            selfObject.getAppClassManager().getEventHandlerComponent().showConfirmOrderScreenEvent();
 
         }).catch(function ( reason ) {
             selfObject.globalCatch( reason )
@@ -372,7 +463,9 @@ class ViewComponent extends BaseComponent{
             'alert-template-parent':'alert-parent',
             'addItemContainer':'ion-content',
             'cart-container-template':'ion-content',
-            'cart-item':'cart-items'
+            'cart-item':'cart-items',
+            'payment-page':'ion-content',
+            'confirm-order':'ion-content'
         } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
@@ -790,7 +883,106 @@ class ViewComponent extends BaseComponent{
     }
 
     addFooterContainer(){
-       $('body').append($('#footer').html());
+        if( $('#footer-container').length === 0 ){
+            $('body').append($('#footer').html());
+        }
     }
 
+    initMapShowDirection( position ){
+        var directionsService = new google.maps.DirectionsService();
+        var directionsRenderer = new google.maps.DirectionsRenderer();
+        let LangaraPos = {lat:49.224604 , lng: -123.1117564 } ;
+
+        console.log('Latitude: '          + position.coords.latitude          + '\n' +
+            'Longitude: '         + position.coords.longitude         + '\n' +
+            'Altitude: '          + position.coords.altitude          + '\n' +
+            'Accuracy: '          + position.coords.accuracy          + '\n' +
+            'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+            'Heading: '           + position.coords.heading           + '\n' +
+            'Speed: '             + position.coords.speed             + '\n' +
+            'Timestamp: '         + position.timestamp                + '\n');
+
+        var currentLocation = new google.maps.LatLng( position.coords.latitude  , position.coords.longitude  );
+        var langara = new google.maps.LatLng( LangaraPos.lat , LangaraPos.lng );
+
+        var map;
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: LangaraPos,
+            zoom:16
+        });
+
+        var image = {
+            url: "http://campuseats.wmdd.ca/html-site/CampusEastCmsHtml/small/images/brands/user.png",
+            // This marker is 20 pixels wide by 32 pixels high.
+            size: new google.maps.Size(150, 150),
+            // The origin for this image is (0, 0).
+            origin: new google.maps.Point(0, 0),
+            // The anchor for this image is the base of the flagpole at (0, 32).
+            anchor: new google.maps.Point(0, 0)
+        };
+
+        let marker = new google.maps.Marker({
+            position: currentLocation ,
+            map: map,
+            icon: image,
+            title: 'User Location'
+        });
+
+        let selfObject = new ViewComponent();
+        let cafeId = JSON.parse( localStorage.getItem('cafe') ).id;
+
+        selfObject.getCafesModel().getOne( cafeId ).then(function ( snapshot ) {
+
+            console.log( snapshot.data() );
+
+                let data = snapshot.data()  ;
+                console.log( data.position );
+
+                if( data.logo.indexOf('union') !== -1 ){
+                    data.logo =  selfObject.getStringHelper(  data.logo  ).replaceChars('jpeg','png')
+                }
+
+                var image = {
+                    url: "http://campuseats.wmdd.ca/html-site/CampusEastCmsHtml/small/"+data.logo,
+                    //url: "http://localhost/CampusEatsMobileApp/www/images/brands/small/subway.png",
+                    // This marker is 20 pixels wide by 32 pixels high.
+                    size: new google.maps.Size(150, 150),
+                    // The origin for this image is (0, 0).
+                    origin: new google.maps.Point(0, 0),
+                    // The anchor for this image is the base of the flagpole at (0, 32).
+                    anchor: new google.maps.Point(0, 0)
+                };
+                langara = new google.maps.LatLng( data.position.lat , data.position.lang);;
+
+                let marker = new google.maps.Marker({
+                    position: { lat: data.position.lat, lng: data.position.lang } ,
+                    map: map,
+                    icon: image,
+                    title: data.name
+                });
+
+        }).then(function () {
+            directionsRenderer.setMap(map);
+            var request = {
+                origin: currentLocation,
+                destination: langara,
+                // Note that JavaScript allows us to access the constant
+                // using square brackets and a string value as its
+                // "property."
+                travelMode: 'TRANSIT'
+            };
+            directionsService.route(request, function(response, status) {
+                if (status == 'OK') {
+                    directionsRenderer.setDirections(response);
+                }
+            });
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
+
+    }
+
+    showDirections(){
+        navigator.geolocation.getCurrentPosition( this.initMapShowDirection , this.initMapFailed )
+    }
 }
