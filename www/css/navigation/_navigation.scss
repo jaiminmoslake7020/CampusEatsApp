@@ -69,11 +69,13 @@
 
   }
 
+
   .menu{
-    width: 350px;
+    height: 100%;
+    width: 100vw;
     position: absolute;
     z-index: 1000;
-    left: -350px;
+    left: -100vw;
     padding: 15px;
     box-sizing: border-box;
     top:0;

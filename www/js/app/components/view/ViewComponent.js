@@ -726,7 +726,10 @@ class ViewComponent extends BaseComponent{
             if( "nutrition" in menu_item && !jQuery.isEmptyObject( menu_item.nutrition ) ){
                 selfObject.addingViewHelper('nutrition-template', 'nutrition-template' , {} );
                 for( let item in menu_item.nutrition  ){
-                    selfObject.addingViewHelper('nutrition-item', 'nutrition-item' , {'title':item,'value':menu_item.nutrition[item] } );
+                    if ( menu_item.nutrition[item] != null && menu_item.nutrition[item] != "" ){
+                        let v = parseFloat(menu_item.nutrition[item]).toFixed(2);
+                        selfObject.addingViewHelper('nutrition-item', 'nutrition-item' , {'title':item,'value':v } );
+                    }
                 }
             }
 

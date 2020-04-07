@@ -70,10 +70,14 @@ class FirebaseCompoenent extends BaseComponent{
                     },100);
                 }
             },
-            signInFlow: 'popup',
+            signInFlow: 'redirect',
             signInSuccessUrl: window.location.href+'?success=1',
             signInOptions: [
-                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                {
+                    provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                    signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
+                },
+                //firebase.auth.EmailAuthProvider.PROVIDER_ID,
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                // firebase.auth.FacebookAuthProvider.PROVIDER_ID   requiers more configuration
             ],
