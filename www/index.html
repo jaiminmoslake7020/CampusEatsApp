@@ -347,10 +347,23 @@
 
     <template id="orderHistory" >
 
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class=" cPrimary text-center mt20 ">Order History</h2>
+
+                <div class="row">
+                    <div class="col-xs-12" id="order-container" >
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </template>
 
     <template id="paymentMethod" >
-
+        <h1>Coming Soon</h1>
     </template>
 
     <template id="editInfo" >
@@ -382,7 +395,6 @@
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
 
@@ -739,7 +751,6 @@
         </li>
     </template>
 
-
     <template id="customizer-size-option" >
         <label class="btn btn-default {{active}}  radio-label ">
             <input type="radio" class="sizeInput {{coffeeSize}} "  name="{{id}}" id="{{id}}" autocomplete="off"
@@ -753,7 +764,6 @@
             > {{tag}}
         </label>
     </template>
-
 
     <template id="alert-template-parent" >
         <div id="alert" class="modal fade" tabindex="-1" role="dialog">
@@ -831,7 +841,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 detailedSummary "  >
 
                                 <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample-{{itemId}}" aria-expanded="false" aria-controls="collapseExample-{{itemId}}">
                                     Detailed Order Item Information
@@ -910,6 +920,30 @@
 
     </template>
 
+    <template id="view-order" >
+        <div class="row cafe-heading-wrapper mt10 ">
+            <div class=" col-xs-12 ">
+                <div class="" >
+                    <img class="lazy" src="images/loader.gif" data-src="{{logo}}" alt="{{name}}">
+                </div>
+            </div>
+            <div class=" col-xs-12 ">
+                <p style="font-weight: 400;" class=" cPrimary text-center mt10 " >Order #{{id}}</p>
+            </div>
+            <div class=" col-xs-12 ">
+                <p style="font-weight: 400;" class="text-center cPrimary mt10 " >CA${{totalPriceOfOrder}}</p>
+            </div>
+            <div class=" col-xs-12 ">
+                <p  class="text-center  mt10 " >{{created_at}}</p>
+            </div>
+            <div class="col-xs-12">
+                <div class="row m0 " id="order-content-{{id}}" >
+
+                </div>
+            </div>
+        </div>
+    </template>
+
     <template id="confirm-order" >
 
         <div class="row">
@@ -930,6 +964,7 @@
     <div id="alert-parent">
 
     </div>
+
 
 
     <script type="text/javascript" src="cordova.js"></script>

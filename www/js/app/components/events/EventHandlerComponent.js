@@ -166,15 +166,35 @@ $('body').on('click','.confirm-order',function () {
                     $('#cvv').parent('li').find('span.text-danger').html('');
                 }
 
+                //  There should be a call to a payment provider such as authNer or paypal here
+                // But for time being I am just passing it.
+                // Otherwise I will have an PHP app which will make a transaction to the real PHP app
+                //  which will connect to PHP APP which will connect to AuthNet
+                // I don't sure about use AJAX or CURL to call PHP app from localhost as Cross Origin Issue
+                //
+                //  What PHP app would have done
+                //  This app would have authNet credentials I have created for authnet account
+                //  loginid , Password and one extra thing
+                //
+                //  I would have created a payment profile for a customer using
+                //  createCustomerProfgile then createCustomerProfilePayment linked them to our user data in firebase
+                //  have option to have muliple customer payment  profiles asociated with the user
+                //
+                //  So user can have option to just use saved customerPaymentProfile
+                //  So user can return to cart and use saved customerPaymentprofile or add new customerPaymentprofile
+                //
+                //  I was not able to do that but I provided this info so one can determine that we would be able to do this if we had more time
                 if( isCreditCardValidated ){
 
                     (new EventHandlerComponent()).showLoading();
-
-                    setTimeout(function () {
+                    new Promise(function ( resolve, reject) {
                         let orderId = (new OrderManager()).bookOrder();
+                        resolve( orderId );
+                    }).then(function ( orderId ) {
                         (new ViewComponent()).showConfirmOrderScreen( orderId );
-                    }, 2000 );
-
+                    }).catch(function (reason) {
+                        console.log( reason );
+                    });
 
                 }
 

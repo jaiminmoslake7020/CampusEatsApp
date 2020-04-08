@@ -104,6 +104,12 @@
   margin: 10px auto;
 }
 
+#orderHistory-screen{
+  .cart-item{
+    border-bottom: 0 solid #eee;
+  }
+}
+
 .product-icons button {
   background-color: $color__bgsecondary;
   border:  none;

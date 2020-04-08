@@ -6129,16 +6129,16 @@ button.button-native {
   display: none;
 }
 
-#faq-screen .header-div .hamburger-menu, #feedback-screen .header-div .hamburger-menu, #editInfo-screen .header-div .hamburger-menu, #privacyPolicys-screen .header-div .hamburger-menu, #cafeLocations-screen .header-div .hamburger-menu {
+#faq-screen .header-div .hamburger-menu, #feedback-screen .header-div .hamburger-menu, #editInfo-screen .header-div .hamburger-menu, #privacyPolicys-screen .header-div .hamburger-menu, #cafeLocations-screen .header-div .hamburger-menu, #orderHistory-screen .header-div .hamburger-menu {
   display: block;
 }
-#faq-screen .header-div .back-button, #feedback-screen .header-div .back-button, #editInfo-screen .header-div .back-button, #privacyPolicys-screen .header-div .back-button, #cafeLocations-screen .header-div .back-button {
+#faq-screen .header-div .back-button, #feedback-screen .header-div .back-button, #editInfo-screen .header-div .back-button, #privacyPolicys-screen .header-div .back-button, #cafeLocations-screen .header-div .back-button, #orderHistory-screen .header-div .back-button {
   display: none;
 }
-#faq-screen .header-div .home-button, #feedback-screen .header-div .home-button, #editInfo-screen .header-div .home-button, #privacyPolicys-screen .header-div .home-button, #cafeLocations-screen .header-div .home-button {
+#faq-screen .header-div .home-button, #feedback-screen .header-div .home-button, #editInfo-screen .header-div .home-button, #privacyPolicys-screen .header-div .home-button, #cafeLocations-screen .header-div .home-button, #orderHistory-screen .header-div .home-button {
   display: block;
 }
-#faq-screen .header-div .cart-menu, #feedback-screen .header-div .cart-menu, #editInfo-screen .header-div .cart-menu, #privacyPolicys-screen .header-div .cart-menu, #cafeLocations-screen .header-div .cart-menu {
+#faq-screen .header-div .cart-menu, #feedback-screen .header-div .cart-menu, #editInfo-screen .header-div .cart-menu, #privacyPolicys-screen .header-div .cart-menu, #cafeLocations-screen .header-div .cart-menu, #orderHistory-screen .header-div .cart-menu {
   display: none;
 }
 
@@ -6376,10 +6376,12 @@ body {
 }
 .app-nav.active-menu .menu {
   left: 0;
-  height: fit-content;
+  height: 100%;
+  min-height: 1250px;
 }
 .app-nav .menu {
   height: 100%;
+  min-height: 1250px;
   width: 100vw;
   position: absolute;
   z-index: 1000;
@@ -6388,7 +6390,6 @@ body {
   box-sizing: border-box;
   top: 0;
   bottom: 0;
-  min-height: 100vh;
   background-color: #f15a24;
   color: white;
   transition: left 1s linear;
@@ -7800,6 +7801,10 @@ footer .wrapper > p img {
   background: white;
   border-bottom: 2px solid #eee;
   margin: 10px auto;
+}
+
+#orderHistory-screen .cart-item {
+  border-bottom: 0 solid #eee;
 }
 
 .product-icons button {

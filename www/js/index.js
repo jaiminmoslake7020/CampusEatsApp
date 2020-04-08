@@ -41,6 +41,8 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        // when running phonegap
+        // uncomment if you are running phonegap
         // campusEats = new CampusEats();
         // campusEats.init();
     }
@@ -50,7 +52,8 @@ app.initialize();
 
 window.addEventListener('load',function () {
 
-
+    // when not using phonegap
+    // comment if you are running phonegap
     campusEats = new CampusEats();
     campusEats.init();
 

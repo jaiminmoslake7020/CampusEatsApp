@@ -138,6 +138,13 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
 
         this._order = 0 ;
 
+        this.whereOne = null ;
+        this.whereTwo = null ;
+        this.whereThree = null ;
+
+        this.orderField = "order" ;
+        this.orderType = "asc" ;
+
     }
 
     addNewCurrentDataCollection( key , value ){
@@ -225,7 +232,8 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
 
             let firebase_data = this.firebase_data ;
             let keysWereNotPresent = [] ;
-            if( this.objectAsANewCollection !== {} ){
+            let objectAsANewCollectionTake = this.objectAsANewCollection ;
+            if( !jQuery.isEmptyObject( objectAsANewCollectionTake  ) ){
                 for( let key in firebase_data){
                     if( this.firebase_document === "picker_7407" ){
                         console.log( this._firebase_document , this._firebase_collection , this._firebase_data , this._objectAsANewCollection );
@@ -248,7 +256,6 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
                     }
                 }
             }
-
 
             this.beforeSave();
             let recent_firebase_document = this.firebase_document;
@@ -354,13 +361,18 @@ class FirebaseActiveRecord extends FirebaseCompoenent{
 
     async findAll(){
         let selfObject = this;
-        const snapshot = await self.db.collection( this.firebase_collection ).orderBy("order").startAt( selfObject.limitOffset ).limit( selfObject.limit).get();
-        return snapshot.docs.map(doc => new BaseEntity( doc.id , doc.data() ) );
+        if( selfObject.whereOne != null  && selfObject.whereTwo != null && selfObject.whereThree != null  ){
+            const snapshot = await self.db.collection( this.firebase_collection ).where( selfObject.whereOne , selfObject.whereTwo , selfObject.whereThree  ).orderBy( selfObject.orderField , selfObject.orderType ).startAt( selfObject.limitOffset ).limit( selfObject.limit).get();
+            return snapshot.docs.map(doc => new BaseEntity( doc.id , doc.data() ) );
+        }else{
+            const snapshot = await self.db.collection( this.firebase_collection ).orderBy( selfObject.orderField , selfObject.orderType ).startAt( selfObject.limitOffset ).limit( selfObject.limit).get();
+            return snapshot.docs.map(doc => new BaseEntity( doc.id , doc.data() ) );
+        }
     }
 
     async findOne(){
         let selfObject = this;
-        const snapshot = await self.db.collection( this.firebase_collection ).orderBy("order").startAt( selfObject.limitOffset ).limit( selfObject.limit).get();
+        const snapshot = await self.db.collection( this.firebase_collection ).orderBy( selfObject.orderField , selfObject.orderType ).startAt( selfObject.limitOffset ).limit( selfObject.limit ).get();
         return snapshot.docs.map(doc => new BaseEntity( doc.id , doc.data() ) );
     }
 

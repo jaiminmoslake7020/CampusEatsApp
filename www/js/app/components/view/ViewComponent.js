@@ -36,11 +36,12 @@ class ViewComponent extends BaseComponent{
             //this.showMenusScreen('tim-hortons');
             //this.showMenuIetmsScreen('section_7410');
             //this.showCustomizeMenuItemOption("983a617f80c40ce93a34f681f90460f6");
-            //this.showHomeScreen();
-            return this.showCartMenu();
+            this.showHomeScreen();
+            //return this.showCartMenu();
             //return this.showPaymentScreen();
            // return this.showConfirmOrderScreen('YTfubvjh');
-            //this.showRenderScreen('cafeLocations');
+            //this.showRenderScreen('orderHistory');
+
         }else{
             if( this.getAppClassManager().getRequestComponent().hasModeSelect() ){
                 consoleAlert( 'showLoginScreen' );
@@ -522,8 +523,9 @@ class ViewComponent extends BaseComponent{
             'confirm-order':'ion-content',
             'nutrition-template':'nut-summary',
             'nutrition-item':'nutrition-container',
-            'order-item-template' : 'detailed-summary'
-        } ;
+            'order-item-template' : 'detailed-summary',
+            'view-order':'order-container'
+    } ;
         if( !templateParentArray.hasOwnProperty( template ) ){
             consoleAlert( 'Template parent array is not available.'+template );
         }
@@ -669,6 +671,9 @@ class ViewComponent extends BaseComponent{
             if( id === "cafeLocations" ){
                 selfObject.showAllCafeLocations();
             }
+            if( id === "orderHistory" ){
+                selfObject.viewOrderListingByUser();
+            }
         }).then(function () {
             selfObject.getAppClassManager().getEventHandlerComponent().addRenderScreenEvents();
         }).catch(function () {
@@ -676,11 +681,135 @@ class ViewComponent extends BaseComponent{
         });
     }
 
-    showOrderHistory(){
+    dateFormat( dateObj ){
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+        let month = monthNames[dateObj.getMonth()];
+        let day = String(dateObj.getDate()).padStart(2, '0');
+        let year = dateObj.getFullYear();
 
+        let hours = dateObj.getHours();
+        let am = " am " ;
+        if( hours > 12 ){
+            hours = hours-12 ;
+            am = " pm " ;
+        }
+        if( hours < 10 ){
+            hours = "0"+hours;
+        }
+        let minutes = dateObj.getMinutes();
+        if( minutes < 10  ){
+            minutes = "0"+minutes;
+        }
+
+        return  month  + '\n'+ day  + ',' + year + ' '+hours+':'+minutes+' '+am ;
     }
 
-    showPaymentMethod(){
+    viewOrderListingByUser(){
+        let selfObject = this;
+
+        let f = new FirebaseActiveRecord();
+        f.firebase_collection = f.main_collection+"/Orders";
+        f.whereOne = "user_id" ;
+        f.whereTwo = "==" ;
+        f.whereThree = JSON.parse( localStorage.authResult ).user.uid  ;
+        //f.orderField = "created_at" ;
+        //f.orderType = "desc" ;
+
+        f.findAll().then(function ( snapshot ) {
+
+            for( let i = 0 ; i < snapshot.length ; i++ ){
+                let orderItem = snapshot[i].data;
+                console.log( orderItem );
+                orderItem.id = snapshot[i].primaryKey;
+
+                (new Cafes()).getOne( orderItem.cafeId ).then(function ( snapshot ) {
+
+                    console.log( snapshot );
+                    let data = snapshot.data();
+                    data.id = orderItem.id ;
+                    data.created_at = selfObject.dateFormat( new Date(orderItem.created_at.seconds  * 1000) ) ;
+                    data.totalPriceOfOrder = orderItem.totalPriceOfOrder ;
+                    console.log( data );
+
+                    selfObject.addingViewHelper( 'view-order' , 'view-order' , data,'order-container'  );
+                    //order-content-{{id}}
+
+                }).then(function (  ) {
+
+                    console.log( orderItem );
+
+                    for( let key in orderItem.items ){
+                        let size = "" ;
+                        if( orderItem.items[key].size != null ){
+                            size = "&nbsp;-&nbsp;"+orderItem.items[key].size ;
+                        }
+                        selfObject.addingViewHelper( 'cart-item', orderItem ,  orderItem.items[key] , 'order-content-'+orderItem.id );
+                        $('#order-content-'+orderItem.id).find('.product-icons').remove();
+
+                        let customizerOptions = orderItem.items[key].customizerOptions ;
+                        if( !jQuery.isEmptyObject( customizerOptions ) ){
+
+                            //console.log( "customizerOptions" );
+                            //console.log( customizerOptions );
+                            let newOptionsObject = {} ;
+                            for( let option in customizerOptions ){
+                                if( customizerOptions[option].parentTitle !== "Size" ){
+                                    let doNotAvoidIt = true ;
+                                    if( option.indexOf('___') !== -1 && customizerOptions[option].title == "No" ){
+                                        doNotAvoidIt = false ;
+                                    }
+                                    else if( customizerOptions[option].value !== "0" && customizerOptions[option].value !== 0 && doNotAvoidIt ){
+                                        if( !( customizerOptions[option].parentTitle in newOptionsObject ) ){
+                                            newOptionsObject[ customizerOptions[option].parentTitle ] = {} ;
+                                        }
+                                        newOptionsObject[ customizerOptions[option].parentTitle ][ customizerOptions[option].title ] =  customizerOptions[option] ;
+                                        newOptionsObject[ customizerOptions[option].parentTitle ][ customizerOptions[option].title ]['option'] = option ;
+                                    }
+                                }
+                            }
+
+                            console.log( "newOptionsObject" );
+                            console.log( newOptionsObject );
+
+                            if( !jQuery.isEmptyObject( newOptionsObject ) ){
+                                selfObject.addingViewHelper( 'order-item-template', 'order-item-template' , {'id':key} , 'detailed-summary-'+key );
+                                let count = 0 ;
+                                for( let panel in newOptionsObject ){
+                                    let innerCount = 0 ;
+                                    let newId = key+'-sub-item-'+count;
+                                    selfObject.addingViewHelper( 'order-item-sub-template', 'order-item-sub-template' , {'id':newId,'title':panel, 'orderId':key } , 'accordion-'+key );
+                                    for( let subPanel in newOptionsObject[panel] ){
+                                        let newNewId = key+'-sub-sub-item-'+innerCount;
+                                        if( newOptionsObject[panel][subPanel].option.indexOf('___') !== -1  ){
+                                            selfObject.addingViewHelper( 'order-item-detail-item', 'order-item-detail-item' , {'id':newNewId,'title':subPanel, 'value': newOptionsObject[panel][subPanel]['value'] , 'dnone' : ' dnone ' } , 'order-detail-container-'+newId );
+                                        }else{
+                                            selfObject.addingViewHelper( 'order-item-detail-item', 'order-item-detail-item' , {'id':newNewId,'title':subPanel, 'value': newOptionsObject[panel][subPanel]['value'] , 'dnone' : '' } , 'order-detail-container-'+newId );
+                                        }
+                                        innerCount++;
+                                    }
+                                    count++;
+                                }
+                            }else{
+                                $('#detailed-summary-'+key).parents('.detailedSummary').remove();
+                            }
+
+                        }
+
+
+                    }
+
+                }).then(function () {
+                    (new EventHandlerComponent()).startLazyLoad();
+                }).catch(function ( reason ) {
+                    console.log( reason );
+                });
+
+            }
+        }).then(function () {
+        }).catch(function ( reason ) {
+            selfObject.globalCatch( reason )
+        });
 
     }
 
